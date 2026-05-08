@@ -1,4 +1,4 @@
-name: Build and Deploy React Vite App to Azure
+name: Azure React Vite CI/CD
 
 on:
   push:
@@ -9,31 +9,37 @@ on:
 
 env:
   NODE_VERSION: '20'
+  AZURE_WEBAPP_NAME: 'devopstrio-QA'
 
 jobs:
   build-and-deploy:
+    name: Build and Deploy Application
     runs-on: ubuntu-latest
 
     permissions:
       contents: read
 
     steps:
-      # Checkout repository
+      # Checkout source code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
+      # Setup Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          cache: npm
 
-      # Install dependencies
+      # Install project dependencies
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
-      # Build application
+      # Verify installed packages
+      - name: Verify Dependencies
+        run: npm list --depth=0
+
+      # Build React Vite application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -41,10 +47,31 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Deploy to Azure Web App
+      # Verify build output exists
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed: dist folder not found"
+            exit 1
+          fi
+
+      # Deploy build to Azure Web App
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'devopstrio-QA'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
+
+      # Success notification
+      - name: Deployment Success
+        if: success()
+        run: echo "Application deployed successfully to Azure."
+
+      # Failure notification
+      - name: Deployment Failed Alert
+        if: failure()
+        run: |
+          echo "CI/CD Pipeline Failed!"
+          echo "Check GitHub Actions logs for detailed errors."
+          exit 1
