@@ -35,7 +35,7 @@ import Team4 from "../assets/images/Kishore_dev.png";
 import Team5 from "../assets/images/Sermaraj_dev.png";
 import Team6 from "../assets/images/thangalakshmi_dev.png";
 import Team7 from "../assets/images/punitha_dev.png";
-import Team8 from "../assets/images/Oviya_dev.png";
+import Team8 from "../assets/images/oviya_dev.png";
 
 
 

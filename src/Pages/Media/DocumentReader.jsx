@@ -5,7 +5,7 @@ import {
   FiDownload, 
   FiX
 } from "react-icons/fi";
-import api from "../../services/api";
+import api from "../../Services/api";
 import "../../Style/Media/DocumentReader.css";
 
 const DocumentReader = () => {

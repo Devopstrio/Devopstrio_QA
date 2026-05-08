@@ -8,7 +8,7 @@ import {
   FiUser,
   FiCalendar,
 } from "react-icons/fi";
-import api from "../../services/api";
+import api from "../../Services/api";
 import "../../Style/Media/CategoryPage.css";
 import Mediahero from "../../components/Hero/Mediahero";
 import Newsletter from "../../components/Newsletter/Newsletter";

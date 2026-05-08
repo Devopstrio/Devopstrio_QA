@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import AboutHero from "../../components/Hero/AboutHero";
+import AboutHero from "../../components/Hero/Abouthero";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import Cta from "../../components/Cta/Cta";
 
