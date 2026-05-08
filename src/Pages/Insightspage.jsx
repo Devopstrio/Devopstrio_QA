@@ -4,7 +4,7 @@ import Insightshero from "../components/Hero/Insightshero";
 import Newsletter from "../components/Newsletter/Newsletter";
 import Cta from "../components/Cta/Cta";
 import "../Style/Insightspage.css";
-import api from "../services/api";
+import api from "../Services/api";
 
 // React Icons
 import {

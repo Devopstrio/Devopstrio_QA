@@ -7,7 +7,7 @@ import Cta from "../components/Cta/Cta";
 import PartnerEcosystem from "../components/PartnerEcosystem/PartnerEcosystem";
 
 // Assets
-import AWSLogo from "../assets/images/aws.png";
+import AWSLogo from "../assets/images/AWS.png";
 import AWSLogo1 from "../assets/images/AWS_certification.png";
 import AzureLogo from "../assets/images/azureLogo.png";
 import GCPLogo from "../assets/images/gcpLogo.png";

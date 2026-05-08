@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FiSearch, FiChevronRight, FiX, FiDownload, FiShare2, FiLink, FiExternalLink } from "react-icons/fi";
-import api from "../../services/api";
+import api from "../../Services/api";
 import "../../Style/Media/IndividualCategoryPage.css";
 
 

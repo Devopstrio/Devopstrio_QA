@@ -23,7 +23,7 @@ import {
 } from "react-icons/fi";
 import { FaQuoteLeft } from "react-icons/fa";
 
-import Newsletter from "../Components/Newsletter/Newsletter";
+import Newsletter from "../components/Newsletter/Newsletter";
 
 import "../Style/JobPortal.css";
 import useSEO from "../hooks/useSEO";

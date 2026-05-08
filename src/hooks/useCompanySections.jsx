@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiUsers } from "react-icons/fi";
-import api from "../services/api";
+import api from "../Services/api";
 
 const useCompanySections = () => {
   const [platformSections, setPlatformSections] = useState([]);
