@@ -75,15 +75,15 @@ const AIConsultationForm = ({
       email: formData.email,
       subject: `${subjectPrefix} - ${formData.phone}`,
       message: `Requirements: ${formData.requirements}\nPhone: ${formData.phone}\nNDA: ${formData.nda ? "Yes" : "No"}`,
-      toOverride: "meena.s@devopstrioglobal.com",
       file: formData.file
     };
 
     try {
       await sendEmail(payload);
+      const targetEmail = import.meta.env.VITE_FORM_SUBMIT_EMAIL || "meena.s@devopstrioglobal.com";
       setStatus({
         type: "success",
-        message: `✅ Request sent to hellosuman29@airsworld.net! We'll review your requirements and contact you shortly.`,
+        message: `✅ Request sent to ${targetEmail}! We'll review your requirements and contact you shortly.`,
       });
       setFormData({ email: "", phone: "", requirements: "", nda: false, file: null, preview: null });
     } catch (error) {

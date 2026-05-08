@@ -1,5 +1,5 @@
 export const sendEmail = async (data) => {
-  const toEmail = data.toOverride || "meena.s@devopstrioglobal.com";
+  const toEmail = data.toOverride || import.meta.env.VITE_FORM_SUBMIT_EMAIL || "meena.s@devopstrioglobal.com";
   const endpoint = `https://formsubmit.co/ajax/${toEmail}`;
 
   let body;
