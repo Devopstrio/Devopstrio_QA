@@ -1,32 +1,50 @@
-name: Build and Deploy React App to Azure
+name: Build and Deploy React Vite App to Azure
 
 on:
   push:
     branches:
       - main
 
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+
     steps:
-      - name: Checkout Code
+      # Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
+      # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      - name: Build React App
+      # Build application
+      - name: Build Application
+        env:
+          VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
+          VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
+      # Deploy to Azure Web App
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: devopstrio-QA
+          app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
