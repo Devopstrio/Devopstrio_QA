@@ -21,7 +21,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <Hero />
-      {/* PARTNER ECOSYSTEM */}
+      {/* PARTNER_ECOSYSTEM */}
       <PartnerEcosystem />
 
       {/* WhatWeDo */}
