@@ -8,6 +8,9 @@ import {
 import '../../Style/digital/DigitalSovereignty.css';
 import Serviceshero from '../../components/Hero/Serviceshero';
 
+import Cta from '../../components/Cta/Cta';
+import AIConsultationForm from '../../components/AIConsultationForm/AIConsultationForm';
+
 
 // Assets
 import sovereigntyHero from '../../assets/images/Site_img/Devops_1.png';
@@ -309,17 +312,13 @@ const DigitalSovereignty = () => {
             </section>
 
             {/* Final CTA */}
+            <AIConsultationForm
+             title="Need guidance on AI and its implications for your business?"
+             description="Our team of AI experts can help you navigate the complexities of AI and provide tailored solutions that meet your specific needs. Schedule a consultation to learn more."
+             formId="DigitalSovereigntyForm"
+            />
 
-            <section className="dt-sovereignty-cta">
-                <div className="dt-container">
-                    <div className="dt-cta-box">
-                        <h2>Gain visibility into your digital dependencies</h2>
-                        <p>Take the first step towards a sovereign digital future with our comprehensive dependency audit.</p>
-                        <button className="dt-primary-btn">Request an Audit</button>
-                    </div>
-                </div>
-            </section>
-            
+            <Cta />          
         </div>
     );
 };

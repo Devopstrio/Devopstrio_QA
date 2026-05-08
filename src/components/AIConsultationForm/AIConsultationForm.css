@@ -35,10 +35,7 @@
 }
 
 .dt-consult-title span {
-  background: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ce2453;
 }
 
 .dt-consult-desc {
@@ -259,7 +256,7 @@
 .dt-btn-submit {
   width: 100%;
   padding: 20px;
-  background: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
+  background: #ce2453;
   border: none;
   border-radius: 16px;
   color: #fff;

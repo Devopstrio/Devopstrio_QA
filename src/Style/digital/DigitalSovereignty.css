@@ -60,7 +60,7 @@
 
 /* Overview Section Redesign */
 .dt-overview-section {
-    padding: 120px 0;
+    padding: 60px 0;
     background: #000;
 }
 
@@ -95,9 +95,8 @@
     justify-content: space-between;
     align-items: center;
     background: #080808;
-    padding: 70px 80px;
+    padding: 60px 50px;
     border-radius: 24px;
-    margin-top: 80px;
     border: 1px solid #151515;
     position: relative;
     overflow: hidden;
@@ -144,7 +143,7 @@
 
 /* Focus Tabs Section Redesign */
 .dt-focus-tabs-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background: #000;
 }
 
@@ -280,12 +279,12 @@
 
 /* Gaps in IT Strategies Section Redesign */
 .dt-gaps-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background: #000;
 }
 
 .dt-gaps-header {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .dt-gaps-title {
@@ -363,13 +362,13 @@
 
 /* White Papers Tabs Section Redesign */
 .dt-papers-tabs-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background: #000;
     border-top: 1px solid #111;
 }
 
 .dt-papers-header {
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .dt-papers-title {
@@ -515,7 +514,7 @@
 
 /* Why Us Section Redesign */
 .dt-why-us-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background: #000;
     border-top: 1px solid #111;
 }
@@ -573,73 +572,16 @@
     line-height: 1.7;
 }
 
-/* CTA */
-.dt-sovereignty-cta {
-    padding: 120px 0 200px;
-}
-
-.dt-cta-box {
-    background: linear-gradient(135deg, #080808, #000);
-    border: 1px solid #151515;
-    padding: 100px 80px;
-    border-radius: 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.dt-cta-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: #ce2453;
-}
-
-.dt-cta-box h2 {
-    font-size: 52px;
-    margin-bottom: 25px;
-    font-weight: 800;
-    letter-spacing: -2px;
-}
-
-.dt-cta-box p {
-    font-size: 20px;
-    color: #888;
-    margin-bottom: 50px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.dt-primary-btn {
-    padding: 22px 55px;
-    background: #ce2453;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dt-primary-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(206, 36, 83, 0.3);
-}
-
+/* 
 /* Insights Section Redesign */
 .dt-insights-section {
-    padding: 140px 0;
+    padding: 60px 0;
     background: #000;
     border-top: 1px solid #111;
 }
 
 .dt-insights-header {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .dt-insights-title {
@@ -661,7 +603,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    margin-bottom: 80px;
 }
 
 .dt-insight-card {

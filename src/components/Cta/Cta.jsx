@@ -10,26 +10,28 @@ const Cta = ({
 
   return (
     <section className="cta-section">
-      <div className="cta-content">
-        <h2 className="cta-heading">
-          {heading}
-        </h2>
-        <p className="cta-description">
-          {description}
-        </p>
-        <div className="cta-buttons">
-          <button
-            className="cta-btn cta-primary"
-            onClick={() => navigate("/careers")}
-          >
-            Start Your Journey
-          </button>
-          <button
-            className="cta-btn cta-secondary"
-            onClick={() => navigate("/contact")}
-          >
-            Talk to an Expert
-          </button>
+      <div className="dt-container">
+        <div className="cta-content">
+          <h2 className="cta-heading">
+            {heading}
+          </h2>
+          <p className="cta-description">
+            {description}
+          </p>
+          <div className="cta-buttons">
+            <button
+              className="cta-btn cta-primary"
+              onClick={() => navigate("/careers")}
+            >
+              Start Your Journey
+            </button>
+            <button
+              className="cta-btn cta-secondary"
+              onClick={() => navigate("/contact")}
+            >
+              Talk to an Expert
+            </button>
+          </div>
         </div>
       </div>
     </section>
