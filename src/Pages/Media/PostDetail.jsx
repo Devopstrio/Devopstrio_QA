@@ -19,7 +19,7 @@ import {
   FiLink,
   FiExternalLink,
 } from "react-icons/fi";
-import api from "../../services/api";
+import api from "../../Services/api";
 import "../../Style/Media/PostDetail.css";
 import TrendingNow from "../../components/Media/TrendingNow";
 

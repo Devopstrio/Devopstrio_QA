@@ -15,7 +15,7 @@ import '../../Style/ai_data/DataScience.css';
 // CONSULTATION
 import AIConsultationForm from '../../components/AIConsultationForm/AIConsultationForm';
 // CTA
-import CTA from '../../components/cta/Cta';
+import CTA from '../../components/Cta/Cta';
 import Servicehero from '../../components/Hero/Serviceshero';
 
 // Assets

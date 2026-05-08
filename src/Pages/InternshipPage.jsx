@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import "../Style/InternshipPage.css";
 import useSEO from "../hooks/useSEO";
-import CtaFinalies from "../Components/CtaFinalies/CtaFinalies";
+import CtaFinalies from "../components/CtaFinalies/CtaFinalies";
 
 const InternshipPage = () => {
   useSEO(

@@ -44,7 +44,7 @@ import Campix from "../../assets/images/Campix.png";
 import Caresuite from "../../assets/images/Caresuite.png";
 import brio from "../../assets/images/brio.png";
 import Justivon from "../../assets/images/Justivon.png";
-import prestivo from "../../assets/images/prestivo.png";
+import prestivo from "../../assets/images/Prestivo.png";
 import safesign from "../../assets/images/safesign.png";
 
 import "../../Style/platform/SaaSApplications.css";
