@@ -142,209 +142,435 @@
     box-shadow: 0 10px 20px rgba(206, 36, 83, 0.2);
 }
 
-/* Focus Areas (Tabs) */
-.dt-focus-areas {
-    padding: 120px 0;
+/* Focus Tabs Section Redesign */
+.dt-focus-tabs-section {
+    padding: 140px 0;
+    background: #000;
 }
 
-.dt-tabs-layout {
+.dt-tabs-header {
+    margin-bottom: 80px;
+}
+
+.dt-tabs-title {
+    font-size: 68px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+}
+
+.dt-tabs-subtitle {
+    font-size: 20px;
+    color: #888;
+    max-width: 850px;
+    line-height: 1.6;
+}
+
+.dt-tabs-container {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 80px;
+    grid-template-columns: 380px 1fr;
+    gap: 100px;
 }
 
-.dt-tabs-nav {
+.dt-tabs-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
-.dt-tab-btn {
+.dt-tab-item {
+    padding: 28px 35px;
     background: transparent;
-    border: 1px solid #1a1a1a;
-    color: #888;
-    padding: 25px 30px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
-    text-align: left;
+    color: #555;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.dt-tab-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.dt-tab-item.active {
+    background: rgba(206, 36, 83, 0.08);
+    color: #fff;
+    border: 1px solid rgba(206, 36, 83, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.dt-tab-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    width: 4px;
+    background: #ce2453;
+    border-radius: 0 4px 4px 0;
+}
+
+.dt-tabs-content {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dt-content-desc {
+    font-size: 20px;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.dt-includes-box {
+    background: #080808;
+    padding: 60px;
+    border-radius: 28px;
+    border: 1px solid #151515;
+    position: relative;
+}
+
+.dt-includes-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+.dt-includes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.dt-includes-list li {
+    display: flex;
+    gap: 18px;
+    color: #888;
+    font-size: 17px;
+    margin-bottom: 22px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.dt-includes-list li:hover {
+    color: #ccc;
+}
+
+.dt-includes-list li svg {
+    color: #ce2453;
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Gaps in IT Strategies Section Redesign */
+.dt-gaps-section {
+    padding: 140px 0;
+    background: #000;
+}
+
+.dt-gaps-header {
+    margin-bottom: 80px;
+}
+
+.dt-gaps-title {
+    font-size: 68px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 35px;
+    letter-spacing: -3px;
+    max-width: 900px;
+    line-height: 1.1;
+}
+
+.dt-gaps-subtitle {
+    font-size: 22px;
+    color: #888;
+    max-width: 950px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.dt-gaps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dt-gap-card {
+    background: #080808;
+    border: 1px solid #151515;
+    padding: 55px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.dt-gap-card:hover {
+    border-color: #ce2453;
+    background: #0a0a0a;
+    transform: translateY(-8px);
+}
+
+.dt-gap-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.dt-gap-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+}
+
+.dt-gap-card:hover p {
+    color: #999;
+}
+
+/* Bento Grid Spanning */
+.dt-gap-card:nth-child(2) {
+    grid-column: span 2;
+}
+
+@media (max-width: 1200px) {
+    .dt-gaps-title { font-size: 54px; }
+}
+
+
+
+/* White Papers Tabs Section Redesign */
+.dt-papers-tabs-section {
+    padding: 140px 0;
+    background: #000;
+    border-top: 1px solid #111;
+}
+
+.dt-papers-header {
+    margin-bottom: 70px;
+}
+
+.dt-papers-title {
+    font-size: 68px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+}
+
+.dt-papers-subtitle {
+    font-size: 20px;
+    color: #888;
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+.dt-papers-tabs-nav {
+    display: flex;
+    gap: 50px;
+    border-bottom: 1px solid #151515;
+    margin-bottom: 80px;
+}
+
+.dt-paper-tab-btn {
+    padding: 25px 0;
+    background: transparent;
+    border: none;
+    color: #444;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dt-paper-tab-btn:hover {
+    color: #fff;
+}
+
+.dt-paper-tab-btn.active {
+    color: #fff;
+}
+
+.dt-paper-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ce2453;
+    box-shadow: 0 0 15px rgba(206, 36, 83, 0.4);
+}
+
+.dt-paper-content {
+    animation: fadeIn 0.5s ease;
+}
+
+.dt-paper-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.dt-paper-image-box {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+}
+
+.dt-paper-image-box img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-paper-image-box:hover img {
+    transform: scale(1.05);
+}
+
+.dt-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(206, 36, 83, 0.1), transparent);
+    z-index: 1;
+}
+
+.dt-paper-info-box h3 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 35px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+}
+
+.dt-paper-points {
+    list-style: none;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.dt-paper-points li {
+    display: flex;
+    gap: 18px;
+    color: #888;
+    font-size: 17px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.dt-paper-points li svg {
+    color: #ce2453;
+    flex-shrink: 0;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.dt-discover-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 12px;
     cursor: pointer;
+    border-bottom: 2px solid #ce2453;
+    padding-bottom: 8px;
+    width: fit-content;
     transition: all 0.3s ease;
 }
 
-.dt-tab-btn:hover {
-    border-color: #333;
+.dt-discover-btn:hover {
+    gap: 18px;
+    color: #ce2453;
+}
+
+/* Why Us Section Redesign */
+.dt-why-us-section {
+    padding: 140px 0;
+    background: #000;
+    border-top: 1px solid #111;
+}
+
+.dt-why-us-header {
+    margin-bottom: 90px;
+}
+
+.dt-why-us-title {
+    font-size: 68px;
+    font-weight: 800;
     color: #fff;
-}
-
-.dt-tab-btn.active {
-    border-color: var(--dt-accent, #ce2453);
-    color: #fff;
-    background: rgba(206, 36, 83, 0.05);
-}
-
-.dt-tab-btn svg {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-}
-
-.dt-tab-btn.active svg {
-    opacity: 1;
-    transform: translateX(0);
-    color: var(--dt-accent, #ce2453);
-}
-
-.dt-tabs-content .dt-content-card {
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    padding: 60px;
-    border-radius: 30px;
-    min-height: 350px;
-}
-
-.dt-content-card h3 {
-    font-size: 32px;
     margin-bottom: 25px;
+    letter-spacing: -3px;
 }
 
-.dt-content-card p {
-    font-size: 18px;
-    color: #aaa;
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
-
-.dt-points-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.dt-points-list li {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #777;
-    font-size: 16px;
-}
-
-.dt-points-list li svg {
-    color: var(--dt-accent, #ce2453);
-}
-
-/* White Papers */
-.dt-white-papers {
-    padding: 120px 0;
-    background: #050505;
-}
-
-.dt-papers-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-.dt-paper-card {
-    display: flex;
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    border-radius: 30px;
-    overflow: hidden;
-    max-width: 1000px;
-}
-
-.dt-paper-image {
-    width: 40%;
-}
-
-.dt-paper-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.dt-paper-info {
-    padding: 50px;
-    width: 60%;
-}
-
-.dt-tag {
-    background: #ce2453;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.dt-paper-info h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.dt-paper-info p {
-    color: #888;
-    line-height: 1.7;
-    margin-bottom: 30px;
-}
-
-.dt-link-btn {
-    background: transparent;
-    border: none;
-    color: var(--dt-accent, #ce2453);
-    font-size: 16px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-/* Why Section */
-.dt-why-section {
-    padding: 120px 0;
-}
-
-.dt-why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.dt-why-card {
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    padding: 40px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-.dt-why-card:hover {
-    border-color: #333;
-}
-
-.dt-why-card svg {
-    font-size: 32px;
-    color: var(--dt-accent, #ce2453);
-    margin-bottom: 25px;
-}
-
-.dt-why-card h4 {
+.dt-why-us-subtitle {
     font-size: 20px;
-    margin-bottom: 15px;
+    color: #888;
+    max-width: 950px;
+    line-height: 1.6;
 }
 
-.dt-why-card p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.6;
+.dt-why-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px 120px;
+}
+
+.dt-why-us-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.dt-why-us-icon {
+    font-size: 34px;
+    color: #ce2453;
+    margin-bottom: 35px;
+    width: fit-content;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #ce2453;
+}
+
+.dt-why-us-item h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+}
+
+.dt-why-us-item p {
+    font-size: 18px;
+    color: #777;
+    line-height: 1.7;
 }
 
 /* CTA */
@@ -353,45 +579,175 @@
 }
 
 .dt-cta-box {
-    background: linear-gradient(135deg, #111, #000);
-    border: 1px solid #1a1a1a;
-    padding: 80px;
+    background: linear-gradient(135deg, #080808, #000);
+    border: 1px solid #151515;
+    padding: 100px 80px;
     border-radius: 40px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dt-cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ce2453;
 }
 
 .dt-cta-box h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 52px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
 .dt-cta-box p {
-    font-size: 18px;
-    color: #777;
-    margin-bottom: 40px;
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dt-primary-btn {
-    padding: 18px 45px;
-    background: var(--dt-accent, #ce2453);
+    padding: 22px 55px;
+    background: #ce2453;
     color: #fff;
     border: none;
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(206, 36, 83, 0.3);
+}
+
+/* Insights Section Redesign */
+.dt-insights-section {
+    padding: 140px 0;
+    background: #000;
+    border-top: 1px solid #111;
+}
+
+.dt-insights-header {
+    margin-bottom: 80px;
+}
+
+.dt-insights-title {
+    font-size: 68px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+}
+
+.dt-insights-subtitle {
+    font-size: 20px;
+    color: #888;
+    max-width: 950px;
+    line-height: 1.6;
+}
+
+.dt-insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.dt-insight-card {
+    background: #080808;
+    border: 1px solid #151515;
+    padding: 70px 60px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-insight-card:hover {
+    border-color: #ce2453;
+    background: #0a0a0a;
+}
+
+.dt-insight-tag {
+    color: #444;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 35px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.dt-insight-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.dt-insight-card p {
+    font-size: 17px;
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.dt-insight-footer {
+    margin-top: auto;
+    text-align: right;
+}
+
+.dt-insight-footer span {
+    color: #444;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dt-show-more-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dt-show-more-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-bottom: 2px solid #ce2453;
+    padding-bottom: 8px;
     transition: all 0.3s ease;
 }
 
+.dt-show-more-btn:hover {
+    color: #ce2453;
+    gap: 18px;
+}
+
 @media (max-width: 1024px) {
-    .dt-hero-content h1 { font-size: 50px; }
-    .dt-overview-title { font-size: 60px; }
-    .dt-overview-content { grid-template-columns: 1fr; gap: 40px; }
-    .dt-overview-banner { flex-direction: column; text-align: center; gap: 30px; padding: 40px; }
-    .dt-banner-text h3 { font-size: 28px; }
-    .dt-tabs-layout { grid-template-columns: 1fr; }
-    .dt-tabs-nav { flex-direction: row; flex-wrap: wrap; }
-    .dt-paper-card { flex-direction: column; }
-    .dt-paper-image, .dt-paper-info { width: 100%; }
-    .dt-why-grid { grid-template-columns: 1fr 1fr; }
+    .dt-insights-grid { grid-template-columns: 1fr; gap: 40px; }
+    .dt-insights-title { font-size: 48px; }
+    .dt-insight-card { padding: 50px 40px; }
+}
+
+@media (max-width: 768px) {
+    .dt-insights-title { font-size: 36px; }
+    .dt-show-more-btn { font-size: 16px; }
 }

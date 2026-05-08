@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { 
     FiShield, FiLock, FiGlobe, FiBriefcase, FiArrowRight,
-    FiPlus, FiMinus, FiFileText, FiAward, FiUsers, FiCpu
+    FiPlus, FiMinus, FiFileText, FiAward, FiUsers, FiCpu, FiCheck
+
 } from 'react-icons/fi';
 import '../../Style/digital/DigitalSovereignty.css';
 import Serviceshero from '../../components/Hero/Serviceshero';
@@ -14,26 +15,88 @@ import whitePaperImg from '../../assets/images/Site_img/devop15.png';
 
 const DigitalSovereignty = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const [activePaperTab, setActivePaperTab] = useState(1);
+
+
 
     const focusAreas = [
         { 
-            title: "Vendor Independence", 
-            desc: "Strategies to migrate away from proprietary tech stacks and avoid long-term vendor lock-in.",
-            points: ["Open-source alternative audits", "Multicloud orchestration", "Data portability frameworks"]
+            title: "Vendor independence", 
+            desc: "We reduce vendor lock-in by designing systems that preserve portability, ownership, and long-term freedom of choice. Our approach focuses on architectures that evolve over time without constraints from proprietary platforms or single-provider dependencies.",
+            points: [
+                "Modular and portable system architecture created via tailored custom development;",
+                "Multi-vendor, hybrid stack design that eliminates single points of dependency;",
+                "Exit-readiness planning supported by documented migration paths and fallback scenarios;",
+                "Clear ownership established for code, data models, and all operational artifacts."
+            ]
         },
         { 
-            title: "Cloud Security & Sovereignty", 
-            desc: "Ensuring your cloud environment complies with local data laws and internal security protocols.",
-            points: ["Local data residency", "Encryption key management", "Secure cloud exit strategies"]
+            title: "Operational clarity", 
+            desc: "We bring structure and visibility to how work is delivered and governed, helping organizations maintain control across teams, projects, and partners. This is supported by Adel, Andersen's delivery system, providing a consistent operational view overall.",
+            points: [
+                "Centralized oversight of delivery processes enabled through the Adel platform;",
+                "Clear definition of roles, responsibilities, and transparent decision paths;",
+                "Continuous visibility into progress, risks, and cross-team dependencies;",
+                "A shared control layer supporting informed and timely management decisions."
+            ]
         },
         { 
-            title: "Data Privacy & Governance", 
-            desc: "Implementing robust frameworks to protect citizen and customer data across borders.",
-            points: ["GDPR/CCPA technical audits", "Privacy-by-design architecture", "Automated compliance monitoring"]
+            title: "AI Evaluation", 
+            desc: "We support AI initiatives with structures that ensure accountability, transparency, and regulatory alignment. This makes AI systems easier to explain, assess, and operate responsibly at scale across complex environments and use cases globally today.",
+            points: [
+                "Evaluation of AI systems across risk, compliance, and governance dimensions;",
+                "Security controls applied across data pipelines, models, and system integrations;",
+                "Comprehensive documentation and traceability of AI behavior and decision logic;",
+                "Technical evaluation of AI pilots with guidance on scaling to production and ROI."
+            ]
+        },
+        { 
+            title: "Cloud & Infrastructure", 
+            desc: "We design infrastructure strategies that give organizations real control over where workloads run and how they are operated. The focus is on resilient, portable environments supporting secure collaboration, sovereign deployment, and operational stability.",
+            points: [
+                "Hybrid and multi-cloud architectures combining flexibility with strong workload isolation;",
+                "Secure, privacy-first communication and collaboration layers for regulated environments;",
+                "Sovereign-ready infrastructure based on enterprise Linux and containers for lifecycle control;",
+                "EU-hosted deployment options with clear data residency rules and operational boundaries."
+            ]
         }
     ];
 
 
+
+
+    const whitePapers = [
+        {
+            title: "EU AI ACT",
+            subtitle: "Measure your structural autonomy in the EU IT sector:",
+            points: [
+                "Comprehensive guide to compliance with the upcoming EU AI regulations;",
+                "Risk-based classification system for AI applications and deployments;",
+                "Implementation roadmap for governance and transparency requirements."
+            ],
+            image: whitePaperImg
+        },
+        {
+            title: "DIGITAL SOVEREIGNTY INDEX",
+            subtitle: "Measure your structural autonomy in the EU IT sector:",
+            points: [
+                "0–63 point maturity scale: five levels from Beginner to Expert;",
+                "10-question risk matrix: assessment of code and vendor layers;",
+                "Recommended actions: next steps for every question."
+            ],
+            image: whitePaperImg
+        },
+        {
+            title: "GEOTECH INDEX 2026",
+            subtitle: "Measure your structural autonomy in the EU IT sector:",
+            points: [
+                "Analysis of emerging geopolitical trends affecting technology supply chains;",
+                "Evaluation of critical tech sectors and strategic autonomy risks;",
+                "Strategic recommendations for 2026 and beyond."
+            ],
+            image: whitePaperImg
+        }
+    ];
 
     return (
         <div className="dt-sovereignty-page">
@@ -71,88 +134,182 @@ const DigitalSovereignty = () => {
                 </div>
             </section>
 
-            {/* Focus Areas (Tabs) */}
-            <section className="dt-focus-areas">
+
+
+            {/* Gaps in IT Strategies Section */}
+            <section className="dt-gaps-section">
                 <div className="dt-container">
-                    <h2 className="dt-section-title">Our service focus areas</h2>
-                    <div className="dt-tabs-layout">
-                        <div className="dt-tabs-nav">
+                    <div className="dt-gaps-header">
+                        <h2 className="dt-gaps-title">The hidden gaps in modern IT strategies</h2>
+                        <p className="dt-gaps-subtitle">Most organizations do not lack technology — they lack visibility and control. We structure the conversation before jumping to solutions.</p>
+                    </div>
+                    <div className="dt-gaps-grid">
+                        <div className="dt-gap-card">
+                            <h3>Vendor lock-in accepted as normal</h3>
+                            <p>Deep integration with a single vendor's ecosystem creates switching costs so high that dependency becomes a default — not a deliberate strategic choice.</p>
+                        </div>
+                        <div className="dt-gap-card">
+                            <h3>AI adoption without clarity</h3>
+                            <p>Organizations deploy AI-driven tools without a coherent architectural model for ownership, risk separation, and lifecycle control. AI components are often added in isolation, with limited visibility into data flows and dependencies. As these systems scale, architectural gaps increase operational complexity and reduce observability and maintainability.</p>
+                        </div>
+                        <div className="dt-gap-card">
+                            <h3>No exit-readiness strategy</h3>
+                            <p>Few organizations have a tested plan for migrating away from their primary cloud provider or critical SaaS platforms — leaving them exposed to disruptions and price escalations.</p>
+                        </div>
+                        <div className="dt-gap-card">
+                            <h3>Overreliance on single hyperscalers</h3>
+                            <p>Concentrating workloads within one cloud ecosystem amplifies risk: service outages, policy changes, or geopolitical events can impact operations with no viable short-term alternatives.</p>
+                        </div>
+                        <div className="dt-gap-card">
+                            <h3>Unclear accountability models</h3>
+                            <p>When data, infrastructure, and AI models span multiple providers and jurisdictions, it becomes difficult to determine who is accountable for compliance, security, and operational decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Focus Tabs Section */}
+            <section className="dt-focus-tabs-section">
+                <div className="dt-container">
+                    <div className="dt-tabs-header">
+                        <h2 className="dt-tabs-title">Our service focus areas</h2>
+                        <p className="dt-tabs-subtitle">We support organizations across key technical domains - from system architecture and delivery oversight to AI evaluation and cloud infrastructure design.</p>
+                    </div>
+                    
+                    <div className="dt-tabs-container">
+                        <div className="dt-tabs-sidebar">
                             {focusAreas.map((area, i) => (
-                                <button 
+                                <div 
                                     key={i} 
-                                    className={`dt-tab-btn ${activeTab === i ? 'active' : ''}`}
+                                    className={`dt-tab-item ${activeTab === i ? 'active' : ''}`}
                                     onClick={() => setActiveTab(i)}
                                 >
-                                    {area.title}
-                                    <FiArrowRight />
-                                </button>
+                                    <span>{area.title}</span>
+                                </div>
                             ))}
                         </div>
+                        
                         <div className="dt-tabs-content">
-                            <div className="dt-content-card">
-                                <h3>{focusAreas[activeTab].title}</h3>
-                                <p>{focusAreas[activeTab].desc}</p>
-                                <ul className="dt-points-list">
-                                    {focusAreas[activeTab].points.map((p, j) => (
-                                        <li key={j}><FiFileText /> {p}</li>
+                            <div className="dt-content-main">
+                                <p className="dt-content-desc">{focusAreas[activeTab].desc}</p>
+                                <div className="dt-includes-box">
+                                    <h4>What this includes:</h4>
+                                    <ul className="dt-includes-list">
+                                        {focusAreas[activeTab].points.map((point, j) => (
+                                            <li key={j}>
+                                                <FiCheck /> {point}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* White Papers Tabs Section */}
+            <section className="dt-papers-tabs-section">
+                <div className="dt-container">
+                    <div className="dt-papers-header">
+                        <h2 className="dt-papers-title">Digital sovereignty: white papers</h2>
+                        <p className="dt-papers-subtitle">Devopstrio continuously deepens and broadens its expertise and regularly shares it through its white papers.</p>
+                    </div>
+                    
+                    <div className="dt-papers-tabs-nav">
+                        {whitePapers.map((paper, i) => (
+                            <button 
+                                key={i} 
+                                className={`dt-paper-tab-btn ${activePaperTab === i ? 'active' : ''}`}
+                                onClick={() => setActivePaperTab(i)}
+                            >
+                                {paper.title}
+                            </button>
+                        ))}
+                    </div>
+                    
+                    <div className="dt-paper-content">
+                        <div className="dt-paper-grid">
+                            <div className="dt-paper-image-box">
+                                <div className="dt-image-overlay"></div>
+                                <img src={whitePapers[activePaperTab].image} alt={whitePapers[activePaperTab].title} />
+                            </div>
+                            <div className="dt-paper-info-box">
+                                <h3>{whitePapers[activePaperTab].subtitle}</h3>
+                                <ul className="dt-paper-points">
+                                    {whitePapers[activePaperTab].points.map((point, j) => (
+                                        <li key={j}><FiCheck /> {point}</li>
                                     ))}
                                 </ul>
+                                <button className="dt-discover-btn">Discover more <FiArrowRight /></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* White Papers */}
-            <section className="dt-white-papers">
+            {/* Why Devopstrio Section */}
+            <section className="dt-why-us-section">
                 <div className="dt-container">
-                    <h2 className="dt-section-title">Digital sovereignty: white papers</h2>
-                    <div className="dt-papers-grid">
-                        <div className="dt-paper-card">
-                            <div className="dt-paper-image">
-                                <img src={whitePaperImg} alt="White Paper" />
-                            </div>
-                            <div className="dt-paper-info">
-                                <span className="dt-tag">Trending</span>
-                                <h3>Multicloud & Data Sovereignty</h3>
-                                <p>Learn how to architect for data residency across AWS, Azure, and GCP while maintaining a unified security posture.</p>
-                                <button className="dt-link-btn">Download PDF <FiArrowRight /></button>
-                            </div>
+                    <div className="dt-why-us-header">
+                        <h2 className="dt-why-us-title">Why Devopstrio</h2>
+                        <p className="dt-why-us-subtitle">Digital sovereignty is not solved by a single product or a regional data center. It requires architectural thinking, governance maturity, and delivery transparency.</p>
+                    </div>
+                    <div className="dt-why-us-grid">
+                        <div className="dt-why-us-item">
+                            <div className="dt-why-us-icon"><FiCpu /></div>
+                            <h3>Ecosystem Thinking</h3>
+                            <p>We focus on sovereign ecosystems, not sovereign products. Multi-vendor architecture, cloud-agnostic strategies, and AI governance embedded from day one — we design independence, not dependency.</p>
+                        </div>
+                        <div className="dt-why-us-item">
+                            <div className="dt-why-us-icon"><FiFileText /></div>
+                            <h3>Transparency by Design</h3>
+                            <p>Full lifecycle visibility, clear ownership models, structured documentation, and decision-tracking at every phase. You always know who controls what, where, and how.</p>
+                        </div>
+                        <div className="dt-why-us-item">
+                            <div className="dt-why-us-icon"><FiShield /></div>
+                            <h3>AI & Regulatory Readiness</h3>
+                            <p>AI risk classification, governance frameworks, documentation standards, and continuous compliance monitoring — all aligned with the EU AI Act and evolving regulatory requirements.</p>
+                        </div>
+                        <div className="dt-why-us-item">
+                            <div className="dt-why-us-icon"><FiBriefcase /></div>
+                            <h3>Proven Enterprise Delivery</h3>
+                            <p>Critical infrastructure projects, complex cloud transformations, vendor diversification programs, and cross-border delivery models with EU governance and oversight.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Why Devopstrio */}
-            <section className="dt-why-section">
+            {/* Insights Section */}
+            <section className="dt-insights-section">
                 <div className="dt-container">
-                    <h2 className="dt-section-title">Why Devopstrio?</h2>
-                    <div className="dt-why-grid">
-                        <div className="dt-why-card">
-                            <FiAward />
-                            <h4>Regulatory Readiness</h4>
-                            <p>We ensure your digital infrastructure is ready for GDPR, CCPA, and emerging local data protection laws.</p>
+                    <div className="dt-insights-header">
+                        <h2 className="dt-insights-title">Insights from Devopstrio</h2>
+                        <p className="dt-insights-subtitle">Our tech landscape is undergoing rapid change, from generative AI to mobile-first, screenless interactions and cloud migration. Devopstrio carefully tracks each trend and highlights what is most relevant for digital sovereignty.</p>
+                    </div>
+                    
+                    <div className="dt-insights-grid">
+                        <div className="dt-insight-card">
+                            <span className="dt-insight-tag">Article</span>
+                            <h3>Devopstrio & AWS European Sovereign Cloud</h3>
+                            <p>Devopstrio expands its cloud portfolio with services on the AWS European Sovereign Cloud. This enables European organizations to modernize IT while ensuring sensitive data remains secure and fully under EU control.</p>
+                            <div className="dt-insight-footer">
+                                <span>Reading time: 2 mins</span>
+                            </div>
                         </div>
-                        <div className="dt-why-card">
-                            <FiUsers />
-                            <h4>Expert Consultants</h4>
-                            <p>Our team includes specialists in open-source migration and multicloud orchestration.</p>
-                        </div>
-                        <div className="dt-why-card">
-                            <FiCpu />
-                            <h4>Tech Autonomy</h4>
-                            <p>We build systems that give you the power to migrate, scale, and evolve without being held hostage by a single provider.</p>
-                        </div>
-                        <div className="dt-why-card">
-                            <FiShield />
-                            <h4>Trust-First Design</h4>
-                            <p>Sovereignty is built on trust. We implement zero-trust architectures to protect your most valuable assets.</p>
+                        <div className="dt-insight-card">
+                            <span className="dt-insight-tag">Article</span>
+                            <h3>EU AI Act: Beyond the Compliance Hurdle</h3>
+                            <p>The era of unregulated AI growth is over. Explore the mechanics of the EU AI Act and Devopstrio's strategic framework. Use our roadmap to turn compliance into a high-integrity technical foundation for your enterprise.</p>
+                            <div className="dt-insight-footer">
+                                <span>Reading time: 5 mins</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Final CTA */}
+
             <section className="dt-sovereignty-cta">
                 <div className="dt-container">
                     <div className="dt-cta-box">
@@ -162,6 +319,7 @@ const DigitalSovereignty = () => {
                     </div>
                 </div>
             </section>
+            
         </div>
     );
 };
