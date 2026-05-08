@@ -1,4 +1,4 @@
-name: Azure React Vite CI/CD
+name: Azure Multi Environment CI/CD
 
 on:
   push:
@@ -6,18 +6,27 @@ on:
       - main
 
   workflow_dispatch:
+    inputs:
+      deploy_production:
+        description: 'Deploy to Production Environment'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 env:
   NODE_VERSION: '20'
-  AZURE_WEBAPP_NAME: 'devopstrio-QA'
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy React Application
-    runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
+  # ==========================================
+  # QA DEPLOYMENT (AUTOMATIC)
+  # ==========================================
+  deploy-qa:
+    name: Deploy QA Environment
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout repository
@@ -35,11 +44,7 @@ jobs:
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Verify installed packages
-      - name: Verify Dependencies
-        run: npm list --depth=0
-
-      # Build Vite application
+      # Build application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -47,7 +52,7 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Validate build output
+      # Verify build output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
@@ -55,34 +60,63 @@ jobs:
             exit 1
           fi
 
-          echo "Build completed successfully."
-          ls -la dist
+          echo "QA build completed successfully."
 
-      # Deploy only production build files
-      - name: Deploy to Azure Web App
+      # Deploy to QA
+      - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./dist
 
-      # Success log
-      - name: Deployment Success
-        if: success()
-        run: |
-          echo "================================="
-          echo "Azure Deployment Successful"
-          echo "Application deployed successfully"
-          echo "================================="
+  # ==========================================
+  # PRODUCTION DEPLOYMENT (MANUAL)
+  # ==========================================
+  deploy-production:
+    name: Deploy Production Environment
+    runs-on: ubuntu-latest
 
-      # Failure log
-      - name: Deployment Failure Alert
-        if: failure()
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
+
+    steps:
+      # Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      # Build application
+      - name: Build Application
+        env:
+          VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
+          VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        run: npm run build
+
+      # Verify build output
+      - name: Verify Build Output
         run: |
-          echo "================================="
-          echo "Azure Deployment Failed"
-          echo "Check GitHub Actions logs"
-          echo "Verify Azure publish profile"
-          echo "Verify build output"
-          echo "================================="
-          exit 1
+          if [ ! -d "dist" ]; then
+            echo "ERROR: dist folder not found."
+            exit 1
+          fi
+
+          echo "Production build completed successfully."
+
+      # Deploy to Production
+      - name: Deploy to Production Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'devopstrio'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
+          package: ./dist
