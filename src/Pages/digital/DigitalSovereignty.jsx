@@ -33,12 +33,7 @@ const DigitalSovereignty = () => {
         }
     ];
 
-    const whyMatters = [
-        { title: "Legacy Dependencies", desc: "Outdated proprietary systems can limit your agility and increase security risks over time.", icon: <FiCpu /> },
-        { title: "Regulatory Compliance", desc: "Growing global data sovereignty laws require precise control over where data resides.", icon: <FiShield /> },
-        { title: "Vendor Lock-In", desc: "Single-vendor reliance creates technical debt and reduces negotiating power during renewals.", icon: <FiLock /> },
-        { title: "Technical Autonomy", desc: "True digital sovereignty means having the freedom to choose and change your tech stack.", icon: <FiGlobe /> }
-    ];
+
 
     return (
         <div className="dt-sovereignty-page">
@@ -50,22 +45,27 @@ const DigitalSovereignty = () => {
              {/* Hero Section */}
               <Serviceshero/>
 
-            {/* Overview */}
+            {/* Overview Section */}
             <section className="dt-overview-section">
                 <div className="dt-container">
-                    <div className="dt-overview-card">
-                        <div className="dt-overview-text">
-                            <h2>Why digital sovereignty matters now</h2>
-                            <p>In an increasingly centralized digital world, sovereignty is no longer just about security—it's about business continuity and strategic independence.</p>
+                    <div className="dt-overview-header">
+                        <h2 className="dt-overview-title">Overview</h2>
+                        <div className="dt-overview-content">
+                            <div className="dt-overview-column">
+                                <p>Digital sovereignty has become a recurring topic in executive agendas as regulatory and supplier landscapes grow more complex. Organizations increasingly rely on digital platforms to run critical operations. At the same time, dependency risks and compliance requirements are becoming harder to ignore. This creates a need for greater clarity and long-term control over core systems.</p>
+                            </div>
+                            <div className="dt-overview-column">
+                                <p>Despite growing interest, most organizations still lack a practical way to act. Digital sovereignty is not a product or a standalone service that can simply be purchased or deployed. It is often reduced to isolated technology choices, rather than questions of governance, ownership, and control. What's missing is a clear, structured entry point to assess dependencies, understand trade-offs, and make informed, long-term decisions.</p>
+                            </div>
                         </div>
-                        <div className="dt-overview-grid">
-                            {whyMatters.map((item, i) => (
-                                <div key={i} className="dt-matters-item">
-                                    <div className="dt-matters-icon">{item.icon}</div>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.desc}</p>
-                                </div>
-                            ))}
+                    </div>
+                    
+                    <div className="dt-overview-banner">
+                        <div className="dt-banner-text">
+                            <h3>Gain clarity and define a clear, structured path toward digital sovereignty</h3>
+                        </div>
+                        <div className="dt-banner-action">
+                            <button className="dt-banner-btn">Request consultation</button>
                         </div>
                     </div>
                 </div>
