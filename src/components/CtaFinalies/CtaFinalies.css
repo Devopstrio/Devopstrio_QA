@@ -1,0 +1,76 @@
+.cta-finalies-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  text-align: center;
+}
+
+.cta-finalies-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-finalies-content {
+  color: white;
+}
+
+.cta-finalies-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cta-finalies-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-finalies-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cta-finalies-input {
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  flex: 1;
+  min-width: 250px;
+  font-size: 1rem;
+}
+
+.cta-finalies-button {
+  padding: 0.875rem 2rem;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cta-finalies-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .cta-finalies-form {
+    flex-direction: column;
+  }
+
+  .cta-finalies-input {
+    min-width: auto;
+  }
+
+  .cta-finalies-title {
+    font-size: 2rem;
+  }
+}
