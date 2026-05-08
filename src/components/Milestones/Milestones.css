@@ -1,0 +1,126 @@
+.ms-timeline-section {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.ms-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.ms-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+/* ── NAVIGATION ── */
+.ms-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 100px;
+}
+
+.ms-nav-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s ease;
+  padding: 5px 0;
+}
+
+.ms-nav-dot {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.ms-nav-btn.active {
+  color: #fff;
+}
+
+.ms-nav-btn.active .ms-nav-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── MAIN AREA ── */
+.ms-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ms-year-hero {
+  font-size: 25rem;
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -10px;
+  color: #f4d7c1; /* Peach color from image */
+  opacity: 0;
+  animation: msYearFade 0.8s forwards;
+  user-select: none;
+}
+
+@keyframes msYearFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ms-content-box {
+  max-width: 900px;
+  margin-left: 20px;
+  opacity: 0;
+  animation: msContentFade 0.8s 0.2s forwards;
+}
+
+@keyframes msContentFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ms-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.ms-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #bbb;
+  font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+  .ms-year-hero { font-size: 15rem; }
+  .ms-inner { gap: 50px; }
+}
+
+@media (max-width: 768px) {
+  .ms-timeline-section { padding: 80px 0; }
+  .ms-inner { flex-direction: column; gap: 40px; }
+  .ms-nav { flex-direction: row; flex-wrap: wrap; padding-top: 0; gap: 20px; }
+  .ms-year-hero { font-size: 10rem; line-height: 1; letter-spacing: -5px; }
+  .ms-content-box { margin-left: 0; margin-top: 20px; }
+  .ms-nav-dot { display: none; }
+}

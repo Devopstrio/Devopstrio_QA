@@ -1,0 +1,142 @@
+.oj-section {
+  padding: 120px 0;
+  background: #000;
+  color: #fff;
+}
+
+.oj-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.oj-badge {
+  background: rgba(255,255,255,0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #aaa;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.oj-heading {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.oj-heading span {
+  color: #ce2453;
+}
+
+.oj-accordion-item {
+  background: #111;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.oj-accordion-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.oj-accordion-content {
+  padding: 0 20px 20px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.oj-arrow {
+  font-size: 20px;
+}
+
+.oj-right {
+  display: flex;
+  justify-content: center;
+}
+
+.oj-ui-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(145deg, #0e0e0e, #121212);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.oj-ui-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.oj-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #ffbd2e; }
+.green { background: #28c840; }
+
+.oj-ui-metric h3 {
+  font-size: 48px;
+  color: #ce2453;
+}
+
+.oj-ui-metric p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.oj-ui-table {
+  background: #0d0d0d;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.oj-ui-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.oj-ui-row:last-child {
+  border-bottom: none;
+}
+
+.verified {
+  color: #28c840;
+}
+
+.pending {
+  color: #ffbd2e;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .oj-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .oj-heading {
+    font-size: 34px;
+  }
+}

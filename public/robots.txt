@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devopstrio.co.uk/sitemap.xml

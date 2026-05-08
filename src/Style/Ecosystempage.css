@@ -1,0 +1,537 @@
+/* Style/Ecosystempage.css - Dark Theme with New Gradient */
+
+/* ===== BASE STYLES ===== */
+.ecosystem-corporate-wrapper {
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.5;
+}
+
+.corporate-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.corporate-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.corporate-section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.corporate-subhead {
+  font-size: 1.125rem;
+  color: #a0a0a0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== 1. WHY PARTNER SECTION ===== */
+.corporate-why-partner {
+  padding: 40px 0;
+}
+
+.corporate-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.corporate-benefit-block {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.corporate-benefit-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(82, 44, 114, 0.1),
+    rgba(150, 41, 100, 0.15),
+    rgba(206, 36, 83, 0.2),
+    rgba(221, 92, 84, 0.15),
+    rgba(231, 158, 87, 0.1)
+  );
+  border-radius: 50%;
+  color: #ce2453;
+}
+
+.corporate-benefit-block h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.corporate-benefit-block p {
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ===== 2. STRATEGIC PARTNERS ===== */
+.corporate-strategic-partners {
+  padding: 40px 0;
+}
+
+.corporate-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.corporate-partner-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: all 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.corporate-partner-card:hover {
+  border-color: #ce2453;
+  box-shadow: 0 8px 16px rgba(206, 36, 83, 0.1);
+}
+
+.corporate-card-logo {
+  height: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.corporate-card-logo img {
+  max-height: 100%;
+  max-width: 130px;
+  object-fit: contain;
+  transition: all 0.2s;
+}
+
+.corporate-partner-card:hover img {
+  filter: brightness(1) grayscale(0);
+}
+
+.corporate-partner-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.corporate-partner-card p {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.corporate-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(
+    90deg,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.corporate-card-link:hover {
+  gap: 8px;
+  border-bottom-color: #ce2453;
+}
+
+/* ===== 3. ECOSYSTEM LOGOS ===== */
+.corporate-ecosystem-logos {
+  padding: 40px 0;
+}
+
+.corporate-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.corporate-logo-item {
+  background: #ffffff;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.corporate-logo-item:hover {
+  border-color: #ce2453;
+  box-shadow: 0 4px 12px rgba(206, 36, 83, 0.15);
+}
+
+.corporate-logo-item img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.corporate-logo-item:hover img {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+}
+
+.corporate-logo-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ce2453;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.corporate-logo-item:hover .corporate-logo-tooltip {
+  opacity: 1;
+  bottom: -40px;
+}
+
+/* ===== 4. COLLABORATION BANNER ===== */
+.corporate-collaboration-banner {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  padding: 80px 0;
+  color: white;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-collaboration-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.6);
+  pointer-events: none;
+}
+
+.corporate-banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.corporate-banner-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.corporate-banner-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.corporate-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #0a0a0a;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.corporate-banner-cta:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== 5. CONTACT SECTION ===== */
+.corporate-contact {
+  background: #0a0a0a;
+  padding: 80px 0;
+}
+
+.corporate-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.corporate-contact-info h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.corporate-contact-info p {
+  color: #a0a0a0;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+}
+
+.corporate-contact-details {
+  margin-bottom: 32px;
+}
+
+.corporate-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #a0a0a0;
+}
+
+.corporate-contact-item svg {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 20px;
+}
+
+.corporate-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #a0a0a0;
+}
+
+.trust-badge svg {
+  color: #ce2453;
+  font-size: 14px;
+}
+
+/* Contact Form */
+.corporate-contact-form {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.corporate-form-row {
+  margin-bottom: 20px;
+}
+
+.corporate-form-row input,
+.corporate-form-row textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #0a0a0a;
+  transition: all 0.2s;
+}
+
+.corporate-form-row input:focus,
+.corporate-form-row textarea:focus {
+  outline: none;
+  border-color: #ce2453;
+  background: #111111;
+}
+
+.corporate-form-row input::placeholder,
+.corporate-form-row textarea::placeholder {
+  color: #6c6c6c;
+}
+
+.corporate-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+}
+
+.corporate-form-note {
+  font-size: 0.85rem;
+  color: #6c6c6c;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .corporate-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .corporate-logo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .corporate-three-column {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .corporate-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .corporate-banner-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .corporate-section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .corporate-card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .corporate-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .corporate-contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .corporate-container {
+    padding: 0 16px;
+  }
+  
+  .corporate-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .corporate-banner-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .corporate-trust-badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,600 @@
+/* UnifiedIntegrations.css — Professional Gravitational Pull System */
+
+/* ══════════════════════════════════════════════════
+   VARIABLES
+══════════════════════════════════════════════════ */
+:root {
+  --primary-gradient: linear-gradient(
+    90deg,
+    #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%
+  );
+  --ui-rose:   #ce2453;
+  --ui-purple: #522c72;
+  --ui-amber:  #e79e57;
+  --ui-border: rgba(255, 255, 255, 0.08);
+  --ui-node-bg: rgba(14, 14, 14, 0.96);
+}
+
+/* ══════════════════════════════════════════════════
+   SECTION
+══════════════════════════════════════════════════ */
+.hub-section {
+  background: #000;
+  color: #fff;
+  padding: 0 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════════ */
+.hub-header {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 10px;
+  text-align: center;
+}
+
+.integrations-pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: 1px solid rgba(206, 36, 83, 0.2);
+}
+
+.hub-header h2 {
+  font-size: 56px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+.hub-header h2 span {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hub-header p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════════
+   VISUALIZATION WRAPPER
+══════════════════════════════════════════════════ */
+.hub-visualization {
+  position: relative;
+  max-width: 95%;
+  height: 500px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════════════
+   SVG CONNECTION LINES
+══════════════════════════════════════════════════ */
+.hub-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hub-line {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1;
+  stroke-linecap: round;
+  transition: stroke 1.8s ease, stroke-width 1.8s ease, opacity 1.8s ease;
+}
+
+/* Pull phase — lines subtly energise */
+.hub-phase-pull .hub-line {
+  stroke: rgba(206, 36, 83, 0.28);
+  stroke-width: 1.2;
+}
+
+/* Absorb — lines dim as everything disappears into the core */
+.hub-phase-absorb .hub-line {
+  stroke: rgba(206, 36, 83, 0.08);
+  stroke-width: 0.8;
+  opacity: 0.5;
+}
+
+/* Eject — very brief amber flicker */
+.hub-phase-eject .hub-line {
+  stroke: rgba(231, 158, 87, 0.22);
+  stroke-width: 1;
+  transition: stroke 0.6s ease;
+}
+
+/* Cooldown / idle — back to resting */
+.hub-phase-cooldown .hub-line,
+.hub-phase-idle .hub-line {
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1;
+}
+
+/* ══════════════════════════════════════════════════
+   CENTER HUB
+══════════════════════════════════════════════════ */
+.hub-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Orbital ring (single, slow, minimal) ── */
+.hub-accretion {
+  position: absolute;
+  inset: 50%;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  border: 1px solid transparent;
+  border-top-color: rgba(206, 36, 83, 0);
+  animation: orbit-idle 12s linear infinite;
+  z-index: 2;
+  transition:
+    border-top-color 1.5s ease,
+    border-right-color 1.5s ease,
+    width 1.5s ease,
+    height 1.5s ease,
+    filter 1.5s ease;
+}
+
+/* Pull — ring becomes just barely visible */
+.hub-phase-pull .hub-accretion {
+  border-top-color: rgba(206, 36, 83, 0.35);
+  border-right-color: rgba(82, 44, 114, 0.15);
+  animation-duration: 6s;
+  filter: drop-shadow(0 0 6px rgba(206, 36, 83, 0.3));
+}
+
+/* Absorb — ring tightens inward and brightens */
+.hub-phase-absorb .hub-accretion {
+  width: 160px;
+  height: 160px;
+  border-top-color: rgba(206, 36, 83, 0.65);
+  border-right-color: rgba(82, 44, 114, 0.3);
+  animation-duration: 2.5s;
+  filter: drop-shadow(0 0 12px rgba(206, 36, 83, 0.5));
+}
+
+/* Eject — ring expands & fades */
+.hub-phase-eject .hub-accretion {
+  width: 220px;
+  height: 220px;
+  border-top-color: rgba(231, 158, 87, 0.2);
+  border-right-color: rgba(231, 158, 87, 0.08);
+  animation-duration: 10s;
+  filter: none;
+  transition: width 0.8s ease, height 0.8s ease, border-top-color 0.5s ease;
+}
+
+.hub-phase-cooldown .hub-accretion,
+.hub-phase-idle .hub-accretion {
+  border-top-color: rgba(206, 36, 83, 0);
+  border-right-color: transparent;
+}
+
+@keyframes orbit-idle {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── Gravity event marker (replaces shockwave — more refined) ── */
+.hub-shockwave {
+  position: absolute;
+  inset: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(206, 36, 83, 0);
+  transform: translate(-50%, -50%) scale(0.9);
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+}
+
+.hub-phase-eject .hub-shockwave {
+  animation: gravity-release 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes gravity-release {
+  0%   { transform: translate(-50%, -50%) scale(0.9);  border-color: rgba(206, 36, 83, 0.7); opacity: 1; }
+  60%  { border-color: rgba(206, 36, 83, 0.15); }
+  100% { transform: translate(-50%, -50%) scale(2.8);  border-color: rgba(206, 36, 83, 0);   opacity: 0; }
+}
+
+/* ── Ambient pulse (very subtle — always running) ── */
+.hub-pulse {
+  position: absolute;
+  inset: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(206, 36, 83, 0.12) 0%,
+    rgba(206, 36, 83, 0.04) 50%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  animation: ambient-pulse 6s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.pulse-2 { animation-delay: 2s;   }
+.pulse-3 { animation-delay: 4s;   }
+
+/* Dim pulses when the inward gravity motion is the hero */
+.hub-phase-pull   .hub-pulse,
+.hub-phase-absorb .hub-pulse { opacity: 0.3; }
+.hub-phase-eject  .hub-pulse { opacity: 1; animation-duration: 2s; }
+
+@keyframes ambient-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.4; }
+  50%       { transform: translate(-50%, -50%) scale(1.2);  opacity: 0.9; }
+}
+
+/* Unused grav spans — hidden */
+.hub-grav { display: none; }
+
+/* ══════════════════════════════════════════════════
+   HUB CORE
+══════════════════════════════════════════════════ */
+.hub-core {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: #0a0809;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow:
+    0 0 30px rgba(206, 36, 83, 0.18),
+    0 0 60px rgba(206, 36, 83, 0.06);
+  transition:
+    box-shadow  1.5s ease,
+    border-color 1.5s ease,
+    transform    1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background   1.5s ease;
+  pointer-events: all;
+}
+
+/* Pull — core barely perceptibly tightens */
+.hub-phase-pull .hub-core {
+  box-shadow:
+    0 0 40px rgba(206, 36, 83, 0.32),
+    0 0 80px rgba(206, 36, 83, 0.12),
+    inset 0 0 20px rgba(206, 36, 83, 0.06);
+  border-color: rgba(206, 36, 83, 0.22);
+  transform: scale(1.04);
+}
+
+/* Absorb — single moment of concentrated light */
+.hub-phase-absorb .hub-core {
+  box-shadow:
+    0 0 0    2px rgba(206, 36, 83, 0.22),
+    0 0 50px     rgba(206, 36, 83, 0.55),
+    0 0 120px    rgba(82, 44, 114, 0.25),
+    inset 0 0 20px rgba(206, 36, 83, 0.15);
+  border-color: rgba(206, 36, 83, 0.5);
+  transform: scale(1.08);
+  background: #120309;
+  transition:
+    box-shadow  0.5s ease,
+    border-color 0.5s ease,
+    transform    0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background   0.5s ease;
+}
+
+/* Eject — immediate breath out */
+.hub-phase-eject .hub-core {
+  box-shadow:
+    0 0 50px rgba(231, 158, 87, 0.22),
+    0 0 100px rgba(231, 158, 87, 0.08);
+  border-color: rgba(231, 158, 87, 0.18);
+  transform: scale(0.98);
+  background: #0a0809;
+  transition:
+    box-shadow   0.5s ease,
+    border-color 0.5s ease,
+    transform    0.5s cubic-bezier(0.4, 0, 0.6, 1),
+    background   0.5s ease;
+}
+
+/* Cooldown / idle */
+.hub-phase-cooldown .hub-core,
+.hub-phase-idle .hub-core {
+  box-shadow:
+    0 0 30px rgba(206, 36, 83, 0.18),
+    0 0 60px rgba(206, 36, 83, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: scale(1);
+}
+
+/* Hover */
+.hub-core:hover {
+  border-color: rgba(206, 36, 83, 0.25);
+  box-shadow:
+    0 0 40px rgba(206, 36, 83, 0.3),
+    0 0 80px rgba(206, 36, 83, 0.1);
+  transform: scale(1.04);
+}
+
+/* Logo */
+.hub-center-logo {
+  width: 70px;
+  height: 100px;
+  transition: transform 1.5s ease, filter 1.5s ease, opacity 1.5s ease;
+  object-fit: contain;
+}
+
+/* Absorb: logo softly dims */
+.hub-phase-absorb .hub-center-logo {
+  opacity: 0.7;
+  filter: brightness(1.4) drop-shadow(0 0 8px rgba(206, 36, 83, 0.5));
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+}
+
+/* Eject: logo snaps back crisp */
+.hub-phase-eject .hub-center-logo {
+  opacity: 1;
+  filter: brightness(1.05);
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.3s ease;
+}
+
+/* ══════════════════════════════════════════════════
+   HUB NODES
+══════════════════════════════════════════════════ */
+.hub-node {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--ui-node-bg);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --pull-x: 0px;
+  --pull-y: 0px;
+
+  /*
+    Default: resting position — slow return after eject.
+  */
+  transition:
+    transform    2.0s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity      0.8s ease,
+    border-color 0.8s ease,
+    box-shadow   0.8s ease;
+}
+
+/* ── Idle / cooldown: fully at rest ── */
+.hub-phase-idle .hub-node,
+.hub-phase-cooldown .hub-node {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition:
+    transform    2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity      1s ease,
+    border-color 1s ease,
+    box-shadow   1s ease;
+}
+
+/* ── PULL: slow, inevitable gravitational drift toward the core ── */
+.hub-phase-pull .hub-node {
+  transform: translate(var(--pull-x), var(--pull-y)) scale(0.88);
+  opacity: 0.75;
+  border-color: rgba(206, 36, 83, 0.22);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 16px rgba(206, 36, 83, 0.12);
+  transition:
+    transform    3.4s cubic-bezier(0.4, 0, 0.2, 1),   /* slow pull */
+    opacity      3.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 2s ease,
+    box-shadow   2s ease;
+}
+
+/* ── ABSORB: nodes dissolve at center ── */
+.hub-phase-absorb .hub-node {
+  transform: translate(var(--pull-x), var(--pull-y)) scale(0.1);
+  opacity: 0;
+  transition:
+    transform    0.6s cubic-bezier(0.55, 0, 1, 0.45),
+    opacity      0.5s ease;
+}
+
+/* ── EJECT: nodes spring cleanly back — no bounce overshoot ── */
+.hub-phase-eject .hub-node {
+  transform: translate(0, 0) scale(1.04);
+  opacity: 1;
+  border-color: rgba(231, 158, 87, 0.18);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(231, 158, 87, 0.1);
+  transition:
+    transform    1.4s cubic-bezier(0.22, 1, 0.36, 1),  /* refined ease-out */
+    opacity      0.4s ease,
+    border-color 0.6s ease,
+    box-shadow   0.6s ease;
+}
+
+/* ══════════════════════════════════════════════════
+   PER-NODE PULL VECTORS
+══════════════════════════════════════════════════ */
+.left.l1  { left: 21%; top:  9%; --pull-x:  165px; --pull-y:  190px; }
+.left.l2  { left: 13%; top: 31%; --pull-x:  265px; --pull-y:   90px; }
+.left.l3  { left: 24%; top: 43%; --pull-x:  175px; --pull-y:   20px; }
+.left.l4  { left: 11%; top: 69%; --pull-x:  295px; --pull-y: -100px; }
+
+.right.r1 { right: 21%; top:  9%; --pull-x: -165px; --pull-y:  190px; }
+.right.r2 { right: 13%; top: 31%; --pull-x: -265px; --pull-y:   90px; }
+.right.r3 { right: 24%; top: 43%; --pull-x: -175px; --pull-y:   20px; }
+.right.r4 { right: 11%; top: 69%; --pull-x: -295px; --pull-y: -100px; }
+
+/* Hover — only meaningful when not animating */
+.hub-node:hover {
+  transform: scale(1.1);
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(206, 36, 83, 0.14);
+  z-index: 20;
+}
+
+.node-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0.9) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.hub-node:hover .node-logo {
+  transform: scale(1.08);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .hub-header h2    { font-size: 48px; }
+  .hub-visualization { max-width: 1000px; height: 450px; }
+  .hub-center       { width: 130px; height: 130px; }
+  .hub-core         { width: 108px; height: 108px; }
+  .hub-center-logo  { width: 54px; height: 80px; }
+  .hub-accretion    { width: 150px; height: 150px; }
+  .hub-pulse        { width: 120px; height: 120px; }
+  .hub-node         { width: 64px; height: 64px; }
+  .node-logo        { width: 36px; height: 36px; }
+}
+
+@media (max-width: 1024px) {
+  .hub-section      { padding: 100px 0 60px; }
+  .hub-header       { padding: 0 24px; }
+  .hub-header h2    { font-size: 42px; }
+  .hub-header p     { font-size: 15px; }
+  .hub-visualization { height: 420px; }
+  .hub-center       { width: 120px; height: 120px; }
+  .hub-core         { width: 96px; height: 96px; border-radius: 18px; }
+  .hub-center-logo  { width: 46px; height: 70px; }
+  .hub-accretion    { width: 135px; height: 135px; }
+  .hub-pulse        { width: 110px; height: 110px; }
+  .hub-node         { width: 60px; height: 60px; }
+  .node-logo        { width: 33px; height: 33px; }
+  .left.l1  { left: 16%; --pull-x:  135px; --pull-y: 160px; }
+  .left.l2  { left: 10%; --pull-x:  210px; --pull-y:  70px; }
+  .left.l3  { left: 19%; --pull-x:  140px; --pull-y:  16px; }
+  .left.l4  { left:  9%; --pull-x:  225px; --pull-y: -80px; }
+  .right.r1 { right: 16%; --pull-x: -135px; --pull-y: 160px; }
+  .right.r2 { right: 10%; --pull-x: -210px; --pull-y:  70px; }
+  .right.r3 { right: 19%; --pull-x: -140px; --pull-y:  16px; }
+  .right.r4 { right:  9%; --pull-x: -225px; --pull-y: -80px; }
+}
+
+@media (max-width: 768px) {
+  .hub-section      { padding: 80px 0 50px; }
+  .hub-header h2    { font-size: 36px; }
+  .hub-header p     { font-size: 15px; }
+  .hub-visualization { height: 360px; }
+  .hub-center       { width: 110px; height: 110px; }
+  .hub-core         { width: 88px; height: 88px; }
+  .hub-center-logo  { width: 42px; height: 64px; }
+  .hub-accretion    { width: 120px; height: 120px; }
+  .hub-pulse        { width: 100px; height: 100px; }
+  .hub-node         { width: 56px; height: 56px; border-radius: 12px; }
+  .node-logo        { width: 30px; height: 30px; }
+  .left.l1  { left: 12%; --pull-x:  115px; --pull-y: 130px; }
+  .left.l2  { left:  8%; --pull-x:  175px; --pull-y:  55px; }
+  .left.l3  { left: 14%; --pull-x:  115px; --pull-y:  12px; }
+  .left.l4  { left:  6%; --pull-x:  185px; --pull-y: -65px; }
+  .right.r1 { right: 12%; --pull-x: -115px; --pull-y: 130px; }
+  .right.r2 { right:  8%; --pull-x: -175px; --pull-y:  55px; }
+  .right.r3 { right: 14%; --pull-x: -115px; --pull-y:  12px; }
+  .right.r4 { right:  6%; --pull-x: -185px; --pull-y: -65px; }
+}
+
+@media (max-width: 640px) {
+  .hub-header h2    { font-size: 32px; }
+  .integrations-pill { font-size: 10px; padding: 7px 16px; }
+  .hub-visualization { height: 300px; }
+  .hub-center       { width: 96px; height: 96px; }
+  .hub-core         { width: 78px; height: 78px; }
+  .hub-center-logo  { width: 36px; height: 54px; }
+  .hub-node         { width: 50px; height: 50px; }
+  .node-logo        { width: 27px; height: 27px; }
+}
+
+@media (max-width: 480px) {
+  .hub-section      { padding: 60px 0 40px; }
+  .hub-header       { padding: 0 20px; }
+  .hub-header h2    { font-size: 28px; }
+  .hub-header p     { font-size: 14px; }
+  .hub-visualization { height: 260px; }
+  .hub-center       { width: 84px; height: 84px; }
+  .hub-core         { width: 68px; height: 68px; border-radius: 14px; }
+  .hub-center-logo  { width: 30px; height: 46px; }
+  .hub-accretion    { width: 95px; height: 95px; }
+  .hub-pulse        { width: 80px; height: 80px; }
+  .hub-node         { width: 44px; height: 44px; border-radius: 10px; }
+  .node-logo        { width: 24px; height: 24px; }
+  .left.l1  { left: 8%;  --pull-x:  85px; --pull-y:  90px; }
+  .left.l2  { left: 5%;  --pull-x: 130px; --pull-y:  40px; }
+  .left.l3  { left: 9%;  --pull-x:  85px; --pull-y:   8px; }
+  .left.l4  { left: 4%;  --pull-x: 135px; --pull-y: -48px; }
+  .right.r1 { right: 8%;  --pull-x:  -85px; --pull-y:  90px; }
+  .right.r2 { right: 5%;  --pull-x: -130px; --pull-y:  40px; }
+  .right.r3 { right: 9%;  --pull-x:  -85px; --pull-y:   8px; }
+  .right.r4 { right: 4%;  --pull-x: -135px; --pull-y: -48px; }
+}
+
+@media (max-width: 375px) {
+  .hub-header h2    { font-size: 26px; }
+  .hub-visualization { height: 230px; }
+  .hub-core         { width: 60px; height: 60px; }
+  .hub-center-logo  { width: 26px; height: 40px; }
+  .hub-node         { width: 40px; height: 40px; }
+  .node-logo        { width: 22px; height: 22px; }
+}

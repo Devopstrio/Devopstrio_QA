@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="DevSecOps platform illustration">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e79e57" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#ce2453" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#522c72" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#060606"/>
+  <circle cx="260" cy="180" r="170" fill="url(#g)" filter="url(#blur)" opacity="0.8"/>
+  <circle cx="1000" cy="640" r="220" fill="url(#g)" filter="url(#blur)" opacity="0.65"/>
+  <g transform="translate(150 170)">
+    <rect x="0" y="0" width="900" height="480" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+    <g transform="translate(70 80)" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2">
+      <rect x="0" y="0" width="760" height="320" rx="22"/>
+      <path d="M0 70h760"/>
+      <path d="M250 70v250"/>
+      <path d="M520 70v250"/>
+    </g>
+    <g transform="translate(110 120)">
+      <rect x="0" y="0" width="200" height="46" rx="14" fill="rgba(231,158,87,0.14)" stroke="rgba(231,158,87,0.34)"/>
+      <path d="M18 23h120" stroke="rgba(255,255,255,0.42)" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(380 120)">
+      <rect x="0" y="0" width="200" height="46" rx="14" fill="rgba(206,36,83,0.12)" stroke="rgba(206,36,83,0.30)"/>
+      <path d="M18 23h132" stroke="rgba(255,255,255,0.38)" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(650 120)">
+      <rect x="0" y="0" width="200" height="46" rx="14" fill="rgba(82,44,114,0.12)" stroke="rgba(82,44,114,0.30)"/>
+      <path d="M18 23h96" stroke="rgba(255,255,255,0.34)" stroke-width="9" stroke-linecap="round"/>
+      <circle cx="170" cy="23" r="7" fill="#22c55e"/>
+    </g>
+    <g transform="translate(110 230)" fill="none" stroke-width="10" stroke-linecap="round">
+      <path d="M0 0h150" stroke="rgba(255,255,255,0.20)"/>
+      <path d="M270 0h150" stroke="rgba(255,255,255,0.20)"/>
+      <path d="M540 0h150" stroke="rgba(255,255,255,0.20)"/>
+      <path d="M0 60h120" stroke="rgba(255,255,255,0.14)"/>
+      <path d="M270 60h180" stroke="rgba(255,255,255,0.14)"/>
+      <path d="M540 60h140" stroke="rgba(255,255,255,0.14)"/>
+    </g>
+  </g>
+</svg>

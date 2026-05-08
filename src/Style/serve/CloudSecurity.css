@@ -1,0 +1,1090 @@
+/* =====================================================
+   CLOUD SECURITY — CloudSecurity.css
+   Black Theme · SaaS Cinematic · Gradient Accent
+   Unique: Scan-line BG, Scale-fade Slider, Marquee
+           Ticker, Counter Cards, Threat Feed Dashboard,
+           Freeze Banner, Comparison Table, Split FAQ
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --cs-grad: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
+  --cs-bg: #000;
+  --cs-surface: #080808;
+  --cs-surface-2: #0e0e0e;
+  --cs-surface-3: #161616;
+  --cs-border: #1a1a1a;
+  --cs-border-2: #252525;
+  --cs-text: #bbb;
+  --cs-muted: #555;
+  --cs-white: #fff;
+  --cs-red: #ce2453;
+  --cs-trans: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --cs-radius: 20px;
+  --cs-glow: 0 0 60px rgba(206, 36, 83, 0.1);
+}
+
+/* ── Base ── */
+.CloudSecurity-page {
+  font-family: 'Inter', sans-serif;
+  color: var(--cs-text);
+}
+
+.CloudSecurity-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Gradient text ── */
+.CloudSecurity-gradient-text {
+  background: var(--cs-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ── Label ── */
+.CloudSecurity-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* ── Section header ── */
+.CloudSecurity-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.CloudSecurity-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--cs-white);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.CloudSecurity-section-desc {
+  font-size: 1.05rem;
+  color: var(--cs-muted);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ── Buttons ── */
+.CloudSecurity-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background: var(--cs-grad);
+  color: var(--cs-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--cs-trans);
+}
+.CloudSecurity-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(206, 36, 83, 0.35);
+}
+.CloudSecurity-btn-lg { padding: 16px 40px; font-size: 1.05rem; }
+
+.CloudSecurity-ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background: transparent;
+  color: var(--cs-white);
+  border: 1px solid var(--cs-border-2);
+  border-radius: 50px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--cs-trans);
+}
+.CloudSecurity-ghost-btn:hover {
+  border-color: var(--cs-red);
+  background: rgba(206, 36, 83, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ==============================================
+   ANIMATED BACKGROUND — Orbs + Radar Pulse Rings
+   ============================================== */
+.CloudSecurity-bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.CloudSecurity-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: CloudSecurity-orb-float ease-in-out infinite alternate;
+}
+.CloudSecurity-orb-1 {
+  width: 600px; height: 600px;
+  background: rgba(82, 44, 114, 0.10);
+  top: -180px; right: -100px;
+  animation-duration: 22s;
+}
+.CloudSecurity-orb-2 {
+  width: 450px; height: 450px;
+  background: rgba(206, 36, 83, 0.08);
+  bottom: 5%; left: -80px;
+  animation-duration: 18s;
+  animation-delay: -8s;
+}
+.CloudSecurity-orb-3 {
+  width: 300px; height: 300px;
+  background: rgba(231, 158, 87, 0.06);
+  top: 45%; right: 25%;
+  animation-duration: 28s;
+  animation-delay: -14s;
+}
+@keyframes CloudSecurity-orb-float {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(50px, -70px) scale(1.1); }
+}
+
+/* ── Radar Pulse Rings ── */
+.CloudSecurity-radar {
+  position: absolute;
+  /* anchor at bottom-right corner */
+  bottom: -20%;
+  right: -10%;
+  width: 900px;
+  height: 900px;
+  transform: translate(0, 0);
+}
+
+.CloudSecurity-ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid rgba(206, 36, 83, 0.18);
+  animation: CloudSecurity-radar-pulse 5s ease-out infinite;
+}
+.CloudSecurity-ring-1 { width: 200px;  height: 200px;  animation-delay: 0s;    border-color: rgba(82,44,114,0.35); }
+.CloudSecurity-ring-2 { width: 400px;  height: 400px;  animation-delay: 1.2s;  border-color: rgba(150,41,100,0.25); }
+.CloudSecurity-ring-3 { width: 640px;  height: 640px;  animation-delay: 2.4s;  border-color: rgba(206,36,83,0.14); }
+.CloudSecurity-ring-4 { width: 900px;  height: 900px;  animation-delay: 3.6s;  border-color: rgba(231,158,87,0.08); }
+
+@keyframes CloudSecurity-radar-pulse {
+  0%   { transform: scale(0.7); opacity: 0.8; }
+  60%  { opacity: 0.4; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+/* ==============================================
+   1. HERO SLIDER
+   ============================================== */
+.CloudSecurity-hero-slider {
+  position: relative;
+  height: 640px;
+  z-index: 1;
+}
+
+.CloudSecurity-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.CloudSecurity-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.2) saturate(1.3);
+}
+
+.CloudSecurity-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(82,44,114,0.25) 0%, rgba(0,0,0,0.6) 60%),
+    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.CloudSecurity-slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 28px;
+}
+
+.CloudSecurity-slide-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--cs-white);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+  white-space: pre-line;
+}
+
+.CloudSecurity-slide-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.CloudSecurity-slide-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.CloudSecurity-slide-dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 10px;
+}
+
+.CloudSecurity-dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  cursor: pointer;
+  transition: var(--cs-trans);
+}
+.CloudSecurity-dot-active {
+  background: var(--cs-grad);
+  width: 52px;
+}
+
+/* ==============================================
+   2. LIVE THREAT TICKER — MARQUEE
+   ============================================== */
+.CloudSecurity-threat-ticker {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--cs-surface);
+  border-top: 1px solid var(--cs-border);
+  border-bottom: 1px solid var(--cs-border);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cs-white);
+  background: var(--cs-surface-2);
+  border-right: 1px solid var(--cs-border);
+  white-space: nowrap;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.CloudSecurity-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #28c840;
+  flex-shrink: 0;
+  animation: CloudSecurity-pulse 1.5s ease-in-out infinite;
+}
+@keyframes CloudSecurity-pulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(40, 200, 64, 0.5); }
+  50%      { opacity: 0.7; box-shadow: 0 0 0 6px rgba(40, 200, 64, 0); }
+}
+
+.CloudSecurity-ticker-track-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.CloudSecurity-ticker-track-wrapper::before,
+.CloudSecurity-ticker-track-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.CloudSecurity-ticker-track-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--cs-surface) 0%, transparent 100%);
+}
+.CloudSecurity-ticker-track-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--cs-surface) 0%, transparent 100%);
+}
+
+.CloudSecurity-ticker-slider {
+  display: flex;
+  width: max-content;
+  animation: CloudSecurity-marquee 24s linear infinite;
+}
+@keyframes CloudSecurity-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.CloudSecurity-ticker-track {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.CloudSecurity-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  height: 60px;
+  white-space: nowrap;
+}
+.CloudSecurity-ticker-icon { font-size: 1rem; color: var(--cs-muted); }
+.CloudSecurity-ticker-value { font-size: 1.1rem; font-weight: 800; }
+.CloudSecurity-ticker-label-text { font-size: 0.8rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: 1px; }
+.CloudSecurity-ticker-sep { font-size: 1.2rem; color: var(--cs-border-2); padding-left: 10px; }
+
+/* ==============================================
+   3. IMPACT COUNTERS
+   ============================================== */
+.CloudSecurity-impact-section {
+  padding: 90px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-impact-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 22px;
+}
+
+.CloudSecurity-impact-card {
+  background: var(--cs-surface-2);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--cs-trans);
+}
+.CloudSecurity-impact-card:hover {
+  border-color: rgba(206,36,83,0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--cs-glow);
+}
+
+.CloudSecurity-impact-glow {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(206,36,83,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.CloudSecurity-impact-num {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.CloudSecurity-impact-lg .CloudSecurity-impact-num { font-size: 4.2rem; }
+
+.CloudSecurity-impact-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cs-white);
+}
+.CloudSecurity-impact-desc {
+  font-size: 0.82rem;
+  color: var(--cs-muted);
+  margin: 0;
+}
+
+/* ==============================================
+   4. SIDEBAR SERVICES
+   ============================================== */
+.CloudSecurity-services-section {
+  padding: 60px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-services-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  border: 1px solid var(--cs-border);
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.CloudSecurity-services-nav {
+  background: var(--cs-surface);
+  border-right: 1px solid var(--cs-border);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 3px;
+}
+
+.CloudSecurity-service-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--cs-trans);
+  width: 100%;
+}
+.CloudSecurity-service-tab:hover { background: rgba(206,36,83,0.04); }
+.CloudSecurity-tab-active {
+  background: rgba(206,36,83,0.07) !important;
+  border-left: 3px solid var(--cs-red);
+}
+
+.CloudSecurity-tab-icon {
+  font-size: 1.1rem;
+  color: var(--cs-muted);
+  flex-shrink: 0;
+}
+.CloudSecurity-tab-active .CloudSecurity-tab-icon { color: var(--cs-red); }
+
+.CloudSecurity-tab-label {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cs-muted);
+  text-align: left;
+}
+.CloudSecurity-tab-active .CloudSecurity-tab-label { color: var(--cs-white); }
+
+.CloudSecurity-tab-arrow {
+  font-size: 0.9rem;
+  color: var(--cs-muted);
+  transform: rotate(-90deg);
+}
+
+/* panel */
+.CloudSecurity-service-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.CloudSecurity-panel-text {
+  padding: 42px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.CloudSecurity-panel-icon {
+  width: 46px; height: 46px;
+  border-radius: 14px;
+  background: rgba(206,36,83,0.08);
+  border: 1px solid var(--cs-border-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  color: var(--cs-red);
+  margin-bottom: 16px;
+}
+
+.CloudSecurity-panel-text h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--cs-white);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.CloudSecurity-panel-text > p {
+  font-size: 0.9rem;
+  color: var(--cs-muted);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.CloudSecurity-panel-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.CloudSecurity-panel-features li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.88rem;
+  color: var(--cs-text);
+}
+.CloudSecurity-feat-check { color: var(--cs-red); font-size: 0.95rem; flex-shrink: 0; }
+
+.CloudSecurity-panel-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 12px 18px;
+  background: rgba(206,36,83,0.04);
+  border: 1px solid var(--cs-border);
+  border-radius: 10px;
+  width: max-content;
+}
+.CloudSecurity-stat-value { font-size: 1.8rem; font-weight: 900; }
+.CloudSecurity-stat-label { font-size: 0.8rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+.CloudSecurity-panel-image {
+  position: relative;
+  overflow: hidden;
+}
+.CloudSecurity-panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.CloudSecurity-service-panel:hover .CloudSecurity-panel-image img { transform: scale(1.05); }
+.CloudSecurity-panel-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14,14,14,0.55) 0%, transparent 55%);
+}
+
+/* ==============================================
+   5. LIVE THREAT FEED DASHBOARD
+   ============================================== */
+.CloudSecurity-feed-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--cs-border);
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-feed-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.CloudSecurity-feed-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--cs-white);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.CloudSecurity-feed-desc {
+  font-size: 0.95rem;
+  color: var(--cs-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.CloudSecurity-feed-stats {
+  display: flex;
+  gap: 28px;
+}
+.CloudSecurity-fstat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.CloudSecurity-fstat span { font-size: 1.7rem; font-weight: 900; }
+.CloudSecurity-fstat small { font-size: 0.75rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+/* threat feed panel */
+.CloudSecurity-feed-panel {
+  background: var(--cs-surface-2);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  overflow: hidden;
+}
+
+.CloudSecurity-feed-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 22px;
+  background: var(--cs-surface);
+  border-bottom: 1px solid var(--cs-border);
+  font-size: 0.82rem;
+  color: var(--cs-muted);
+}
+
+.CloudSecurity-feed-badge {
+  margin-left: auto;
+  background: rgba(40,200,64,0.1);
+  color: #28c840;
+  border: 1px solid rgba(40,200,64,0.25);
+  border-radius: 50px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.CloudSecurity-feed-list {
+  padding: 10px 0;
+}
+
+.CloudSecurity-feed-row {
+  display: grid;
+  grid-template-columns: 90px 90px 1fr 100px;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--cs-border);
+  transition: var(--cs-trans);
+  font-size: 0.82rem;
+}
+.CloudSecurity-feed-row:last-child { border-bottom: none; }
+.CloudSecurity-feed-row:hover { background: rgba(206,36,83,0.03); }
+
+/* left border severity color */
+.CloudSecurity-sev-critical { border-left: 3px solid #ce2453; }
+.CloudSecurity-sev-high     { border-left: 3px solid #dd5c54; }
+.CloudSecurity-sev-medium   { border-left: 3px solid #e79e57; }
+
+.CloudSecurity-feed-time   { font-family: monospace; color: var(--cs-muted); font-size: 0.75rem; }
+.CloudSecurity-feed-event  { color: var(--cs-text); }
+.CloudSecurity-feed-region { font-size: 0.72rem; color: var(--cs-muted); text-align: right; }
+
+.CloudSecurity-feed-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+.CloudSecurity-type-blocked    { background: rgba(206,36,83,0.12); color: #ce2453; border: 1px solid rgba(206,36,83,0.2); }
+.CloudSecurity-type-detected   { background: rgba(231,158,87,0.12); color: #e79e57; border: 1px solid rgba(231,158,87,0.2); }
+.CloudSecurity-type-alerted    { background: rgba(150,41,100,0.12); color: #962964; border: 1px solid rgba(150,41,100,0.2); }
+.CloudSecurity-type-remediated { background: rgba(40,200,64,0.1); color: #28c840; border: 1px solid rgba(40,200,64,0.2); }
+
+/* ==============================================
+   6. VIDEO / FREEZE BANNER
+   ============================================== */
+.CloudSecurity-banner-section {
+  position: relative;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+
+  /* frozen background */
+  background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.CloudSecurity-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg,
+      rgba(0,0,0,0.88) 0%,
+      rgba(82,44,114,0.20) 45%,
+      rgba(0,0,0,0.88) 100%
+    );
+}
+
+.CloudSecurity-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 52px 48px;
+  background: rgba(8,8,8,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 28px;
+  animation: CloudSecurity-float 5s ease-in-out infinite;
+}
+
+@keyframes CloudSecurity-float {
+  0%, 100% { transform: translateY(0);    box-shadow: 0 20px 60px rgba(82,44,114,0.15); }
+  50%       { transform: translateY(-12px); box-shadow: 0 32px 80px rgba(206,36,83,0.22); }
+}
+
+.CloudSecurity-banner-content h2 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--cs-white);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.CloudSecurity-banner-content p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* ==============================================
+   7. COMPARISON TABLE
+   ============================================== */
+.CloudSecurity-comparison-section {
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-comparison-table {
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius);
+  overflow: hidden;
+}
+
+.CloudSecurity-comp-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  background: var(--cs-surface);
+  border-bottom: 1px solid var(--cs-border);
+}
+
+.CloudSecurity-comp-header > * {
+  padding: 18px 28px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.CloudSecurity-comp-before { color: var(--cs-muted); border-left: 1px solid var(--cs-border); }
+.CloudSecurity-comp-after  { color: var(--cs-white); border-left: 1px solid var(--cs-border); }
+
+.CloudSecurity-comp-x   { color: #ce2453; }
+.CloudSecurity-comp-chk { color: #28c840; }
+
+.CloudSecurity-comp-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  border-bottom: 1px solid var(--cs-border);
+  transition: var(--cs-trans);
+}
+.CloudSecurity-comp-row:last-child { border-bottom: none; }
+.CloudSecurity-comp-row:hover { background: rgba(206,36,83,0.03); }
+
+.CloudSecurity-comp-row > * {
+  padding: 18px 28px;
+  font-size: 0.9rem;
+}
+
+.CloudSecurity-comp-col-label { color: var(--cs-text); font-weight: 500; }
+.CloudSecurity-comp-before-val {
+  color: var(--cs-muted);
+  border-left: 1px solid var(--cs-border);
+  text-decoration: line-through;
+  text-decoration-color: rgba(206,36,83,0.3);
+}
+.CloudSecurity-comp-after-val {
+  border-left: 1px solid var(--cs-border);
+  font-weight: 600;
+}
+
+/* ==============================================
+   8. TESTIMONIAL
+   ============================================== */
+.CloudSecurity-quote-section {
+  padding: 50px 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-quote-card {
+  background: var(--cs-surface-2);
+  border: 1px solid var(--cs-border);
+  border-radius: 26px;
+  padding: 52px 58px;
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.CloudSecurity-quote-glow {
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,44,114,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.CloudSecurity-q-icon {
+  font-size: 2.2rem;
+  background: var(--cs-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.45;
+  display: block;
+  margin-bottom: 22px;
+}
+
+.CloudSecurity-quote-card blockquote {
+  font-size: 1.18rem;
+  color: var(--cs-white);
+  font-style: italic;
+  line-height: 1.9;
+  margin: 0 0 32px;
+  border: none;
+  padding: 0;
+}
+
+.CloudSecurity-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.CloudSecurity-quote-author img {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cs-border-2);
+  flex-shrink: 0;
+}
+.CloudSecurity-quote-author h4 { font-size: 1rem; font-weight: 700; color: var(--cs-white); margin: 0 0 3px; }
+.CloudSecurity-quote-author > div:nth-child(2) p { font-size: 0.82rem; color: var(--cs-muted); margin: 0; }
+
+.CloudSecurity-quote-metrics {
+  margin-left: auto;
+  display: flex;
+  gap: 28px;
+}
+.CloudSecurity-qm { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.CloudSecurity-qm span { font-size: 2rem; font-weight: 900; }
+.CloudSecurity-qm small { font-size: 0.7rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ==============================================
+   9. FAQ — SPLIT
+   ============================================== */
+.CloudSecurity-faq-section {
+  padding: 60px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.CloudSecurity-faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.CloudSecurity-faq-left {
+  position: sticky;
+  top: 120px;
+}
+
+.CloudSecurity-faq-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--cs-white);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.CloudSecurity-faq-sub {
+  font-size: 1rem;
+  color: var(--cs-muted);
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+
+.CloudSecurity-faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.CloudSecurity-faq-item {
+  background: var(--cs-surface-2);
+  border: 1px solid var(--cs-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--cs-trans);
+}
+.CloudSecurity-faq-open {
+  border-color: rgba(206,36,83,0.4);
+  box-shadow: var(--cs-glow);
+}
+
+.CloudSecurity-faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  color: var(--cs-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--cs-trans);
+  gap: 14px;
+}
+.CloudSecurity-faq-q:hover { background: rgba(206,36,83,0.04); }
+.CloudSecurity-faq-q span { flex: 1; }
+.CloudSecurity-faq-q svg {
+  font-size: 1.2rem;
+  color: var(--cs-red);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.CloudSecurity-faq-open .CloudSecurity-faq-q svg { transform: rotate(180deg); }
+
+.CloudSecurity-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 24px;
+}
+.CloudSecurity-faq-open .CloudSecurity-faq-a {
+  max-height: 300px;
+  padding: 0 24px 20px;
+}
+.CloudSecurity-faq-a p {
+  font-size: 0.9rem;
+  color: var(--cs-muted);
+  line-height: 1.8;
+  border-top: 1px solid var(--cs-border);
+  padding-top: 16px;
+  margin: 0;
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+@media (max-width: 1024px) {
+  .CloudSecurity-hero-slider    { height: 560px; }
+  .CloudSecurity-slide-title    { font-size: 3rem; }
+  .CloudSecurity-section-title  { font-size: 2.3rem; }
+
+  .CloudSecurity-impact-grid    { grid-template-columns: 1fr 1fr; }
+  .CloudSecurity-impact-card.CloudSecurity-impact-lg { grid-column: 1/-1; }
+
+  .CloudSecurity-services-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .CloudSecurity-services-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--cs-border);
+    gap: 4px;
+  }
+  .CloudSecurity-service-tab  { white-space: nowrap; flex-shrink: 0; }
+  .CloudSecurity-tab-active   { border-left: none; border-bottom: 3px solid var(--cs-red); }
+  .CloudSecurity-tab-arrow    { display: none; }
+  .CloudSecurity-service-panel { grid-template-columns: 1fr; }
+  .CloudSecurity-panel-image  { height: 300px; }
+
+  .CloudSecurity-feed-layout { grid-template-columns: 1fr; gap: 50px; }
+
+  .CloudSecurity-comp-header, .CloudSecurity-comp-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .CloudSecurity-comp-col-label { display: none; }
+
+  .CloudSecurity-faq-layout { grid-template-columns: 1fr; gap: 50px; }
+  .CloudSecurity-faq-left   { position: static; text-align: center; }
+
+  .CloudSecurity-quote-card { padding: 38px; }
+}
+
+@media (max-width: 768px) {
+  .CloudSecurity-hero-slider { height: 500px; }
+  .CloudSecurity-slide-title { font-size: 2.4rem; }
+  .CloudSecurity-slide-btns  { flex-direction: column; align-items: center; }
+  .CloudSecurity-section-title { font-size: 2rem; }
+
+  .CloudSecurity-impact-grid { grid-template-columns: 1fr; }
+  .CloudSecurity-impact-card.CloudSecurity-impact-lg { grid-column: auto; }
+  .CloudSecurity-impact-num  { font-size: 2.8rem; }
+  .CloudSecurity-impact-lg .CloudSecurity-impact-num { font-size: 3.4rem; }
+
+  .CloudSecurity-feed-row { grid-template-columns: 80px 80px 1fr; }
+  .CloudSecurity-feed-region { display: none; }
+
+  .CloudSecurity-banner-content { padding: 36px 28px; }
+  .CloudSecurity-banner-content h2 { font-size: 2rem; }
+
+  .CloudSecurity-quote-card { padding: 30px 24px; }
+  .CloudSecurity-quote-card blockquote { font-size: 1rem; }
+  .CloudSecurity-quote-author { flex-wrap: wrap; }
+  .CloudSecurity-quote-metrics { margin-left: 0; }
+
+  .CloudSecurity-faq-title { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .CloudSecurity-container  { padding: 0 16px; }
+  .CloudSecurity-hero-slider { height: 440px; }
+  .CloudSecurity-slide-title { font-size: 1.9rem; }
+  .CloudSecurity-slide-content { padding: 0 16px; }
+  .CloudSecurity-section-title { font-size: 1.7rem; }
+  .CloudSecurity-imp-grid { grid-template-columns: 1fr; }
+  .CloudSecurity-banner-content { padding: 28px 20px; }
+  .CloudSecurity-banner-content h2 { font-size: 1.7rem; }
+  .CloudSecurity-faq-title { font-size: 1.7rem; }
+  .CloudSecurity-quote-card { padding: 24px 18px; }
+  .CloudSecurity-feed-row { grid-template-columns: 1fr 1fr; font-size: 0.75rem; }
+  .CloudSecurity-feed-time { display: none; }
+}
+

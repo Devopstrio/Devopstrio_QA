@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>DevOpsTrio Blog</title>
+    <link>https://devopstrio.co.uk/</link>
+    <description>Latest DevOps, Cloud, and AI insights from DevOpsTrio</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Mar 2026 10:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Ready to Grow Smarter in 2026? Microsoft Dynamics 365 for Business</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/microsoft-dynamics-365</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/microsoft-dynamics-365</guid>
+      <pubDate>Fri, 10 Jan 2026 09:00:00 GMT</pubDate>
+      <description>Discover how Microsoft Dynamics 365 helps businesses streamline operations and improve efficiency.</description>
+    </item>
+
+    <item>
+      <title>Strengthening Serverless Security with AWS Lambda</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/aws-lambda-security</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/aws-lambda-security</guid>
+      <pubDate>Tue, 21 Jan 2026 10:00:00 GMT</pubDate>
+      <description>Secure serverless applications using IAM roles, VPC isolation, and runtime monitoring.</description>
+    </item>
+
+    <item>
+      <title>Turning High-Volume Data into Real-Time Insights with GCP</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/gcp-bigquery-dataflow</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/gcp-bigquery-dataflow</guid>
+      <pubDate>Mon, 03 Feb 2026 11:00:00 GMT</pubDate>
+      <description>Use BigQuery and Dataflow to process and analyze large-scale data in real time.</description>
+    </item>
+
+    <item>
+      <title>Strengthening Cloud Infrastructure Security with AWS</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/aws-cloud-security</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/aws-cloud-security</guid>
+      <pubDate>Wed, 12 Feb 2026 09:30:00 GMT</pubDate>
+      <description>Best practices to protect cloud environments and improve infrastructure security.</description>
+    </item>
+
+    <item>
+      <title>Enterprise AI at Scale: Why Azure AI Studio is the Future</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/azure-ai-studio</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/azure-ai-studio</guid>
+      <pubDate>Tue, 25 Feb 2026 10:15:00 GMT</pubDate>
+      <description>How Azure AI Studio enables scalable AI model development and enterprise adoption.</description>
+    </item>
+
+    <item>
+      <title>Stop Ransomware Before It Starts: AWS Backup Strategy for Enterprises</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/aws-backup-strategy</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/aws-backup-strategy</guid>
+      <pubDate>Mon, 02 Mar 2026 09:45:00 GMT</pubDate>
+      <description>Build a strong ransomware defense using AWS backup and disaster recovery strategies.</description>
+    </item>
+
+    <item>
+      <title>AI-Enabled Azure Virtual Desktop for Modern Workspaces</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/azure-virtual-desktop-ai</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/azure-virtual-desktop-ai</guid>
+      <pubDate>Wed, 11 Mar 2026 10:30:00 GMT</pubDate>
+      <description>Enable secure and scalable remote work environments using Azure Virtual Desktop.</description>
+    </item>
+
+    <item>
+      <title>Azure Cloud Migration: Building Scalable Infrastructure with Bicep and ARM</title>
+      <link>https://devopstrio.co.uk/insights-knowledge/blogs/azure-migration-bicep-arm</link>
+      <guid>https://devopstrio.co.uk/insights-knowledge/blogs/azure-migration-bicep-arm</guid>
+      <pubDate>Tue, 18 Mar 2026 11:00:00 GMT</pubDate>
+      <description>Leverage Infrastructure as Code with Bicep and ARM templates for scalable cloud migration.</description>
+    </item>
+
+  </channel>
+</rss>

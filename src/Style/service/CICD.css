@@ -1,0 +1,1200 @@
+/* ============================================
+   CI/CD AUTOMATION PAGE
+   Black Theme + Gradient
+   Unique: Slider, Pipeline Strip, Sidebar Tabs,
+   Comparison Table, Particle BG
+   ============================================ */
+
+:root {
+  --ci-gradient: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
+  --ci-bg: #000;
+  --ci-surface: #0a0a0a;
+  --ci-surface-2: #111;
+  --ci-surface-3: #181818;
+  --ci-border: #1a1a1a;
+  --ci-border-light: #2a2a2a;
+  --ci-text: #d4d4d4;
+  --ci-text-muted: #777;
+  --ci-white: #fff;
+  --ci-radius: 20px;
+  --ci-radius-sm: 12px;
+  --ci-radius-lg: 28px;
+  --ci-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --ci-glow: 0 0 40px rgba(206, 36, 83, 0.12);
+}
+
+/* ---- Base ---- */
+.ci-page {
+  color: var(--ci-text);
+  line-height: 1.6;
+  position: relative;
+}
+
+.ci-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- Background particles ---- */
+.ci-bg-particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ci-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+  animation: ci-float-particle linear infinite;
+}
+
+.ci-p1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #522c72, transparent 70%);
+  top: 10%; left: -5%;
+  animation-duration: 20s;
+}
+.ci-p2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #ce2453, transparent 70%);
+  top: 40%; right: -5%;
+  animation-duration: 25s;
+  animation-delay: 3s;
+}
+.ci-p3 {
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, #e79e57, transparent 70%);
+  bottom: 20%; left: 30%;
+  animation-duration: 22s;
+  animation-delay: 7s;
+}
+.ci-p4 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, #962964, transparent 70%);
+  bottom: 5%; right: 20%;
+  animation-duration: 28s;
+  animation-delay: 5s;
+}
+.ci-p5 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, #dd5c54, transparent 70%);
+  top: 60%; left: 60%;
+  animation-duration: 18s;
+  animation-delay: 10s;
+}
+
+@keyframes ci-float-particle {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40px, -60px) scale(1.1); }
+  50% { transform: translate(-30px, 40px) scale(0.9); }
+  75% { transform: translate(60px, 20px) scale(1.05); }
+}
+
+/* ---- Gradient text ---- */
+.ci-gradient-text {
+  background: linear-gradient(90deg, #962964 5%, #ce2453 20%, #dd5c54 45%, #e79e57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ---- Label ---- */
+.ci-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* ---- Section header ---- */
+.ci-section-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.ci-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--ci-white);
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+.ci-section-desc {
+  font-size: 1.1rem;
+  color: var(--ci-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- Buttons ---- */
+.ci-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  background: var(--ci-gradient);
+  color: var(--ci-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ci-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.ci-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(206, 36, 83, 0.35);
+}
+
+.ci-content-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: rgba(206, 36, 83, 0.08);
+  color: var(--ci-white);
+  border: 1px solid var(--ci-border-light);
+  border-radius: 50px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ci-transition);
+  margin-top: 20px;
+}
+
+.ci-content-btn:hover {
+  border-color: #ce2453;
+  background: rgba(206, 36, 83, 0.15);
+  transform: translateX(4px);
+}
+
+.ci-btn-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+
+.ci-primary-btn:hover .ci-btn-icon {
+  transform: translateX(4px);
+}
+
+/* ==============================================
+   1. AUTO-SLIDING HERO
+   ============================================== */
+.ci-slider-section {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.ci-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ci-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.ci-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) saturate(1.5);
+}
+.ci-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(82,44,114,0.15) 40%, rgba(0,0,0,0.85) 100%),
+    radial-gradient(ellipse at 60% 50%, rgba(206,36,83,0.06) 0%, transparent 60%);
+}
+
+.ci-slide-content {
+  position: absolute;
+  top: 100px;
+  left: 40%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.ci-slide-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--ci-white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.ci-slide-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.ci-slide-dots {
+  position: absolute;
+  bottom: 90px;
+  left: 10%;
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+.ci-dot {
+  width: 40px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.ci-dot-active {
+  width: 60px;
+  background: var(--ci-gradient);
+}
+
+/* ==============================================
+   2. PIPELINE STRIP
+   ============================================== */
+.ci-pipeline-strip {
+  padding: 50px 24px;
+  border-top: 1px solid var(--ci-border);
+  border-bottom: 1px solid var(--ci-border);
+  overflow-x: auto;
+}
+
+.ci-pipeline-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.ci-pipeline-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-width: max-content;
+  margin: 0 auto;
+}
+
+.ci-pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.ci-pipeline-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: var(--ci-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--ci-white);
+  transition: var(--ci-transition);
+}
+
+.ci-pipeline-node:hover .ci-pipeline-circle {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(206, 36, 83, 0.25);
+}
+
+.ci-pipeline-node span {
+  font-size: 0.82rem;
+  color: var(--ci-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ci-pipeline-line {
+  width: 80px;
+  height: 2px;
+  background: var(--ci-border);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ci-pipeline-line-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  animation: ci-line-fill 2s ease forwards;
+}
+
+@keyframes ci-line-fill {
+  to { width: 100%; }
+}
+
+/* ==============================================
+   3. BENEFITS GRID
+   ============================================== */
+.ci-benefits-section {
+  padding: 80px 0;
+}
+
+.ci-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ci-benefit-card {
+  background: var(--ci-surface-2);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius);
+  padding: 35px 30px;
+  transition: var(--ci-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.ci-benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--ci-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.ci-benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ci-benefit-card:hover {
+  border-color: rgba(206, 36, 83, 0.2);
+  transform: translateY(-6px);
+  box-shadow: var(--ci-glow);
+}
+
+.ci-benefit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(206, 36, 83, 0.08);
+  border: 1px solid var(--ci-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #ce2453;
+  margin-bottom: 18px;
+}
+
+.ci-benefit-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ci-white);
+  margin-bottom: 8px;
+}
+
+.ci-benefit-card p {
+  font-size: 0.88rem;
+  color: var(--ci-text-muted);
+  line-height: 1.6;
+}
+
+/* ==============================================
+   4. SIDEBAR TAB SECTION
+   ============================================== */
+.ci-sidebar-section {
+  padding: 60px 0;
+}
+
+.ci-sidebar-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  background: var(--ci-surface-2);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-lg);
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* Sidebar nav */
+.ci-sidebar-nav {
+  background: var(--ci-surface);
+  border-right: 1px solid var(--ci-border);
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.ci-sidebar-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  color: var(--ci-text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  border-radius: var(--ci-radius-sm);
+  transition: var(--ci-transition);
+  position: relative;
+}
+
+.ci-sidebar-tab:hover {
+  background: rgba(206, 36, 83, 0.04);
+  color: var(--ci-white);
+}
+
+.ci-tab-active {
+  background: rgba(206, 36, 83, 0.08) !important;
+  color: var(--ci-white) !important;
+  border-left: 3px solid #ce2453;
+}
+
+.ci-tab-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.ci-tab-active .ci-tab-icon {
+  color: #ce2453;
+}
+
+.ci-tab-label {
+  flex: 1;
+}
+
+.ci-tab-arrow {
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ci-tab-active .ci-tab-arrow {
+  opacity: 1;
+  color: #ce2453;
+}
+
+/* Content panel */
+.ci-sidebar-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 100%;
+}
+
+.ci-sidebar-text {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ci-sidebar-text h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ci-white);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.ci-sidebar-text > p {
+  font-size: 0.95rem;
+  color: var(--ci-text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.ci-sidebar-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ci-sidebar-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--ci-text);
+}
+
+.ci-feature-check {
+  color: #ce2453;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ci-sidebar-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.ci-sidebar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ci-sidebar-content:hover .ci-sidebar-image img {
+  transform: scale(1.04);
+}
+
+.ci-sidebar-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17,17,17,0.6) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* ==============================================
+   5. VIDEO CTA BANNER
+   ============================================== */
+.ci-video-banner {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ci-video-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ci-video-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.2) saturate(1.3);
+  animation: ci-kenburns 18s ease-in-out infinite alternate;
+}
+
+@keyframes ci-kenburns {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+.ci-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.85) 0%,
+    rgba(82,44,114,0.2) 50%,
+    rgba(0,0,0,0.85) 100%
+  );
+  z-index: 1;
+}
+
+.ci-video-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 650px;
+  padding: 0 24px;
+}
+
+.ci-video-content h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--ci-white);
+  margin-bottom: 16px;
+}
+
+.ci-video-content p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.ci-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 38px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.2);
+  color: var(--ci-white);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--ci-transition);
+}
+
+.ci-play-btn:hover {
+  border-color: #ce2453;
+  background: rgba(206, 36, 83, 0.12);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(206, 36, 83, 0.3);
+}
+
+.ci-play-btn svg {
+  font-size: 1.4rem;
+}
+
+/* ==============================================
+   6. COMPARISON TABLE
+   ============================================== */
+.ci-comparison-section {
+  padding: 80px 0;
+}
+
+.ci-comparison-table {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius);
+  overflow: hidden;
+}
+
+.ci-comparison-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  background: var(--ci-surface);
+  border-bottom: 1px solid var(--ci-border);
+}
+
+.ci-comparison-header .ci-comp-col {
+  padding: 18px 24px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ci-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.ci-comparison-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  border-bottom: 1px solid var(--ci-border);
+  transition: var(--ci-transition);
+}
+
+.ci-comparison-row:last-child {
+  border-bottom: none;
+}
+
+.ci-comparison-row:hover {
+  background: rgba(206, 36, 83, 0.03);
+}
+
+.ci-comp-col {
+  padding: 18px 24px;
+  font-size: 0.95rem;
+}
+
+.ci-comp-feature {
+  color: var(--ci-white);
+  font-weight: 600;
+}
+
+.ci-comp-before {
+  color: var(--ci-text-muted);
+}
+
+.ci-comp-after {
+  font-weight: 700;
+}
+
+/* ==============================================
+   7. TESTIMONIAL
+   ============================================== */
+.ci-testimonial-section {
+  padding: 60px 0;
+}
+
+.ci-testimonial-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background: var(--ci-surface-2);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-lg);
+  overflow: hidden;
+}
+
+.ci-testimonial-left {
+  padding: 50px 45px;
+}
+
+.ci-quote-icon {
+  font-size: 2rem;
+  background: var(--ci-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.ci-testimonial-left blockquote {
+  font-size: 1.2rem;
+  color: var(--ci-white);
+  line-height: 1.8;
+  font-style: italic;
+  margin: 0 0 30px;
+  padding: 0;
+  border: none;
+}
+
+.ci-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ci-testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ci-border-light);
+}
+
+.ci-testimonial-author h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ci-white);
+  margin: 0 0 3px;
+}
+
+.ci-testimonial-author p {
+  font-size: 0.82rem;
+  color: var(--ci-text-muted);
+  margin: 0;
+}
+
+.ci-testimonial-stats {
+  background: var(--ci-surface);
+  border-left: 1px solid var(--ci-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.ci-testi-stat {
+  padding: 28px 30px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid var(--ci-border);
+}
+
+.ci-testi-stat:last-child {
+  border-bottom: none;
+}
+
+.ci-testi-stat h3 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.ci-testi-stat p {
+  font-size: 0.8rem;
+  color: var(--ci-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* ==============================================
+   8. FAQ
+   ============================================== */
+.ci-faq-section {
+  padding: 60px 0;
+}
+
+.ci-faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ci-faq-item {
+  background: var(--ci-surface-2);
+  border: 1px solid var(--ci-border);
+  border-radius: var(--ci-radius-sm);
+  overflow: hidden;
+  transition: var(--ci-transition);
+}
+
+.ci-faq-item.ci-faq-open {
+  border-color: #ce2453;
+  box-shadow: var(--ci-glow);
+}
+
+.ci-faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 26px;
+  background: transparent;
+  border: none;
+  color: var(--ci-white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--ci-transition);
+}
+
+.ci-faq-question:hover {
+  background: rgba(206, 36, 83, 0.04);
+}
+
+.ci-faq-question span {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.ci-faq-question svg {
+  font-size: 1.2rem;
+  color: #ce2453;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.ci-faq-open .ci-faq-question svg {
+  transform: rotate(180deg);
+}
+
+.ci-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 26px;
+}
+
+.ci-faq-open .ci-faq-answer {
+  max-height: 300px;
+  padding: 0 26px 24px;
+}
+
+.ci-faq-answer p {
+  font-size: 0.92rem;
+  color: var(--ci-text-muted);
+  line-height: 1.8;
+  border-top: 1px solid var(--ci-border);
+  padding-top: 18px;
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+@media (max-width: 1024px) {
+  .ci-section-title {
+    font-size: 2.4rem;
+  }
+
+  .ci-slide-title {
+    font-size: 2.2rem;
+  }
+
+  .ci-slide-content {
+    left: 40px;
+    bottom: 60px;
+  }
+
+  .ci-slide-dots {
+    left: 40px;
+  }
+
+  .ci-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ci-sidebar-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .ci-sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--ci-border);
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .ci-sidebar-tab {
+    white-space: nowrap;
+    padding: 12px 18px;
+    flex-shrink: 0;
+  }
+
+  .ci-tab-active {
+    border-left: none;
+    border-bottom: 3px solid #ce2453;
+  }
+
+  .ci-tab-arrow {
+    display: none;
+  }
+
+  .ci-sidebar-content {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-sidebar-image {
+    height: 300px;
+  }
+
+  .ci-showcase-card {
+    padding: 28px;
+  }
+
+  .ci-testimonial-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-testimonial-stats {
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px solid var(--ci-border);
+  }
+
+  .ci-testi-stat {
+    border-bottom: none;
+    border-right: 1px solid var(--ci-border);
+  }
+
+  .ci-testi-stat:last-child {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ci-slider-section {
+    height: 440px;
+  }
+
+  .ci-slide-content {
+    left: 24px;
+    right: 24px;
+    bottom: 50px;
+  }
+
+  .ci-slide-title {
+    font-size: 1.8rem;
+  }
+
+  .ci-slide-desc {
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+  }
+
+  .ci-slide-dots {
+    left: 24px;
+    bottom: 20px;
+  }
+
+  .ci-section-title {
+    font-size: 2rem;
+  }
+
+  .ci-pipeline-track {
+    justify-content: flex-start;
+  }
+
+  .ci-pipeline-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+
+  .ci-pipeline-line {
+    width: 40px;
+  }
+
+  .ci-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-sidebar-text {
+    padding: 28px 24px;
+  }
+
+  .ci-sidebar-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .ci-video-banner {
+    height: 350px;
+  }
+
+  .ci-video-content h2 {
+    font-size: 2rem;
+  }
+
+  .ci-comparison-header,
+  .ci-comparison-row {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .ci-comp-col {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .ci-testimonial-left {
+    padding: 30px;
+  }
+
+  .ci-testimonial-left blockquote {
+    font-size: 1.05rem;
+  }
+
+  .ci-testi-stat h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ci-container {
+    padding: 0 16px;
+  }
+
+  .ci-slider-section {
+    height: 400px;
+  }
+
+  .ci-slide-title {
+    font-size: 1.5rem;
+  }
+
+  .ci-section-title {
+    font-size: 1.7rem;
+  }
+
+  .ci-pipeline-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .ci-pipeline-node span {
+    font-size: 0.72rem;
+  }
+
+  .ci-pipeline-line {
+    width: 24px;
+  }
+
+  .ci-benefit-card {
+    padding: 28px 24px;
+  }
+
+  .ci-sidebar-nav {
+    padding: 6px;
+  }
+
+  .ci-sidebar-tab {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  .ci-sidebar-text {
+    padding: 24px 20px;
+  }
+
+  .ci-video-banner {
+    height: 300px;
+  }
+
+  .ci-video-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .ci-play-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  .ci-comparison-header,
+  .ci-comparison-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ci-comparison-header .ci-comp-col:first-child {
+    display: none;
+  }
+
+  .ci-comp-feature {
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .ci-comp-before,
+  .ci-comp-after {
+    padding-top: 4px;
+  }
+
+  .ci-testimonial-left {
+    padding: 24px;
+  }
+
+  .ci-testimonial-left blockquote {
+    font-size: 0.95rem;
+  }
+
+  .ci-testimonial-stats {
+    flex-direction: column;
+  }
+
+  .ci-testi-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--ci-border);
+    padding: 20px;
+  }
+
+  .ci-faq-question {
+    padding: 16px 20px;
+    font-size: 0.92rem;
+  }
+}

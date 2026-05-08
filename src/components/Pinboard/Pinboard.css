@@ -1,0 +1,376 @@
+/* PinboardComponent.css - Modular Styles for Pinboard/Process Section */
+
+.pinboard-section {
+  padding: 30px 0;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.pinboard-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header Styling */
+.pinboard-header {
+  text-align: center;
+}
+
+.pinboard-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(206, 36, 83, 0.1);
+  color: #ce2453;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 100px;
+  border: 1px solid rgba(206, 36, 83, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.pinboard-gradient-text {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff 0%, #aaa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 14px;
+}
+
+.pinboard-subhead {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Roadmap Track */
+.pinboard-visual-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  padding: 100px 0;
+}
+
+.pinboard-track {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pinboard-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.pinboard-line-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #ce2453, #e79e57);
+  box-shadow: 0 0 20px rgba(206, 36, 83, 0.4);
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pinboard-section.in-view .pinboard-line-glow {
+  height: 100%;
+}
+
+/* Steps Layout - Fixed for Side Alignment */
+.pinboard-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.pinboard-step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.pinboard-section.in-view .pinboard-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.right-step {
+  justify-content: flex-start;
+  padding-left: calc(50% + 100px);
+}
+
+.left-step {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  padding-right: calc(50% + 100px);
+}
+
+/* Nodes - Sticky to Center Line */
+.pinboard-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.pinboard-core {
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border: 3px solid #ce2453;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.pinboard-core-inner {
+  position: absolute;
+  inset: 2px;
+  background: #ce2453;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ce2453;
+}
+
+.pinboard-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(206, 36, 83, 0.2);
+  border-radius: 50%;
+  animation: pb-pulse 2s infinite ease-out;
+}
+
+@keyframes pb-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Engineering Connectors - Fixed Positioning */
+.pinboard-connector {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #ce2453, transparent);
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.left-step .pinboard-connector {
+  left: auto;
+  right: 50%;
+  background: linear-gradient(-90deg, #ce2453, transparent);
+}
+
+/* Card Design Refined */
+.pinboard-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 40px;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pinboard-card:hover {
+  transform: translateY(-20px);
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+}
+
+.pinboard-card-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(206, 36, 83, 0.05) 0%, transparent 70%);
+}
+
+.pinboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.pinboard-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+}
+
+.pinboard-icon-box {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ce2453;
+  transition: all 0.3s ease;
+}
+
+.pinboard-card:hover .pinboard-icon-box {
+  background: #ce2453;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+  transform: scale(1.1);
+}
+
+.pinboard-step-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.pinboard-desc {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Intro Section - Aligned to Track */
+.pinboard-intro-wrap {
+  margin-bottom: 0px;
+  text-align: center;
+  position: relative;
+  top: -70px;
+  z-index: 5;
+  /* Shift left so the arrow (on the right) aligns with the center line */
+  transform: translateX(-252px); 
+}
+
+.pinboard-intro-content {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 15px;
+}
+
+.pinboard-intro-content h3 {
+  font-size: 2.5rem;
+  font-family: 'Great', cursive;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.pinboard-arrow-icon {
+  font-size: 3rem;
+  color: #ce2453;
+  animation: pb-bounce 2s infinite ease;
+}
+
+@keyframes pb-bounce {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 10px);
+  }
+}
+
+/* Responsive corrections */
+@media (max-width: 992px) {
+  .pinboard-intro-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .pinboard-intro-wrap {
+    margin-bottom: 30px;
+  }
+
+  /* Roadmap Track Mobile Adjustments */
+  .pinboard-container {
+    padding: 0 15px;
+  }
+
+  .pinboard-center-line,
+  .pinboard-line-glow {
+    left: 30px;
+    transform: none;
+  }
+
+  .pinboard-node {
+    left: 30px;
+  }
+
+  .pinboard-step,
+  .left-step {
+    padding: 0 0 0 80px;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+
+  .pinboard-card {
+    max-width: 100%;
+    transform: none !important;
+  }
+
+  .pinboard-connector {
+    display: none;
+  }
+
+  .pinboard-items {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinboard-intro-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .pinboard-gradient-text {
+    font-size: 2.2rem;
+  }
+}

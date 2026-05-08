@@ -1,0 +1,315 @@
+/* Careershero.css — Scoped to ch- prefix */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.ch-hero {
+  min-height: 90vh;
+  background: #000;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  position: relative;
+  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
+}
+
+.ch-container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* CONTENT LAYER */
+.ch-content-layer {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+}
+
+.ch-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ce2453;
+  margin-bottom: 40px;
+}
+
+.ch-heading {
+  font-size: clamp(2.8rem, 4.5vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 1px;
+  color:#fff;
+  margin: 0 0 32px;
+}
+
+.ch-heading strong {
+  font-weight: 400;
+}
+
+.ch-description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: rgba(172, 170, 170, 0.7);
+  margin-bottom: 80px;
+  max-width: 1000px;
+}
+
+.ch-actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  left: -320px;
+  gap: 20px;
+}
+
+.ch-btn-gradient {
+  padding: 12px 26px;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.ch-btn-gradient:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.ch-avatar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ch-avatar-stack {
+  display: flex;
+  margin-left: 14px;
+  align-items: center;
+}
+
+.ch-avatar-stack img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  margin-left: -14px;
+  object-fit: cover;
+}
+
+.ch-avatar-stack img:first-child {
+  margin-left: 0;
+}
+
+.ch-avatar-count {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #222;
+  border: 3px solid #000;
+  margin-left: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ccc;
+}
+
+/* GRID VISUAL */
+.ch-grid-visual {
+  position: absolute;
+  bottom: -50px;
+  right: 30px;
+  width: 85%;
+  height: 80%;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  perspective: 2000px; /* Base for 3D effects */
+}
+
+.ch-grid-mesh {
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.ch-grid-mesh > div {
+  pointer-events: auto;
+}
+
+.ch-grid-square {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ch-grid-square:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+  z-index: 50;
+  transform: scale(1.15);
+}
+
+.ch-grid-empty {
+  visibility: hidden;
+}
+
+/* FOOTER NOTE */
+.ch-footer-note {
+  position: absolute;
+  bottom:-100px;
+  left: 70px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+
+/* POPUP */
+.chx-popup {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  width: 300px;
+  background: #080808; /* Deep solid black for maximum contrast */
+  border: 1px solid #222; /* Crisper, visible border */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  z-index: 10000;
+  text-align: left;
+  animation: chPopupIn 0.25s ease-out;
+  pointer-events: none;
+}
+
+.chx-popup-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.chx-popup-content {
+  padding: 16px;
+}
+
+.chx-popup-left { 
+  right: 0; 
+  transform-origin: bottom right;
+  transform: rotateY(-12deg);
+}
+
+.chx-popup-right { 
+  left: 0; 
+  transform-origin: bottom left;
+  transform: rotateY(12deg);
+}
+
+.chx-popup-center { 
+  left: 50%; 
+  transform: translateX(-50%) rotateY(0deg); 
+  transform-origin: bottom center; 
+}
+
+@keyframes chPopupIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(12px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    /* The specific rotation is now handled by the side-specific classes */
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* Adjust centering animation to fix the transform conflict */
+.chx-popup-center {
+  animation: chPopupInCenter 0.25s ease-out forwards;
+}
+
+@keyframes chPopupInCenter {
+  from { opacity: 0; transform: translate(-50%, 12px) scale(0.95) rotateY(0deg); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1) rotateY(0deg); }
+}
+
+.chx-popup-title {
+  font-size: 1.05rem;
+  font-weight: 800; /* Extra bold for clarity */
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.chx-popup-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #cecece; /* Sharper light gray */
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.chx-popup-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.chx-popup-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.chx-tag-enhancement { background: rgba(110, 86, 207, 0.2); color: #9c89ef; }
+.chx-tag-workflows { background: rgba(0, 128, 0, 0.2); color: #4ade80; }
+.chx-tag-performance { background: rgba(178, 94, 9, 0.2); color: #fbbf24; }
+.chx-tag-core { background: rgba(0, 106, 220, 0.2); color: #60a5fa; }
+.chx-tag-team { background: rgba(205, 43, 49, 0.2); color: #f87171; }
+.chx-tag-growth { background: rgba(192, 38, 211, 0.2); color: #f472b6; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .ch-grid-visual {
+    width: 100%;
+    opacity: 0.5;
+  }
+  .ch-content-layer {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+  .ch-heading {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ch-container {
+    padding: 0 30px;
+  }
+  .ch-heading {
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+  }
+  .ch-footer-note {
+    left: 30px;
+  }
+}

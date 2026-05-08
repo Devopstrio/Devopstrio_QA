@@ -1,0 +1,492 @@
+/* ============================================
+   HEXAGON GRID - PROFESSIONAL GREY THEME
+   Staggered Layout with Scroll Animation
+   ============================================ */
+
+.hex-section {
+  padding: 120px 8%;
+  background: #0a0a0a;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ===== LEFT CONTENT ===== */
+.hex-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hex-tag {
+  display: inline-block;
+  color: #9ca3af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(156, 163, 175, 0.3);
+}
+
+.hex-title {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.hex-title-gradient {
+  background: linear-gradient(135deg, #a0a0a0, #d0d0d0, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hex-desc {
+  color: #9ca3af;
+  line-height: 1.8;
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+.hex-btn {
+  padding: 16px 32px;
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hex-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+.hex-btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.hex-btn:hover .hex-btn-arrow {
+  transform: translateX(6px);
+}
+
+/* ===== HEXAGON WRAPPER ===== */
+.hex-wrapper {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 800px;
+  margin-left: 40px;
+}
+
+/* ===== GREY HEX OUTLINE BACKGROUND ===== */
+.hex-grid-background {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(60deg, rgba(180, 180, 180, 0.08) 1px, transparent 1px),
+    linear-gradient(-60deg, rgba(180, 180, 180, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== HEXAGON BASE STYLES ===== */
+.hex {
+  position: absolute;
+  width: 260px;
+  height: 300px;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Hexagon Border */
+.hex-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  border: 2px solid rgba(180, 180, 180, 0.3);
+  z-index: 5;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Hexagon Images */
+.hex img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* ===== STAGGERED POSITIONING (MANUAL ALIGNMENT) ===== */
+.hex1 {
+  top: 0;
+  left: 20px;
+  z-index: 5;
+}
+
+.hex2 {
+  top: 80px;
+  left: 320px;
+  z-index: 4;
+}
+
+.hex3 {
+  top: 280px;
+  left: 120px;
+  z-index: 3;
+}
+
+.hex4 {
+  top: 360px;
+  left: 420px;
+  z-index: 3;
+}
+
+.hex5 {
+  top: 560px;
+  left: 40px;
+  z-index: 2;
+}
+
+.hex6 {
+  top: 600px;
+  left: 340px;
+  z-index: 2;
+}
+
+/* ===== HOVER POP-UP EFFECT ===== */
+.hex:hover {
+  transform: scale(1.08);
+  z-index: 20 !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.hex:hover .hex-border {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hex:hover img {
+  transform: scale(1.15);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* ===== OVERLAY CONTENT ===== */
+.hex-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(30, 30, 30, 0.7) 60%,
+    transparent 100%
+  );
+  color: white;
+  transform: translateY(0);
+  transition: transform 0.4s ease, background 0.4s ease;
+  z-index: 6;
+}
+
+.hex-overlay h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.hex-overlay p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hex:hover .hex-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(60, 60, 60, 0.8) 70%,
+    transparent 100%
+  );
+}
+
+/* ===== SCROLL ANIMATION FOR BOTTOM 3 HEXAGONS ===== */
+.animate {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ADDITIONAL DECORATIVE ELEMENTS ===== */
+/* Floating Particles (Subtle) */
+.hex-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(180,180,180,0.03) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(180,180,180,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .hex-section {
+    padding: 100px 5%;
+  }
+  
+  .hex-title {
+    font-size: 44px;
+  }
+  
+  .hex-wrapper {
+    height: 750px;
+  }
+  
+  .hex {
+    width: 230px;
+    height: 270px;
+  }
+  
+  .hex2 {
+    left: 280px;
+  }
+  
+  .hex4 {
+    left: 380px;
+  }
+  
+  .hex6 {
+    left: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hex-container {
+    flex-direction: column;
+    gap: 100px;
+  }
+  
+  .hex-left {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hex-wrapper {
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .hex-grid-background {
+    display: none;
+  }
+  
+  .hex {
+    position: relative;
+    width: 100% !important;
+    height: 240px !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    clip-path: polygon(
+      50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%
+    );
+  }
+  
+  .animate {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .hex-overlay h3 {
+    font-size: 16px;
+  }
+  
+  .hex-overlay p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hex-section {
+    padding: 80px 4%;
+  }
+  
+  .hex-title {
+    font-size: 38px;
+  }
+  
+  .hex-desc {
+    font-size: 16px;
+  }
+  
+  .hex-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .hex {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hex-wrapper {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .hex {
+    height: 240px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hex-section {
+    padding: 60px 4%;
+  }
+  
+  .hex-title {
+    font-size: 32px;
+  }
+  
+  .hex-tag {
+    font-size: 12px;
+  }
+  
+  .hex-desc {
+    font-size: 15px;
+  }
+  
+  .hex-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hex {
+    height: 220px !important;
+  }
+  
+  .hex-overlay {
+    padding: 15px;
+  }
+  
+  .hex-overlay h3 {
+    font-size: 15px;
+  }
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .hex,
+  .hex img,
+  .hex-overlay,
+  .hex-btn,
+  .hex-btn-arrow,
+  .animate {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .animate {
+    opacity: 1;
+    transform: none;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}

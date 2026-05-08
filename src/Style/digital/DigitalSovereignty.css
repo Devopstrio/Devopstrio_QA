@@ -1,0 +1,362 @@
+/* Digital Sovereignty Styles */
+.dt-sovereignty-page {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.dt-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.dt-section-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero */
+.dt-hero-section {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.dt-hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), #000);
+}
+
+.dt-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.dt-hero-content h1 {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -2px;
+}
+
+.dt-hero-content p {
+    font-size: 20px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 45px;
+}
+
+/* Overview Card */
+.dt-overview-section {
+    padding: 120px 0;
+    background: #050505;
+}
+
+.dt-overview-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 40px;
+    padding: 80px;
+}
+
+.dt-overview-text {
+    margin-bottom: 60px;
+    max-width: 700px;
+}
+
+.dt-overview-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.dt-overview-text p {
+    font-size: 18px;
+    color: #777;
+    line-height: 1.8;
+}
+
+.dt-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.dt-matters-icon {
+    font-size: 28px;
+    color: var(--dt-accent, #ce2453);
+    margin-bottom: 20px;
+}
+
+.dt-matters-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.dt-matters-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Focus Areas (Tabs) */
+.dt-focus-areas {
+    padding: 120px 0;
+}
+
+.dt-tabs-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+}
+
+.dt-tabs-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dt-tab-btn {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    color: #888;
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dt-tab-btn:hover {
+    border-color: #333;
+    color: #fff;
+}
+
+.dt-tab-btn.active {
+    border-color: var(--dt-accent, #ce2453);
+    color: #fff;
+    background: rgba(206, 36, 83, 0.05);
+}
+
+.dt-tab-btn svg {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.dt-tab-btn.active svg {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--dt-accent, #ce2453);
+}
+
+.dt-tabs-content .dt-content-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 60px;
+    border-radius: 30px;
+    min-height: 350px;
+}
+
+.dt-content-card h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.dt-content-card p {
+    font-size: 18px;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.dt-points-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.dt-points-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #777;
+    font-size: 16px;
+}
+
+.dt-points-list li svg {
+    color: var(--dt-accent, #ce2453);
+}
+
+/* White Papers */
+.dt-white-papers {
+    padding: 120px 0;
+    background: #050505;
+}
+
+.dt-papers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.dt-paper-card {
+    display: flex;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 30px;
+    overflow: hidden;
+    max-width: 1000px;
+}
+
+.dt-paper-image {
+    width: 40%;
+}
+
+.dt-paper-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dt-paper-info {
+    padding: 50px;
+    width: 60%;
+}
+
+.dt-tag {
+    background: #ce2453;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.dt-paper-info h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.dt-paper-info p {
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.dt-link-btn {
+    background: transparent;
+    border: none;
+    color: var(--dt-accent, #ce2453);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Why Section */
+.dt-why-section {
+    padding: 120px 0;
+}
+
+.dt-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.dt-why-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.dt-why-card:hover {
+    border-color: #333;
+}
+
+.dt-why-card svg {
+    font-size: 32px;
+    color: var(--dt-accent, #ce2453);
+    margin-bottom: 25px;
+}
+
+.dt-why-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dt-why-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CTA */
+.dt-sovereignty-cta {
+    padding: 120px 0 200px;
+}
+
+.dt-cta-box {
+    background: linear-gradient(135deg, #111, #000);
+    border: 1px solid #1a1a1a;
+    padding: 80px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.dt-cta-box h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.dt-cta-box p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.dt-primary-btn {
+    padding: 18px 45px;
+    background: var(--dt-accent, #ce2453);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .dt-hero-content h1 { font-size: 50px; }
+    .dt-overview-grid { grid-template-columns: 1fr 1fr; }
+    .dt-tabs-layout { grid-template-columns: 1fr; }
+    .dt-tabs-nav { flex-direction: row; flex-wrap: wrap; }
+    .dt-paper-card { flex-direction: column; }
+    .dt-paper-image, .dt-paper-info { width: 100%; }
+    .dt-why-grid { grid-template-columns: 1fr 1fr; }
+}

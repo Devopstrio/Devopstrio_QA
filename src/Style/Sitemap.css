@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+.sitemap-flow-page {
+  background-color: #000000; /* Extremely dark for contrast matching image */
+  color: #a1a1aa;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 8rem 0;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background accents */
+.ambient-glow {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(206, 36, 83, 0.08) 0%, rgba(0,0,0,0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sitemap-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Left side text */
+.sitemap-intro {
+  padding-top: 4rem;
+}
+
+.intro-tag {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.sitemap-intro h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.sitemap-intro p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #d1d5db; /* softer gray */
+  font-weight: 300;
+}
+
+/* Right side Canvas for Tree */
+.tree-canvas {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0 3rem 0;
+  cursor: grab;
+}
+
+.tree-canvas:active {
+  cursor: grabbing;
+}
+
+/* Tree Structure styles */
+.flow-tree {
+  display: flex;
+  align-items: center; /* keep everything centered vertically */
+  padding-right: 50px;
+  padding-top: 2rem;
+}
+
+.flow-tree ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 60px; /* horizontal line length */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.flow-tree > ul {
+  padding-left: 0;
+}
+
+.flow-tree li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 12px 0; /* vertical gap between items is 2*12 = 24px */
+}
+
+/* NODE APPERANCE */
+.node-pill {
+  background-color: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 14px 28px;
+  color: #c9c9c9;
+  font-size: 0.95rem;
+  font-weight: 400;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.node-pill.active {
+  background-color: #ce2453; /* The lime-green equivalent in client's color */
+  border-color: #ce2453;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(206, 36, 83, 0.4);
+}
+
+.node-pill:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #666;
+  transform: translateY(-2px);
+}
+
+.node-pill.active:hover {
+  background-color: #e62c60;
+  border-color: #e62c60;
+  transform: translateY(-2px);
+}
+
+/* Green dot marker in the image (We use #ce2453) */
+.node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ce2453;
+  margin-right: 12px;
+  box-shadow: 0 0 8px #ce2453;
+}
+.node-pill.active .node-dot {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+}
+
+/* CONNECTING LINES */
+
+/* Line going RIGHT from a node */
+.flow-tree li > .node-pill::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -30px; /* half of ul padding */
+  width: 30px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%);
+}
+
+/* Hide right line if no children */
+.flow-tree li > .node-pill:only-child::after {
+  display: none;
+}
+
+/* Line going LEFT toward a node */
+.flow-tree li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  width: 30px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%);
+}
+
+.flow-tree > ul > li::before {
+  display: none;
+}
+
+/* VERTICAL SPINE */
+/* Note: Pill height is approx 14px*2 + line-height(16) + border 1*2 = ~46px.
+   padding is 12px. Center is 12 + 23 = 35px. */
+.flow-tree ul::before {
+  content: '';
+  position: absolute;
+  top: 35px; 
+  bottom: 35px;
+  left: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.flow-tree > ul::before {
+  display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .sitemap-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .sitemap-intro {
+    padding-top: 0;
+    margin-bottom: 2rem;
+  }
+  .sitemap-intro h1 {
+    font-size: 2.8rem;
+  }
+}

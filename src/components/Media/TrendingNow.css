@@ -1,0 +1,116 @@
+/* ------------------------------------------------------------------------- */
+/* Trending Now Section */
+/* ------------------------------------------------------------------------- */
+
+.trending-now-section {
+  width: 100%;
+  padding: 4rem 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.trending-now-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.trending-now-heading {
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.trending-now-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.trending-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #0d0d0d;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.trending-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(221, 92, 84, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.trending-card-content {
+  padding: 2.5rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 200px;
+  background-color: #1a1a1a;
+}
+
+.trending-card-category {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #dd5c54;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, #ce2453, #e79e57);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trending-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.trending-card:hover .trending-card-title {
+  color: #dd5c54;
+}
+
+.trending-card-img-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.trending-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trending-card:hover .trending-card-img {
+  transform: scale(1.05);
+}
+
+/* Responsiveness for Trending Now Grid */
+@media (min-width: 768px) {
+  .trending-now-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .trending-now-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

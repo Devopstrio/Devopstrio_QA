@@ -1,0 +1,143 @@
+/* AuthorityInfoBar Styling */
+.drio-navbar-infobar {
+  width: 100%;
+  background: #050505;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 0;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  max-height: 80px;
+  opacity: 1;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(0);
+}
+
+.drio-navbar-infobar.drio-hidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  border-bottom: none;
+}
+
+.drio-infobar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drio-infobar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.drio-partner-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drio-ms-logo {
+  display: grid;
+  grid-template-columns: repeat(2, 9px);
+  gap: 2px;
+}
+
+.drio-ms-logo span {
+  width: 9px;
+  height: 9px;
+}
+
+.ms-box-1 { background: #f25022; }
+.ms-box-2 { background: #7fbb00; }
+.ms-box-3 { background: #00a1f1; }
+.ms-box-4 { background: #ffb900; }
+
+.drio-partner-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.drio-partner-main {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+}
+
+.drio-partner-sub {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
+.drio-infobar-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.drio-rating-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drio-rating-label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.drio-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star-filled {
+  color: #00b67a;
+  font-size: 14px;
+}
+
+.drio-reviews-count {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.drio-reviews-count:hover {
+  color: #00b67a;
+}
+
+.drio-infobar-right {
+  display: flex;
+  align-items: center;
+}
+
+.drio-support-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Response Hiding for Mobile */
+@media (max-width: 1024px) {
+  .drio-navbar-infobar {
+    display: none;
+  }
+}

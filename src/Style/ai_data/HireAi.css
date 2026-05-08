@@ -1,0 +1,851 @@
+:root {
+    --dt-pure-black: #000000;
+    --dt-deep-bg: #050505;
+    --dt-card-bg: #0a0a0a;
+    --dt-accent: #ce2453;
+    --dt-accent-glow: rgba(206, 36, 83, 0.2);
+    --dt-text-main: #ffffff;
+    --dt-text-dim: #a0a0a0;
+    --dt-border: rgba(255, 255, 255, 0.08);
+    --dt-radius: 12px;
+    --dt-transition: all 0.3s ease;
+}
+
+.dt-hire-page {
+    background-color: var(--dt-pure-black);
+    color: var(--dt-text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.dt-hire-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* Typography & Reusable */
+.dt-hire-gradient-text {
+    background: linear-gradient(var(--dt-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dt-hire-section-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 1.2;
+}
+
+/* Hero Section */
+.dt-hire-hero {
+    padding: 60px 0px;
+    position: relative;
+}
+
+.dt-hire-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dt-hire-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(206, 36, 83, 0.1);
+    border: 1px solid var(--dt-accent);
+    border-radius: 100px;
+    color: var(--dt-accent);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dt-hire-hero h1 {
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+/* Stats Section */
+.dt-hire-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+}
+
+.dt-hire-stat-card {
+    background: var(--dt-card-bg);
+    border: 1px solid var(--dt-border);
+    padding: 60px;
+    border-radius: var(--dt-radius);
+    text-align: center;
+    transition: var(--dt-transition);
+}
+
+.dt-hire-stat-card:hover {
+    border-color: var(--dt-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dt-hire-stat-card h3 {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--dt-accent);
+    margin-bottom: 8px;
+}
+
+.dt-hire-stat-card p {
+    color: var(--dt-text-dim);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Talent Stats Section */
+.dt-hire-talent-stats {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+    border-top: 1px solid var(--dt-border);
+    border-bottom: 1px solid var(--dt-border);
+}
+
+.dt-hire-talent-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.dt-hire-talent-heading h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.dt-hire-talent-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dt-hire-talent-card {
+    position: relative;
+    background: var(--dt-card-bg);
+    border: 1px solid var(--dt-border);
+    border-radius: var(--dt-radius);
+    height: 250px;
+    overflow: hidden;
+    transition: var(--dt-transition);
+    cursor: pointer;
+}
+
+.dt-hire-talent-card:hover {
+    border-color: var(--dt-accent);
+    box-shadow: 0 10px 30px rgba(206, 36, 83, 0.1);
+}
+
+.dt-hire-card-front, .dt-hire-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-hire-card-front {
+    text-align: center;
+    z-index: 1;
+}
+
+.dt-hire-card-front h3 {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--dt-accent);
+    margin-bottom: 8px;
+}
+
+.dt-hire-card-front p {
+    color: var(--dt-text-dim);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.dt-hire-card-back {
+    background: var(--dt-card-bg);
+    z-index: 2;
+    transform: translateY(100%);
+    opacity: 0;
+    border-top: 4px solid var(--dt-accent);
+}
+
+.dt-hire-talent-card:hover .dt-hire-card-back {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dt-hire-talent-card:hover .dt-hire-card-front {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.dt-hire-card-back p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--dt-text-main);
+}
+
+/* Sought After Section */
+.dt-hire-sought-after {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+}
+
+.dt-hire-sought-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 64px;
+}
+
+.dt-hire-sought-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dt-hire-sought-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: rgba(206, 36, 83, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(206, 36, 83, 0.2);
+}
+
+.dt-hire-sought-icon-wrap::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--dt-accent);
+    border-radius: 50%;
+    top: -5px;
+    left: -5px;
+    opacity: 0.2;
+    filter: blur(8px);
+}
+
+.dt-hire-sought-icon {
+    font-size: 24px;
+    color: var(--dt-accent);
+}
+
+.dt-hire-sought-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dt-text-main);
+}
+
+.dt-hire-sought-item p {
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Roles Section */
+.dt-hire-roles-section {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+}
+
+.dt-hire-roles-header {
+    max-width: 900px;
+    margin-bottom: 64px;
+}
+
+.dt-hire-roles-subtext {
+    color: var(--dt-text-dim);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.dt-hire-roles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.dt-hire-roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dt-hire-role-btn {
+    background: transparent;
+    border: none;
+    color: var(--dt-text-dim);
+    padding: 24px 32px;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--dt-transition);
+    font-size: 18px;
+    font-weight: 600;
+    border-left: 3px solid transparent;
+}
+
+.dt-hire-role-btn:hover {
+    color: var(--dt-text-main);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.dt-hire-role-btn.active {
+    background: var(--dt-card-bg);
+    color: var(--dt-text-main);
+    border-left: 3px solid var(--dt-accent);
+}
+
+.dt-hire-role-content {
+    background: transparent;
+}
+
+.dt-hire-role-desc {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--dt-text-main);
+    margin-bottom: 40px;
+}
+
+.dt-hire-results-box {
+    background: var(--dt-card-bg);
+    padding: 48px;
+    border-radius: var(--dt-radius);
+    border: 1px solid var(--dt-border);
+}
+
+.dt-hire-results-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: var(--dt-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dt-hire-results-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.dt-hire-results-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: var(--dt-text-main);
+    line-height: 1.4;
+}
+
+.dt-hire-results-list li svg {
+    color: var(--dt-accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Profiles Section */
+.dt-hire-profiles {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+}
+
+.dt-hire-profiles-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 64px;
+}
+
+.dt-hire-profiles-subtext {
+    color: var(--dt-text-dim);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.dt-hire-profiles-slider {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    padding: 0 64px;
+}
+
+.dt-hire-slider-arrow {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--dt-border);
+    color: var(--dt-text-main);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--dt-transition);
+    position: absolute;
+    z-index: 10;
+}
+
+.dt-hire-slider-arrow:hover {
+    background: var(--dt-accent);
+    border-color: var(--dt-accent);
+}
+
+.dt-hire-slider-arrow.left { left: 0; }
+.dt-hire-slider-arrow.right { right: 0; }
+
+.dt-hire-profile-grid-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.dt-hire-profile-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-hire-profile-card {
+    flex: 0 0 calc((100% - 64px) / 3);
+    background: var(--dt-card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--dt-border);
+    padding: 60px;
+    transition: var(--dt-transition);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dt-hire-profile-card:hover {
+    border-color: var(--dt-accent);
+}
+
+.dt-hire-profile-top {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.dt-hire-profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--dt-border);
+}
+
+.dt-hire-profile-id h4 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.dt-hire-profile-id span {
+    color: var(--dt-accent);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dt-hire-profile-summary label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--dt-text-dim);
+    margin-bottom: 13px;
+    letter-spacing: 1.5px;
+}
+
+.dt-hire-profile-summary p {
+    color: var(--dt-text-main);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.dt-hire-profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.dt-hire-tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--dt-text-dim);
+    border: 1px solid var(--dt-border);
+}
+
+/* Profiles Banner */
+.dt-hire-profiles-banner {
+    background: var(--dt-card-bg);
+    border: 1px solid var(--dt-border);
+    border-radius: 16px;
+    padding: 48px 64px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+}
+
+.dt-hire-profiles-banner h3 {
+    font-size: 29px;
+    font-weight: 700;
+    max-width: 600px;
+}
+
+.dt-hire-btn-accent {
+    background: var(--dt-accent);
+    color: white;
+    padding: 19px 40px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--dt-transition);
+    white-space: nowrap;
+}
+
+.dt-hire-btn-accent:hover {
+    background: #e02d5d;
+    box-shadow: 0 0 30px var(--dt-accent-glow);
+}
+
+/* Technologies Section */
+.dt-hire-tech-section {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+    border-top: 1px solid var(--dt-border);
+}
+
+.dt-hire-tech-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 64px;
+}
+
+.dt-hire-tech-subtext {
+    color: var(--dt-text-dim);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 16px;
+}
+
+.dt-hire-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+
+.dt-hire-tech-cat h4 {
+    color: var(--dt-text-main);
+    margin-bottom: 32px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dt-hire-tech-cat ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dt-hire-tech-cat li {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    color: var(--dt-text-main);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.dt-hire-tech-cat li svg {
+    color: var(--dt-accent);
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    opacity: 0.7;
+}
+
+.dt-hire-tech-toggle {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+}
+
+.dt-hire-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--dt-text-main);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: var(--dt-transition);
+    padding: 13px 24px;
+    border-radius: 8px;
+}
+
+.dt-hire-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--dt-accent);
+}
+
+.dt-hire-toggle-btn svg {
+    font-size: 19px;
+}
+
+/* Steps Section */
+.dt-hire-steps-section {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+}
+
+.dt-hire-steps-header {
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+
+.dt-hire-steps-subtext {
+    color: var(--dt-text-dim);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 13px;
+}
+
+.dt-hire-steps-accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.dt-hire-step-item {
+    border-bottom: 1px solid var(--dt-border);
+    transition: var(--dt-transition);
+    position: relative;
+    padding: 0 24px;
+}
+
+.dt-hire-step-item.active {
+    background: #080808;
+}
+
+.dt-hire-step-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--dt-accent);
+}
+
+.dt-hire-step-head {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dt-hire-step-item:first-child {
+    border-top: 1px solid var(--dt-border);
+}
+
+.dt-hire-step-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.dt-hire-step-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dt-text-main);
+    width: 24px;
+}
+
+.dt-hire-step-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dt-text-main);
+}
+
+.dt-hire-step-duration {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--dt-text-dim);
+    padding: 5px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 13px;
+}
+
+.dt-hire-step-icon {
+    font-size: 20px;
+    color: var(--dt-text-dim);
+    opacity: 0.5;
+}
+
+.dt-hire-step-item.active .dt-hire-step-icon {
+    color: var(--dt-accent);
+    opacity: 1;
+}
+
+.dt-hire-step-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 88px;
+}
+
+.dt-hire-step-item.active .dt-hire-step-body {
+    max-height: 200px;
+    padding-bottom: 20px;
+}
+
+.dt-hire-step-body p {
+    color: var(--dt-text-dim);
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 850px;
+}
+
+/* Expert Section */
+.dt-hire-expert-card {
+    background: linear-gradient(135deg, var(--dt-card-bg) 0%, #151515 100%);
+    border-radius: 24px;
+    border: 1px solid var(--dt-border);
+    padding: 60px;
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    margin: 96px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dt-hire-expert-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(circle, var(--dt-accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.dt-hire-expert-info {
+    flex: 1;
+}
+
+.dt-hire-expert-img {
+    flex: 0 0 400px;
+}
+
+.dt-hire-expert-img img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+/* FAQ */
+.dt-hire-faq {
+    padding: 60px 0;
+}
+
+.dt-hire-faq-item {
+    border-bottom: 1px solid var(--dt-border);
+    padding: 24px 0;
+}
+
+.dt-hire-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.dt-hire-faq-answer {
+    padding-top: 16px;
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.dt-hire-contact {
+    padding: 60px 0;
+}
+
+.dt-hire-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dt-hire-stats-grid, .dt-hire-profile-grid, .dt-hire-tech-categories, .dt-hire-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dt-hire-expert-card {
+        flex-direction: column-reverse;
+        padding: 32px;
+    }
+    .dt-hire-expert-img {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dt-hire-stats-grid, .dt-hire-profile-grid, .dt-hire-tech-categories, .dt-hire-steps-grid, .dt-hire-roles-grid, .dt-hire-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .dt-hire-banner-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+}

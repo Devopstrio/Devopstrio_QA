@@ -1,0 +1,870 @@
+/* ===============================
+   NAVBAR BASE STYLES
+   =============================== */
+.drio-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  box-sizing: border-box;
+  /* Fix for responsive layout sizing */
+}
+
+.drio-navbar *,
+.drio-navbar *::before,
+.drio-navbar *::after {
+  box-sizing: inherit;
+}
+
+.drio-navbar-transparent {
+  background: rgba(0, 0, 0, 0.995);
+  /* fallback */
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .drio-navbar-transparent {
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+.drio-navbar-scrolled {
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.drio-navbar-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===============================
+   LOGO - INCREASED SIZES
+   =============================== */
+.drio-navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.drio-logo-image {
+  height: 48px;
+  width: auto;
+  filter: brightness(1.1);
+}
+
+.drio-logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  background: linear-gradient(90deg, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===============================
+   MENU ITEMS - INCREASED FONT SIZES
+   =============================== */
+.drio-navbar-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.drio-menu-item {
+  position: static;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.drio-desktop-menu-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+.drio-desktop-menu-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.drio-desktop-menu-button.drio-active {
+  color: #ce2453;
+  background: rgba(206, 36, 83, 0.1);
+}
+
+.drio-desktop-menu-button.drio-active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: linear-gradient(90deg, #ce2453, #e79e57);
+  border-radius: 2px;
+}
+
+/* ===============================
+   MEGA MENU - CINEMATIC BLACK THEME
+   =============================== */
+.drio-mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95);
+  animation: megaFloatingFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 999;
+  overflow: hidden;
+  padding: 15px 0 0;
+}
+
+@keyframes megaFloatingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drio-mega-menu-header {
+  max-width: 1320px;
+  margin: 0 auto 20px;
+  padding: 0 48px;
+}
+
+.drio-mega-menu-header h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ce2453;
+  font-weight: 800;
+}
+
+.drio-mega-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px 25px;
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  gap: 25px;
+}
+
+/* CATEGORY SIDEBAR */
+.drio-mega-categories-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 20px;
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.drio-mega-categories-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.drio-category-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  letter-spacing: 0.2px;
+}
+
+.drio-category-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.drio-category-btn.drio-active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.drio-category-content-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.drio-category-icon {
+  font-size: 16px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.drio-category-btn.drio-active .drio-category-icon {
+  color: #ce2453;
+  opacity: 1;
+}
+
+.drio-category-arrow {
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ce2453;
+}
+
+.drio-category-btn.drio-active .drio-category-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* LEFT FEATURE CARD (More Compact) */
+.drio-mega-card-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drio-nav-feature-card {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drio-card-image-wrapper {
+  position: relative;
+  width: 220px;
+  height: 240px;
+  margin: 0 auto 20px;
+  /* Organic blob shape */
+  background: linear-gradient(135deg, #ce2453 30%, #dd5c54 75%, #e79e57 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  overflow: hidden;
+  transition:
+    border-radius 0.6s ease,
+    box-shadow 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drio-nav-feature-card:hover .drio-card-image-wrapper {
+  /* Blob morphs on hover */
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  box-shadow: 0 15px 30px rgba(221, 92, 84, 0.3);
+}
+
+.drio-card-image {
+  width: 81%;
+  height: 100%;
+  position: relative;
+  top: 10%;
+  object-fit: cover;
+  z-index: 100;
+  /* Grayscale filter to match the reference style */
+  /* filter: grayscale(100%) contrast(1.1) brightness(0.9); */
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.drio-nav-feature-card:hover .drio-card-image {
+  transform: scale(1);
+  filter: grayscale(0%) contrast(1) brightness(1);
+  /* Reveal full color on hover */
+}
+
+.drio-card-badge {
+  position: absolute;
+  width: fit-content;
+  top: -1%;
+  right: 3%;
+  padding: 4px 12px;
+  background: #ce2453;
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  z-index: 2;
+}
+
+.drio-card-content h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ce2453;
+  margin: 15px 0 10px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.drio-card-content p {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+  max-width: 280px;
+}
+
+.drio-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  /* Reduced padding */
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  /* Smaller font */
+  font-weight: 700;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.drio-card-link:hover {
+  background: #ffffff;
+  color: #000;
+  border-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* RIGHT LINKS GRID (8 Items Visible Only - 4 per column) */
+.drio-mega-links-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.drio-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  color: #ce2453;
+  font-size: 20px;
+  pointer-events: auto;
+  /* Changed from none to allow clicking */
+  cursor: pointer;
+  /* Signal interactivity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  /* Static opacity, no blinking */
+  transition: all 0.3s ease;
+}
+
+.drio-scroll-indicator:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.drio-scroll-indicator.top {
+  top: 0;
+  background: linear-gradient(to bottom, #000000 50%, transparent);
+  width: 100%;
+  height: 35px;
+  padding-bottom: 8px;
+}
+
+.drio-scroll-indicator.bottom {
+  bottom: 0;
+  background: linear-gradient(to top, #000000 50%, transparent);
+  width: 100%;
+  height: 35px;
+  padding-top: 8px;
+}
+
+/* Animation removed as per request */
+
+.drio-mega-links-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  /* Adjusted to fit exactly 4 rows perfectly at 100px each */
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Hide scrollbar IE/Edge */
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
+}
+
+.drio-mega-links-panel::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar Chrome/Safari */
+}
+
+.drio-panel-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.drio-panel-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 20px;
+  /* Slightly adjusted padding for exact row height */
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100px;
+  /* Increased height for larger content */
+  box-sizing: border-box;
+}
+
+.drio-panel-link:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.drio-panel-link:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.drio-link-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 30px;
+}
+
+.drio-link-name {
+  color: #ffffff;
+  font-size: 18px;
+  /* Increased from 16px */
+  font-weight: 700;
+  margin-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.drio-panel-link:hover .drio-link-name {
+  color: #ce2453;
+}
+
+.drio-link-description {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  /* Increased from 12px */
+  line-height: 1.45;
+}
+
+.drio-link-arrow {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+}
+
+.drio-panel-link:hover .drio-link-arrow {
+  color: #ce2453;
+  transform: translateX(6px);
+}
+
+/* BOTTOM STRIP */
+.drio-mega-menu-bottom {
+  width: 100%;
+  padding: 12px 0;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drio-mega-menu-bottom-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drio-mega-social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.drio-social-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.drio-social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.drio-nav-social-item {
+  width: 34px;
+  /* Reduced from 40px */
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  /* Reduced from 20px */
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.drio-nav-social-item:hover {
+  background: #ce2453;
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+}
+
+.drio-mega-quick-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.drio-mega-quick-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.drio-mega-quick-links a i {
+  font-size: 18px;
+  color: #ce2453;
+}
+
+.drio-mega-quick-links a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   NAVBAR ACTIONS
+   =============================== */
+.drio-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.drio-contact-btn {
+  padding: 10px 26px;
+  border: 1.5px solid #ce2453;
+  background: rgba(206, 36, 83, 0.08);
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.drio-contact-btn:hover {
+  background: #ce2453;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(206, 36, 83, 0.4);
+  transform: translateY(-2px);
+}
+
+.drio-navbar-scrolled .drio-desktop-menu-button.drio-active,
+.drio-navbar-transparent .drio-desktop-menu-button.drio-active {
+  color: #ce2453;
+}
+
+/* ===============================
+   MOBILE MENU
+   =============================== */
+.drio-mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.drio-mobile-menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.drio-mobile-menu-toggle.drio-active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.drio-mobile-menu-toggle.drio-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.drio-mobile-menu-toggle.drio-active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.drio-mobile-menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: all 0.3s ease;
+}
+
+.drio-mobile-menu-button.drio-active {
+  color: #ce2453;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+/* 4K Ultra Wide */
+@media (min-width: 2560px) {
+  .drio-navbar-container {
+    max-width: 2100px;
+    padding: 0 80px;
+    height: 110px;
+  }
+
+  .drio-logo-image {
+    height: 64px;
+  }
+
+  .drio-logo-text {
+    font-size: 28px;
+  }
+
+  .drio-navbar-menu {
+    gap: 12px;
+  }
+
+  .drio-desktop-menu-button {
+    font-size: 20px;
+    padding: 14px 24px;
+  }
+
+  .drio-mega-menu {
+    top: 110px;
+  }
+
+  .drio-mega-container {
+    padding: 40px 60px;
+    min-height: 380px;
+  }
+
+  .drio-link-name {
+    font-size: 17px;
+  }
+
+  .drio-link-description {
+    font-size: 13px;
+  }
+
+  .drio-card-content h4 {
+    font-size: 20px;
+  }
+}
+
+/* Tablets / Mobile Adjustment */
+@media (max-width: 1024px) {
+  .drio-mega-menu {
+    position: static;
+    background: #000;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .drio-mega-container {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .drio-mobile-menu-toggle {
+    display: flex;
+  }
+
+  .drio-navbar-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(0, 0, 0, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 60px 0;
+    gap: 0;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .drio-navbar-menu.drio-mobile-open {
+    left: 0;
+  }
+
+  .drio-menu-item {
+    width: calc(100% - 48px);
+    margin: 0 24px;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .drio-menu-item.drio-has-mega .drio-mobile-menu-button::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+  }
+
+  .drio-menu-item.drio-has-mega .drio-mobile-menu-button.drio-active::after {
+    transform: rotate(-135deg);
+    border-color: #ce2453;
+  }
+
+  .drio-navbar-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .drio-navbar-container {
+    padding: 0 20px;
+    height: 80px;
+  }
+
+  .drio-navbar-menu {
+    top: 80px;
+    height: calc(100vh - 80px);
+  }
+
+  .drio-mega-menu {
+    top: 80px;
+  }
+
+  .drio-logo-text {
+    font-size: 20px;
+  }
+
+  .drio-logo-image {
+    height: 38px;
+  }
+
+  .drio-mega-social {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drio-navbar-container {
+    padding: 0 14px;
+    height: 70px;
+  }
+
+  .drio-navbar-menu {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .drio-logo-text {
+    font-size: 18px;
+  }
+
+  .drio-logo-image {
+    height: 32px;
+  }
+}
+
+/* Custom scrollbar - removed as we are hiding scrollbars */

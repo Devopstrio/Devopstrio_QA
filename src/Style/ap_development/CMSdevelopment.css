@@ -1,0 +1,633 @@
+:root {
+    --dt-pure-black: #000000;
+    --dt-dark-bg: #050505;
+    --dt-accent: #ce2453;
+    --dt-border: rgba(255, 255, 255, 0.08);
+    --dt-text-dim: #999999;
+}
+
+.dt-cms-page-wrapper {
+    background-color: var(--dt-pure-black);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.dt-cms-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.dt-cms-accent-text {
+    color: var(--dt-accent);
+}
+
+.dt-cms-section-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.dt-cms-section-desc {
+    font-size: 18px;
+    color: var(--dt-text-dim);
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* Trust Bar */
+.dt-cms-trust-bar {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--dt-border);
+    background: #030303;
+}
+
+.dt-cms-trust-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dt-cms-trust-left p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #eee;
+    max-width: 600px;
+}
+
+.dt-clutch-badge {
+    font-weight: 700;
+    color: var(--dt-accent);
+    letter-spacing: 1px;
+}
+
+/* Benefits Section */
+.dt-cms-benefits {
+    padding: 60px 0;
+}
+
+.dt-cms-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.dt-cms-benefit-card {
+    background: #0a0a0a;
+    border: 1px solid var(--dt-border);
+    padding: 40px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.dt-cms-benefit-card:hover {
+    border-color: var(--dt-accent);
+    transform: translateY(-5px);
+}
+
+.dt-cms-benefit-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.dt-cms-benefit-card p {
+    font-size: 14px;
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+}
+
+/* Solutions Section - High Fidelity Expertise */
+.dt-cms-solutions-section {
+    padding-bottom: 40px;
+}
+
+.dt-cms-solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.dt-cms-solution-card {
+    background: #0a0a0a;
+    border: 1px solid var(--dt-border);
+    padding: 50px 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.dt-cms-solution-card:hover {
+    border-color: var(--dt-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(206, 36, 83, 0.1);
+}
+
+.dt-cms-solution-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.dt-cms-solution-card p {
+    font-size: 15px;
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.dt-solution-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.dt-solution-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #eee;
+    font-size: 14px;
+}
+
+.dt-solution-features li svg {
+    color: var(--dt-accent);
+}
+
+.dt-solution-cta {
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--dt-accent);
+    color: var(--dt-accent);
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dt-solution-cta:hover {
+    background: var(--dt-accent);
+    color: #fff;
+}
+
+/* Value Section - High Fidelity Typography */
+.dt-cms-value-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--dt-border);
+    margin-top: 60px;
+}
+
+.dt-cms-value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.dt-cms-value-icon {
+    font-size: 32px;
+    color: var(--dt-accent);
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.dt-cms-value-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.dt-cms-value-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dt-text-dim);
+}
+
+@media (max-width: 1100px) {
+    .dt-cms-value-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .dt-cms-value-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* Modal Styling (Compact Dark) */
+.dt-pwa-modal-overlay {
+    padding: 60px 0;
+    background: #030303;
+}
+
+/* Why Partner */
+.dt-cms-partner {
+    padding: 60px 0;
+    background: #030303;
+}
+
+.dt-cms-partner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+    margin-top: 60px;
+}
+
+.dt-cms-partner-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.dt-cms-partner-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--dt-accent);
+}
+
+.dt-cms-partner-item p {
+    font-size: 15px;
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+}
+
+.dt-cms-partner-banner {
+    margin-top: 80px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+    padding: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    border: 1px solid var(--dt-border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.dt-cms-partner-banner p {
+    font-size: 22px;
+    font-weight: 700;
+    max-width: 600px;
+}
+
+.dt-cms-banner-cta {
+    padding: 18px 48px;
+    background: var(--dt-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 20px rgba(206, 36, 83, 0.2);
+}
+
+.dt-cms-banner-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(206, 36, 83, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Steps Section - Interactive Accordion */
+.dt-cms-steps {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--dt-border);
+}
+
+.dt-cms-steps-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.dt-cms-visual img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    border: 1px solid var(--dt-border);
+}
+
+.dt-cms-accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.dt-cms-accordion-item {
+    border-bottom: 1px solid var(--dt-border);
+    padding: 30px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.dt-cms-accordion-item.active {
+    border-color: transparent;
+}
+
+.dt-cms-accordion-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    background: var(--dt-accent);
+    transform: scaleY(0);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dt-cms-accordion-item.active::before {
+    transform: scaleY(1);
+}
+
+.dt-accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.dt-step-idx {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dt-text-dim);
+    min-width: 40px;
+}
+
+.dt-cms-accordion-item.active .dt-step-idx {
+    color: #fff;
+}
+
+.dt-accordion-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    flex-grow: 1;
+}
+
+.dt-accordion-icon {
+    font-size: 20px;
+    color: var(--dt-text-dim);
+}
+
+.dt-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    padding-left: 70px;
+}
+
+.dt-cms-accordion-item.active .dt-accordion-content {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.dt-accordion-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dt-text-dim);
+}
+
+/* Testimonials Section - High Fidelity Cinematic Slider */
+.dt-cms-testimonials {
+    padding: 60px 0;
+    background: var(--dt-pure-black);
+}
+
+.dt-testimonial-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.dt-testimonial-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(206, 36, 83, 0.1);
+    border: 1px solid rgba(206, 36, 83, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dt-accent);
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.dt-testimonial-intro {
+    font-size: 18px;
+    color: var(--dt-text-dim);
+    max-width: 700px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+}
+
+.dt-testimonial-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.dt-testimonial-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.dt-testimonial-item.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.dt-testimonial-visual {
+    position: relative;
+    height: 480px;
+    width: 100%;
+}
+
+.dt-testimonial-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    border: 1px solid var(--dt-border);
+}
+
+.dt-testimonial-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.dt-star-active {
+    color: #ffb800;
+    font-size: 18px;
+}
+
+.dt-testimonial-quote {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.dt-testimonial-author h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.dt-testimonial-author span {
+    font-size: 14px;
+    color: var(--dt-text-dim);
+}
+
+.dt-testimonial-footer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: 1px solid var(--dt-border);
+}
+
+.dt-testimonial-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.dt-nav-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--dt-border);
+    background: rgba(255,255,255,0.03);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dt-nav-arrow:hover {
+    border-color: var(--dt-accent);
+    color: var(--dt-accent);
+    background: rgba(206, 36, 83, 0.05);
+}
+
+.dt-testimonial-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dt-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dt-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dt-dot.active {
+    background: var(--dt-accent);
+    width: 24px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1000px) {
+    .dt-testimonial-slider { height: auto; }
+    .dt-testimonial-item { grid-template-columns: 1fr; gap: 40px; position: relative; }
+    .dt-testimonial-visual { height: 400px; }
+    .dt-testimonial-content { text-align: center; }
+    .dt-testimonial-rating { justify-content: center; }
+    .dt-testimonial-footer { flex-direction: column; gap: 30px; }
+}
+
+/* FAQ Section */
+.dt-cms-faq {
+    padding-bottom: 40px;
+}
+
+.dt-cms-faq-list {
+    margin-top: 50px;
+}
+
+.dt-cms-faq-item {
+    border-bottom: 1px solid var(--dt-border);
+    padding: 30px 0;
+    cursor: pointer;
+}
+
+.dt-faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dt-faq-q h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dt-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.dt-cms-faq-item.active .dt-faq-a {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.dt-faq-a p {
+    color: var(--dt-text-dim);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+@media (max-width: 1100px) {
+    .dt-cms-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .dt-cms-packages-grid { grid-template-columns: 1fr; }
+    .dt-cms-partner-grid { grid-template-columns: 1fr 1fr; }
+    .dt-cms-steps-layout { grid-template-columns: 1fr; }
+    .dt-cms-partner-banner { flex-direction: column; gap: 30px; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    .dt-cms-benefits-grid { grid-template-columns: 1fr; }
+    .dt-cms-partner-grid { grid-template-columns: 1fr; }
+}

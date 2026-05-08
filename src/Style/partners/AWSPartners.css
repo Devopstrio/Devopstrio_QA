@@ -1,0 +1,1844 @@
+/* ================================================================
+   AWSPartners.css  —  11-Section AWS Partnership Page
+   Black bg · (#522c72→#e79e57) + AWS orange (#FF9900)
+   No scan animations · all aws- prefixed · fully responsive
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --aws-grad: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
+  --aws-orange: #FF9900;
+  --aws-bg: #000;
+  --aws-s1: #060606;
+  --aws-s2: #0a0a0a;
+  --aws-border: #161616;
+  --aws-bord2: #222;
+  --aws-text: #9a9a9a;
+  --aws-muted: #484848;
+  --aws-white: #fff;
+  --aws-accent: #ce2453;
+  --aws-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --aws-trans: 0.32s var(--aws-ease);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+.aws-page {
+  background: var(--aws-bg);
+  color: var(--aws-text);
+  line-height: 1.65;
+  position: relative;
+}
+
+.aws-container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-grad {
+  background: var(--aws-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.aws-eyebrow {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.aws-sec-head {
+  text-align: center;
+  margin-bottom: 62px
+}
+
+.aws-sec-h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.12;
+  letter-spacing: -.5px;
+  margin-bottom: 14px;
+}
+
+.aws-sec-sub {
+  font-size: .97rem;
+  color: var(--aws-text);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* ── Buttons ── */
+.aws-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: var(--aws-grad);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: .93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.aws-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+}
+
+.aws-btn-primary:hover::after {
+  transform: translateX(100%)
+}
+
+.aws-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(206, 36, 83, .38)
+}
+
+.aws-btn-lg {
+  padding: 17px 42px;
+  font-size: 1.02rem
+}
+
+.aws-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: rgba(255, 255, 255, .04);
+  color: #fff;
+  border: 1.5px solid var(--aws-bord2);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: .93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  backdrop-filter: blur(4px);
+}
+
+.aws-btn-ghost:hover {
+  border-color: var(--aws-accent);
+  background: rgba(206, 36, 83, .08);
+  transform: translateY(-3px)
+}
+
+/* ── Orb background ── */
+.aws-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden
+}
+
+.aws-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  animation: aws-drift ease-in-out infinite alternate
+}
+
+.aws-orb-1 {
+  width: 700px;
+  height: 700px;
+  background: rgba(255, 153, 0, .06);
+  top: -200px;
+  right: -100px;
+  animation-duration: 22s
+}
+
+.aws-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(82, 44, 114, .09);
+  bottom: 0;
+  left: -80px;
+  animation-duration: 19s;
+  animation-delay: -8s
+}
+
+.aws-orb-3 {
+  width: 360px;
+  height: 360px;
+  background: rgba(206, 36, 83, .06);
+  top: 45%;
+  right: 20%;
+  animation-duration: 27s;
+  animation-delay: -12s
+}
+
+@keyframes aws-drift {
+  from {
+    transform: translate(0, 0) scale(1)
+  }
+
+  to {
+    transform: translate(50px, -55px) scale(1.1)
+  }
+}
+
+.aws-grid-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+}
+
+/* ================================================================
+   1. HERO SPLIT
+   ================================================================ */
+.aws-hero {
+  padding: 130px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.aws-partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: rgba(255, 153, 0, .06);
+  border: 1px solid rgba(255, 153, 0, .22);
+  border-radius: 50px;
+  margin-bottom: 26px;
+}
+
+.aws-badge-logo {
+  background: #FF9900;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .68rem;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: .5px;
+}
+
+.aws-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px
+}
+
+.aws-badge-text strong {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--aws-white)
+}
+
+.aws-badge-text span {
+  font-size: .62rem;
+  color: var(--aws-muted)
+}
+
+.aws-badge-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 153, 0, .12);
+  color: #FF9900;
+  font-size: .8rem;
+}
+
+.aws-hero-h1 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 900;
+  color: var(--aws-white);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.aws-hero-sub {
+  font-size: 1rem;
+  color: var(--aws-text);
+  line-height: 1.88;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.aws-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap
+}
+
+/* Video card */
+.aws-video-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  border: 1px solid var(--aws-border);
+}
+
+.aws-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s ease
+}
+
+.aws-video-card:hover .aws-video-thumb {
+  transform: scale(1.05)
+}
+
+.aws-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, rgba(82, 44, 114, .18) 0%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .7) 100%);
+}
+
+.aws-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  border: 2px solid rgba(255, 255, 255, .3);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--aws-trans);
+}
+
+.aws-play-btn:hover {
+  background: var(--aws-orange);
+  border-color: var(--aws-orange);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 36px rgba(255, 153, 0, .5)
+}
+
+.aws-video-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, .7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 50px;
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--aws-white);
+}
+
+.aws-live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: aws-blink 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes aws-blink {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, .7)
+  }
+
+  60% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0)
+  }
+}
+
+/* ================================================================
+   2. PARTNERSHIP BANNER
+   ================================================================ */
+.aws-partnership-banner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 0;
+}
+
+.aws-banner-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+
+.aws-banner-grad-line {
+  width: 100%;
+  height: 2px;
+  background: var(--aws-grad);
+  opacity: .35;
+}
+
+.aws-banner-text {
+  text-align: center;
+  padding: 40px 12px;
+}
+
+.aws-banner-h2 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--aws-white);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.aws-banner-sub {
+  font-size: 1rem;
+  color: var(--aws-text);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+.aws-banner-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 70px;
+  text-align: left;
+  align-items: center;
+}
+
+.aws-banner-feat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aws-banner-feat-h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.15;
+}
+
+.aws-banner-feat-p {
+  font-size: 1.05rem;
+  color: var(--aws-text);
+  line-height: 1.75;
+}
+
+.aws-banner-feat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aws-banner-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .97rem;
+  color: var(--aws-white);
+  font-weight: 500;
+}
+
+.aws-feat-icon {
+  color: var(--aws-orange);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.aws-banner-feat-image {
+  position: relative;
+  z-index: 1;
+}
+
+.aws-feat-img-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--aws-border);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, .7);
+  background: var(--aws-bg);
+}
+
+.aws-feat-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .8s var(--aws-ease);
+}
+
+.aws-feat-img-card:hover img {
+  transform: scale(1.05);
+}
+
+.aws-feat-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 153, 0, .1), transparent 70%);
+  pointer-events: none;
+}
+
+.aws-feat-img-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 153, 0, .15), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  opacity: .5;
+}
+
+@media (max-width: 991px) {
+  .aws-banner-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .aws-banner-feat-h3 {
+    text-align: center;
+  }
+
+  .aws-banner-feat-p {
+    text-align: center;
+  }
+
+  .aws-banner-feat-list {
+    align-items: center;
+  }
+}
+
+/* ================================================================
+   3. SIDEBAR TABS — PRACTICE AREAS
+   ================================================================ */
+.aws-tab-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-tab-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 52px;
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.aws-tab-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aws-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, .02);
+  border: 1px solid var(--aws-border);
+  border-radius: 14px;
+  color: var(--aws-text);
+  font-family: 'Inter', sans-serif;
+  font-size: .93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.aws-tab-btn:hover {
+  background: rgba(255, 153, 0, .05);
+  border-color: rgba(255, 153, 0, .2);
+  color: var(--aws-white);
+  transform: translateX(6px);
+}
+
+.aws-tab-btn.on {
+  background: rgba(255, 153, 0, .09);
+  border-color: rgba(255, 153, 0, .3);
+  color: var(--aws-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+.aws-tab-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.aws-tab-arrow {
+  margin-left: auto;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--aws-trans);
+}
+
+.aws-tab-btn:hover .aws-tab-arrow,
+.aws-tab-btn.on .aws-tab-arrow {
+  opacity: .5;
+  transform: translateX(0);
+}
+
+.aws-tab-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--tc, var(--aws-orange));
+  transform: scaleY(0);
+  transition: transform .4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aws-tab-btn.on .aws-tab-bar {
+  transform: scaleY(1);
+}
+
+/* Content Panel */
+.aws-tab-panel {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  border: 1px solid var(--aws-border);
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.aws-tab-img-wrap {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.aws-tab-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.aws-tab-panel:hover .aws-tab-img-wrap img {
+  transform: scale(1.08);
+}
+
+.aws-tab-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, .9));
+}
+
+.aws-tab-img-label {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(14px);
+  border: 1px solid currentColor;
+  border-radius: 50px;
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aws-tab-body {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aws-tab-h3 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.aws-tab-p {
+  font-size: 1.02rem;
+  color: var(--aws-text);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.aws-tab-points {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-grow: 1;
+}
+
+.aws-tab-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .95rem;
+  color: var(--aws-white);
+  font-weight: 500;
+}
+
+.aws-tab-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .aws-tab-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .aws-tab-panel {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .aws-tab-img-wrap {
+    height: 300px;
+  }
+}
+
+/* ================================================================
+   4. INSIGHTS — 3 Cards
+   ================================================================ */
+.aws-insights-section {
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.aws-insight-card {
+  background: var(--aws-s1);
+  border: 1px solid var(--aws-border);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  transition: all .4s var(--aws-ease);
+  cursor: default;
+}
+
+.aws-insight-card:hover {
+  border-color: color-mix(in srgb, var(--ic, var(--aws-orange)) 28%, transparent);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, .5);
+}
+
+.aws-insight-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden
+}
+
+.aws-insight-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s ease
+}
+
+.aws-insight-card:hover .aws-insight-img-wrap img {
+  transform: scale(1.07)
+}
+
+.aws-insight-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .7) 100%);
+  pointer-events: none;
+}
+
+.aws-insight-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.aws-insight-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ic, var(--aws-orange));
+}
+
+.aws-tag-icon {
+  font-size: .9rem
+}
+
+.aws-insight-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.3
+}
+
+.aws-insight-desc {
+  font-size: .84rem;
+  color: var(--aws-muted);
+  line-height: 1.7
+}
+
+.aws-insight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  margin-top: 4px;
+}
+
+.aws-insight-link:hover {
+  transform: translateX(4px)
+}
+
+.aws-insight-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--ic, var(--aws-orange)), rgba(255, 153, 0, .3));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-insight-card:hover .aws-insight-bar {
+  transform: scaleX(1)
+}
+
+/* ================================================================
+   5. WHAT'S NEW — 4 cards
+   ================================================================ */
+.aws-whatsnew-section {
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-whatsnew-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.aws-new-card {
+  background: var(--aws-s2);
+  border: 1px solid var(--aws-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--aws-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aws-new-card:hover {
+  border-color: color-mix(in srgb, var(--nc, var(--aws-orange)) 28%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, .5);
+  transform: translateY(-5px);
+}
+
+.aws-new-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.aws-new-date {
+  font-size: .68rem;
+  color: var(--aws-muted)
+}
+
+.aws-new-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--aws-white);
+  line-height: 1.4;
+  flex: 1
+}
+
+.aws-new-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  margin-top: 4px;
+}
+
+.aws-new-link:hover {
+  transform: translateX(4px)
+}
+
+.aws-new-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--nc, var(--aws-orange)), rgba(255, 153, 0, .25));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-new-card:hover .aws-new-bar {
+  transform: scaleX(1)
+}
+
+/* ================================================================
+   6. STATS STRIP
+   ================================================================ */
+.aws-stats-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.aws-stat-card {
+  padding: 40px 28px;
+  border-right: 1px solid var(--aws-border);
+  text-align: center;
+  position: relative;
+  transition: var(--aws-trans);
+}
+
+.aws-stat-card:last-child {
+  border-right: none
+}
+
+.aws-stat-card:hover {
+  background: rgba(255, 153, 0, .025)
+}
+
+.aws-stat-icon {
+  font-size: 1.5rem;
+  color: var(--aws-orange);
+  margin-bottom: 14px;
+  display: inline-block
+}
+
+.aws-stat-val {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 900;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--aws-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.aws-stat-lbl {
+  font-size: .78rem;
+  color: var(--aws-muted);
+  line-height: 1.45
+}
+
+.aws-stat-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--aws-orange), rgba(255, 153, 0, .25));
+  border-radius: 2px;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-stat-card:hover .aws-stat-underline {
+  transform: translateX(-50%) scaleX(1)
+}
+
+/* ================================================================
+   7. COMPETENCIES — Dark Grid
+   ================================================================ */
+.aws-comp-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.aws-comp-card {
+  background: var(--aws-s2);
+  border: 1px solid var(--aws-border);
+  border-radius: 18px;
+  padding: 24px 16px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--aws-ease);
+  cursor: default;
+}
+
+.aws-comp-card:hover {
+  border-color: color-mix(in srgb, var(--cc, var(--aws-orange)) 30%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, .5);
+}
+
+.aws-comp-icon-wrap {
+  font-size: 1.7rem;
+  color: var(--cc, var(--aws-orange));
+  margin-bottom: 12px;
+  display: inline-block;
+  transition: var(--aws-trans);
+}
+
+.aws-comp-card:hover .aws-comp-icon-wrap {
+  transform: scale(1.18)
+}
+
+.aws-comp-label {
+  font-size: .8rem;
+  font-weight: 800;
+  color: var(--aws-white);
+  margin-bottom: 6px;
+  line-height: 1.2
+}
+
+.aws-comp-tier {
+  display: inline-block;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cc, var(--aws-orange));
+  background: color-mix(in srgb, var(--cc, var(--aws-orange)) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cc, var(--aws-orange)) 25%, transparent);
+  padding: 2px 8px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.aws-comp-stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  color: var(--cc, var(--aws-orange));
+  font-size: .6rem;
+}
+
+.aws-comp-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cc, var(--aws-orange)) 8%, transparent);
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.aws-comp-card:hover .aws-comp-glow {
+  opacity: 1
+}
+
+.aws-comp-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--cc, var(--aws-orange)), rgba(255, 153, 0, .25));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-comp-card:hover .aws-comp-bar {
+  transform: scaleX(1)
+}
+
+/* ================================================================
+   8. PROGRAMS — 4 col
+   ================================================================ */
+.aws-programs-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.aws-program-card {
+  background: var(--aws-s1);
+  border: 1px solid var(--aws-border);
+  border-radius: 22px;
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--aws-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aws-program-card:hover {
+  border-color: color-mix(in srgb, var(--pc, var(--aws-orange)) 28%, transparent);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, .5);
+  transform: translateY(-6px);
+}
+
+.aws-program-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: var(--aws-trans);
+}
+
+.aws-program-card:hover .aws-program-icon {
+  transform: scale(1.1)
+}
+
+.aws-program-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.2
+}
+
+.aws-program-desc {
+  font-size: .84rem;
+  color: var(--aws-muted);
+  line-height: 1.7;
+  flex: 1
+}
+
+.aws-program-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  width: fit-content;
+}
+
+.aws-program-btn:hover {
+  transform: translateX(4px)
+}
+
+.aws-program-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--pc, var(--aws-orange)), rgba(255, 153, 0, .25));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-program-card:hover .aws-program-bar {
+  transform: scaleX(1)
+}
+
+/* ================================================================
+   9. SOLUTIONS MEGA GRID — 3×3
+   ================================================================ */
+.aws-solutions-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.aws-solution-card {
+  background: var(--aws-s2);
+  border: 1px solid var(--aws-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--aws-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aws-solution-card:hover {
+  border-color: color-mix(in srgb, var(--sc, var(--aws-orange)) 28%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, .5);
+  transform: translateY(-5px);
+}
+
+.aws-solution-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--aws-trans);
+  flex-shrink: 0;
+}
+
+.aws-solution-card:hover .aws-solution-icon {
+  transform: scale(1.1)
+}
+
+.aws-solution-title {
+  font-size: .97rem;
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.25
+}
+
+.aws-solution-desc {
+  font-size: .82rem;
+  color: var(--aws-muted);
+  line-height: 1.65;
+  flex: 1
+}
+
+.aws-solution-arrow {
+  font-size: 1rem;
+  color: var(--aws-muted);
+  transition: var(--aws-trans);
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.aws-solution-card:hover .aws-solution-arrow {
+  color: var(--sc, var(--aws-orange));
+  transform: translateX(4px)
+}
+
+.aws-solution-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--sc, var(--aws-orange)), rgba(255, 153, 0, .25));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .42s var(--aws-ease);
+}
+
+.aws-solution-card:hover .aws-solution-bar {
+  transform: scaleX(1)
+}
+
+/* ================================================================
+   10. CASE STUDIES CAROUSEL
+   ================================================================ */
+.aws-carousel-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-carousel-wrap {
+  position: relative
+}
+
+.aws-case-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--aws-s1);
+  border: 1px solid var(--aws-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 36px 72px rgba(0, 0, 0, .5);
+  min-height: 400px;
+}
+
+.aws-case-img-wrap {
+  position: relative;
+  overflow: hidden
+}
+
+.aws-case-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s ease
+}
+
+.aws-case-card:hover .aws-case-img-wrap img {
+  transform: scale(1.05)
+}
+
+.aws-case-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--cc, var(--aws-orange)) 18%, transparent) 0%, rgba(0, 0, 0, .65) 100%);
+  pointer-events: none;
+}
+
+.aws-case-body {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.aws-case-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.aws-case-logo {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--aws-muted)
+}
+
+.aws-case-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--aws-white);
+  line-height: 1.35;
+  flex: 1
+}
+
+.aws-case-metric {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--aws-white);
+}
+
+.aws-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.aws-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--aws-s1);
+  border: 1px solid var(--aws-border);
+  color: var(--aws-white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--aws-trans);
+}
+
+.aws-carousel-btn:hover {
+  border-color: var(--aws-orange);
+  color: var(--aws-orange);
+  transform: scale(1.08)
+}
+
+.aws-carousel-btn.sm {
+  width: 36px;
+  height: 36px;
+  font-size: .85rem
+}
+
+.aws-carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center
+}
+
+.aws-cdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--aws-border);
+  border: none;
+  cursor: pointer;
+  transition: var(--aws-trans);
+  padding: 0;
+}
+
+.aws-cdot.on {
+  background: var(--aws-orange);
+  transform: scale(1.5)
+}
+
+/* ================================================================
+   11. NEWS & INSIGHTS CAROUSEL
+   ================================================================ */
+.aws-news-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.aws-news-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: start;
+}
+
+.aws-news-featured {
+  background: var(--aws-s2);
+  border: 1px solid var(--aws-border);
+  border-radius: 24px;
+  padding: 44px 40px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 3px solid var(--nc, var(--aws-orange));
+}
+
+.aws-news-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.aws-news-date {
+  font-size: .68rem;
+  color: var(--aws-muted)
+}
+
+.aws-news-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--aws-white);
+  line-height: 1.3;
+  flex: 1
+}
+
+.aws-news-read {
+  font-size: .72rem;
+  color: var(--aws-muted);
+  letter-spacing: .5px
+}
+
+.aws-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.aws-news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--aws-border);
+  padding: 18px 4px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: var(--aws-trans);
+}
+
+.aws-news-item:first-child {
+  border-top: 1px solid var(--aws-border)
+}
+
+.aws-news-item:hover,
+.aws-news-item.on {
+  padding-left: 10px
+}
+
+.aws-news-item-tag {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase
+}
+
+.aws-news-item-title {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--aws-muted);
+  line-height: 1.4;
+  transition: color .3s
+}
+
+.aws-news-item.on .aws-news-item-title {
+  color: var(--aws-white)
+}
+
+.aws-news-item:hover .aws-news-item-title {
+  color: var(--aws-white)
+}
+
+.aws-news-item-read {
+  font-size: .65rem;
+  color: var(--aws-muted)
+}
+
+.aws-news-item-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background: var(--nc, var(--aws-orange));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s var(--aws-ease);
+}
+
+.aws-news-item.on .aws-news-item-bar,
+.aws-news-item:hover .aws-news-item-bar {
+  transform: scaleY(1)
+}
+
+.aws-news-carousel-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px;
+  justify-content: center;
+}
+
+/* ================================================================
+   11. FINAL CTA BANNER
+   ================================================================ */
+.aws-final-section {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid var(--aws-border);
+}
+
+.aws-final-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0
+}
+
+.aws-final-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
+}
+
+.aws-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 0, 0, .98) 0%, rgba(10, 5, 25, .08) 55%, rgba(0, 0, 0, .97) 100%);
+}
+
+.aws-final-inner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 36px;
+  max-width: 760px
+}
+
+.aws-final-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 900;
+  color: var(--aws-white);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+.aws-final-sub {
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, .4);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.aws-final-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media(max-width:1200px) {
+  .aws-comp-grid {
+    grid-template-columns: repeat(5, 1fr)
+  }
+
+  .aws-solutions-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media(max-width:1024px) {
+  .aws-container {
+    padding: 0 24px
+  }
+
+  .aws-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 48px
+  }
+
+  .aws-insight-grid {
+    grid-template-columns: 1fr
+  }
+
+  .aws-whatsnew-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .aws-stats-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .aws-stat-card:nth-child(2) {
+    border-right: none
+  }
+
+  .aws-stat-card:nth-child(3) {
+    border-right: 1px solid var(--aws-border)
+  }
+
+  .aws-stat-card {
+    border-bottom: 1px solid var(--aws-border)
+  }
+
+  .aws-comp-grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  .aws-programs-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .aws-case-card {
+    grid-template-columns: 1fr
+  }
+
+  .aws-news-layout {
+    grid-template-columns: 1fr;
+    gap: 32px
+  }
+}
+
+@media(max-width:768px) {
+  .aws-whatsnew-grid {
+    grid-template-columns: 1fr
+  }
+
+  .aws-comp-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .aws-solutions-grid {
+    grid-template-columns: 1fr
+  }
+
+  .aws-programs-grid {
+    grid-template-columns: 1fr
+  }
+
+  .aws-hero-h1 {
+    font-size: 2.6rem;
+    letter-spacing: -1px
+  }
+
+  .aws-final-h2 {
+    font-size: 2.4rem
+  }
+
+  .aws-final-btns {
+    flex-direction: column
+  }
+
+  .aws-case-body {
+    padding: 28px
+  }
+
+  .aws-news-featured {
+    padding: 28px 24px
+  }
+}
+
+@media(max-width:480px) {
+  .aws-container {
+    padding: 0 18px
+  }
+
+  .aws-comp-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .aws-stats-grid {
+    grid-template-columns: 1fr
+  }
+
+  .aws-stat-card {
+    border-right: none
+  }
+
+  .aws-sec-h2 {
+    font-size: 1.8rem
+  }
+
+  .aws-final-section {
+    min-height: 55vh
+  }
+
+  .aws-hero-actions {
+    flex-direction: column
+  }
+}

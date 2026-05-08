@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Security blueprint insight illustration">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ce2453" stop-opacity="0.92"/>
+      <stop offset="0.6" stop-color="#dd5c54" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#522c72" stop-opacity="0.92"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#060606"/>
+  <circle cx="980" cy="190" r="170" fill="url(#g)" filter="url(#blur)" opacity="0.72"/>
+  <circle cx="250" cy="650" r="220" fill="url(#g)" filter="url(#blur)" opacity="0.65"/>
+  <g transform="translate(190 190)">
+    <rect x="0" y="0" width="820" height="440" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+    <g transform="translate(110 120)">
+      <path d="M150 0l150 60v160c0 120-96 192-150 224-54-32-150-104-150-224V60L150 0z"
+            fill="rgba(0,0,0,0.34)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+      <path d="M150 120c-30 0-54 24-54 54v24h108v-24c0-30-24-54-54-54z"
+            fill="rgba(221,92,84,0.14)" stroke="rgba(221,92,84,0.34)" stroke-width="2"/>
+      <rect x="108" y="198" width="84" height="78" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.14)"/>
+      <circle cx="150" cy="236" r="11" fill="#22c55e"/>
+      <path d="M150 248v18" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(460 130)">
+      <rect x="0" y="0" width="280" height="76" rx="22" fill="rgba(206,36,83,0.12)" stroke="rgba(206,36,83,0.30)"/>
+      <path d="M26 40h160" stroke="rgba(255,255,255,0.34)" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="240" cy="40" r="7" fill="#dd5c54"/>
+    </g>
+    <g transform="translate(460 230)">
+      <rect x="0" y="0" width="280" height="140" rx="22" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.12)"/>
+      <path d="M26 44h220" stroke="rgba(255,255,255,0.18)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M26 78h170" stroke="rgba(255,255,255,0.14)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M26 112h120" stroke="rgba(255,255,255,0.10)" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

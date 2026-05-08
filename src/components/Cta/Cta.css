@@ -1,0 +1,296 @@
+/* CTA Component Styles */
+
+.cta-section {
+    background: linear-gradient(135deg, #000000, #000000);
+    padding: 110px 8%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(202, 16, 69, 0.158), transparent 70%);
+    animation: ctaRotate 20s linear infinite;
+    pointer-events: none; /* Prevents interference with interactions */
+}
+
+@keyframes ctaRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-heading {
+    font-size: clamp(32px, 5vw, 48px);
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 700;
+}
+
+.cta-description {
+    color: #aaaaaa;
+    font-size: clamp(16px, 2vw, 18px);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    border: none;
+    min-width: 200px;
+    text-align: center;
+}
+
+.cta-primary {
+    background: linear-gradient(
+        90deg,
+        #522c72 0%,
+        #962964 25%,
+        #ce2453 50%,
+        #dd5c54 75%,
+        #e79e57 100%
+    );
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(206, 36, 83, 0.3);
+    background-size: 200% auto; /* For gradient animation on hover */
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(206, 36, 83, 0.5);
+    background-position: right center; /* Gradient animation effect */
+}
+
+.cta-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(206, 36, 83, 0.5);
+}
+
+.cta-secondary:hover {
+    border-color: #ce2453;
+    background: rgba(206, 36, 83, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Tablet Landscape and Medium Devices */
+@media (max-width: 1024px) {
+    .cta-section {
+        padding: 90px 6%;
+    }
+    
+    .cta-buttons {
+        gap: 15px;
+    }
+    
+    .cta-btn {
+        padding: 15px 35px;
+        min-width: 180px;
+    }
+}
+
+/* Tablet Portrait and Small Devices */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 70px 20px;
+    }
+
+    .cta-heading {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 350px;
+        padding: 14px 30px;
+    }
+    
+    /* Adjust background animation for mobile */
+    .cta-section::before {
+        animation: ctaRotate 15s linear infinite; /* Slightly faster on mobile */
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 640px) and (orientation: landscape) {
+    .cta-section {
+        padding: 60px 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+        width: auto;
+        flex: 1 1 auto;
+        min-width: 150px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 60px 15px;
+    }
+
+    .cta-heading {
+        font-size: 28px;
+    }
+
+    .cta-description {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        max-width: 100%;
+        font-size: 15px;
+    }
+    
+    .cta-buttons {
+        gap: 12px;
+    }
+}
+
+/* Large Desktop Screens */
+@media (min-width: 1400px) {
+    .cta-section {
+        padding: 120px 10%;
+    }
+    
+    .cta-content {
+        max-width: 1000px;
+    }
+    
+    .cta-heading {
+        font-size: 56px;
+    }
+    
+    .cta-description {
+        font-size: 20px;
+        max-width: 700px;
+    }
+    
+    .cta-btn {
+        padding: 18px 50px;
+        font-size: 18px;
+        min-width: 220px;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cta-primary {
+        /* Ensure gradient looks sharp on high DPI screens */
+        background: linear-gradient(
+            90deg,
+            #522c72 0%,
+            #962964 25%,
+            #ce2453 50%,
+            #dd5c54 75%,
+            #e79e57 100%
+        );
+    }
+}
+
+/* Touch Devices Optimization */
+@media (hover: none) and (pointer: coarse) {
+    .cta-btn:hover {
+        transform: none; /* Remove hover effects on touch devices */
+    }
+    
+    .cta-primary:active {
+        transform: scale(0.98);
+        box-shadow: 0 5px 15px rgba(206, 36, 83, 0.4);
+    }
+    
+    .cta-secondary:active {
+        background: rgba(206, 36, 83, 0.15);
+        transform: scale(0.98);
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    .cta-section::before,
+    .cta-btn {
+        animation: none;
+        transition: none;
+    }
+    
+    .cta-primary:hover,
+    .cta-secondary:hover {
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .cta-section {
+        background: #000;
+        padding: 50px 20px;
+    }
+    
+    .cta-section::before {
+        display: none;
+    }
+    
+    .cta-btn {
+        box-shadow: none;
+        border: 1px solid #ce2453;
+    }
+}

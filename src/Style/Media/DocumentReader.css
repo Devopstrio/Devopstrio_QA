@@ -1,0 +1,271 @@
+/* DocumentReader.css - Immersive Fullscreen PDF Viewer */
+
+.dr-master-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 99999; /* Above everything including Navbar */
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: "Outfit", sans-serif;
+    overflow: hidden;
+}
+
+.dr-header {
+    height: 64px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 100;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease;
+}
+
+.dr-header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dr-header.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dr-header-left, .dr-header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.dr-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dr-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+}
+
+.dr-back-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dr-doc-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.dr-header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dr-branding {
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    opacity: 0.25;
+    text-transform: uppercase;
+}
+
+.dr-branding span {
+    font-weight: 400;
+}
+
+.dr-icon-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    border-radius: 50%;
+}
+
+.dr-icon-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dr-icon-btn .success {
+    color: #ce2453;
+}
+
+.dr-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #ce2453;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(206, 36, 83, 0.3);
+}
+
+.dr-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(206, 36, 83, 0.4);
+    background: #e02b5e;
+}
+
+.dr-close-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 0.5rem;
+}
+
+.dr-close-btn:hover {
+    background: #ce2453;
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.dr-content-area {
+    flex: 1;
+    background-color: #1a1a1a;
+    position: relative;
+    width: 100%;
+}
+
+.dr-pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Loading State */
+.dr-loading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.dr-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #ce2453;
+    border-radius: 50%;
+    animation: dr-spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes dr-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.dr-error-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.dr-error-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.dr-error-box p {
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.dr-error-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 auto;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.dr-error-btn:hover {
+    background: #ce2453;
+    border-color: #ce2453;
+}
+
+/* Print Overrides */
+@media print {
+    .dr-header {
+        display: none !important;
+    }
+    .dr-content-area {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .dr-branding, .dr-back-btn span, .dr-download-btn span {
+        display: none;
+    }
+    .dr-header-center {
+        display: none;
+    }
+    .dr-doc-title {
+        max-width: 200px;
+    }
+    .dr-download-btn {
+        padding: 0.6rem;
+    }
+}

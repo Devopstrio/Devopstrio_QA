@@ -1,0 +1,515 @@
+/* AiTools.css - Premium Cinematic Theme */
+
+.dt-aitools-page {
+  background-color: #000000;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.dt-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+:root {
+  --primary: #ce2453;
+  --gradient: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-muted: #a0a0a0;
+  --bg-card: #0a0a0a;
+}
+
+.dt-gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero Section */
+.dt-hero-tools {
+  padding: 40px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dt-hero-dual {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+  width: 100%;
+}
+
+.dt-hero-content {
+  text-align: left;
+  padding-right: 40px;
+}
+
+.dt-hero-image-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dt-hero-image-side img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px; /* Removing specific radius for a simpler look if desired, or keep a small one */
+  box-shadow: none;
+  border: none;
+  transform: none;
+  transition: none;
+}
+
+.dt-hero-image-side:hover img {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Metrics Slider */
+.dt-metrics-slider {
+  background: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+.dt-metrics-track {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: max-content;
+  animation: scrollMetrics 60s linear infinite;
+}
+
+.dt-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.dt-metric-icon {
+  color: var(--primary);
+  font-size: 1rem;
+  display: flex;
+  opacity: 0.8;
+}
+
+.dt-metric-label {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dt-metric-value {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.1rem;
+  background: linear-gradient(var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dt-metric-dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  margin-left: 40px;
+}
+
+@keyframes scrollMetrics {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.dt-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(206, 36, 83, 0.1);
+  padding: 8px 20px;
+  border-radius: 60px;
+  font-size: 0.85rem;
+  margin-bottom: 32px;
+  color: var(--primary);
+  border: 1px solid rgba(206, 36, 83, 0.2);
+}
+
+.dt-hero-tools h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.dt-hero-desc {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.dt-btn-primary {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -8px rgba(206, 36, 83, 0.4);
+}
+
+.dt-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -8px rgba(206, 36, 83, 0.6);
+}
+
+/* Section Spacing */
+.dt-section-spacing {
+  padding: 60px 0;
+}
+
+.dt-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 80px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+
+/* Benefits Grid */
+.dt-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.dt-benefit-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.3s ease;
+}
+
+.dt-benefit-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(206, 36, 83, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dt-benefit-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.dt-benefit-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.dt-benefit-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Tools Grid */
+.dt-tool-banner {
+  background: #0a0a0a;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-height: 500px;
+  transition: all 0.4s ease;
+}
+
+.dt-tool-banner:hover {
+  border-color: var(--primary);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.dt-tool-banner-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.dt-tool-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.dt-tool-banner:hover .dt-tool-banner-image img {
+  transform: scale(1.05);
+}
+
+.dt-tool-banner-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+}
+
+.dt-tool-banner-content h3 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.dt-tool-banner-content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #c0c0c0;
+  margin-bottom: 32px;
+}
+
+.dt-tool-banner .dt-tool-try-link {
+  align-self: flex-start;
+  background: var(--primary);
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: none;
+}
+
+.dt-tool-banner .dt-tool-try-link:hover {
+  background: #fff;
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.dt-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.dt-tool-card {
+  background: #0a0a0a;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 420px; /* Fixed height for 60/40 split */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dt-tool-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dt-tool-image {
+  width: 100%;
+  height: 60%; /* 60% image initially */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.dt-tool-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease;
+}
+
+.dt-tool-card:hover .dt-tool-image {
+  height: 100%; /* Image fills background on hover */
+}
+
+.dt-tool-card:hover .dt-tool-image img {
+  transform: scale(1.1);
+  filter: brightness(0.3) blur(3px);
+}
+
+.dt-tool-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background: #0d0d0d;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(60%); /* Content occupies 40% initially (slides up from 100% to 60%) */
+}
+
+.dt-tool-card:hover .dt-tool-content {
+  transform: translateY(0);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(15px);
+  justify-content: center;
+  padding: 30px;
+}
+
+.dt-tool-header {
+  margin-bottom: 12px;
+}
+
+.dt-tool-header h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.dt-tool-category {
+  font-size: 0.7rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.dt-tool-card p {
+  color: #d1d1d1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.dt-tool-card:hover p {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 15px;
+}
+
+.dt-tool-try-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: var(--primary);
+  padding: 12px 28px;
+  border-radius: 40px;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+}
+
+.dt-tool-card:hover .dt-tool-try-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Legacy styles removed - replaced by slide-up logic above */
+
+.dt-tool-link:hover {
+  gap: 12px;
+  color: var(--primary);
+}
+
+/* Consultation Section is now handled by AIConsultationForm component */
+
+/* More Button Section */
+.dt-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.dt-btn-more {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.dt-btn-more:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .dt-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dt-hero-dual {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .dt-hero-content {
+    text-align: center;
+  }
+  .dt-hero-image-side {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dt-hero-tools h1 { font-size: 3rem; }
+  .dt-benefits-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .dt-tools-grid {
+    grid-template-columns: 1fr;
+  }
+}

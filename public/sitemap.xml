@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
+  <url><loc>https://devopstrio.co.uk/</loc><priority>1.0</priority></url>
+  <url><loc>https://devopstrio.co.uk/services</loc><priority>0.9</priority></url>
+  <url><loc>https://devopstrio.co.uk/platform</loc><priority>0.9</priority></url>
+  <url><loc>https://devopstrio.co.uk/clients</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/insights</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/ecosystem</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/about</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/careers</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/contact</loc><priority>0.9</priority></url>
+
+  <!-- Services Sub-routes -->
+  <url><loc>https://devopstrio.co.uk/services/cloud-architecture</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/cloud-migration</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/multi-cloud</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/services/gitops</loc><priority>0.7</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/services/devops-enablement</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/cicd</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/iac</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/services/serverless</loc><priority>0.7</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/services/security</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/iam</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/compliance</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/services/threat-detection</loc><priority>0.7</priority></url>
+  
+  <!-- Platform & Resources -->
+  <url><loc>https://devopstrio.co.uk/platform/saas-applications</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/platform/retail</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/case-studies</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/resources/roi-reports</loc><priority>0.6</priority></url> -->
+  <!-- <url><loc>https://devopstrio.co.uk/resources/benchmarks</loc><priority>0.6</priority></url> -->
+  <!-- <url><loc>https://devopstrio.co.uk/resources/white-papers</loc><priority>0.6</priority></url> -->
+
+  <!-- Partners & Marketplace -->
+  <url><loc>https://devopstrio.co.uk/partners/aws</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/partners/azure</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/partners/gcp</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/partners/servicenow</loc><priority>0.7</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/marketplace</loc><priority>0.8</priority></url>
+  <url><loc>https://devopstrio.co.uk/marketplace/cloud-infrastructure</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/marketplace/data-analytics</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/marketplace/enterprise-apps</loc><priority>0.7</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/marketplace/cx</loc><priority>0.7</priority></url>
+  <!-- <url><loc>https://devopstrio.co.uk/marketplace/ai-ml</loc><priority>0.7</priority></url> -->
+
+  <!-- About & Events -->
+  <url><loc>https://devopstrio.co.uk/about/overview</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/about/locations</loc><priority>0.6</priority></url>
+  <url><loc>https://devopstrio.co.uk/about/values</loc><priority>0.6</priority></url>
+  <url><loc>https://devopstrio.co.uk/events</loc><priority>0.7</priority></url>
+
+  <!-- Legal & Info -->
+  <url><loc>https://devopstrio.co.uk/contributions</loc><priority>0.6</priority></url>
+  <url><loc>https://devopstrio.co.uk/privacy-policy</loc><priority>0.5</priority></url>
+  <url><loc>https://devopstrio.co.uk/footer-compliance</loc><priority>0.5</priority></url>
+  <url><loc>https://devopstrio.co.uk/terms-of-service</loc><priority>0.5</priority></url>
+  <url><loc>https://devopstrio.co.uk/sitemap</loc><priority>0.4</priority></url>
+  <url><loc>https://devopstrio.co.uk/cookie-policy</loc><priority>0.4</priority></url>
+  <url><loc>https://devopstrio.co.uk/disclaimer</loc><priority>0.4</priority></url>
+
+  <!-- Events -->
+  <url><loc>https://devopstrio.co.uk/events</loc><priority>0.7</priority></url>
+
+  <!-- Insights & Knowledge -->
+  <url><loc>https://devopstrio.co.uk/insights-knowledge/blogs</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/insights-knowledge/case-studies</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/insights-knowledge/newsletters</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/insights-knowledge/podcasts</loc><priority>0.7</priority></url>
+
+  <!-- News & Events -->
+  <url><loc>https://devopstrio.co.uk/news-events/industry-events</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/news-events/company-announcements</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/news-events/achievements</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/news-events/awards-milestones</loc><priority>0.7</priority></url>
+  
+  <!-- Life at Devopstrio -->
+  <url><loc>https://devopstrio.co.uk/life-at/celebrations</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/life-at/team-culture</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/life-at/posters</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/life-at/community</loc><priority>0.7</priority></url>
+
+  <!-- Careers Page -->
+  <url><loc>https://devopstrio.co.uk/careers/jobs</loc><priority>0.7</priority></url>
+  <url><loc>https://devopstrio.co.uk/careers/internship</loc><priority>0.7</priority></url>
+  
+  <!-- Job Details Page -->
+  <url><loc>https://devopstrio.co.uk/apply/:id</loc><priority>0.7</priority></url>
+</urlset>

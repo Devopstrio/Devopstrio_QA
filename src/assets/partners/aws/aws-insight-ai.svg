@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="AI and data insight illustration">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#962964" stop-opacity="0.95"/>
+      <stop offset="0.6" stop-color="#ce2453" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FF9900" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#060606"/>
+  <circle cx="260" cy="200" r="175" fill="url(#g)" filter="url(#blur)" opacity="0.8"/>
+  <circle cx="980" cy="640" r="220" fill="url(#g)" filter="url(#blur)" opacity="0.65"/>
+  <g transform="translate(180 190)">
+    <rect x="0" y="0" width="840" height="440" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+    <g transform="translate(90 110)">
+      <rect x="0" y="0" width="280" height="240" rx="22" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
+      <g transform="translate(40 54)" fill="none" stroke-width="10" stroke-linecap="round">
+        <path d="M0 130V40" stroke="rgba(150,41,100,0.9)"/>
+        <path d="M60 130V20" stroke="rgba(206,36,83,0.8)"/>
+        <path d="M120 130V70" stroke="rgba(255,153,0,0.75)"/>
+        <path d="M180 130V0" stroke="rgba(82,44,114,0.85)"/>
+      </g>
+    </g>
+    <g transform="translate(420 110)">
+      <rect x="0" y="0" width="330" height="96" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.10)"/>
+      <path d="M28 44h220" stroke="rgba(255,255,255,0.32)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M28 70h170" stroke="rgba(255,255,255,0.18)" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(420 230)">
+      <rect x="0" y="0" width="330" height="120" rx="22" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.12)"/>
+      <g transform="translate(26 28)" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2">
+        <circle cx="28" cy="32" r="18"/>
+        <path d="M78 32h210" stroke="rgba(255,255,255,0.20)" stroke-width="10" stroke-linecap="round"/>
+        <path d="M78 62h150" stroke="rgba(255,255,255,0.14)" stroke-width="10" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+</svg>

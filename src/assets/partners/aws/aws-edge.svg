@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="IoT and edge computing illustration">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#522c72" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#FF9900" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ce2453" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="#060606"/>
+  <circle cx="240" cy="650" r="220" fill="url(#g)" filter="url(#blur)" opacity="0.75"/>
+  <circle cx="980" cy="180" r="170" fill="url(#g)" filter="url(#blur)" opacity="0.7"/>
+  <g transform="translate(160 170)">
+    <rect x="0" y="0" width="880" height="480" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+    <g transform="translate(90 120)" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2">
+      <circle cx="140" cy="140" r="74"/>
+      <circle cx="140" cy="140" r="118" opacity="0.6"/>
+      <circle cx="140" cy="140" r="160" opacity="0.35"/>
+      <path d="M300 140h420" stroke="rgba(255,255,255,0.16)" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="740" cy="140" r="44"/>
+      <circle cx="740" cy="140" r="74" opacity="0.55"/>
+    </g>
+    <g transform="translate(120 320)">
+      <rect x="0" y="0" width="260" height="54" rx="16" fill="rgba(82,44,114,0.16)" stroke="rgba(82,44,114,0.34)"/>
+      <path d="M18 28h160" stroke="rgba(255,255,255,0.42)" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="228" cy="28" r="7" fill="#22c55e"/>
+    </g>
+    <g transform="translate(540 300)">
+      <rect x="0" y="0" width="280" height="90" rx="22" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.12)"/>
+      <path d="M28 36h200" stroke="rgba(255,255,255,0.26)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M28 64h140" stroke="rgba(255,255,255,0.16)" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

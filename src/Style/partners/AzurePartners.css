@@ -1,0 +1,1749 @@
+/* ================================================================
+   AzurePartners.css  —  11-Section Microsoft Azure Partnership Page
+   Black bg · brand gradient (#522c72→#e79e57) + Azure blue (#0078D4)
+   All az- prefixed · no scan lines · fully responsive
+   ================================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap");
+
+/* ── Tokens ── */
+:root {
+  --az-grad: linear-gradient(
+    90deg,
+    #7630ae 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  --az-hero-grad: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 55%,
+    #e79e57 100%
+  );
+  --az-blue: #ce2453;
+  --az-cyan: #e79e57;
+  --az-bg: #000;
+  --az-s1: #060606;
+  --az-s2: #0a0a0a;
+  --az-border: #161616;
+  --az-bord2: #222;
+  --az-text: #9a9a9a;
+  --az-muted: #484848;
+  --az-white: #fff;
+  --az-accent: #ce2453;
+  --az-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --az-trans: 0.32s var(--az-ease);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.az-page {
+  font-family: "Inter", sans-serif;
+  background: var(--az-bg);
+  color: var(--az-text);
+  line-height: 1.65;
+  position: relative;
+}
+
+.az-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.az-grad {
+  background: var(--az-hero-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+/* Devopstrio  brand gradient — used for the "Devopstrio " word in the hero */
+.az-brand-grad {
+  background: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.az-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.az-sec-head {
+  text-align: center;
+  margin-bottom: 62px;
+}
+
+.az-sec-h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.az-sec-sub {
+  font-size: 0.97rem;
+  color: var(--az-text);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* ── Buttons ── */
+.az-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: linear-gradient(
+    90deg,
+    #522c72,
+    #ce2453,
+    #e79e57,
+    #ce2453,
+    #522c72
+  );
+  background-size: 200% auto;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.5s var(--az-ease);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.az-btn-primary:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(206, 36, 83, 0.4);
+}
+
+.az-btn-lg {
+  padding: 17px 42px;
+  font-size: 1.02rem;
+}
+
+.az-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1.5px solid var(--az-bord2);
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--az-trans);
+  backdrop-filter: blur(4px);
+}
+
+.az-btn-ghost:hover {
+  border-color: var(--az-blue);
+  background: rgba(206, 36, 83, 0.08);
+  transform: translateY(-3px);
+}
+
+/* ── Orb background ── */
+.az-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.az-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  animation: az-drift ease-in-out infinite alternate;
+}
+
+.az-orb-1 {
+  width: 700px;
+  height: 700px;
+  background: rgba(206, 36, 83, 0.07);
+  top: -200px;
+  right: -100px;
+  animation-duration: 22s;
+}
+
+.az-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(231, 158, 87, 0.05);
+  bottom: 0;
+  left: -80px;
+  animation-duration: 19s;
+  animation-delay: -8s;
+}
+
+.az-orb-3 {
+  width: 360px;
+  height: 360px;
+  background: rgba(82, 44, 114, 0.07);
+  top: 45%;
+  right: 20%;
+  animation-duration: 27s;
+  animation-delay: -12s;
+}
+
+@keyframes az-drift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(50px, -55px) scale(1.1);
+  }
+}
+
+.az-grid-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(206, 36, 83, 0.025) 1px,
+    transparent 1px
+  );
+  background-size: 44px 44px;
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 20%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 20%,
+    transparent 80%
+  );
+}
+
+/* ================================================================
+   1. HERO SPLIT
+   ================================================================ */
+.az-hero {
+  padding: 130px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.az-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Azure badge — uses authentic Microsoft Azure blue */
+.az-partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(0, 120, 212, 0.07);
+  border: 1px solid rgba(0, 120, 212, 0.28);
+  border-radius: 50px;
+  margin-bottom: 26px;
+}
+
+.az-badge-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0078d4, #50e6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Azure logo shape */
+.az-azure-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.az-icon-tri-1 {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Azure triangle icon — white on Azure blue bg */
+.az-icon-tri {
+  font-size: 8px;
+  font-weight: 800;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.az-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.az-badge-text strong {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--az-white);
+}
+
+.az-badge-text span {
+  font-size: 0.62rem;
+  color: var(--az-muted);
+}
+
+/* Azure blue verified dot */
+.az-badge-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 120, 212, 0.14);
+  color: #0078d4;
+  font-size: 0.8rem;
+}
+
+.az-hero-h1 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 900;
+  color: var(--az-white);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.az-hero-sub {
+  font-size: 1rem;
+  color: var(--az-text);
+  line-height: 1.88;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.az-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Video card */
+.az-video-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  border: 1px solid var(--az-border);
+}
+
+.az-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+
+.az-video-card:hover .az-video-thumb {
+  transform: scale(1.05);
+}
+
+.az-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    150deg,
+    rgba(206, 36, 83, 0.12) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.az-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--az-trans);
+}
+
+.az-play-btn:hover {
+  background: var(--az-blue);
+  border-color: var(--az-blue);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 36px rgba(206, 36, 83, 0.5);
+}
+
+.az-video-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--az-white);
+}
+
+.az-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: az-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes az-blink {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+
+  60% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+}
+
+/* ================================================================
+   2. PARTNERSHIP BANNER
+   ================================================================ */
+.az-partnership-banner {
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.az-banner-inner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.az-banner-grad-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #522c72,
+    #962964,
+    #ce2453,
+    #dd5c54,
+    #e79e57
+  );
+  opacity: 0.5;
+}
+
+.az-banner-text {
+  text-align: center;
+  padding: 40px 22px;
+}
+
+.az-banner-h2 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--az-white);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.az-banner-sub {
+  font-size: 1rem;
+  color: var(--az-text);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+.az-banner-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 70px;
+  text-align: left;
+  align-items: center;
+}
+
+.az-banner-feat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.az-banner-feat-h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.15;
+}
+
+.az-banner-feat-p {
+  font-size: 1.05rem;
+  color: var(--az-text);
+  line-height: 1.75;
+}
+
+.az-banner-feat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.az-banner-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.97rem;
+  color: var(--az-white);
+  font-weight: 500;
+}
+
+.az-feat-icon {
+  color: #50e6ff; /* Azure Cyan */
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.az-banner-feat-image {
+  position: relative;
+  z-index: 1;
+}
+
+.az-feat-img-card {
+  position: relative;
+  overflow: hidden;
+  transform: scale(1.1);
+  border: 1px solid var(--az-border);
+  border-radius: 10px;
+
+}
+
+.az-feat-img-card img {
+  width: 100%;
+  height: 450px;
+  display: block;
+  transition: transform 0.8s var(--az-ease);
+}
+
+.az-feat-img-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 6, 6, 0.13) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0.5;
+}
+
+.az-feat-img-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 120, 212, 0.15),
+    transparent 70%
+  ); /* Azure Blue */
+  filter: blur(40px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+@media (max-width: 991px) {
+  .az-banner-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .az-banner-feat-h3 {
+    text-align: center;
+  }
+
+  .az-banner-feat-p {
+    text-align: center;
+  }
+
+  .az-banner-feat-list {
+    align-items: center;
+  }
+}
+
+/* ================================================================
+   3. INSIGHTS — 3 cards
+   ================================================================ */
+.az-insights-section {
+  padding: 40px 0;
+
+  position: relative;
+  z-index: 2;
+}
+
+.az-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.az-insight-card {
+  background: var(--az-s1);
+  border: 1px solid var(--az-border);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s var(--az-ease);
+  cursor: default;
+}
+
+.az-insight-card:hover {
+  border-color: color-mix(in srgb, var(--ic, var(--az-blue)) 30%, transparent);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+}
+
+.az-insight-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.az-insight-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+
+.az-insight-card:hover .az-insight-img-wrap img {
+  transform: scale(1.07);
+}
+
+.az-insight-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  pointer-events: none;
+}
+
+.az-insight-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.az-insight-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ic, var(--az-blue));
+}
+
+.az-tag-icon {
+  font-size: 0.9rem;
+}
+
+.az-insight-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.3;
+}
+
+.az-insight-desc {
+  font-size: 0.84rem;
+  color: var(--az-muted);
+  line-height: 1.7;
+}
+
+.az-insight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--az-trans);
+  margin-top: 4px;
+}
+
+.az-insight-link:hover {
+  transform: translateX(4px);
+}
+
+.az-insight-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    var(--ic, var(--az-blue)),
+    rgba(231, 158, 87, 0.3)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-insight-card:hover .az-insight-bar {
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   4. WHAT'S NEW — 4 cards
+   ================================================================ */
+.az-whatsnew-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.az-whatsnew-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.az-new-card {
+  background: var(--az-s2);
+  border: 1px solid var(--az-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--az-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.az-new-card:hover {
+  border-color: color-mix(in srgb, var(--nc, var(--az-blue)) 28%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.az-new-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.az-new-date {
+  font-size: 0.68rem;
+  color: var(--az-muted);
+}
+
+.az-new-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--az-white);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.az-new-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--az-trans);
+  margin-top: 4px;
+}
+
+.az-new-link:hover {
+  transform: translateX(4px);
+}
+
+.az-new-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    var(--nc, var(--az-blue)),
+    rgba(231, 158, 87, 0.25)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-new-card:hover .az-new-bar {
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   5. STATS STRIP
+   ================================================================ */
+.az-stats-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--az-border);
+  border-bottom: 1px solid var(--az-border);
+  position: relative;
+  z-index: 2;
+}
+
+.az-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.az-stat-card {
+  padding: 40px 28px;
+  border-right: 1px solid var(--az-border);
+  text-align: center;
+  position: relative;
+  transition: var(--az-trans);
+}
+
+.az-stat-card:last-child {
+  border-right: none;
+}
+
+.az-stat-card:hover {
+  background: rgba(206, 36, 83, 0.025);
+}
+
+.az-stat-icon {
+  font-size: 1.5rem;
+  color: var(--az-blue);
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.az-stat-val {
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 900;
+  font-family: "JetBrains Mono", monospace;
+  background: linear-gradient(90deg, #522c72, #ce2453, #e79e57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.az-stat-lbl {
+  font-size: 0.78rem;
+  color: var(--az-muted);
+  line-height: 1.45;
+}
+
+.az-stat-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #522c72, #ce2453, #e79e57);
+  border-radius: 2px;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-stat-card:hover .az-stat-underline {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ================================================================
+   6. COMPETENCIES — Dark Grid (9 items)
+   ================================================================ */
+.az-comp-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.az-comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.az-comp-card {
+  background: var(--az-s2);
+  border: 1.5px solid var(--az-border);
+  border-radius: 18px;
+  padding: 24px 14px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--az-ease);
+  cursor: default;
+}
+
+.az-comp-card:hover {
+  border-color: color-mix(in srgb, var(--cc, var(--az-blue)) 30%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.5);
+}
+
+.az-comp-icon-wrap {
+  font-size: 1.7rem;
+  color: var(--cc, var(--az-blue));
+  margin-bottom: 12px;
+  display: inline-block;
+  transition: var(--az-trans);
+}
+
+.az-comp-card:hover .az-comp-icon-wrap {
+  transform: scale(1.18);
+}
+
+.az-comp-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--az-white);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.az-comp-tier {
+  display: inline-block;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cc, var(--az-blue));
+  background: color-mix(in srgb, var(--cc, var(--az-blue)) 10%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--cc, var(--az-blue)) 25%, transparent);
+  padding: 2px 7px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.az-comp-stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  color: var(--cc, var(--az-blue));
+  font-size: 0.6rem;
+}
+
+.az-comp-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cc, var(--az-blue)) 8%, transparent);
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.az-comp-card:hover .az-comp-glow {
+  opacity: 1;
+}
+
+.az-comp-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    var(--cc, var(--az-blue)),
+    rgba(231, 158, 87, 0.25)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-comp-card:hover .az-comp-bar {
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   7. PROGRAMS — 4 col
+   ================================================================ */
+.az-programs-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.az-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.az-program-card {
+  border: 1px solid var(--az-border);
+  border-radius: 22px;
+  padding: 30px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--az-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.az-program-card:hover {
+  border-color: color-mix(in srgb, var(--pc, var(--az-blue)) 28%, transparent);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+}
+
+.az-program-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: var(--az-trans);
+}
+
+.az-program-card:hover .az-program-icon {
+  transform: scale(1.1);
+}
+
+.az-program-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.2;
+}
+
+.az-program-desc {
+  font-size: 0.84rem;
+  color: var(--az-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.az-program-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: 1px solid;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--az-trans);
+  width: fit-content;
+}
+
+.az-program-btn:hover {
+  transform: translateX(4px);
+}
+
+.az-program-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    var(--pc, var(--az-blue)),
+    rgba(231, 158, 87, 0.25)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-program-card:hover .az-program-bar {
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   8. SOLUTIONS MEGA GRID — 3×3
+   ================================================================ */
+.az-solutions-section {
+  padding: 40px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.az-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.az-solution-card {
+  background: var(--az-s2);
+  border: 1px solid var(--az-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--az-ease);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.az-solution-card:hover {
+  border-color: color-mix(in srgb, var(--sc, var(--az-blue)) 28%, transparent);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.az-solution-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: var(--az-trans);
+  flex-shrink: 0;
+}
+
+.az-solution-card:hover .az-solution-icon {
+  transform: scale(1.1);
+}
+
+.az-solution-title {
+  font-size: 0.97rem;
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.25;
+}
+
+.az-solution-desc {
+  font-size: 0.82rem;
+  color: var(--az-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.az-solution-arrow {
+  font-size: 1rem;
+  color: var(--az-muted);
+  transition: var(--az-trans);
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.az-solution-card:hover .az-solution-arrow {
+  color: var(--sc, var(--az-blue));
+  transform: translateX(4px);
+}
+
+.az-solution-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(
+    90deg,
+    var(--sc, var(--az-blue)),
+    rgba(231, 158, 87, 0.25)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.42s var(--az-ease);
+}
+
+.az-solution-card:hover .az-solution-bar {
+  transform: scaleX(1);
+}
+
+/* ================================================================
+   9. CASE STUDIES CAROUSEL
+   ================================================================ */
+.az-carousel-section {
+  padding: 40px 0;
+
+  position: relative;
+  z-index: 2;
+}
+
+.az-carousel-wrap {
+  position: relative;
+}
+
+.az-case-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--az-s1);
+  border: 1px solid var(--az-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 36px 72px rgba(0, 0, 0, 0.5);
+  min-height: 400px;
+}
+
+.az-case-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.az-case-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+
+.az-case-card:hover .az-case-img-wrap img {
+  transform: scale(1.05);
+}
+
+.az-case-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--cc, var(--az-blue)) 18%, transparent) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+.az-case-body {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.az-case-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.az-case-logo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--az-muted);
+}
+
+.az-case-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--az-white);
+  line-height: 1.35;
+  flex: 1;
+}
+
+.az-case-metric {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--az-white);
+}
+
+.az-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.az-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--az-s1);
+  border: 1px solid var(--az-border);
+  color: var(--az-white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--az-trans);
+}
+
+.az-carousel-btn:hover {
+  border-color: var(--az-blue);
+  color: var(--az-blue);
+  transform: scale(1.08);
+}
+
+.az-carousel-btn.sm {
+  width: 36px;
+  height: 36px;
+  font-size: 0.85rem;
+}
+
+.az-carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.az-cdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--az-border);
+  border: none;
+  cursor: pointer;
+  transition: var(--az-trans);
+  padding: 0;
+}
+
+.az-cdot.on {
+  background: var(--az-blue);
+  transform: scale(1.5);
+}
+
+/* ================================================================
+   10. NEWS & INSIGHTS CAROUSEL
+   ================================================================ */
+.az-news-section {
+  padding: 40px 0;
+
+  position: relative;
+  z-index: 2;
+}
+
+.az-news-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: start;
+}
+
+.az-news-featured {
+  background: var(--az-s2);
+  border: 1px solid var(--az-border);
+  border-radius: 24px;
+  padding: 44px 40px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 3px solid var(--nc, var(--az-blue));
+}
+
+.az-news-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.az-news-date {
+  font-size: 0.68rem;
+  color: var(--az-muted);
+}
+
+.az-news-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--az-white);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.az-news-read {
+  font-size: 0.72rem;
+  color: var(--az-muted);
+  letter-spacing: 0.5px;
+}
+
+.az-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.az-news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+
+  padding: 18px 4px;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: var(--az-trans);
+}
+
+.az-news-item:first-child {
+  border-top: 1px solid var(--az-border);
+}
+
+.az-news-item:hover,
+.az-news-item.on {
+  padding-left: 10px;
+}
+
+.az-news-item-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.az-news-item-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--az-muted);
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.az-news-item.on .az-news-item-title,
+.az-news-item:hover .az-news-item-title {
+  color: var(--az-white);
+}
+
+.az-news-item-read {
+  font-size: 0.65rem;
+  color: var(--az-muted);
+}
+
+.az-news-item-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background: var(--nc, var(--az-blue));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s var(--az-ease);
+}
+
+.az-news-item.on .az-news-item-bar,
+.az-news-item:hover .az-news-item-bar {
+  transform: scaleY(1);
+}
+
+.az-news-carousel-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px;
+  justify-content: center;
+}
+
+/* ================================================================
+   11. FINAL CTA BANNER
+   ================================================================ */
+.az-final-section {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid var(--az-border);
+}
+
+.az-final-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.az-final-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.az-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(0, 10, 30, 0.08) 55%,
+    rgba(0, 0, 0, 0.97) 100%
+  );
+}
+
+.az-final-inner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 36px;
+  max-width: 760px;
+}
+
+.az-final-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 900;
+  color: var(--az-white);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+.az-final-sub {
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.az-final-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1200px) {
+  .az-comp-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .az-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .az-container {
+    padding: 0 24px;
+  }
+
+  .az-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .az-insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .az-whatsnew-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .az-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .az-stat-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .az-stat-card:nth-child(3) {
+    border-right: 1px solid var(--az-border);
+  }
+
+  .az-stat-card {
+    border-bottom: 1px solid var(--az-border);
+  }
+
+  .az-comp-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .az-programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .az-case-card {
+    grid-template-columns: 1fr;
+  }
+
+  .az-news-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .az-whatsnew-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .az-comp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .az-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .az-programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .az-hero-h1 {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+
+  .az-final-h2 {
+    font-size: 2.4rem;
+  }
+
+  .az-final-btns {
+    flex-direction: column;
+  }
+
+  .az-case-body {
+    padding: 28px;
+  }
+
+  .az-news-featured {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .az-container {
+    padding: 0 18px;
+  }
+
+  .az-comp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .az-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .az-stat-card {
+    border-right: none;
+  }
+
+  .az-sec-h2 {
+    font-size: 1.8rem;
+  }
+
+  .az-final-section {
+    min-height: 55vh;
+  }
+
+  .az-hero-actions {
+    flex-direction: column;
+  }
+}

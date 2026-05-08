@@ -1,0 +1,283 @@
+.join-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+}
+
+.join-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.join-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+/* LEFT SIDE */
+.join-left {
+  color: #ffffff;
+  max-width: 500px;
+}
+
+.join-left .badge {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.join-left h2 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* RIGHT SIDE BOX */
+.join-box {
+  background: #000000;
+  padding: 60px;
+  max-width: 480px;
+  border: 6px solid #ffffff;
+}
+
+.join-box h3 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.join-box p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #cfcfcf;
+  margin-bottom: 30px;
+}
+
+.join-btn {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background: linear-gradient(90deg, #522c72 0%, #962964 50%, #ce2453 100%);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN - PERFECTED BREAKPOINTS
+   =============================== */
+
+/* 4K Ultra Wide */
+@media (min-width: 2560px) {
+  .join-section {
+    min-height: 800px;
+    padding: 160px 0;
+  }
+  .join-container {
+    max-width: 2100px;
+    padding: 0 80px;
+    gap: 120px;
+  }
+  .join-left {
+    max-width: 800px;
+  }
+  .join-left .badge {
+    font-size: 20px;
+    padding: 12px 24px;
+    margin-bottom: 30px;
+  }
+  .join-left h2 {
+    font-size: 84px;
+  }
+  .join-box {
+    max-width: 700px;
+    padding: 80px;
+    border-width: 8px;
+  }
+  .join-box h3 {
+    font-size: 56px;
+    margin-bottom: 24px;
+  }
+  .join-box p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  .join-btn {
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 32px;
+  }
+}
+
+/* Large Desktops */
+@media (min-width: 1440px) and (max-width: 2559px) {
+  .join-container {
+    max-width: 1260px;
+  }
+  .join-left h2 {
+    font-size: 49px;
+  }
+}
+
+/* Laptops / Normal Desktops */
+@media (max-width: 1280px) {
+  .join-section {
+    padding: 80px 0;
+  }
+  .join-container {
+    padding: 0 32px;
+    gap: 40px;
+  }
+  .join-left h2 {
+    font-size: 49px;
+  }
+  .join-box {
+    max-width: 440px;
+    padding: 40px;
+  }
+  .join-box h3 {
+    font-size: 32px;
+  }
+  .join-box p {
+    font-size: 16px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .join-section {
+    padding: 70px 0;
+    min-height: auto;
+  }
+  .join-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  .join-left {
+    max-width: 100%;
+  }
+  .join-left .badge {
+    margin: 0 auto 20px auto;
+  }
+  .join-box {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Mobile Landscape & Standard Tabs */
+@media (max-width: 720px) {
+  .join-section {
+    padding: 60px 0;
+  }
+  .join-container {
+    padding: 0 24px;
+    gap: 40px;
+  }
+  .join-left h2 {
+    font-size: 36px;
+  }
+  .join-box {
+    padding: 32px;
+    border-width: 4px;
+  }
+  .join-box h3 {
+    font-size: 28px;
+  }
+  .join-box p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Base Mobile */
+@media (max-width: 480px) {
+  .join-section {
+    padding: 50px 0;
+  }
+  .join-container {
+    padding: 0 16px;
+    gap: 30px;
+  }
+  .join-left .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+  .join-left h2 {
+    font-size: 32px;
+  }
+  .join-box {
+    padding: 24px;
+    border-width: 3px;
+  }
+  .join-box h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .join-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .join-btn {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+
+/* Small, Narrow Phones */
+@media (max-width: 360px) {
+  .join-section {
+    padding: 40px 0;
+  }
+  .join-container {
+    padding: 0 12px;
+  }
+  .join-left h2 {
+    font-size: 28px;
+  }
+  .join-box {
+    padding: 20px;
+  }
+  .join-box h3 {
+    font-size: 22px;
+  }
+  .join-box p {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .join-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
