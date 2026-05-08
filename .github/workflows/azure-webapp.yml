@@ -13,25 +13,25 @@ env:
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy Application
+    name: Build and Deploy React Application
     runs-on: ubuntu-latest
 
     permissions:
       contents: read
 
     steps:
-      # Checkout source code
+      # Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Setup Node.js environment
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install project dependencies
+      # Install dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
@@ -39,7 +39,7 @@ jobs:
       - name: Verify Dependencies
         run: npm list --depth=0
 
-      # Build React Vite application
+      # Build Vite application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -47,31 +47,42 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify build output exists
+      # Validate build output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
-            echo "Build failed: dist folder not found"
+            echo "ERROR: dist folder not found."
             exit 1
           fi
 
-      # Deploy build to Azure Web App
+          echo "Build completed successfully."
+          ls -la dist
+
+      # Deploy only production build files
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
+          package: ./dist
 
-      # Success notification
+      # Success log
       - name: Deployment Success
         if: success()
-        run: echo "Application deployed successfully to Azure."
+        run: |
+          echo "================================="
+          echo "Azure Deployment Successful"
+          echo "Application deployed successfully"
+          echo "================================="
 
-      # Failure notification
-      - name: Deployment Failed Alert
+      # Failure log
+      - name: Deployment Failure Alert
         if: failure()
         run: |
-          echo "CI/CD Pipeline Failed!"
-          echo "Check GitHub Actions logs for detailed errors."
+          echo "================================="
+          echo "Azure Deployment Failed"
+          echo "Check GitHub Actions logs"
+          echo "Verify Azure publish profile"
+          echo "Verify build output"
+          echo "================================="
           exit 1
