@@ -608,7 +608,7 @@
 .dt-insight-card {
     background: #080808;
     border: 1px solid #151515;
-    padding: 70px 60px;
+    padding: 50px 30px;
     border-radius: 28px;
     display: flex;
     flex-direction: column;
