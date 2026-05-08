@@ -19,7 +19,7 @@ import {
 // Import logos from assets
 import awsLogo from "../assets/images/awslogo.jpg";
 import gcpLogo from "../assets/images/gcpLogo.png";
-import microsoftLogo from "../assets/images/microsoft.png";
+import microsoftLogo from "../assets/images/Microsoft.png";
 import kubernetesLogo from "../assets/images/kubernetesLogo.png";
 import dockerLogo from "../assets/images/dockerLogo.png";
 import datadogLogo from "../assets/images/Lenovologo.svg";

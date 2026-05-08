@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
-import api from "../../services/api";
+import api from "../../Services/api";
 import { FiX, FiCheck } from "react-icons/fi";
 import "./CategoryPopup.css";
 
