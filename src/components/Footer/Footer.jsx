@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiFacebook,
@@ -15,120 +15,128 @@ import "./Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [showMoreOffices, setShowMoreOffices] = useState(false);
 
-  const services = [
+  const aiServices = [
+    { label: "Artificial Intelligence", path: "/services/artificial-intelligence" },
+    { label: "AI Consulting", path: "/services/ai-consulting-services" },
+    { label: "AI Tools", path: "/services/ai-tools" },
+    { label: "Data Science", path: "/services/data-science" },
+    { label: "Database Creation", path: "/services/database-creation-and-management" },
+    { label: "Hire AI Experts", path: "/services/hire-ai-experts" },
+  ];
+
+  const appServices = [
+    { label: "Mobile Development", path: "/services/mobile-development" },
+    { label: "Web Development", path: "/services/web-development" },
+    { label: "Cross-platform Dev", path: "/services/cross-platform-development" },
+    { label: "PWA Development", path: "/services/pwa-development" },
+    { label: "CMS Web Development", path: "/services/cms-based-web-development" },
+  ];
+
+  const securityServices = [
+    { label: "Security Management", path: "/services/security-management" },
+    { label: "Security Ops Center", path: "/services/security-operations-center" },
+    { label: "Penetration Testing", path: "/services/penetration-testing" },
+    { label: "Digital Transformation", path: "/services/digital-transformation" },
+    { label: "IT Consulting", path: "/services/it-consulting" },
+    { label: "Digital Sovereignty", path: "/services/digital-sovereignty" },
+  ];
+
+  const cloudServices = [
     { label: "DevOps Consulting", path: "/services/devops-enablement" },
     { label: "Cloud Migration", path: "/services/cloud-migration" },
     { label: "CI/CD Pipeline", path: "/services/cicd" },
     { label: "Infrastructure as Code", path: "/services/iac" },
     { label: "Kubernetes Solutions", path: "/services/cloud-architecture" },
-    // { label: "Monitoring & Observability", path: "/Contributions" },
   ];
 
   const industries = [
-    { label: "FinTech", path: "/marketplace" },
-    { label: "Healthcare", path: "/marketplace" },
-    { label: "E-commerce", path: "/platform/retail" },
-    { label: "SaaS", path: "/platform/saas-applications" },
-    { label: "Telecom", path: "/contact" },
+    { label: "Retail & E-commerce", path: "/platform/retail" },
+    { label: "SaaS Applications", path: "/platform/saas-applications" },
   ];
 
   const company = [
     { label: "About Us", path: "/about" },
     { label: "Contact Us", path: "/contact" },
-    { label: "News", path: "/insights-knowledge/newsletters" },
+    { label: "Newsletters", path: "/insights-knowledge/newsletters" },
     { label: "Blog", path: "/insights-knowledge/blogs" },
     { label: "Events", path: "/news-events/industry-events" },
   ];
 
-  const quickLinks = [
-    { label: "Sitemap", path: "/sitemap" },
-    { label: "Privacy Policy", path: "/privacy-policy" },
-    { label: "Terms of Service", path: "/terms-of-service" },
-    { label: "Cookie Policy", path: "/cookie-policy" },
-    { label: "GDPR Compliance", path: "/footer-compliance" },
-    { label: "Disclaimer", path: "/disclaimer" },
+  const offices = [
+    {
+      city: "London",
+      type: "Head Office",
+      address: "128 City Road, London, United Kingdom EC1V 2NX",
+      icon: <FiMapPin />
+    },
+    {
+      city: "Tennessee",
+      type: "Sub-Regional Office",
+      address: "522 Aventura Dr, Mt Juliet, Tennessee 37122 United States",
+      icon: <FiMapPin />
+    },
+    {
+      city: "Bengaluru",
+      type: "Corporate Office",
+      address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
+      icon: <FiMapPin />
+    },
+    {
+      city:"Chennai",
+      type:"Sub-Regional Office",
+      address:"Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
+      icon:<FiMapPin /> 
+    },
+    {
+      city:"Thoothukudi",
+      type:"Sub-Regional Office",
+      address:"4/ 367, Rajeev Colony, Pasuvanthanai 628718 Thoothukudi, Tamilnadu, IN",
+      icon:<FiMapPin />
+    }
+  
   ];
 
   const socialMedia = [
-    {
-      icon: <FiLinkedin />,
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all",
-      brand: "brand-li",
-    },
-    {
-      icon: <FiFacebook />,
-      name: "Facebook",
-      url: "https://www.facebook.com/profile.php?id=61579126233218",
-      brand: "brand-fb",
-    },
-    {
-      icon: <FiInstagram />,
-      name: "Instagram",
-      url: "https://www.instagram.com/devopstrio_offcl/",
-      brand: "brand-ig",
-    },
-    {
-      icon: <FiYoutube />,
-      name: "YouTube",
-      url: "https://www.youtube.com/@Devopstrioltd",
-      brand: "brand-yt",
-    },
+    { icon: <FiLinkedin />, url: "https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all", name: "LinkedIn" },
+    { icon: <FiFacebook />, url: "https://www.facebook.com/profile.php?id=61579126233218", name: "Facebook" },
+    { icon: <FiInstagram />, url: "https://www.instagram.com/devopstrio_offcl/", name: "Instagram" },
+    { icon: <FiYoutube />, url: "https://www.youtube.com/@Devopstrioltd", name: "YouTube" },
   ];
 
+
   return (
-    <footer className="footer">
-      {/* Main Footer Content */}
-      <div className="footer-main">
-        <div className="footer-container">
+    <footer className="dt-footer">
+      <div className="dt-footer-container">
+        <div className="dt-footer-top-row">
           {/* Logo & Description Column */}
-          <div className="footer-column footer-logo-col">
-            <div className="footer-logo">
+          <div className="dt-footer-brand-col">
+            <div className="dt-footer-logo">
               <img
                 src="/images/Devopsrio_Main_logo.png"
-                alt="Devopstrio "
-                className="logo-footer-image"
+                alt="Devopstrio"
+                className="dt-footer-logo-img"
               />
-              <svg
-                width="200"
-                height="40"
-                viewBox="0 0 200 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <text
-                  x="0"
-                  y="30"
-                  fill="#ffffff"
-                  fontFamily="Inter, sans-serif"
-                  fontSize="28"
-                  fontWeight="700"
-                >
-                  Devopstrio
-                </text>
-                <circle cx="185" cy="14" r="5" fill="#000000   " />
-                <circle cx="195" cy="14" r="5" fill="#000000   " />
-                <circle cx="190" cy="26" r="5" fill="#000000   " />
-              </svg>
+              <span className="dt-footer-logo-text">Devopstrio</span>
             </div>
-            <p className="footer-description">
+            <p className="dt-footer-description">
               Transforming businesses through innovative DevOps solutions. We
               help organizations achieve faster delivery, improved reliability,
               and scalable infrastructure.
             </p>
 
             {/* Social Media */}
-            <div className="footer-social">
-              <h4 className="footer-social-title">Follow Us</h4>
-              <div className="social-icons">
+            <div className="dt-footer-social">
+              <h4 className="dt-footer-social-title">Follow Us</h4>
+              <div className="dt-social-icons">
                 {socialMedia.map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`footer-social-item ${social.brand}`}
+                    className="dt-social-item"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -138,142 +146,120 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services Column */}
-          <div className="footer-column">
-            <h3 className="footer-column-title">
-              <FiChevronRight className="title-icon" />
-              Services
-            </h3>
-            <ul className="footer-links">
-              {services.map((service) => (
-                <li key={service.label}>
-                  <Link to={service.path}>
-                    <FiChevronRight className="link-icon" />
-                    {service.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries Column */}
-          <div className="footer-column">
-            <h3 className="footer-column-title">
-              <FiChevronRight className="title-icon" />
-              Industries
-            </h3>
-            <ul className="footer-links">
-              {industries.map((industry) => (
-                <li key={industry.label}>
-                  <Link to={industry.path}>
-                    <FiChevronRight className="link-icon" />
-                    {industry.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Column */}
-          <div className="footer-column">
-            <h3 className="footer-column-title">
-              <FiChevronRight className="title-icon" />
-              Company
-            </h3>
-            <ul className="footer-links">
-              {company.map((company) => (
-                <li key={company.label}>
-                  <Link to={company.path}>
-                    <FiChevronRight className="link-icon" />
-                    {company.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Newsletter Column */}
-          <div className="footer-column footer-contact-col">
-            <h3 className="footer-column-title">
-              <FiChevronRight className="title-icon" />
-              Contact Info
-            </h3>
-
-            <div className="contact-info">
-              <div className="contact-item">
-                <FiMapPin className="contact-icon" />
-                <div>
-                  <p className="contact-label">Headquarters</p>
-                  <p className="contact-text">
-                    128, City Road, London, EC1V 2NX<br></br> United Kingdom
-                  </p>
-                </div>
-              </div>
-
-              <div className="contact-item">
-                <FiPhone className="contact-icon" />
-                <div>
-                  <p className="contact-label">Phone</p>
-                  <p className="contact-text">+44 7471 482903</p>
-                </div>
-              </div>
-
-              <div className="contact-item">
-                <FiMail className="contact-icon" />
-                <div>
-                  <p className="contact-label">Email</p>
-                  <p className="contact-text">info@devopstrioglobal.com</p>
-                </div>
-
-                {/* <div className="contact-item">
-                <FiMessageCircle className="contact-icon" />
-                <div>
-                  <p className="contact-label">Whatsapp</p>
-                  <p className="contact-text">8071357581</p>
-                </div>
-              </div> */}
-              </div>
+          {/* Navigation Links Grid */}
+          <div className="dt-footer-links-grid">
+            <div className="dt-footer-col">
+              <h4 className="dt-footer-title">AI & DATA</h4>
+              <ul className="dt-footer-list">
+                {aiServices.map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
             </div>
-
-            {/* Newsletter */}
-            {/* <div className="newsletter">
-              <h4 className="newsletter-title">Stay Updated</h4>
-              <p className="newsletter-desc">Subscribe to our newsletter</p>
-              <form className="newsletter-form">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email"
-                  className="newsletter-input"
-                />
-                <button type="submit" className="newsletter-btn">
-                  <FiChevronRight />
-                </button>
-              </form>
-            </div> */}
+            <div className="dt-footer-col">
+              <h4 className="dt-footer-title">APP DEVELOPMENT</h4>
+              <ul className="dt-footer-list">
+                {appServices.map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div className="dt-footer-col">
+              <h4 className="dt-footer-title">SECURITY</h4>
+              <ul className="dt-footer-list">
+                {securityServices.map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div className="dt-footer-col">
+              <h4 className="dt-footer-title">CLOUD</h4>
+              <ul className="dt-footer-list">
+                {cloudServices.map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div className="dt-footer-col">
+              <h4 className="dt-footer-title">COMPANY</h4>
+              <ul className="dt-footer-list">
+                {[...industries, ...company].map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* <CertificationSlider /> */}
-      {/* <Devopstrio /> */}
-
-      {/* Footer Bottom */}
-      <div className="footer-bottom">
-        <div className="footer-bottom-container">
-          <div className="copyright">
-            © {currentYear} Devopstrio. All rights reserved.
+        {/* Offices Section */}
+        <div className="dt-footer-offices-section">
+          <div className="dt-footer-offices-header">
+            <h4 className="dt-footer-section-title">OUR OFFICES</h4>
+            <div className="dt-footer-see-more">
+              <button 
+                className={`dt-see-more-btn ${showMoreOffices ? 'active' : ''}`}
+                onClick={() => setShowMoreOffices(!showMoreOffices)}
+              >
+                {showMoreOffices ? 'See less' : 'See more'} <FiChevronRight />
+              </button>
+            </div>
           </div>
+          
+          <div className="dt-offices-slider-container">
+            <div className={`dt-offices-slider ${showMoreOffices ? 'slide-active' : ''}`}>
+              {offices.map((office, index) => (
+                <div key={`${office.city}-${index}`} className="dt-office-card">
+                  <h5 className="dt-office-city">{office.city}</h5>
+                  <p className="dt-office-type">
+                    <span className="dt-office-icon">{office.icon}</span>
+                    {office.type}
+                  </p>
+                  <p className="dt-office-address">{office.address}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-          <div className="footer-bottom-links">
-            {quickLinks.map((link) => (
-              <Link key={link.label} to={link.path} className="bottom-link">
-                {link.label}
-              </Link>
-            ))}
+        {/* Contact Section */}
+        <div className="dt-footer-contact-section">
+          <div className="dt-contact-content">
+            <h4 className="dt-footer-section-title">CONTACT US</h4>
+            <div className="dt-contact-items">
+              <a href="tel:+44 7471 482903" className="dt-contact-link">
+                <FiPhone /> +44 7471 482903
+              </a>
+              <a href="mailto:info@devopstrioglobal.com" className="dt-contact-link">
+                <FiMail /> info@devopstrioglobal.com
+              </a>
+            </div>
+          </div>
+          <button className="dt-scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <FiChevronRight style={{ transform: 'rotate(-90deg)' }} />
+          </button>
+        </div>
+
+        {/* Certifications Section */}
+        <div className="dt-footer-certifications">
+          <CertificationSlider />
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="dt-footer-bottom">
+          <div className="dt-bottom-left">
+            <p>© {currentYear} Devopstrio. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/cookie-policy">Cookie Policy</Link>.</p>
+            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
+          </div>
+          <div className="dt-bottom-right">
+            <div className="dt-rating-badges">
+              <div className="dt-rating-stars">★★★★★</div>
+              <div className="dt-rating-text">100+ REVIEWS</div>
+            </div>
           </div>
         </div>
       </div>
     </footer>
+
   );
 };
 
