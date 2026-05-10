@@ -93,7 +93,7 @@ const CategoryPopup = ({ email, closePopup }) => {
         title: "Invalid Email",
         text: "Please provide a valid email address.",
         confirmButtonColor: "#ce2453",
-        background: "#0a0a0a",
+        background: "#000000ff",
         color: "#fff",
         didOpen: () => {
           const container = Swal.getContainer();
