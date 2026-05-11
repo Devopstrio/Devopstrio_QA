@@ -157,7 +157,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="dt-footer-col">
-              <h4 className="dt-footer-title">APP DEVELOPMENT</h4>
+              <h4 className="dt-footer-title">DEVELOPMENT</h4>
               <ul className="dt-footer-list">
                 {appServices.map((item) => (
                   <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
@@ -240,9 +240,9 @@ const Footer = () => {
         </div>
 
         {/* Certifications Section */}
-        <div className="dt-footer-certifications">
+        {/* <div className="dt-footer-certifications">
           <CertificationSlider />
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="dt-footer-bottom">

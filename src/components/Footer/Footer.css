@@ -131,9 +131,8 @@
 
 /* Offices Section */
 .dt-footer-offices-section {
-  padding-top: 60px;
+  padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-bottom: 60px;
   overflow: hidden;
 }
 
@@ -237,12 +236,11 @@
 
 /* Contact Section */
 .dt-footer-contact-section {
-  padding-top: 60px;
+  padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 60px;
 }
 
 .dt-contact-content {
