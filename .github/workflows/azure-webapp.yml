@@ -1,122 +1,131 @@
-name: Azure Multi Environment CI/CD
+name: Azure Enterprise Multi Environment CI/CD
 
 on:
   push:
     branches:
       - main
 
-  workflow_dispatch:
-    inputs:
-      deploy_production:
-        description: 'Deploy to Production Environment'
-        required: true
-        default: 'false'
-        type: choice
-        options:
-          - 'false'
-          - 'true'
-
 env:
   NODE_VERSION: '20'
 
 jobs:
 
-  # ==========================================
-  # QA DEPLOYMENT (AUTOMATIC)
-  # ==========================================
+  # ==================================================
+  # BUILD APPLICATION
+  # ==================================================
+  build:
+    name: Build Application
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      # Install Dependencies
+      - name: Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      # Build Application
+      - name: Build Vite Application
+        env:
+          VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
+          VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        run: npm run build
+
+      # Verify Dist
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "ERROR: dist folder not found."
+            exit 1
+          fi
+
+          echo "Build completed successfully."
+
+      # Compress Build
+      - name: Compress Build Files
+        run: |
+          cd dist
+          zip -r ../release.zip .
+
+      # Upload Artifact
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-production-build
+          path: release.zip
+
+  # ==================================================
+  # DEPLOY QA
+  # ==================================================
   deploy-qa:
     name: Deploy QA Environment
     runs-on: ubuntu-latest
+    needs: build
+
+    environment:
+      name: qa
+      url: https://devopstrio-qa.azurewebsites.net
 
     steps:
-      # Checkout repository
-      - name: Checkout Repository
-        uses: actions/checkout@v4
 
-      # Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      # Download Artifact
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          name: vite-production-build
 
-      # Install dependencies
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+      # Extract Artifact
+      - name: Extract Build Files
+        run: unzip release.zip -d dist
 
-      # Build application
-      - name: Build Application
-        env:
-          VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
-          VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
-        run: npm run build
-
-      # Verify build output
-      - name: Verify Build Output
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "ERROR: dist folder not found."
-            exit 1
-          fi
-
-          echo "QA build completed successfully."
-
-      # Deploy to QA
+      # Deploy QA
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'devopstrio-QA'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          app-name: 'devopstrio-qa'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
           package: ./dist
+          clean: true
 
-  # ==========================================
-  # PRODUCTION DEPLOYMENT (MANUAL)
-  # ==========================================
+  # ==================================================
+  # DEPLOY PRODUCTION
+  # ==================================================
   deploy-production:
     name: Deploy Production Environment
     runs-on: ubuntu-latest
+    needs: deploy-qa
 
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
+    environment:
+      name: production
+      url: https://devopstrio.co.uk
 
     steps:
-      # Checkout repository
-      - name: Checkout Repository
-        uses: actions/checkout@v4
 
-      # Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      # Download Artifact
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          name: vite-production-build
 
-      # Install dependencies
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+      # Extract Artifact
+      - name: Extract Build Files
+        run: unzip release.zip -d dist
 
-      # Build application
-      - name: Build Application
-        env:
-          VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
-          VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
-        run: npm run build
-
-      # Verify build output
-      - name: Verify Build Output
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "ERROR: dist folder not found."
-            exit 1
-          fi
-
-          echo "Production build completed successfully."
-
-      # Deploy to Production
+      # Deploy Production
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
           package: ./dist
+          clean: true
