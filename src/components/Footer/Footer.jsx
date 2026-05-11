@@ -248,7 +248,7 @@ const Footer = () => {
         <div className="dt-footer-bottom">
           <div className="dt-bottom-left">
             <p>© {currentYear} Devopstrio. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/cookie-policy">Cookie Policy</Link>.</p>
-            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
+            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/privacy-policy">Privacy Policy</Link>, <Link rel="stylesheet" href="" /> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
           </div>
           <div className="dt-bottom-right">
             <div className="dt-rating-badges">

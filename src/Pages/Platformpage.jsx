@@ -609,7 +609,6 @@ export default function PlatformPage() {
                     API-first architecture for easy integration
                   </li>
                 </ul>
-                <button className="platform-use-case-btn">Learn More</button>
               </div>
             </div>
 
@@ -644,7 +643,6 @@ export default function PlatformPage() {
                     Personalized shopping experiences with AI
                   </li>
                 </ul>
-                <button className="platform-use-case-btn">Learn More</button>
               </div>
             </div>
           </div>

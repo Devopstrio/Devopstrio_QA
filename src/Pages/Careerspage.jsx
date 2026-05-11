@@ -287,6 +287,7 @@ const Careerspage = () => {
     if (giTabOpening) return;
     setGiTabOpening(true);
     window.setTimeout(() => {
+      window.scrollTo(0, 0);
       navigate("/global-internship");
     }, 420);
   };

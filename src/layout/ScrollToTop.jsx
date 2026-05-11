@@ -2,15 +2,17 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant" // change to "smooth" if you want animation
-    });
-  }, [pathname]);
+    // Standard window scroll
+    window.scrollTo(0, 0);
+    
+    // Fallback for cases where html/body might be the scroll container
+    if (document.documentElement) {
+      document.documentElement.scrollTo(0, 0);
+    }
+  }, [pathname, search]);
 
   return null;
 }

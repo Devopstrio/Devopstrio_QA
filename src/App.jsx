@@ -113,150 +113,159 @@ import NotFoundPage from "./Pages/NotFoundPage";
 
 import "./App.css";
 
+import ClickSpark from "./layout/Click_it";
+
 function App() {
   
   return (
     <HelmetProvider>
       <Router>
-        <Helmet>
+        <ClickSpark
+          sparkColor="rgba(255, 255, 255, 0.6)"
+          sparkSize={10}
+          sparkRadius={20}
+          sparkCount={10}
+          duration={400}
+        >
+          <Helmet>
+            {/* Google tag (gtag.js) */}
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-NGV5DC74RW"
+            ></script>
+            <script>
+              {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NGV5DC74RW');
+            `}
+            </script>
+          </Helmet>
+          <CookieBanner />
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            {/* ===== Home ===== */}
+            <Route path="/" element={<Home />} />
+            <Route path="/navbar" element={<Navbar />} />
+            <Route path="/footer" element={<Footer />} />
+
+            {/* ===== Main Navigation Pages ===== */}
+            <Route path="/services" element={<Servicespage />} />
+            <Route path="/platform" element={<Platformpage />} />
+            <Route path="/clients" element={<ClientSuccess />} />
+            <Route path="/insights" element={<Insightspage />} />
+            <Route path="/ecosystem" element={<Ecosystempage />} />
+            <Route path="/about" element={<Aboutpage />} />
+            <Route path="/careers" element={<Careerspage />} />
+            <Route path="/global-internship" element={<GlobalInternshipPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/contributions" element={<Contributions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/footer-compliance" element={<FooterCompliance />} />
+            <Route path="/terms-of-service" element={<TermsofService />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+
+            {/* ===== SERVICES SUB-ROUTES ===== */}
+            {/* ===== Cloud Services ===== */}
+            <Route path="/services/cloud-architecture" element={<CloudArchitecture />} />
+            <Route path="/services/cloud-migration" element={<CloudMigration />} />
+            <Route path="/services/multi-cloud" element={<MultiCloud />} />
+
+            {/* ===== DevOps & Platform ===== */}
+            <Route path="/services/devops-enablement" element={<DevOpsEnablement />} />
+            <Route path="/services/cicd" element={<CICD />} />
+            <Route path="/services/iac" element={<IaC />} />
+            {/* <Route path="/services/serverless" element={<Serverless />} /> */}
+
+       
+            {/* ===== Security & Reliability ===== */}
+            <Route path="/services/security" element={<CloudSecurity />} />
+            <Route path="/services/iam" element={<IAM />} />
+            <Route path="/services/compliance" element={<Compliance />} />
+            <Route path="/services/threat-detection" element={<ThreatDetection />} />
+            <Route path="/services/explore" element={<ProvideServices />} />
+
+            {/* ===== AI & Data Services ===== */}
+            <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
+            <Route path="/services/ai-consulting-services" element={<AIConsulting />} />
+            <Route path="/services/ai-tools" element={<AiTools />} />
+            <Route path="/services/data-science" element={<DataScience />} />
+            <Route path="/services/database-creation-and-management" element={<DBCreation />} />
+            <Route path="/services/hire-ai-experts" element={<HireAi />} />
+
+            {/* Application Development */}
+            <Route path="/services/mobile-development" element={<Mobiledevelopment />} />
+            <Route path="/services/web-development" element={<Webdevelopment />} />
+            <Route path="/services/cross-platform-development" element={<Crossplatform />} />
+            <Route path="/services/pwa-development" element={<PWAdevelopment />} />
+            <Route path="/services/cms-based-web-development" element={<CMSdevelopment />} />
+
+            {/* Cybersecurity Services */}
+            <Route path="/services/security-management" element={<ITSecurity />} />
+            <Route path="/services/security-operations-center" element={<OperationsCenter />} />
+            <Route path="/services/penetration-testing" element={<PenetrationTesting />} />
+            <Route path="/services/digital-transformation" element={<DigitalTransformation />} />
+            <Route path="/services/it-consulting" element={<ITConsulting />} />
+            <Route path="/services/digital-sovereignty" element={<DigitalSovereignty />} />
+
+            {/* ===== PLATFORM SUB-ROUTES ===== */}
+            <Route path="/platform/saas-applications" element={<SaaSApplications />} />
+            <Route path="/platform/retail" element={<RetailPlatform />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/resources/roi-reports" element={<ROIReports />} />
+            <Route path="/resources/benchmarks" element={<Benchmarks />} />
+            <Route path="/resources/white-papers" element={<WhitePapers />} />
+
+            {/* ===== ECOSYSTEM SUB-ROUTES ===== */}
+            {/* ===== Partners ===== */}
+            <Route path="/partners/aws" element={<AWSPartners />} />
+            <Route path="/partners/azure" element={<AzurePartners />} />
+            <Route path="/partners/gcp" element={<GCPPartners />} />
+            {/* <Route path="/partners/servicenow" element={<ServiceNowPartners />} /> */}
+
+            {/* ===== Marketplace ===== */}
+            <Route path="/marketplace" element={<MarketplacePage />} />
+            <Route path="/marketplace/cloud-infrastructure" element={<CloudInfrastructureMarketplace />} />
+            <Route path="/marketplace/data-analytics" element={<DataAnalyticsMarketplace />} />
+            {/* <Route path="/marketplace/enterprise-apps" element={<EnterpriseAppsMarketplace />} /> */}
+            <Route path="/marketplace/cx" element={<CXMarketplace />} />
+            {/* <Route path="/marketplace/ai-ml" element={<AIMLMarketplace />} /> */}
+
+            {/* ===== ABOUT SUB-ROUTES ===== */}
+            <Route path="/about/overview" element={<CompanyOverview />} />
+            {/* <Route path="/about/locations" element={<Locations />} /> */}
+            <Route path="/about/values" element={<Values />} />
+            <Route path="/events" element={<Events />} />
+
+            {/* ===== MEDIA SUB-ROUTES ===== */}
+            <Route path="/:sectionSlug/white-paper" element={<WhitePapers />} />
+            <Route path="/:sectionSlug/:categorySlug" element={<CategoryPage />} />
+            <Route path="/:sectionSlug/:categorySlug/:postId" element={<PostDetail />} />
+            <Route path="/:sectionSlug/:categorySlug/:postId/reader" element={<DocumentReader />} />
+
+            {/* ===== CAREERS SUB-ROUTES ===== */}
+            <Route path="/apply/:requirementId" element={<CandidateApplyPage />} />
+            <Route path="/careers/internship" element={<InternshipPage />} />
+            <Route path="/careers/jobs" element={<JobPortal />} />
+            <Route path="/" element={<CandidateApplyPage />} />
           
-          {/* Google tag (gtag.js) */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-NGV5DC74RW"
-          ></script>
-          <script>
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-NGV5DC74RW');
-          `}
-          </script>
-        </Helmet>
-        <CookieBanner />
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          {/* ===== Home ===== */}
-          <Route path="/" element={<Home />} />
-          <Route path="/navbar" element={<Navbar />} />
-          <Route path="/footer" element={<Footer />} />
+            {/* ===== 404 Route ===== */}
+            <Route path="*" element={<NotFoundPage />} />
 
-          {/* ===== Main Navigation Pages ===== */}
-          <Route path="/services" element={<Servicespage />} />
-          <Route path="/platform" element={<Platformpage />} />
-          <Route path="/clients" element={<ClientSuccess />} />
-          <Route path="/insights" element={<Insightspage />} />
-          <Route path="/ecosystem" element={<Ecosystempage />} />
-          <Route path="/about" element={<Aboutpage />} />
-          <Route path="/careers" element={<Careerspage />} />
-          <Route path="/global-internship" element={<GlobalInternshipPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/contributions" element={<Contributions />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/footer-compliance" element={<FooterCompliance />} />
-          <Route path="/terms-of-service" element={<TermsofService />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
+            {/* ===== They not to use it ===== */}
+            {/* <Route path="/services/gitops" element={<GitOps />} /> */}
+            {/* <Route path="/services/incident-response"element={<IncidentResponse />}/> */}
 
-          {/* ===== SERVICES SUB-ROUTES ===== */}
-          {/* ===== Cloud Services ===== */}
-          <Route path="/services/cloud-architecture" element={<CloudArchitecture />} />
-          <Route path="/services/cloud-migration" element={<CloudMigration />} />
-          <Route path="/services/multi-cloud" element={<MultiCloud />} />
-
-          {/* ===== DevOps & Platform ===== */}
-          <Route path="/services/devops-enablement" element={<DevOpsEnablement />} />
-          <Route path="/services/cicd" element={<CICD />} />
-          <Route path="/services/iac" element={<IaC />} />
-          {/* <Route path="/services/serverless" element={<Serverless />} /> */}
-
-     
-          {/* ===== Security & Reliability ===== */}
-          <Route path="/services/security" element={<CloudSecurity />} />
-          <Route path="/services/iam" element={<IAM />} />
-          <Route path="/services/compliance" element={<Compliance />} />
-          <Route path="/services/threat-detection" element={<ThreatDetection />} />
-          <Route path="/services/explore" element={<ProvideServices />} />
-
-          {/* ===== AI & Data Services ===== */}
-          <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
-          <Route path="/services/ai-consulting-services" element={<AIConsulting />} />
-          <Route path="/services/ai-tools" element={<AiTools />} />
-          <Route path="/services/data-science" element={<DataScience />} />
-          <Route path="/services/database-creation-and-management" element={<DBCreation />} />
-          <Route path="/services/hire-ai-experts" element={<HireAi />} />
-
-          {/* Application Development */}
-          <Route path="/services/mobile-development" element={<Mobiledevelopment />} />
-          <Route path="/services/web-development" element={<Webdevelopment />} />
-          <Route path="/services/cross-platform-development" element={<Crossplatform />} />
-          <Route path="/services/pwa-development" element={<PWAdevelopment />} />
-          <Route path="/services/cms-based-web-development" element={<CMSdevelopment />} />
-
-          {/* Cybersecurity Services */}
-          <Route path="/services/security-management" element={<ITSecurity />} />
-          <Route path="/services/security-operations-center" element={<OperationsCenter />} />
-          <Route path="/services/penetration-testing" element={<PenetrationTesting />} />
-          <Route path="/services/digital-transformation" element={<DigitalTransformation />} />
-          <Route path="/services/it-consulting" element={<ITConsulting />} />
-          <Route path="/services/digital-sovereignty" element={<DigitalSovereignty />} />
-
-          {/* ===== PLATFORM SUB-ROUTES ===== */}
-          <Route path="/platform/saas-applications" element={<SaaSApplications />} />
-          <Route path="/platform/retail" element={<RetailPlatform />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/resources/roi-reports" element={<ROIReports />} />
-          <Route path="/resources/benchmarks" element={<Benchmarks />} />
-          <Route path="/resources/white-papers" element={<WhitePapers />} />
-
-          {/* ===== ECOSYSTEM SUB-ROUTES ===== */}
-          {/* ===== Partners ===== */}
-          <Route path="/partners/aws" element={<AWSPartners />} />
-          <Route path="/partners/azure" element={<AzurePartners />} />
-          <Route path="/partners/gcp" element={<GCPPartners />} />
-          {/* <Route path="/partners/servicenow" element={<ServiceNowPartners />} /> */}
-
-          {/* ===== Marketplace ===== */}
-          <Route path="/marketplace" element={<MarketplacePage />} />
-          <Route path="/marketplace/cloud-infrastructure" element={<CloudInfrastructureMarketplace />} />
-          <Route path="/marketplace/data-analytics" element={<DataAnalyticsMarketplace />} />
-          {/* <Route path="/marketplace/enterprise-apps" element={<EnterpriseAppsMarketplace />} /> */}
-          <Route path="/marketplace/cx" element={<CXMarketplace />} />
-          {/* <Route path="/marketplace/ai-ml" element={<AIMLMarketplace />} /> */}
-
-          {/* ===== ABOUT SUB-ROUTES ===== */}
-          <Route path="/about/overview" element={<CompanyOverview />} />
-          {/* <Route path="/about/locations" element={<Locations />} /> */}
-          <Route path="/about/values" element={<Values />} />
-          <Route path="/events" element={<Events />} />
-
-          {/* ===== MEDIA SUB-ROUTES ===== */}
-          <Route path="/:sectionSlug/white-paper" element={<WhitePapers />} />
-          <Route path="/:sectionSlug/:categorySlug" element={<CategoryPage />} />
-          <Route path="/:sectionSlug/:categorySlug/:postId" element={<PostDetail />} />
-          <Route path="/:sectionSlug/:categorySlug/:postId/reader" element={<DocumentReader />} />
-
-          {/* ===== CAREERS SUB-ROUTES ===== */}
-          <Route path="/apply/:requirementId" element={<CandidateApplyPage />} />
-          <Route path="/careers/internship" element={<InternshipPage />} />
-          <Route path="/careers/jobs" element={<JobPortal />} />
-          <Route path="/" element={<CandidateApplyPage />} />
-        
-          {/* ===== 404 Route ===== */}
-          <Route path="*" element={<NotFoundPage />} />
-
-          {/* ===== They not to use it ===== */}
-          {/* <Route path="/services/gitops" element={<GitOps />} /> */}
-          {/* <Route path="/services/incident-response"element={<IncidentResponse />}/> */}
-
-        </Routes>
-        {/* ===== CHATBOT ===== */}
-        <ChatBot />
-        {/* ===== FOOTER ===== */}
-        <Footer />
+          </Routes>
+          {/* ===== CHATBOT ===== */}
+          <ChatBot />
+          {/* ===== FOOTER ===== */}
+          <Footer />
+        </ClickSpark>
       </Router>
     </HelmetProvider>
   );
