@@ -62,6 +62,12 @@ jobs:
 
           echo "QA build completed successfully."
 
+      # Azure Login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       # Deploy to QA
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
@@ -113,6 +119,12 @@ jobs:
           fi
 
           echo "Production build completed successfully."
+
+      # Azure Login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       # Deploy to Production
       - name: Deploy to Production Azure Web App
