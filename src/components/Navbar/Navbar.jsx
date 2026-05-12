@@ -169,7 +169,7 @@ const Navbar = () => {
                 description: "Strategy development, integration and deployment, maintenance and support",
               },
               {
-                name: "AI Tools for Business Transformation",
+                name: "AI for Business Transformation",
                 path: "/services/ai-tools",
                 description: "Top AI solutions from Devopstrio for 2026",
               },
@@ -179,7 +179,7 @@ const Navbar = () => {
                 description: "Feedback analysis, metrics analysis, task automation",
               },
               {
-                name: "Database Creation and Management",
+                name: "Database Management",
                 path: "/services/database-creation-and-management",
                 description: "Building modern solutions with advanced tech practices",
               },
@@ -206,7 +206,7 @@ const Navbar = () => {
                 description: "Customer and employee web portals, apps for front-office, enterprise websites",
               },
               {
-                name: "Cross-Platform Development",
+                name: "Cross-Platform",
                 path: "/services/cross-platform-development",
                 description: "Development, consulting, migration, design, QA, support and maintenance",
               },
@@ -216,11 +216,11 @@ const Navbar = () => {
                 description: "PWA development, design, testing, integration, migration, consulting",
               },
               {
-                name: "CMS-Based Web Development",
+                name: "CMS Web Development",
                 path: "/services/cms-based-web-development",
                 description: "CMS-based web development: implementation, integration, support, etc.",
               },
-                {
+              {
                 name: "More Services",
                 path: "/services/explore",
                 description: "Explore all our services",
@@ -258,7 +258,7 @@ const Navbar = () => {
             icon: <FiShield />,
             items: [
               {
-                name: "IT Security Services",
+                name: "IT Security",
                 path: "/services/security-management",
                 description: "SSD, QA, security, culture establishment, audits, hardening",
               },
@@ -268,11 +268,11 @@ const Navbar = () => {
                 description: "Incident response, threat hunting, monitoring, training, assessment",
               },
               {
-                name: "Penetration Testing Services",
+                name: "Penetration Testing",
                 path: "/services/penetration-testing",
                 description: "Penetration testing for APIs, IoT, and networks, red teaming, GDPR/PII",
               },
-                {
+              {
                 name: "More Services",
                 path: "/services/explore",
                 description: "Explore all our services",
@@ -298,7 +298,7 @@ const Navbar = () => {
                 path: "/services/digital-sovereignty",
                 description: "Ensuring data control, security, and compliance in the digital landscape",
               },
-                {
+              {
                 name: "More Services",
                 path: "/services/explore",
                 description: "Explore all our services",
@@ -459,12 +459,12 @@ const Navbar = () => {
         },
       },
 
-      Platform: {
+      Industries: {
         path: "/platform",
-        title: "Platform",
+        title: "Industries",
         categories: [
-          {
-            name: "Platforms",
+             {
+            name: "Industries",
             icon: <FiLayers />,
             items: [
               {
@@ -477,47 +477,40 @@ const Navbar = () => {
                 path: "/platform/retail",
                 description: "Scalable platforms for retail",
               },
-            ],
-          },
+              {
+                name: "Financial Services",
+                path: "/platform/financial-services",
+                description: "Software for Banking, insurance, inverting, leanding , cypto and more ",
+              },
+              {
+                name: "Healthcare",
+                path: "/platform/retail",
+                description: "Products for Telehealth, Telecare, Telemonitoring, EMR/EHR, Patient monitoring, etc.",
+              },
+              {
+                name: "Logistics",
+                path: "/platform/logistics",
+                description: "Products for Logistics and Supply Chain Management",
+              },
+              {
+                name: "Media & Entertainment",
+                path: "/platform/media-entertainment",
+                description: "Solution for live streaming , video on demand, OTT and other media and entertainment needs",
+              },
+              {
+                name: "Telecommunication",
+                path: "/platform/telecommunication",
+                description: "Telecom software solutions with Channel Partner Management, OSS, BSS, Cloud Services and other telecom needs",
+              },
+              {
+                name: "Automotive",
+                path: "/platform/automotive",
+                description: "Automotive IVI solutions, Connectivity, ADAS / AD and powertrain system Software",
+              }          
+            ],         
+          },    
 
-          /* Success Stories menu */
-          ...platformSections.map((section) => {
-            return {
-              ...section,
-              items: section.items.map((item) => {
-                // SUCCESS STORIES Overrides
-                if (item.name === "Client Transformations") {
-                  return {
-                    ...item,
-                    description:
-                      "Real-world digital transformation case studies",
-                  };
-                }
-
-                if (item.name === "Impact Metrics") {
-                  return {
-                    ...item,
-                    description:
-                      "Measurable results and performance improvements",
-                  };
-                }
-
-                if (item.name === "Testimonials") {
-                  return {
-                    ...item,
-                    description: "What our clients say about working with us",
-                  };
-                }
-
-                // Fallback: Pick a "random" (deterministic) description from the pool
-                return {
-                  ...item,
-                  description:
-                    item.description || getDefaultDescription(item.name),
-                };
-              }),
-            };
-          }),
+          /* Success Stories menu moved to About */
         ],
         card: {
           title: "Industry-Focused Cloud Solutions",
@@ -551,11 +544,11 @@ const Navbar = () => {
                 path: "/partners/gcp",
                 description: "Premier GCP partner",
               },
-              // {
-              //   name: "ServiceNow",
-              //   path: "/partners/servicenow",
-              //   description: "Elite ServiceNow partner",
-              // },
+              {
+                name: "ServiceNow",
+                path: "/partners/servicenow",
+                description: "Elite ServiceNow partner",
+              },
             ],
           },
           {
@@ -738,6 +731,30 @@ const Navbar = () => {
                   };
                 }
 
+                // SUCCESS STORIES Overrides
+                if (item.name === "Client Transformations") {
+                  return {
+                    ...item,
+                    description:
+                      "Real-world digital transformation case studies",
+                  };
+                }
+
+                if (item.name === "Impact Metrics") {
+                  return {
+                    ...item,
+                    description:
+                      "Measurable results and performance improvements",
+                  };
+                }
+
+                if (item.name === "Testimonials") {
+                  return {
+                    ...item,
+                    description: "What our clients say about working with us",
+                  };
+                }
+
                 // Fallback: Pick a "random" (deterministic) description from the pool
                 return {
                   ...item,
@@ -763,7 +780,7 @@ const Navbar = () => {
   // Main menu items
   const menuItems = [
     { label: "Services", path: "/services", mega: true },
-    { label: "Platform", path: "/platform", mega: true },
+    { label: "Industries", path: "/platform", mega: true },
     { label: "Ecosystem", path: "/ecosystem", mega: true },
     { label: "Insights", path: "/insights", mega: false },
     { label: "Careers", path: "/careers", mega: false },

@@ -190,54 +190,108 @@ const SOLUTIONS = [
     title: "GCP Landing Zone",
     desc: "Foundation blueprint — org structure, VPC design, IAM, budgets and policy guardrails with Terraform.",
     color: "#522c72",
+    moreDetails: [
+      "Org & Folder hierarchy",
+      "Shared VPC networking",
+      "IAM Policy Guardrails",
+      "Cloud Billing & Budgets",
+    ],
   },
   {
     icon: <FiCpu />,
     title: "Vertex AI Platform",
     desc: "End-to-end ML lifecycle — training, serving, monitoring, Gemini fine-tuning, and responsible AI.",
     color: "#962964",
+    moreDetails: [
+      "Gemini Model fine-tuning",
+      "MLOps on Vertex AI Pipelines",
+      "Model Monitoring & drift",
+      "Vector Search & RAG setup",
+    ],
   },
   {
     icon: <FiDatabase />,
     title: "BigQuery Data Warehouse",
     desc: "Petabyte-scale analytics with streaming ingestion, ML-in-database, and Looker for self-serve BI.",
     color: "#ce2453",
+    moreDetails: [
+      "Streaming Ingestion setup",
+      "BigQuery ML modeling",
+      "Looker BI dashboards",
+      "Data Governance (Dataplex)",
+    ],
   },
   {
     icon: <FiShield />,
     title: "Chronicle SecOps",
     desc: "Google-scale threat intelligence, SIEM/SOAR, and Security Command Centre for GCP estates.",
     color: "#dd5c54",
+    moreDetails: [
+      "SIEM / SOAR automation",
+      "Threat Intel integration",
+      "SCC Enterprise setup",
+      "VPC Service Controls",
+    ],
   },
   {
     icon: <FiCode />,
     title: "Cloud Native CI/CD",
     desc: "Cloud Build, Cloud Deploy, Artifact Registry, and Binary Authorisation for secure supply chain.",
     color: "#e79e57",
+    moreDetails: [
+      "Cloud Build pipelines",
+      "Canary / Blue-Green deploys",
+      "Binary Authorization",
+      "Artifact Registry setup",
+    ],
   },
   {
     icon: <FiServer />,
     title: "GKE Enterprise",
     desc: "Production-grade Kubernetes — Autopilot, multi-cluster fleet, Anthos Service Mesh, and KEDA.",
     color: "#522c72",
+    moreDetails: [
+      "GKE Autopilot setup",
+      "Anthos Multi-cluster fleet",
+      "Service Mesh (Istio)",
+      "Autoscaling with KEDA",
+    ],
   },
   {
     icon: <FiGlobe />,
     title: "Multi-Region & HA",
     desc: "Global load balancing, Cloud CDN, Anycast, and disaster recovery across GCP regions.",
     color: "#962964",
+    moreDetails: [
+      "Global Load Balancing",
+      "Cloud CDN integration",
+      "Cross-region DR patterns",
+      "Cloud DNS & Anycast",
+    ],
   },
   {
     icon: <FiActivity />,
     title: "Observability Stack",
     desc: "Cloud Monitoring, Cloud Trace, Error Reporting, and Grafana Cloud integration for full-stack ops.",
     color: "#ce2453",
+    moreDetails: [
+      "Cloud Monitoring alerts",
+      "Cloud Trace & Profiler",
+      "Error Reporting setup",
+      "Grafana/Prometheus link",
+    ],
   },
   {
     icon: <FiPackage />,
     title: "Serverless & Event-Driven",
     desc: "Cloud Run, Cloud Functions Gen2, Pub/Sub, Eventarc — build event-driven systems without managing servers.",
     color: "#dd5c54",
+    moreDetails: [
+      "Cloud Run deployments",
+      "Cloud Functions Gen 2",
+      "Pub/Sub messaging",
+      "Eventarc architectures",
+    ],
   },
 ];
 
@@ -354,8 +408,9 @@ function Counter({ to, suffix = "" }) {
 ════════════════════════════════════════ */
 const GCPPartners = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("infra");
+  const [activeTab, setActiveTab] = useState("ai");
   const [caseIdx, setCaseIdx] = useState(0);
+  const [expandedSol, setExpandedSol] = useState(null); // Track expanded card index
   const [newsIdx, setNewsIdx] = useState(0);
 
   /* Scroll-driven hero parallax */
@@ -454,12 +509,6 @@ const GCPPartners = () => {
                 onClick={() => navigate("/contact")}
               >
                 Talk to GCP Experts <FiArrowRight />
-              </button>
-              <button
-                className="gcp-btn-ghost gcp-btn-lg"
-                onClick={() => navigate("/case-studies")}
-              >
-                View Case Studies <FiExternalLink />
               </button>
             </motion.div>
 
@@ -745,32 +794,74 @@ const GCPPartners = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
           >
-            {SOLUTIONS.map((s, i) => (
-              <motion.div
-                key={i}
-                className="gcp-sol-card"
-                variants={fadeUp}
-                whileHover={{ y: -7 }}
-                style={{ "--sc": s.color }}
-              >
-                <div
-                  className="gcp-sol-icon"
-                  style={{
-                    color: s.color,
-                    background: `${s.color}10`,
-                    borderColor: `${s.color}20`,
-                  }}
+            {SOLUTIONS.map((s, i) => {
+              const isExpanded = expandedSol === i;
+              return (
+                <motion.div
+                  key={i}
+                  layout
+                  className={`gcp-solution-card ${isExpanded ? "expanded" : ""}`}
+                  variants={fadeUp}
+                  whileHover={!isExpanded ? { y: -7 } : {}}
+                  style={{ "--sc": s.color }}
+                  onClick={() => setExpandedSol(isExpanded ? null : i)}
                 >
-                  {s.icon}
-                </div>
-                <h3 className="gcp-sol-title">{s.title}</h3>
-                <p className="gcp-sol-desc">{s.desc}</p>
-                <div className="gcp-sol-arrow">
-                  <FiChevronRight />
-                </div>
-                <div className="gcp-sol-bar" />
-              </motion.div>
-            ))}
+                  <div
+                    className="gcp-solution-icon"
+                    style={{
+                      color: s.color,
+                      background: `${s.color}10`,
+                      borderColor: `${s.color}20`,
+                    }}
+                  >
+                    {s.icon}
+                  </div>
+                  <h3 className="gcp-solution-title">{s.title}</h3>
+                  <p className="gcp-solution-desc">{s.desc}</p>
+
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        className="gcp-solution-details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <ul className="gcp-solution-list">
+                          {s.moreDetails.map((detail, idx) => (
+                            <li key={idx}>
+                              <FiCheck style={{ color: s.color }} />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          className="gcp-solution-btn"
+                          style={{ backgroundColor: s.color }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate("/contact");
+                          }}
+                        >
+                          Enquire Now
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="gcp-solution-arrow">
+                    <FiChevronRight
+                      style={{
+                        transform: isExpanded ? "rotate(90deg)" : "none",
+                        transition: "transform 0.3s ease",
+                      }}
+                    />
+                  </div>
+                  <div className="gcp-solution-bar" />
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -843,7 +934,7 @@ const GCPPartners = () => {
                   </div>
                   <button
                     className="gcp-btn-primary"
-                    style={{ "--bc": c.color }}
+                    style={{ "--bc": c.color }} onClick={() => navigate("/clients")}
                   >
                     Read Full Story <FiArrowRight />
                   </button>
@@ -968,11 +1059,12 @@ const GCPPartners = () => {
               </div>
             </div>
           </div>
+          <Newsletter />
         </div>
       </section>
 
       <Cta />
-      <Newsletter />
+      
     </div>
   );
 };

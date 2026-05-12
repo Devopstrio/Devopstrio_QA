@@ -1287,6 +1287,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-self: start; /* Allow cards to have different heights */
+  height: 100%;
 }
 
 .aws-solution-card:hover {
@@ -1323,7 +1325,58 @@
   font-size: .82rem;
   color: var(--aws-muted);
   line-height: 1.65;
-  flex: 1
+  margin-bottom: 4px;
+}
+
+.aws-solution-card.expanded {
+  border-color: var(--sc);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: 10;
+}
+
+.aws-solution-details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.aws-solution-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aws-solution-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--aws-text);
+}
+
+.aws-solution-list li svg {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.aws-solution-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.aws-solution-btn:hover {
+  opacity: 0.9;
 }
 
 .aws-solution-arrow {

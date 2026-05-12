@@ -187,6 +187,7 @@
   background: rgba(206, 36, 83, 0.5);
   animation: snw-float linear infinite;
   opacity: 0;
+  will-change: transform, opacity; /* Hardware acceleration */
 }
 
 @keyframes snw-float {
@@ -410,7 +411,7 @@
   border: 1px solid var(--snw-border);
   border-radius: 50px;
   font-size: 0.72rem;
-  backdrop-filter: blur(8px);
+  /* backdrop-filter: blur(8px);  -- Removed for performance */
 }
 
 .snw-chip-icon {
@@ -474,7 +475,7 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px); /* Reduced from 16px */
   color: #fff;
   font-size: 1.6rem;
   display: flex;
@@ -483,6 +484,7 @@
   cursor: pointer;
   transition: var(--snw-trans);
   padding-left: 4px;
+  will-change: transform, box-shadow, background;
 }
 
 .snw-play-ring {
@@ -1061,7 +1063,9 @@
   cursor: default;
   transition:
     border-color 0.4s,
-    box-shadow 0.4s;
+    box-shadow 0.4s,
+    transform 0.4s;
+  will-change: transform, box-shadow, border-color;
 }
 
 .snw-sol-card:hover {
@@ -1097,7 +1101,58 @@
   font-size: 0.83rem;
   color: var(--snw-muted);
   line-height: 1.65;
-  flex: 1;
+  margin-bottom: 4px;
+}
+
+.snw-sol-card.expanded {
+  border-color: var(--sc);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: 10;
+}
+
+.snw-sol-details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.snw-sol-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.snw-sol-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--snw-text);
+}
+
+.snw-sol-list li svg {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.snw-sol-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.snw-sol-btn:hover {
+  opacity: 0.9;
 }
 
 .snw-sol-arrow {

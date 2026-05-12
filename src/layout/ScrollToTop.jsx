@@ -5,13 +5,28 @@ export default function ScrollToTop() {
   const { pathname, search } = useLocation();
 
   useEffect(() => {
-    // Standard window scroll
-    window.scrollTo(0, 0);
-    
+    // Standard window scroll with instant behavior to prevent conflicts
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+
     // Fallback for cases where html/body might be the scroll container
     if (document.documentElement) {
-      document.documentElement.scrollTo(0, 0);
+      document.documentElement.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
     }
+    
+    // Additional fallback for slower renders
+    const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [pathname, search]);
 
   return null;

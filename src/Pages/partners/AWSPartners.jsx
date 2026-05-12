@@ -305,54 +305,108 @@ const SOLUTIONS = [
     title: "Cloud Landing Zone",
     desc: "Secure, scalable AWS foundations via Control Tower and Account Factory.",
     color: "#FF9900",
+    moreDetails: [
+      "Control Tower & Guardrails",
+      "Account Factory automation",
+      "VPC / Subnet networking",
+      "AWS Organizations setup",
+    ],
   },
   {
     icon: <FiZap />,
     title: "CI/CD Automation",
     desc: "Full pipeline automation — CodePipeline, GitHub Actions, and EKS deployments.",
     color: "#962964",
+    moreDetails: [
+      "AWS CodePipeline setup",
+      "GitHub Actions integration",
+      "Blue/Green deployments",
+      "Containerisation (EKS/ECS)",
+    ],
   },
   {
     icon: <FiShield />,
     title: "Compliance as Code",
     desc: "AWS Config rules, GuardDuty, and Security Hub for SOC 2 & PCI-DSS.",
     color: "#ce2453",
+    moreDetails: [
+      "Automated Config rules",
+      "GuardDuty threat detection",
+      "Security Hub integration",
+      "SOC 2 / PCI-DSS compliance",
+    ],
   },
   {
     icon: <FiDatabase />,
     title: "Data Lake & Analytics",
     desc: "S3-based data lakes, Glue pipelines, and Athena for self-serve analytics.",
     color: "#dd5c54",
+    moreDetails: [
+      "S3 Data Lake architecture",
+      "AWS Glue ETL pipelines",
+      "Athena SQL querying",
+      "QuickSight visualisation",
+    ],
   },
   {
     icon: <FiCpu />,
     title: "ML Platforms on SageMaker",
     desc: "End-to-end ML workflows — training, deployment, and monitoring on SageMaker.",
     color: "#7d18d1",
+    moreDetails: [
+      "SageMaker model training",
+      "Automated MLOps pipelines",
+      "Model monitoring & drift",
+      "Inference endpoint setup",
+    ],
   },
   {
     icon: <FiServer />,
     title: "FinOps & Cost Control",
     desc: "AWS Cost Explorer, savings plans, and reserved instance optimisation programs.",
     color: "#FF9900",
+    moreDetails: [
+      "Cost Explorer dashboards",
+      "Savings Plans strategy",
+      "Reserved Instance mgmt",
+      "Budget alerts & governance",
+    ],
   },
   {
     icon: <FiMonitor />,
     title: "Observability Stack",
     desc: "CloudWatch, X-Ray, and third-party SIEM integrations for full-stack visibility.",
     color: "#962964",
+    moreDetails: [
+      "CloudWatch logs & metrics",
+      "X-Ray distributed tracing",
+      "Application Insights",
+      "Managed Grafana/Prometheus",
+    ],
   },
   {
     icon: <FiGlobe />,
     title: "Multi-Region DR",
     desc: "Pilot light and warm standby disaster recovery architectures across AWS regions.",
     color: "#ce2453",
+    moreDetails: [
+      "Multi-region replication",
+      "Route 53 failover design",
+      "Pilot Light / Warm Standby",
+      "Backup & Recovery testing",
+    ],
   },
   {
     icon: <FiCode />,
     title: "Serverless Applications",
     desc: "Lambda, API Gateway, and EventBridge for event-driven cloud-native workloads.",
     color: "#dd5c54",
+    moreDetails: [
+      "AWS Lambda development",
+      "API Gateway management",
+      "EventBridge architecture",
+      "Step Functions workflows",
+    ],
   },
 ];
 
@@ -417,6 +471,7 @@ const AWSPartners = () => {
   const [activeTab, setActiveTab] = useState("ai");
   const [caseIdx, setCaseIdx] = useState(0);
   const [newsIdx, setNewsIdx] = useState(0);
+  const [expandedSol, setExpandedSol] = useState(null);
 
   const prevCase = () =>
     setCaseIdx((i) => (i - 1 + CASE_STUDIES.length) % CASE_STUDIES.length);
@@ -430,14 +485,6 @@ const AWSPartners = () => {
 
   return (
     <div className="aws-page">
-      {/* ── Background ── */}
-      <div className="aws-bg" aria-hidden="true">
-        <div className="aws-orb aws-orb-1" />
-        <div className="aws-orb aws-orb-2" />
-        <div className="aws-orb aws-orb-3" />
-        <div className="aws-grid-dots" />
-      </div>
-
       {/* ════════ 1. HERO SPLIT ════════ */}
       <section className="aws-hero">
         <div className="aws-container aws-hero-layout">
@@ -475,12 +522,6 @@ const AWSPartners = () => {
                 onClick={() => navigate("/contact")}
               >
                 Talk to AWS Experts <FiArrowRight />
-              </button>
-              <button
-                className="aws-btn-ghost aws-btn-lg"
-                onClick={() => navigate("/case-studies")}
-              >
-                View Case Studies <FiExternalLink />
               </button>
             </div>
           </motion.div>
@@ -955,32 +996,74 @@ const AWSPartners = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {SOLUTIONS.map((s, i) => (
-              <motion.div
-                key={i}
-                className="aws-solution-card"
-                variants={fadeUp}
-                whileHover={{ y: -5 }}
-                style={{ "--sc": s.color }}
-              >
-                <div
-                  className="aws-solution-icon"
-                  style={{
-                    color: s.color,
-                    background: `${s.color}10`,
-                    borderColor: `${s.color}20`,
-                  }}
+            {SOLUTIONS.map((s, i) => {
+              const isExpanded = expandedSol === i;
+              return (
+                <motion.div
+                  key={i}
+                  layout
+                  className={`aws-solution-card ${isExpanded ? "expanded" : ""}`}
+                  variants={fadeUp}
+                  whileHover={!isExpanded ? { y: -5 } : {}}
+                  style={{ "--sc": s.color }}
+                  onClick={() => setExpandedSol(isExpanded ? null : i)}
                 >
-                  {s.icon}
-                </div>
-                <h3 className="aws-solution-title">{s.title}</h3>
-                <p className="aws-solution-desc">{s.desc}</p>
-                <div className="aws-solution-arrow">
-                  <FiChevronRight />
-                </div>
-                <div className="aws-solution-bar" />
-              </motion.div>
-            ))}
+                  <div
+                    className="aws-solution-icon"
+                    style={{
+                      color: s.color,
+                      background: `${s.color}10`,
+                      borderColor: `${s.color}20`,
+                    }}
+                  >
+                    {s.icon}
+                  </div>
+                  <h3 className="aws-solution-title">{s.title}</h3>
+                  <p className="aws-solution-desc">{s.desc}</p>
+
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        className="aws-solution-details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <ul className="aws-solution-list">
+                          {s.moreDetails.map((detail, idx) => (
+                            <li key={idx}>
+                              <FiCheck style={{ color: s.color }} />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          className="aws-solution-btn"
+                          style={{ backgroundColor: s.color }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate("/contact");
+                          }}
+                        >
+                          Enquire Now
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="aws-solution-arrow">
+                    <FiChevronRight
+                      style={{
+                        transform: isExpanded ? "rotate(90deg)" : "none",
+                        transition: "transform 0.3s ease",
+                      }}
+                    />
+                  </div>
+                  <div className="aws-solution-bar" />
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -1047,7 +1130,7 @@ const AWSPartners = () => {
                   </div>
                   <button
                     className="aws-btn-primary"
-                    onClick={() => navigate("/case-studies")}
+                    onClick={() => navigate("/clients")}
                   >
                     Read Full Case Study <FiArrowRight />
                   </button>
@@ -1164,6 +1247,7 @@ const AWSPartners = () => {
               </div>
             </div>
           </div>
+          <Newsletter />
         </div>
       </section>
 
@@ -1212,7 +1296,6 @@ const AWSPartners = () => {
       </section> */}
 
       <Cta />
-      <Newsletter />
     </div>
   );
 };

@@ -23,13 +23,11 @@ const useCompanySections = () => {
           })),
         }));
 
-        // 🎯 Move only success-stories into platform
-        const platformOnly = formatted.filter(
-          (s) => s.slug === "success-stories",
-        );
+        // 🎯 Success stories moved to About
+        const platformOnly = [];
 
-        // Everything else (if needed later)
-        const aboutOnly = formatted.filter((s) => s.slug !== "success-stories");
+        // All sections from API go to About (including success-stories)
+        const aboutOnly = formatted;
 
         setPlatformSections(platformOnly);
         setAboutSections(aboutOnly);

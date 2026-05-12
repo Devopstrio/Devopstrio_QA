@@ -140,7 +140,7 @@ const TAB_CONTENT = {
       "Document Management workflows",
       "Global workforce compliance",
     ],
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80",
+    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=900&fit=crop&q=80",
     color: "#e79e57",
   },
   appeng: {
@@ -190,54 +190,108 @@ const SOLUTIONS = [
     title: "ITSM Pro Implementation",
     desc: "End-to-end ITSM with Predictive Intelligence, Virtual Agent, and Continual Improvement Management.",
     color: "#522c72",
+    moreDetails: [
+      "Predictive Intelligence & ML",
+      "Virtual Agent conversations",
+      "SLA & Performance Analytics",
+      "Self-service portal design",
+    ],
   },
   {
     icon: <FiMonitor />,
     title: "ITOM Discovery & Health",
     desc: "Automated CMDB population, service mapping, and AIOps-powered event correlation for resiliency.",
     color: "#962964",
+    moreDetails: [
+      "Automated CMDB Discovery",
+      "Service Mapping (Top-down)",
+      "AIOps Event Management",
+      "Cloud Provisioning & Governance",
+    ],
   },
   {
     icon: <FiUsers />,
     title: "HRSD Employee Experience",
     desc: "Employee Centre Pro, onboarding workflows, document management, and global HR case management.",
     color: "#ce2453",
+    moreDetails: [
+      "Employee Center Pro Portals",
+      "Lifecycle Event Workflows",
+      "HR Case & Knowledge Mgmt",
+      "Document Management & Sign",
+    ],
   },
   {
     icon: <FiCode />,
     title: "App Engine Development",
     desc: "Build and govern departmental apps with App Engine Studio, Flow Designer, and IntegrationHub spokes.",
     color: "#dd5c54",
+    moreDetails: [
+      "Low-code App Development",
+      "Flow Designer Workflows",
+      "IntegrationHub Spokes",
+      "Governance & Citizen Dev",
+    ],
   },
   {
     icon: <FiShield />,
     title: "SecOps & GRC Platform",
     desc: "Security Incident Response, Vulnerability Response, and GRC Risk Frameworks on Now Platform.",
     color: "#e79e57",
+    moreDetails: [
+      "Security Incident Response",
+      "Vulnerability Management",
+      "Risk & Compliance (GRC)",
+      "Threat Intelligence feeds",
+    ],
   },
   {
     icon: <FiGlobe />,
     title: "CSM & Field Service",
     desc: "Customer portals, proactive service ops, and field service management for seamless customer journeys.",
     color: "#522c72",
+    moreDetails: [
+      "Customer Service Portals",
+      "Proactive Case Deflection",
+      "Field Service Scheduling",
+      "Asset & Work Order Mgmt",
+    ],
   },
   {
     icon: <FiDatabase />,
     title: "CMDB & Asset Intelligence",
     desc: "Discovery-driven CMDB with HAM/SAM Pro, licence optimisation, and technology portfolio visibility.",
     color: "#962964",
+    moreDetails: [
+      "Hardware Asset Mgmt (HAM)",
+      "Software Asset Mgmt (SAM)",
+      "License Optimisation",
+      "Asset Lifecycle automation",
+    ],
   },
   {
     icon: <FiRefreshCw />,
     title: "Platform Upgrades & Health",
     desc: "Expert upgrade management, instance health checks, and technical debt remediation for Now Platform.",
     color: "#ce2453",
+    moreDetails: [
+      "Instance Health Scanning",
+      "Version Upgrade strategy",
+      "Performance Tuning",
+      "Technical Debt cleanup",
+    ],
   },
   {
     icon: <FiBarChart2 />,
     title: "Performance Analytics",
     desc: "KPI dashboards, NOW Analytics, and Workspace design to drive data-driven service decisions.",
     color: "#dd5c54",
+    moreDetails: [
+      "Real-time KPI Dashboards",
+      "Trend Analysis & Forecasts",
+      "In-platform Benchmarks",
+      "Unified Workspace design",
+    ],
   },
 ];
 
@@ -250,15 +304,6 @@ const CASE_STUDIES = [
       "Unified 7 disparate ITSM tools into a single ServiceNow instance — 50,000 end users onboarded in 12 weeks",
     color: "#ce2453",
     img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80",
-  },
-  {
-    tag: "HRSD & Onboarding",
-    company: "FinTech Scale-up",
-    metric: "82% faster employee onboarding",
-    title:
-      "Built an AI-powered onboarding flow on HRSD serving 14 countries — cutting time-to-productivity from 30 to 5 days",
-    color: "#962964",
-    img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80",
   },
   {
     tag: "SecOps & GRC",
@@ -305,14 +350,14 @@ const STATS = [
 ];
 
 /* ─── Particle hook ─── */
-function useParticles(count = 40) {
+function useParticles(count = 20) {
   const [particles] = useState(() =>
     [...Array(count)].map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 2.5 + 0.5,
-      dur: Math.random() * 20 + 12,
+      size: Math.random() * 2 + 0.5,
+      dur: Math.random() * 20 + 15,
       delay: Math.random() * -20,
     })),
   );
@@ -352,7 +397,8 @@ const ServiceNowPartners = () => {
   const [activeTab, setActiveTab] = useState("itsm");
   const [caseIdx, setCaseIdx] = useState(0);
   const [newsIdx, setNewsIdx] = useState(0);
-  const particles = useParticles(44);
+  const [expandedSol, setExpandedSol] = useState(null); // Track expanded card index
+  const particles = useParticles(20); // Reduced from 44
 
   const heroRef = useRef();
   const { scrollYProgress: heroScroll } = useScroll({
@@ -465,12 +511,6 @@ const ServiceNowPartners = () => {
               >
                 Talk to ServiceNow Experts
               </button>
-              <button
-                className="snw-btn-ghost snw-btn-lg"
-                onClick={() => navigate("/case-studies")}
-              >
-                View Implementations <FiExternalLink />
-              </button>
             </motion.div>
 
             <motion.div className="snw-hero-chips" variants={stagger}>
@@ -496,6 +536,7 @@ const ServiceNowPartners = () => {
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
                 alt="ServiceNow Now Platform"
                 className="snw-video-img"
+                loading="lazy"
               />
               <div className="snw-video-tint" />
               <button className="snw-play" aria-label="Play overview">
@@ -671,7 +712,7 @@ const ServiceNowPartners = () => {
                 exit={{ opacity: 0, x: -30, transition: { duration: 0.28 } }}
               >
                 <div className="snw-tab-img-wrap">
-                  <img src={tab.img} alt={tab.headline} />
+                  <img src={tab.img} alt={tab.headline} loading="lazy" />
                   <div
                     className="snw-tab-img-overlay"
                     style={{ "--tc": tab.color }}
@@ -754,32 +795,74 @@ const ServiceNowPartners = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.05 }}
           >
-            {SOLUTIONS.map((s, i) => (
-              <motion.div
-                key={i}
-                className="snw-sol-card"
-                variants={fadeUp}
-                whileHover={{ y: -7 }}
-                style={{ "--sc": s.color }}
-              >
-                <div
-                  className="snw-sol-icon"
-                  style={{
-                    color: s.color,
-                    background: `${s.color}10`,
-                    borderColor: `${s.color}20`,
-                  }}
+            {SOLUTIONS.map((s, i) => {
+              const isExpanded = expandedSol === i;
+              return (
+                <motion.div
+                  key={i}
+                  layout // Framer motion layout prop for smooth height change
+                  className={`snw-sol-card ${isExpanded ? "expanded" : ""}`}
+                  variants={fadeUp}
+                  whileHover={!isExpanded ? { y: -7 } : {}}
+                  style={{ "--sc": s.color }}
+                  onClick={() => setExpandedSol(isExpanded ? null : i)}
                 >
-                  {s.icon}
-                </div>
-                <h3 className="snw-sol-title">{s.title}</h3>
-                <p className="snw-sol-desc">{s.desc}</p>
-                <div className="snw-sol-arrow">
-                  <FiChevronRight />
-                </div>
-                <div className="snw-sol-bar" />
-              </motion.div>
-            ))}
+                  <div
+                    className="snw-sol-icon"
+                    style={{
+                      color: s.color,
+                      background: `${s.color}10`,
+                      borderColor: `${s.color}20`,
+                    }}
+                  >
+                    {s.icon}
+                  </div>
+                  <h3 className="snw-sol-title">{s.title}</h3>
+                  <p className="snw-sol-desc">{s.desc}</p>
+
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        className="snw-sol-details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <ul className="snw-sol-list">
+                          {s.moreDetails.map((detail, idx) => (
+                            <li key={idx}>
+                              <FiCheck style={{ color: s.color }} />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          className="snw-sol-btn"
+                          style={{ backgroundColor: s.color }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate("/contact");
+                          }}
+                        >
+                          Enquire Now
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="snw-sol-arrow">
+                    <FiChevronRight
+                      style={{
+                        transform: isExpanded ? "rotate(90deg)" : "none",
+                        transition: "transform 0.3s ease",
+                      }}
+                    />
+                  </div>
+                  <div className="snw-sol-bar" />
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -821,7 +904,7 @@ const ServiceNowPartners = () => {
                 }}
               >
                 <div className="snw-case-img-wrap">
-                  <img src={c.img} alt={c.title} />
+                  <img src={c.img} alt={c.title} loading="lazy" />
                   <div
                     className="snw-case-overlay"
                     style={{ "--cc": c.color }}
@@ -853,6 +936,7 @@ const ServiceNowPartners = () => {
                   <button
                     className="snw-btn-primary"
                     style={{ "--bc": c.color }}
+                    onClick={() => navigate("/clients")}
                   >
                     Read Full Story <FiArrowRight />
                   </button>
@@ -928,6 +1012,7 @@ const ServiceNowPartners = () => {
                 <button
                   className="snw-btn-primary"
                   style={{ "--bc": n.color, marginTop: "20px" }}
+                  onClick={() => navigate("/insights-knowledge/white-paper")}
                 >
                   Read Article <FiArrowRight />
                 </button>
@@ -981,11 +1066,12 @@ const ServiceNowPartners = () => {
               </div>
             </div>
           </div>
-        </div>
+          <Newsletter />
+        </div>  
       </section>
 
       <Cta />
-      <Newsletter />
+     
     </div>
   );
 };

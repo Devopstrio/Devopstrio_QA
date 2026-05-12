@@ -234,7 +234,17 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <button className="dt-scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <button 
+            className="dt-scroll-top" 
+            onClick={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+              // Fallback for cases where html/body might be the scroll container
+              if (document.documentElement) {
+                document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+              }
+            }}
+            aria-label="Scroll to top"
+          >
             <FiChevronRight style={{ transform: 'rotate(-90deg)' }} />
           </button>
         </div>
@@ -247,13 +257,15 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="dt-footer-bottom">
           <div className="dt-bottom-left">
-            <p>© {currentYear} Devopstrio. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/cookie-policy">Cookie Policy</Link>.</p>
-            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/privacy-policy">Privacy Policy</Link>, <Link rel="stylesheet" href="" /> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
+            <p>© {currentYear} Devopstrio. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link>, <Link to="/footer-compliance">Compliance</Link> and <Link to="/cookie-policy">Cookie Policy</Link>.</p>
+            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/disclaimer">Disclaimer</Link> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
           </div>
           <div className="dt-bottom-right">
             <div className="dt-rating-badges">
-              <div className="dt-rating-stars">★★★★★</div>
-              <div className="dt-rating-text">100+ REVIEWS</div>
+              <Link to="/sitemap">
+                <div className="dt-rating-stars">★★★★★</div>
+                <div className="dt-rating-text">100+ REVIEWS</div>
+              </Link>
             </div>
           </div>
         </div>

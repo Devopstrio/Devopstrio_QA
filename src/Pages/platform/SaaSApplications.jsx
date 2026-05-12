@@ -995,9 +995,9 @@ const SaaSApplications = () => {
           </div>
         </div>
       </section>
-
-      <Cta />
       <Newsletter />
+      <Cta />
+    
     </div>
   );
 };

@@ -357,6 +357,13 @@
   margin-top: 80px;
 }
 
+.gi-button {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .gi-grid-card {
   display: flex;
   flex-direction: column;

@@ -459,7 +459,7 @@ const Careerspage = () => {
                 <div className="cp-hiring-step-content">
                   <h3 className="cp-hiring-step-title">Offer & Onboarding</h3>
                   <p className="cp-hiring-step-description">
-                    Get your offer and start your journey with us 🚀
+                    Get your offer and start your journey with us.
                   </p>
                 </div>
               </div>

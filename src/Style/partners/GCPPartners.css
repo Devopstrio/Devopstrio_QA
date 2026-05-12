@@ -1062,7 +1062,7 @@
   gap: 16px;
 }
 
-.gcp-sol-card {
+.gcp-solution-card {
   background: var(--gcp-s1);
   border: 1px solid var(--gcp-border);
   border-radius: 22px;
@@ -1076,14 +1076,16 @@
   transition:
     border-color 0.4s,
     box-shadow 0.4s;
+  align-self: start;
+  height: 100%;
 }
 
-.gcp-sol-card:hover {
+.gcp-solution-card:hover {
   border-color: color-mix(in srgb, var(--sc, #ce2453) 30%, transparent);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.5);
 }
 
-.gcp-sol-icon {
+.gcp-solution-icon {
   width: 50px;
   height: 50px;
   border-radius: 14px;
@@ -1096,37 +1098,88 @@
   flex-shrink: 0;
 }
 
-.gcp-sol-card:hover .gcp-sol-icon {
+.gcp-solution-card:hover .gcp-solution-icon {
   transform: scale(1.12);
 }
 
-.gcp-sol-title {
+.gcp-solution-title {
   font-size: 1rem;
   font-weight: 800;
   color: var(--gcp-white);
   line-height: 1.25;
 }
 
-.gcp-sol-desc {
+.gcp-solution-desc {
   font-size: 0.83rem;
   color: var(--gcp-muted);
   line-height: 1.65;
-  flex: 1;
+  margin-bottom: 4px;
 }
 
-.gcp-sol-arrow {
+.gcp-solution-card.expanded {
+  border-color: var(--sc);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: 10;
+}
+
+.gcp-solution-details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.gcp-solution-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gcp-solution-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--gcp-text);
+}
+
+.gcp-solution-list li svg {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.gcp-solution-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.gcp-solution-btn:hover {
+  opacity: 0.9;
+}
+
+.gcp-solution-arrow {
   font-size: 1rem;
   color: var(--gcp-muted);
   transition: all 0.3s var(--gcp-ease);
   width: fit-content;
 }
 
-.gcp-sol-card:hover .gcp-sol-arrow {
+.gcp-solution-card:hover .gcp-solution-arrow {
   color: var(--sc, #ce2453);
   transform: translateX(5px);
 }
 
-.gcp-sol-bar {
+.gcp-solution-bar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1142,7 +1195,7 @@
   transition: transform 0.42s var(--gcp-ease);
 }
 
-.gcp-sol-card:hover .gcp-sol-bar {
+.gcp-solution-card:hover .gcp-solution-bar {
   transform: scaleX(1);
 }
 

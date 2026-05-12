@@ -219,54 +219,108 @@ const SOLUTIONS = [
     title: "Azure Landing Zone",
     desc: "Hub-spoke networks, Management Groups, Policy-as-Code using AzureRM Terraform and Bicep.",
     color: "#7c1fc7ff",
+    moreDetails: [
+      "Hub-Spoke Network design",
+      "Azure Policy-as-Code",
+      "Management Group hierarchy",
+      "Bicep & Terraform templates",
+    ],
   },
   {
     icon: <FiZap />,
     title: "Azure DevOps & GitHub CI/CD",
     desc: "End-to-end pipelines with Azure DevOps, GitHub Actions, AKS GitOps, and Helm automation.",
     color: "#962964",
+    moreDetails: [
+      "Azure DevOps Pipelines",
+      "GitHub Actions workflows",
+      "AKS GitOps (Flux/Argo)",
+      "Helm Chart management",
+    ],
   },
   {
     icon: <FiShield />,
     title: "Microsoft Sentinel & Defender",
     desc: "Unified SIEM/XDR — Sentinel, Defender for Cloud, MDI, and MDE with automated playbooks.",
     color: "#ce2453",
+    moreDetails: [
+      "Microsoft Sentinel SIEM",
+      "Defender for Cloud XDR",
+      "SOAR Automated Playbooks",
+      "Identity protection (MDI)",
+    ],
   },
   {
     icon: <FiDatabase />,
     title: "Azure Data Platform",
     desc: "Synapse Analytics, Azure Data Factory, Data Lake Gen2, and Purview for governed data estates.",
     color: "#dd5c54",
+    moreDetails: [
+      "Synapse Analytics workspace",
+      "Data Factory ETL flows",
+      "Data Lake Gen2 storage",
+      "Azure Purview governance",
+    ],
   },
   {
     icon: <FiCpu />,
     title: "Azure OpenAI & Copilot",
     desc: "Enterprise AI deployments — RAG pipelines, fine-tuning, Copilot Studio, and LLM governance.",
     color: "#0078D4",
+    moreDetails: [
+      "Azure OpenAI RAG flows",
+      "LLM Guardrails & Safety",
+      "Copilot Studio builders",
+      "Semantic Kernel integration",
+    ],
   },
   {
     icon: <FiServer />,
     title: "AKS & Container Strategy",
     desc: "Production-grade Kubernetes on AKS with KEDA, Flux, Linkerd, and GitOps delivery.",
     color: "#50e6ff",
+    moreDetails: [
+      "AKS cluster management",
+      "KEDA event-driven scaling",
+      "Linkerd Service Mesh",
+      "Azure Container Registry",
+    ],
   },
   {
     icon: <FiMonitor />,
     title: "Azure Monitor & Observability",
     desc: "Full-stack visibility with Azure Monitor, Log Analytics, Application Insights, and Grafana.",
     color: "#ce2453",
+    moreDetails: [
+      "Log Analytics workspaces",
+      "Application Insights SDK",
+      "Azure Managed Grafana",
+      "Metrics Advisor & Alerts",
+    ],
   },
   {
     icon: <FiGlobe />,
     title: "Multi-Region & DR",
     desc: "Active-active and pilot-light DR patterns across Azure regions with Traffic Manager.",
     color: "#dd5c54",
+    moreDetails: [
+      "Cross-region replication",
+      "Azure Traffic Manager",
+      "Site Recovery (ASR) setup",
+      "Front Door global CDN",
+    ],
   },
   {
     icon: <FiCode />,
     title: "Serverless & Event-Driven",
     desc: "Azure Functions, Logic Apps, Event Grid, and Service Bus for cloud-native workflows.",
     color: "#0078D4",
+    moreDetails: [
+      "Azure Functions (Serverless)",
+      "Logic Apps integrations",
+      "Event Grid pub/sub",
+      "Service Bus messaging",
+    ],
   },
 ];
 
@@ -331,6 +385,7 @@ const AzurePartners = () => {
   const navigate = useNavigate();
   const [caseIdx, setCaseIdx] = useState(0);
   const [newsIdx, setNewsIdx] = useState(0);
+  const [expandedSol, setExpandedSol] = useState(null); // Track expanded card index
 
   const prevCase = () =>
     setCaseIdx((i) => (i - 1 + CASE_STUDIES.length) % CASE_STUDIES.length);
@@ -387,13 +442,7 @@ const AzurePartners = () => {
               >
                 Talk to Azure Experts <FiArrowRight />
               </button>
-              <button
-                className="az-btn-ghost az-btn-lg"
-                onClick={() => navigate("/case-studies")}
-              >
-                View Case Studies <FiExternalLink />
-              </button>
-            </div>
+             </div>
           </motion.div>
 
           <motion.div
@@ -749,32 +798,74 @@ const AzurePartners = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
-            {SOLUTIONS.map((s, i) => (
-              <motion.div
-                key={i}
-                className="az-solution-card"
-                variants={fadeUp}
-                whileHover={{ y: -5 }}
-                style={{ "--sc": s.color }}
-              >
-                <div
-                  className="az-solution-icon"
-                  style={{
-                    color: s.color,
-                    background: `${s.color}10`,
-                    borderColor: `${s.color}20`,
-                  }}
+            {SOLUTIONS.map((s, i) => {
+              const isExpanded = expandedSol === i;
+              return (
+                <motion.div
+                  key={i}
+                  layout
+                  className={`az-solution-card ${isExpanded ? "expanded" : ""}`}
+                  variants={fadeUp}
+                  whileHover={!isExpanded ? { y: -5 } : {}}
+                  style={{ "--sc": s.color }}
+                  onClick={() => setExpandedSol(isExpanded ? null : i)}
                 >
-                  {s.icon}
-                </div>
-                <h3 className="az-solution-title">{s.title}</h3>
-                <p className="az-solution-desc">{s.desc}</p>
-                <div className="az-solution-arrow">
-                  <FiChevronRight />
-                </div>
-                <div className="az-solution-bar" />
-              </motion.div>
-            ))}
+                  <div
+                    className="az-solution-icon"
+                    style={{
+                      color: s.color,
+                      background: `${s.color}10`,
+                      borderColor: `${s.color}20`,
+                    }}
+                  >
+                    {s.icon}
+                  </div>
+                  <h3 className="az-solution-title">{s.title}</h3>
+                  <p className="az-solution-desc">{s.desc}</p>
+
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        className="az-solution-details"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <ul className="az-solution-list">
+                          {s.moreDetails.map((detail, idx) => (
+                            <li key={idx}>
+                              <FiCheck style={{ color: s.color }} />
+                              {detail}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          className="az-solution-btn"
+                          style={{ backgroundColor: s.color }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate("/contact");
+                          }}
+                        >
+                          Enquire Now
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="az-solution-arrow">
+                    <FiChevronRight
+                      style={{
+                        transform: isExpanded ? "rotate(90deg)" : "none",
+                        transition: "transform 0.3s ease",
+                      }}
+                    />
+                  </div>
+                  <div className="az-solution-bar" />
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
@@ -841,7 +932,7 @@ const AzurePartners = () => {
                   </div>
                   <button
                     className="az-btn-primary"
-                    onClick={() => navigate("/case-studies")}
+                    onClick={() => navigate("/clients")}
                   >
                     Read Full Case Study <FiArrowRight />
                   </button>
@@ -955,6 +1046,7 @@ const AzurePartners = () => {
               </div>
             </div>
           </div>
+          <Newsletter />
         </div>
       </section>
 
@@ -1003,7 +1095,6 @@ const AzurePartners = () => {
       </section> */}
 
       <Cta />
-      <Newsletter />
     </div>
   );
 };

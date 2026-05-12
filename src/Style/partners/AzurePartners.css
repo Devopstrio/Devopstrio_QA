@@ -1180,6 +1180,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-self: start;
+  height: 100%;
 }
 
 .az-solution-card:hover {
@@ -1216,7 +1218,58 @@
   font-size: 0.82rem;
   color: var(--az-muted);
   line-height: 1.65;
-  flex: 1;
+  margin-bottom: 4px;
+}
+
+.az-solution-card.expanded {
+  border-color: var(--sc);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: 10;
+}
+
+.az-solution-details {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.az-solution-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.az-solution-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--az-text);
+}
+
+.az-solution-list li svg {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.az-solution-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.az-solution-btn:hover {
+  opacity: 0.9;
 }
 
 .az-solution-arrow {

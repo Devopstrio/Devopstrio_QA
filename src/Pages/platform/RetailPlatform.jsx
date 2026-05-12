@@ -797,9 +797,8 @@ const RetailPlatform = () => {
           </motion.div>
         </div>
       </section>
-
-      <Cta />
       <Newsletter />
+      <Cta />
     </div>
   );
 };

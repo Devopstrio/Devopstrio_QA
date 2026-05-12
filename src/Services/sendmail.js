@@ -9,25 +9,34 @@ export const sendEmail = async (data) => {
 
   if (data.file) {
     const formData = new FormData();
-    formData.append("name", data.fullName || "New Submission");
-    formData.append("email", data.email);
-    formData.append("subject", data.subject || "New Contact Form Submission");
-    formData.append("message", data.message);
+    formData.append("Full Name", data.fullName || "New Submission");
+    formData.append("Email Address", data.email);
+    formData.append("Inquiry Subject", data.subject || "FinTech Service Inquiry");
+    formData.append("Message Content", data.message);
+    formData.append("Company / Organization", data.company || "N/A");
+    formData.append("Service Category", data.serviceType || "Financial Services");
     formData.append("attachment", data.file);
-    formData.append("_template", "box");
+    
+    // FormSubmit Configuration
+    formData.append("_template", "table"); // Professional table format
     formData.append("_captcha", "false");
     formData.append("_replyto", data.email);
+    formData.append("_subject", `[Devopstrio Lead] ${data.subject || "New Inquiry"}`);
+    
     body = formData;
   } else {
     headers["Content-Type"] = "application/json";
     body = JSON.stringify({
-      name: data.fullName,
-      email: data.email,
-      subject: data.subject || "New Contact Form Submission",
-      message: data.message,
-      _template: "box",
+      "Full Name": data.fullName,
+      "Email Address": data.email,
+      "Inquiry Subject": data.subject || "FinTech Service Inquiry",
+      "Company / Organization": data.company || "N/A",
+      "Service Category": data.serviceType || "Financial Services",
+      "Message Content": data.message,
+      _template: "table",
       _captcha: "false",
       _replyto: data.email,
+      _subject: `[Devopstrio Lead] ${data.subject || "New Inquiry"}`,
     });
   }
 

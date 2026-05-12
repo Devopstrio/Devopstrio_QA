@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./GlobalInternship.css";
 
-import CtaFinalies from "../CtaFinalies/CtaFinalies";   
+import CtaFinalies from "../CtaFinalies/CtaFinalies";
 
 import Frame4 from "../../assets/images/Site_img/Frame_4.png";
 import MapImg from "../../assets/images/Site_img/Map.png";
@@ -29,7 +29,7 @@ const GlobalInternship = () => {
     { name: "IBM", logo: "/images/partners/bp-logo.svg" },
     { name: "RedHat", logo: "/images/partners/Boviet_Solar.png" },
     { name: "Salesforce", logo: "/images/partners/BT.svg" },
-    { name: "Google", logo: "/images/partners/gxo.svg"},
+    { name: "Google", logo: "/images/partners/gxo.svg" },
     { name: "godaddy", logo: "/images/partners/godaddy.svg" },
     { name: "Virgin", logo: "/images/partners/Virgin.svg" },
     { name: "Virgin", logo: "/images/partners/Microsoft.svg" },
@@ -58,15 +58,15 @@ const GlobalInternship = () => {
             </p>
 
             <div className="gi-hero__actions">
-              <a 
-                className="gi-hero__btn gi-hero__btn--primary" 
+              <a
+                className="gi-hero__btn gi-hero__btn--primary"
                 href="#gi-cta-section"
                 onClick={scrollToCTA}
               >
                 Apply Now <i className="ri-arrow-right-line" aria-hidden="true" />
               </a>
-              <a 
-                className="gi-hero__btn gi-hero__btn--ghost" 
+              <a
+                className="gi-hero__btn gi-hero__btn--ghost"
                 href="#gi-cta-section"
                 onClick={scrollToCTA}
               >
@@ -79,7 +79,7 @@ const GlobalInternship = () => {
             <div className="gi-hero__imageFrame">
               <div className="gi-hero__imageCircle">
                 <img src={Frame4} alt="Global Internship" className="gi-hero__image" />
-              </div> 
+              </div>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const GlobalInternship = () => {
           <span className="gi-subtitle">Who this is for</span>
           <h2 className="gi-section-title gi-title-grad">One program. Every stage of your career.</h2>
           <p className="gi-section-desc">From final-year student to career switcher. Devopstrio adapts to where you are right now.</p>
-          
+
           <div className="gi-tabs">
             <button className={`gi-tab ${activeTab === 'college' ? 'active' : ''}`} onClick={() => setActiveTab('college')}>College Students</button>
             <button className={`gi-tab ${activeTab === 'grad' ? 'active' : ''}`} onClick={() => setActiveTab('grad')}>Fresh Graduates</button>
@@ -269,10 +269,10 @@ const GlobalInternship = () => {
                 )}
               </div>
               <div className="gi-stage-right">
-                <img 
-                  src={activeTab === 'college' ? StudentsImg : activeTab === 'grad' ? Stdent1Img : Students2Img} 
-                  alt="Target Audience" 
-                  className="gi-stage-img" 
+                <img
+                  src={activeTab === 'college' ? StudentsImg : activeTab === 'grad' ? Stdent1Img : Students2Img}
+                  alt="Target Audience"
+                  className="gi-stage-img"
                 />
               </div>
             </div>
@@ -285,10 +285,10 @@ const GlobalInternship = () => {
         <div className="gi-container gi-text-center">
           <h2 className="gi-section-title">Everything you need to launch your tech career</h2>
           <p className="gi-section-desc">
-            Beyond certificates every element is built to develop real <br/>
+            Beyond certificates every element is built to develop real <br />
             industry skills and open real global doors.
           </p>
-          
+
           <div className="gi-grid">
             <div className="gi-grid-card">
               <div className="gi-card-icon-box">
@@ -332,6 +332,14 @@ const GlobalInternship = () => {
               <h3 className="gi-card-title-pink">Flexible Schedule</h3>
               <p>Evening sessions and weekend tasks built around your existing life — college, part-time work, job hunting, or family. 100% remote. Zero commute.</p>
             </div>
+            <div className="gi-button">
+              <button
+                className="gi-apply-btn"
+                onClick={() => window.open("https://forms.office.com/pages/responsepage.aspx?id=yTq6JeqKkkSI7wjM0AQgFv43VAq2y4NIsnG51xqapO9UOVpYOTVUUEhTOEpPQjc1OEFVSUdLMkRJQy4u&route=shorturl")}
+              > Apply Now
+              </button>
+            </div>
+
           </div>
         </div>
       </section>
@@ -346,7 +354,7 @@ const GlobalInternship = () => {
             <div className="gi-why-right">
               <h2 className="gi-section-title">Why people choose Devopstrio</h2>
               <p className="gi-section-desc">We bridge the gap between education and employment.</p>
-              
+
               <ul className="gi-why-list">
                 <li>
                   <h4>Bridge the gap to career opportunity</h4>
@@ -365,11 +373,11 @@ const GlobalInternship = () => {
                   <p>Top performers receive bonuses, recommendations, and exclusive job opportunities.</p>
                 </li>
               </ul>
-              <button 
+              <button
                 className="gi-apply-btn"
-                onClick={scrollToCTA}
+                onClick={() => window.open("https://devopstrio.co.uk/insights-knowledge/undefined/69fc1ee77230edf42505cfb7/reader")}
               >
-                Apply Now <i className="ri-arrow-right-line"></i>
+                Explore the Programs <i className="ri-arrow-right-line"></i>
               </button>
             </div>
           </div>
@@ -382,7 +390,7 @@ const GlobalInternship = () => {
           <span className="gi-subtitle">How it works</span>
           <h2 className="gi-section-title gi-title-process">From application to certification</h2>
           <p className="gi-section-desc-left">Five simple steps. Get started in days, not months.</p>
-          
+
           <div className="gi-process-steps">
             <div className="gi-process-step">
               <div className="gi-step-circle">01</div>
@@ -413,7 +421,7 @@ const GlobalInternship = () => {
         <div className="gi-container gi-text-center">
           <span className="gi-subtitle">Your Path</span>
           <h2 className="gi-section-title">Choose your domain</h2>
-          
+
           <div className="gi-domain-grid">
             <div className="gi-domain-card">
               <h3>Cloud Engineering</h3>
@@ -421,18 +429,18 @@ const GlobalInternship = () => {
               <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
-              <h3>DevOps & SRE</h3>
-              <p>Learn CI/CD, Kubernetes, and Infrastructure as Code.</p>
+              <h3>AI on Security</h3>
+              <p>Learn AI Security, Cyber Security and Data Security.</p>
               <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
-              <h3>Full Stack Development</h3>
-              <p>Build modern web applications with React, Node, and more.</p>
+              <h3>AI on Digital Transformation</h3>
+              <p>Learn Digital Transformation, and Cloud Engineering.</p>
               <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
-              <h3>AI & Data Science</h3>
-              <p>Harness the power of LLMs and data-driven insights.</p>
+              <h3>AI on Automation </h3>
+              <p>Learn AI, Machine Learning, Deep Learning and NLP.</p>
               <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
           </div>
@@ -445,10 +453,10 @@ const GlobalInternship = () => {
           <span className="gi-subtitle">Recognition</span>
           <h2 className="gi-section-title gi-title-grad">What you earn when you complete</h2>
           <p className="gi-section-desc">
-            Devopstrio is a UK-registered company trusted by Microsoft, Airbnb, BP, GoDaddy, and Heathrow. 
+            Devopstrio is a UK-registered company trusted by Microsoft, Airbnb, BP, GoDaddy, and Heathrow.
             Your certificate carries real global weight.
           </p>
-          
+
           <div className="gi-completion-visual">
             <div className="gi-completion-labels gi-labels-left">
               <div className="gi-label-minimal">Internship Completion Certificate <span className="gi-dot"></span></div>
@@ -482,10 +490,10 @@ const GlobalInternship = () => {
         <div className="gi-container gi-text-center">
           <h2 className="gi-section-title">Our Interns Feedback</h2>
           <p className="gi-section-desc">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.
           </p>
-          
+
           <div className="gi-feedback-slider">
             <div className="gi-feedback-track">
               {/* Original 4 cards duplicated for infinite scroll */}
@@ -502,7 +510,7 @@ const GlobalInternship = () => {
                       <span>Freelance Designer</span>
                     </div>
                   </div>
-                  
+
                   <div className="gii-feedback-card">
                     <p className="gi-feedback-quote">"I learned more in 3 months here than in my entire college degree. Highly recommended for any aspiring DevOps engineer."</p>
                     <div className="gi-stars">
@@ -575,23 +583,23 @@ const GlobalInternship = () => {
       </section>
 
       {/* Footer Info */}
-    <footer className="ip-cinematic-footer">
-          <div className="ip-footer-content">
-            <h2 className="ip-footer-logo">
-              DEVOPSTRIO <span>INTERN</span>
-            </h2>
-            <div className="ip-footer-divider"></div>
-            <p className="ip-footer-query">
-              Questions? Our engineering team is here.
-            </p>
-            <a
-              href="mailto:internship@devopstrioglobal.com"
-              className="ip-footer-email"
-            >
-              internship@devopstrioglobal.com
-            </a>
-          </div>
-        </footer>
+      <footer className="ip-cinematic-footer">
+        <div className="ip-footer-content">
+          <h2 className="ip-footer-logo">
+            DEVOPSTRIO <span>INTERN</span>
+          </h2>
+          <div className="ip-footer-divider"></div>
+          <p className="ip-footer-query">
+            Questions? Our engineering team is here.
+          </p>
+          <a
+            href="mailto:internship@devopstrioglobal.com"
+            className="ip-footer-email"
+          >
+            internship@devopstrioglobal.com
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };

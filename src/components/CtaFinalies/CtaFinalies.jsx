@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import "../../Style/internshipPage.css";
 
 const CtaFinalies = () => {
     const location = useLocation();
