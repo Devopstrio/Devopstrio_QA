@@ -14,6 +14,7 @@ import '../../Style/ai_data/DBCreation.css';
 // Components
 import AIConsultationForm from '../../components/AIConsultationForm/AIConsultationForm';
 import CTA from '../../components/Cta/Cta';
+import Hero from '../../components/Hero/Serviceshero';
 
 // Assets (Using existing high-quality assets where applicable)
 import fintechImg from "../../assets/images/datascience/fintech.jpg";
@@ -78,7 +79,7 @@ const DBCreation = () => {
     return (
         <div className="dt-db-page">
             {/* Hero Section */}
-            <section className="dt-db-hero">
+            {/* <section className="dt-db-hero">
                 <div className="dt-db-container">
                     <div className="dt-db-hero-dual">
                         <div className="dt-db-hero-content">
@@ -98,7 +99,8 @@ const DBCreation = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <Hero />
 
             {/* Redesigned Dual Row Marquee Section */}
             <section className="dt-db-brands-marquee">

@@ -261,13 +261,10 @@ const CloudMigration = () => {
   return (
     <div className="page-wrapper cloud-migration-page">
       <Helmet>
-        <title>
-          Cloud Migration Services UK | Secure, Zero Downtime Cloud Migration |
-          Devopstrio
-        </title>
+        <title>Cloud Migration Services UK | Azure, AWS & GCP Migration Experts </title>
         <meta
           name="description"
-          content="Devopstrio delivers expert cloud migration services across the UK move your applications, data, and infrastructure to AWS, Azure, or GCP with zero downtime, 100% security, and 30% cost savings. Get your free migration assessment today."
+          content="Transform your business with secure cloud migration services from Devopstrio. We specialize in Azure, AWS, GCP, hybrid cloud, and enterprise cloud transformation solutions."
         />
         <meta
           name="keywords"

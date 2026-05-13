@@ -50,12 +50,13 @@ const CloudSecurity = lazy(() => import("./Pages/serve/CloudSecurity"));
 const IAM = lazy(() => import("./Pages/serve/IAM"));
 const Compliance = lazy(() => import("./Pages/serve/Compliance"));
 const ThreatDetection = lazy(() => import("./Pages/serve/ThreatDetection"));
-const GitOps = lazy(() => import("./Pages/serve/GitOps"));
+// const GitOps = lazy(() => import("./Pages/serve/GitOps"));
 
 // ========== PLATFORM SUB-PAGES ==========
 const SaaSApplications = lazy(() => import("./Pages/platform/SaaSApplications"));
 const RetailPlatform = lazy(() => import("./Pages/platform/RetailPlatform"));
 const FinancialServices = lazy(() => import("./Pages/platform/FinancialServices"));
+const Healthcare = lazy(() => import("./Pages/platform/Healthcare"));
 const CaseStudies = lazy(() => import("./Pages/CaseStudies"));
 const ROIReports = lazy(() => import("./Pages/resources/ROIReports"));
 const Benchmarks = lazy(() => import("./Pages/resources/Benchmarks"));
@@ -219,6 +220,7 @@ function App() {
             <Route path="/platform/saas-applications" element={<SaaSApplications />} />
             <Route path="/platform/retail" element={<RetailPlatform />} />
             <Route path="/platform/financial-services" element={<FinancialServices />} />
+            <Route path="/platform/healthcare" element={<Healthcare />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/resources/roi-reports" element={<ROIReports />} />
             <Route path="/resources/benchmarks" element={<Benchmarks />} />

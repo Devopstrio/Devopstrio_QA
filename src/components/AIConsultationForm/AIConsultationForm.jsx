@@ -114,12 +114,12 @@ const AIConsultationForm = ({
               ))}
             </div>
 
-            <div className="dt-consult-trust">
+            {/* <div className="dt-consult-trust">
               <span className="dt-trust-tag">✦ Customers who trust us</span>
               <div className="dt-trust-brands-row">
                 <strong>Advertima</strong> <strong>Universkin</strong> <strong>sema</strong> <strong>TUI</strong>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="dt-consultation-form-wrapper">

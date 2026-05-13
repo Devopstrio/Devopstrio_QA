@@ -35,7 +35,7 @@ const Mobiledevelopment = () => {
         },
         {
             title: "IoT",
-            desc: "Andersen engineers build custom mobile application development accelerators for connected mobile devices, enabling enterprise mobile apps to capture sensor data and simplify complex processes in real time.",
+            desc: "Devopstrio engineers build custom mobile application development accelerators for connected mobile devices, enabling enterprise mobile apps to capture sensor data and simplify complex processes in real time.",
             icon: <FiZap />
         },
         {
@@ -59,7 +59,7 @@ const Mobiledevelopment = () => {
         {
             company: "Europcar",
             title: "Cross-Platform Car Rental",
-            desc: "Andersen built a car rental ecosystem featuring keyless access and a management panel. Covering 190,000 vehicles and 13,000 stations, the platform holds a 4.9 rating. This high-quality product reduced operational errors and was acquired as a white-label tool.",
+            desc: "Devopstrio built a car rental ecosystem featuring keyless access and a management panel. Covering 190,000 vehicles and 13,000 stations, the platform holds a 4.9 rating. This high-quality product reduced operational errors and was acquired as a white-label tool.",
             img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200&h=800",
             location: "France"
         },

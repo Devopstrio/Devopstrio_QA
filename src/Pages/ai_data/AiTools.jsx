@@ -64,7 +64,8 @@ const tools = [
         title: "Grammarly",
         desc: "An advanced AI writing assistant that offers real-time professional grammar, punctuation, and tone checks across multiple platforms. It helps businesses maintain a consistent brand voice while ensuring all communications are clear, impactful, and error-free.",
         image: grammarlyImg,
-        icon: <FiEdit3 />
+        icon: <FiEdit3 />,
+        link: "https://www.grammarly.com/"
     },
     {
         id: 2,
@@ -72,7 +73,8 @@ const tools = [
         title: "Midjourney",
         desc: "State-of-the-art generative AI that transforms complex text prompts into stunning, high-fidelity visual assets. Perfect for rapid prototyping of marketing materials, concept art, and high-quality digital illustrations that stand out.",
         image: midjourneyImg,
-        icon: <FiImage />
+        icon: <FiImage />,
+        link: "https://www.midjourney.com/"
     },
     {
         id: 3,
@@ -80,7 +82,8 @@ const tools = [
         title: "Custom Chatbot",
         desc: "24/7 intelligent multilingual chat solutions powered by private LLMs. These bots learn from your specific company data to provide accurate, human-like support to customers while reducing the workload on your human support teams.",
         image: chatImg,
-        icon: <FiMessageSquare />
+        icon: <FiMessageSquare />,
+        link: "https://openai.com/"
     },
     {
         id: 4,
@@ -88,7 +91,8 @@ const tools = [
         title: "Notion AI",
         desc: "A powerful integrated AI assistant that helps you write, plan, and analyze directly within your Notion workspace. It can summarize long documents, generate brainstorming ideas, and automate tedious database tasks with simple commands.",
         image: notionImg,
-        icon: <FiFileText />
+        icon: <FiFileText />,
+        link: "https://www.notion.so/product/ai"
     },
     {
         id: 5,
@@ -96,7 +100,8 @@ const tools = [
         title: "Uizard",
         desc: "AI-powered rapid UI/UX prototyping tool that turns hand-drawn sketches into functional digital designs instantly. It streamlines the design workflow for product teams, allowing them to iterate on user interfaces with unprecedented speed.",
         image: uizardImg,
-        icon: <FiPenTool />
+        icon: <FiPenTool />,
+        link: "https://uizard.io/"
     },
     {
         id: 6,
@@ -104,7 +109,8 @@ const tools = [
         title: "HeyGen",
         desc: "Professional-grade AI video generation for business. Create studio-quality videos with photorealistic avatars and natural-sounding voices in minutes, perfect for training, corporate announcements, and personalized marketing campaigns.",
         image: heygenImg,
-        icon: <FiVideo />
+        icon: <FiVideo />,
+        link: "https://www.heygen.com/"
     },
     {
         id: 7,
@@ -112,7 +118,8 @@ const tools = [
         title: "Surfer SEO",
         desc: "Data-driven SEO strategy platform that uses AI to analyze top-ranking pages for any keyword. It provides actionable insights for content optimization, helping you climb search engine results and drive organic traffic consistently.",
         image: surferseoImg,
-        icon: <FiTrendingUp />
+        icon: <FiTrendingUp />,
+        link: "https://surferseo.com/"
     },
     {
         id: 8,
@@ -120,7 +127,8 @@ const tools = [
         title: "ElevenLabs",
         desc: "The world's most realistic AI speech synthesis software. It offers emotionally-aware voices that can speak in dozens of languages, allowing you to create high-quality narrations for videos, games, and accessibility tools.",
         image: elevenlabsImg,
-        icon: <FiMic />
+        icon: <FiMic />,
+        link: "https://elevenlabs.io/"
     },
     {
         id: 9,
@@ -128,7 +136,8 @@ const tools = [
         title: "Fireflies.ai",
         desc: "Your AI meeting assistant that automatically records, transcribes, and summarizes voice conversations across all major video conferencing platforms. It ensures no action item is missed and knowledge is easily searchable.",
         image: firefliesImg,
-        icon: <FiCpu />
+        icon: <FiCpu />,
+        link: "https://fireflies.ai/"
     },
     {
         id: 10,
@@ -136,7 +145,8 @@ const tools = [
         title: "GitHub Copilot",
         desc: "An AI pair programmer that provides real-time code suggestions and entire functions directly in your editor. It accelerates the development lifecycle by handling boilerplate code and suggesting complex logic patterns.",
         image: copilotImg,
-        icon: <FiCode />
+        icon: <FiCode />,
+        link: "https://github.com/features/copilot"
     },
     {
         id: 11,
@@ -144,7 +154,8 @@ const tools = [
         title: "Tableau AI",
         desc: "Augmented analytics for data-driven teams. Tableau AI provides intelligent insights and automated data preparation, helping businesses visualize complex information and discover hidden trends in seconds.",
         image: tableauImg,
-        icon: <FiBarChart2 />
+        icon: <FiBarChart2 />,
+        link: "https://www.tableau.com/products/ai"
     },
     {
         id: 12,
@@ -152,7 +163,8 @@ const tools = [
         title: "Darktrace",
         desc: "An enterprise-grade cyber AI platform that learns your digital environment to detect and neutralize subtle threats in real-time. It provides autonomous response capabilities to protect critical infrastructure.",
         image: securityImg,
-        icon: <FiShield />
+        icon: <FiShield />,
+        link: "https://www.darktrace.com/"
     },
     {
         id: 13,
@@ -160,7 +172,8 @@ const tools = [
         title: "Jasper",
         desc: "An AI content platform that helps marketing teams create high-quality blog posts, social media content, and ad copy 10x faster. It maintains brand consistency across all channels using your unique voice.",
         image: marketingImg,
-        icon: <FiShare2 />
+        icon: <FiShare2 />,
+        link: "https://www.jasper.ai/"
     },
     {
         id: 14,
@@ -168,7 +181,8 @@ const tools = [
         title: "Harvey AI",
         desc: "The next-generation AI platform for professional legal services. Harvey assists lawyers with research, drafting, and analysis across multiple jurisdictions, significantly increasing accuracy and efficiency.",
         image: lawImg,
-        icon: <FiLock />
+        icon: <FiLock />,
+        link: "https://www.harvey.ai/"
     },
     {
         id: 15,
@@ -176,7 +190,8 @@ const tools = [
         title: "Babylon AI",
         desc: "AI-driven digital health services that provide personalized health assessments and remote consultations. It uses advanced machine learning to help clinicians diagnose conditions more accurately and faster.",
         image: medicineImg,
-        icon: <FiHeart />
+        icon: <FiHeart />,
+        link: "https://www.babylonhealth.com/"
     },
     {
         id: 16,
@@ -184,7 +199,8 @@ const tools = [
         title: "Dynamic Yield",
         desc: "An AI-powered personalization platform that helps retailers deliver tailored customer experiences across web, mobile, and email. It optimizes the customer journey in real-time to drive conversions.",
         image: retailImg,
-        icon: <FiShoppingBag />
+        icon: <FiShoppingBag />,
+        link: "https://www.dynamicyield.com/"
     },
     {
         id: 17,
@@ -192,7 +208,8 @@ const tools = [
         title: "Project44",
         desc: "Advanced supply chain visibility powered by AI. It provides real-time tracking and predictive analytics for global shipments, helping logistics teams optimize routes and reduce operational delays.",
         image: logisticsImg,
-        icon: <FiTruck />
+        icon: <FiTruck />,
+        link: "https://www.project44.com/"
     },
     {
         id: 18,
@@ -200,7 +217,8 @@ const tools = [
         title: "Suno AI",
         desc: "Generate full, professional-quality songs with vocals and instrumentation from simple text descriptions. Suno AI is revolutionizing creative workflows for content creators and musicians alike.",
         image: musicImg,
-        icon: <FiMusic />
+        icon: <FiMusic />,
+        link: "https://suno.com/"
     },
     {
         id: 19,
@@ -208,7 +226,8 @@ const tools = [
         title: "Luma AI",
         desc: "Capture reality in photorealistic 3D using just your smartphone. Luma AI uses neural radiance fields (NeRF) to create highly detailed 3D models and cinematic scenes for games, VFX, and e-commerce.",
         image: realityImg,
-        icon: <FiCamera />
+        icon: <FiCamera />,
+        link: "https://lumalabs.ai/"
     }
 ];
 
@@ -279,7 +298,7 @@ const AiTools = () => {
                                 <span className="dt-tool-category">{tools[0].category}</span>
                                 <h3>{tools[0].title}</h3>
                                 <p>{tools[0].desc}</p>
-                                <a href="#" className="dt-tool-try-link">Try it out <FiArrowRight /></a>
+                                <a href={tools[0].link} target="_blank" rel="noopener noreferrer" className="dt-tool-try-link">Try it out <FiArrowRight /></a>
                             </div>
                         </div>
                     )}
@@ -296,7 +315,7 @@ const AiTools = () => {
                                         <h3>{tool.title}</h3>
                                     </div>
                                     <p>{tool.desc}</p>
-                                    <a href="#" className="dt-tool-try-link">Try it out <FiArrowRight /></a>
+                                    <a href={tool.link} target="_blank" rel="noopener noreferrer" className="dt-tool-try-link">Try it out <FiArrowRight /></a>
                                 </div>
                             </div>
                         ))}

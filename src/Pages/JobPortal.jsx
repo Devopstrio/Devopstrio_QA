@@ -626,9 +626,10 @@ const JobPortal = () => {
           </motion.div>
         </div>
       </motion.section>
-
       {/* ── NEWSLETTER ── */}
+      <div style={{maxWidth: "1250px", margin: "0 auto"}}>
       <Newsletter />
+      </div>
      
       {/* ── MODAL ── */}
       <AnimatePresence>

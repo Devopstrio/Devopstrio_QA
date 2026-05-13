@@ -302,35 +302,7 @@ const Careerspage = () => {
       >
         <span className="cp-giSideTab__text">Explore our Global Internship</span>
       </button>
-
-      {/* ── HERO ── */}
-      {/* <section className="cp-hero">
-        <div className="cp-wrap">
-          <div className="cp-hero-content">
-            <h1 className="ch-heading">
-              <span className="cp-accent-word">Our mission</span> is to build the
-              <br />
-              <strong>Cloud Platform</strong> for the <span className="cp-accent-word">next generation</span>.
-            </h1>
-            <p className="ch-description">
-              We&apos;re redefining Cloud — shipping powerful,
-              <br />
-              groundbreaking features at every turn. Join us to
-              <br />
-              revolutionize how the world builds software.
-            </p>
-            <div className="ch-actions">
-              <button className="ch-btn-gradient" onClick={() => navigate("/careers/jobs")}>
-                Join the team <FiChevronRight />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="cp-hero-illustration">
-          <img src="/images/Pure_black_Bg1.png" className="ch-illustration-img" alt="Hero Illustration" />
-        </div>
-      </section> */}
-
+      
       <Careershero />
 
       {/* ── OPPORTUNITIES FOR YOU TO EXPLORE ── */}

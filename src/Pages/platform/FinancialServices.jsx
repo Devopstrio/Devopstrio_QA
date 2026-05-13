@@ -180,14 +180,46 @@ const PROCESS_STEPS = [
 ];
 
 const CAPABILITIES = [
-    { title: "Business process reconstruction", icon: <FiActivity /> },
-    { title: "Cyber and IT security", icon: <FiShield /> },
-    { title: "Implementation of CI/CD Flows", icon: <FiZap /> },
-    { title: "UX/UI", icon: <FiPieChart /> },
-    { title: "QA Automation", icon: <FiCpu /> },
-    { title: "Big Data and Analytics", icon: <FiDatabase /> },
-    { title: "Mobile Engineering", icon: <FiSmartphone /> },
-    { title: "Web Engineering", icon: <FiGlobe /> },
+    { 
+        title: "Business process reconstruction", 
+        icon: <FiActivity />,
+        details: "We analyze and redesign core financial workflows to improve efficiency, reduce operational costs, and eliminate legacy bottlenecks using modern automation."
+    },
+    { 
+        title: "Cyber and IT security", 
+        icon: <FiShield />,
+        details: "Implementing multi-layered security protocols, including end-to-end encryption, real-time threat detection, and strict compliance with global financial regulations."
+    },
+    { 
+        title: "Implementation of CI/CD Flows", 
+        icon: <FiZap />,
+        details: "Streamlining financial software delivery with automated pipelines that ensure rapid, reliable, and secure code deployment without service interruptions."
+    },
+    { 
+        title: "UX/UI", 
+        icon: <FiPieChart />,
+        details: "Designing intuitive, high-performance interfaces for complex financial data visualization, ensuring seamless user journeys for both retail and institutional clients."
+    },
+    { 
+        title: "QA Automation", 
+        icon: <FiCpu />,
+        details: "Leveraging AI-driven testing frameworks to validate complex financial transactions, API integrations, and system resilience under peak loads."
+    },
+    { 
+        title: "Big Data and Analytics", 
+        icon: <FiDatabase />,
+        details: "Extracting actionable insights from high-volume financial datasets to drive predictive modeling, fraud detection, and personalized customer experiences."
+    },
+    { 
+        title: "Mobile Engineering", 
+        icon: <FiSmartphone />,
+        details: "Building secure, high-fidelity mobile banking and investment applications with native performance and advanced biometric authentication."
+    },
+    { 
+        title: "Web Engineering", 
+        icon: <FiGlobe />,
+        details: "Developing scalable, enterprise-grade web platforms for digital banking, insurance management, and decentralized financial services."
+    },
 ];
 
 const ARTICLES = [
@@ -1175,12 +1207,19 @@ const FinancialServices = () => {
 
                     <div className="fs-capabilities-grid">
                         {CAPABILITIES.map((item, idx) => (
-                            <div key={idx} className="fs-capability-card">
-                                <div className="fs-cap-icon">{item.icon}</div>
-                                <h3 className="fs-cap-h3">{item.title}</h3>
-                                <a href="#" className="fs-cap-link">
-                                    See more <span>→</span>
-                                </a>
+                            <div key={idx} className="fs-capability-flip-card">
+                                <div className="fs-capability-card-inner">
+                                    {/* Front Side */}
+                                    <div className="fs-capability-card-front">
+                                        <div className="fs-cap-icon">{item.icon}</div>
+                                        <h3 className="fs-cap-h3">{item.title}</h3>
+                                    </div>
+                                    {/* Back Side */}
+                                    <div className="fs-capability-card-back">
+                                        <h3 className="fs-cap-h3-back">{item.title}</h3>
+                                        <p className="fs-cap-details">{item.details}</p>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

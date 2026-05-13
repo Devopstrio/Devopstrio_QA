@@ -125,33 +125,33 @@ const HireAi = () => {
     const technologies = [
         {
             cat: "INFRASTRUCTURE AND DEVOPS",
-            items: ["Docker;", "Kubernetes;", "KitOps;", "Terraform;", "Cloud platforms (AWS, Azure, GCP);", "CI/CD (GitHub Actions, GitLab CI, Jenkins)."]
+            items: ["Docker", "Kubernetes", "KitOps", "Terraform", "Cloud platforms (AWS, Azure, GCP)", "CI/CD (GitHub Actions, GitLab CI, Jenkins)"]
         },
         {
             cat: "MLOPS PLATFORMS AND MODEL LIFECYCLE",
-            items: ["Kubeflow;", "MLflow;", "Inference servers (llama.cpp, vLLM);", "Observability (Langfuse, Ragas, AriseAI, Opik);", "Airflow;", "n8n."]
+            items: ["Kubeflow", "MLflow", "Inference servers (llama.cpp, vLLM)", "Observability (Langfuse, Ragas, AriseAI, Opik)", "Airflow", "n8n"]
         },
         {
             cat: "AI/ML FRAMEWORKS",
-            items: ["TensorFlow;", "PyTorch;", "scikit-learn;", "LoRa;", "RLHF;", "XGBoost/LightGBM."]
+            items: ["TensorFlow", "PyTorch", "scikit-learn", "LoRa", "RLHF", "XGBoost/LightGBM"]
         },
         {
             cat: "LLM AND AGENTIC AI ECOSYSTEM",
-            items: ["LLM APIs (OpenAI, Claude, Gemini);", "Amazon Bedrock/Sagemaker;", "LlamaIndex;", "Vector databases;", "LangChain;", "CrewAI."]
+            items: ["LLM APIs (OpenAI, Claude, Gemini)", "Amazon Bedrock/Sagemaker", "LlamaIndex", "Vector databases", "LangChain", "CrewAI"]
         },
         {
             cat: "DEVELOPMENT",
-            items: ["FastAPI;", "Node.js (Express/NestJS);", "Django/Django REST Framework;", "GraphQL;", "gRPC;", "Redis."],
+            items: ["FastAPI", "Node.js (Express/NestJS)", "Django/Django REST Framework", "GraphQL", "gRPC", "Redis"],
             extra: true
         },
         {
             cat: "MULTIMODAL",
-            items: ["ElevenLabs;", "Whisper (ASR);", "DeepSpeech/Vosk;", "FFmpeg;", "OpenAI Multimodal (GPT-4o/GPT-5);", "CLIP."],
+            items: ["ElevenLabs", "Whisper (ASR)", "DeepSpeech/Vosk", "FFmpeg", "OpenAI Multimodal (GPT-4o/GPT-5)", "CLIP"],
             extra: true
         },
         {
             cat: "COMPUTER VISION",
-            items: ["OpenCV;", "Yolo;", "CNN;", "Vision Transformers;", "VisionAgent;", "OCR (Paddle, MonkeyOCR, Tesseract)."],
+            items: ["OpenCV", "Yolo", "CNN", "Vision Transformers", "VisionAgent", "OCR (Paddle, MonkeyOCR, Tesseract)"],
             extra: true
         }
     ];

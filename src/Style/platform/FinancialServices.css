@@ -694,6 +694,10 @@
   margin-bottom: 60px;
 }
 
+.fs-sec-head.left-aligned {
+  text-align: left;
+}
+
 .fs-eyebrow {
   font-size: 0.8rem;
   font-weight: 800;
@@ -1319,48 +1323,149 @@
 /* ─────────────────────────────────────────────
    7. CAPABILITIES GRID
    ───────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   7. CAPABILITIES GRID (Interactive Flip Cards)
+   ───────────────────────────────────────────── */
 .fs-capabilities {
-  padding: 60px 0;
+  padding: 80px 0;
   background: #000;
 }
 
 .fs-capabilities-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 24px;
   margin-top: 60px;
 }
 
-.fs-capability-card {
-  background: #0a0a0a;
-  border: 1px solid #1a1a1a;
-  padding: 40px 30px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.fs-capability-flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 320px; /* Fixed height for consistent flip */
+  perspective: 1000px; /* 3D effect container */
 }
 
-.fs-capability-card:hover {
-  background: #0f0f0f;
-  border-color: #ce2453;
-  transform: translateY(-10px);
+.fs-capability-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.fs-capability-flip-card:hover .fs-capability-card-inner {
+  transform: rotateY(180deg);
+}
+
+.fs-capability-card-front, 
+.fs-capability-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fs-capability-card-front {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  color: #fff;
+}
+
+.fs-capability-card-back {
+  background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+  border: 1px solid #ce2453;
+  color: #fff;
+  transform: rotateY(180deg);
+  justify-content: center;
 }
 
 .fs-cap-icon {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #ce2453;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
 }
 
 .fs-cap-h3 {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 30px;
-  flex-grow: 1;
+  margin-bottom: auto;
   line-height: 1.3;
+}
+
+.fs-cap-link {
+  color: #ce2453;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.fs-cap-h3-back {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ce2453;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fs-cap-details {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+}
+
+.fs-cap-link-back {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ce2453;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.fs-cap-link-back:hover {
+  background: #ff3e78;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+  .fs-capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .fs-capability-flip-card { height: 300px; }
+}
+
+@media (max-width: 640px) {
+  .fs-capabilities-grid { grid-template-columns: 1fr; }
+  .fs-capability-flip-card { height: 280px; }
+}
+
+@media (max-width: 1200px) {
+  .fs-capabilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+  .fs-capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .fs-capabilities-grid { grid-template-columns: 1fr; }
 }
 
 .fs-cap-link-btn {
@@ -1387,134 +1492,6 @@
 
 .fs-cap-link-btn:hover span {
   transform: translateX(5px);
-}
-
-/* Modal Styling */
-.fs-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.fs-modal-content {
-  background: #0a0a0a;
-  border: 1px solid #1a1a1a;
-  width: 100%;
-  max-width: 700px;
-  border-radius: 32px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
-}
-
-.fs-modal-close {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border: none;
-  color: #fff;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: 0.3s;
-  z-index: 10;
-}
-
-.fs-modal-close:hover {
-  background: #ce2453;
-  transform: rotate(90deg);
-}
-
-.fs-modal-body {
-  padding: 60px;
-}
-
-.fs-modal-h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 20px 0 30px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.fs-modal-p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #a1a1aa;
-}
-
-.fs-modal-footer {
-  margin-top: 50px;
-}
-
-.fs-modal-btn {
-  background: #ce2453;
-  color: #fff;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 100px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.fs-modal-btn:hover {
-  background: #ff3e78;
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .fs-modal-body { padding: 40px 30px; }
-  .fs-modal-h2 { font-size: 1.8rem; }
-  .fs-modal-p { font-size: 1rem; }
-}
-
-.fs-cap-link {
-  color: #ce2453;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 0.2s;
-}
-
-.fs-cap-link span {
-  transition: transform 0.2s;
-}
-
-.fs-cap-link:hover {
-  color: #ff3e78;
-}
-
-.fs-cap-link:hover span {
-  transform: translateX(5px);
-}
-
-@media (max-width: 1200px) {
-  .fs-capabilities-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 992px) {
-  .fs-capabilities-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 576px) {
-  .fs-capabilities-grid { grid-template-columns: 1fr; }
 }
 
 /* ─────────────────────────────────────────────
@@ -1608,7 +1585,9 @@
 }
 
 .fs-article-item:hover {
-  background: transparent;
+  background: #0f0f0f;
+  border-color: #ce245350;
+  transform: translateX(5px);
 }
 
 .fs-article-item:hover .fs-article-h4 {
@@ -1639,6 +1618,99 @@
   .fs-knowledge-layout { grid-template-columns: 1fr; }
   .fs-featured-img-wrap { height: 300px; }
   .fs-featured-h3 { font-size: 1.8rem; }
+}
+
+/* Modal Styling */
+.fs-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fs-modal-content {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+}
+
+.fs-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.fs-modal-close:hover {
+  background: #ce2453;
+  transform: rotate(90deg);
+}
+
+.fs-modal-body {
+  padding: 60px;
+}
+
+.fs-modal-h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 20px 0 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.fs-modal-p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #a1a1aa;
+}
+
+.fs-modal-footer {
+  margin-top: 50px;
+}
+
+.fs-modal-btn {
+  background: #ce2453;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fs-modal-btn:hover {
+  background: #ff3e78;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .fs-modal-body { padding: 40px 30px; }
+  .fs-modal-h2 { font-size: 1.8rem; }
+  .fs-modal-p { font-size: 1rem; }
 }
 
 /* ─────────────────────────────────────────────

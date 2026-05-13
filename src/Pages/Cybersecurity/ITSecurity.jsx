@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-    FiShield, 
-    FiLock, 
-    FiCheckCircle, 
-    FiSearch, 
-    FiActivity, 
-    FiUsers, 
-    FiZap, 
-    FiGlobe, 
+import {
+    FiShield,
+    FiLock,
+    FiCheckCircle,
+    FiSearch,
+    FiActivity,
+    FiUsers,
+    FiZap,
+    FiGlobe,
     FiAlertTriangle,
     FiPlus,
     FiMinus,
@@ -73,7 +73,7 @@ const ITSecurity = () => {
         {
             title: "Standard SSD projects",
             icon: <FiCode />,
-            desc: "Andersen will apply code analysis tools to standard development operations to ensure your product source code is checked against best industry practices and the OWASP guidelines. Also, within continuous CI/CD routines, we will systematically tackle all risks stemming from open source libraries for transparent risk management."
+            desc: "Devopstrio will apply code analysis tools to standard development operations to ensure your product source code is checked against best industry practices and the OWASP guidelines. Also, within continuous CI/CD routines, we will systematically tackle all risks stemming from open source libraries for transparent risk management."
         },
         {
             title: "Advanced SSD initiatives",
@@ -83,12 +83,12 @@ const ITSecurity = () => {
         {
             title: "Standard QA projects",
             icon: <FiCheckCircle />,
-            desc: "Andersen's software QA package includes a default test strategy covering the OWASP Top 10 recommendations as standard."
+            desc: "Devopstrio's software QA package includes a default test strategy covering the OWASP Top 10 recommendations as standard."
         },
         {
             title: "Security audit and hardening",
             icon: <FiShield />,
-            desc: "An independent security audit of the production environment is an important milestone for a successful product that draws much attention. Andersen's development team provides full support for external penetration and hardening audit activities (PEN-tests)."
+            desc: "An independent security audit of the production environment is an important milestone for a successful product that draws much attention. Devopstrio's development team provides full support for external penetration and hardening audit activities (PEN-tests)."
         }
     ];
 
@@ -176,7 +176,7 @@ const ITSecurity = () => {
     return (
         <div className="dt-sec-page-wrapper">
             {/* Hero Section */}
-         <ServicesHero />
+            <ServicesHero />
 
             {/* Trust Stats Bar */}
             <section className="dt-sec-trust-bar">
@@ -205,7 +205,7 @@ const ITSecurity = () => {
                         <p className="dt-sec-section-desc">
                             To advance their knowledge, confirm their expertise, and gain further practical skills, our employees obtain the following certificates in the field of information systems security.
                         </p>
-                        
+
                         <div className="dt-sec-certificates">
                             {[iso27001, gdpr, cyberEssentials, owasp, hipaa].map((img, i) => (
                                 <div key={i} className="dt-cert-img-wrapper">
@@ -222,9 +222,9 @@ const ITSecurity = () => {
                 <div className="dt-sec-container">
                     <h2 className="dt-sec-section-title">Scope of our <span className="dt-sec-accent-text">IT Security Services</span></h2>
                     <p className="dt-sec-section-desc">
-                        Andersen's secure software development practices (SSD) and QA are an important baseline for your digital product's cyber security.
+                        Devopstrio's secure software development practices (SSD) and QA are an important baseline for your digital product's cyber security.
                     </p>
-                    
+
                     <div className="dt-sec-scope-grid">
                         {services.map((service, idx) => (
                             <div key={idx} className="dt-sec-scope-card">
@@ -244,41 +244,41 @@ const ITSecurity = () => {
                         <div className="dt-wwd-title-group">
                             <h2 className="dt-sec-section-title">What We Do </h2>
                         </div>
-                    <div className="dt-wwd-subtitle-row">
-                        <p className="dt-wwd-subtitle">Design, Develop, and Run robust, secure-by-design business software solutions tailored to your unique enterprise requirements and industry compliance standards.</p>
-                        <div className="dt-wwd-controls">
-                            <button className="dt-wwd-ctrl-btn" onClick={() => scrollSlider('left')}><FiArrowLeft /></button>
-                            <button className="dt-wwd-ctrl-btn active" onClick={() => scrollSlider('right')}><FiArrowRight /></button>
+                        <div className="dt-wwd-subtitle-row">
+                            <p className="dt-wwd-subtitle">Design, Develop, and Run robust, secure-by-design business software solutions tailored to your unique enterprise requirements and industry compliance standards.</p>
+                            <div className="dt-wwd-controls">
+                                <button className="dt-wwd-ctrl-btn" onClick={() => scrollSlider('left')}><FiArrowLeft /></button>
+                                <button className="dt-wwd-ctrl-btn active" onClick={() => scrollSlider('right')}><FiArrowRight /></button>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div className="dt-wwd-slider-container">
-                        <div className="dt-wwd-slider" ref={sliderRef}>
-                            {whatWeDoItems.map((item, idx) => (
-                                <div key={idx} className="dt-wwd-card">
-                                    <div className="dt-wwd-card-image">
-                                        <img src={item.image} alt={item.title} />
-                                        <div className="dt-wwd-card-overlay">
-                                            <h4>{item.title}</h4>
+
+                        <div className="dt-wwd-slider-container">
+                            <div className="dt-wwd-slider" ref={sliderRef}>
+                                {whatWeDoItems.map((item, idx) => (
+                                    <div key={idx} className="dt-wwd-card">
+                                        <div className="dt-wwd-card-image">
+                                            <img src={item.image} alt={item.title} />
+                                            <div className="dt-wwd-card-overlay">
+                                                <h4>{item.title}</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="dt-wwd-card-content">
-                                        <div className="dt-wwd-card-meta">
-                                            <div className="dt-wwd-line"></div>
-                                        </div>
-                                        <p>{item.desc}</p>
-                                        <div className="dt-wwd-card-footer">
-                                            <div className="dt-wwd-footer-icon">
-                                                <FiActivity />
+                                        <div className="dt-wwd-card-content">
+                                            <div className="dt-wwd-card-meta">
+                                                <div className="dt-wwd-line"></div>
+                                            </div>
+                                            <p>{item.desc}</p>
+                                            <div className="dt-wwd-card-footer">
+                                                <div className="dt-wwd-footer-icon">
+                                                    <FiActivity />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                  </div> 
+                    </div>
                 </div>
             </section>
 
@@ -303,7 +303,7 @@ const ITSecurity = () => {
                     <p className="dt-sec-insights-intro">
                         The world is changing quickly, but we, as an IT security consulting company, are closely monitoring the situation. Let us bring to your attention our research in the field of information security.
                     </p>
-                    
+
                     <div className="dt-sec-insights-layout">
                         {/* Featured Insight */}
                         <div className="dt-insights-featured">
@@ -315,7 +315,7 @@ const ITSecurity = () => {
                             <p>{featuredInsight.desc}</p>
                             <a href={featuredInsight.link} className="dt-sec-link">See more →</a>
                         </div>
-                        
+
                         {/* Insights List */}
                         <div className="dt-insights-list-column">
                             {insights.map((insight, idx) => (
@@ -359,7 +359,7 @@ const ITSecurity = () => {
             <AITeam />
 
             <div className="dt-sec-container">
-                <AIConsultationForm 
+                <AIConsultationForm
                     title="Let's secure your <span className='dt-sec-accent-text'>IT Infrastructure</span>"
                     description="Our cybersecurity experts are ready to audit your systems and build a robust defense strategy."
                 />

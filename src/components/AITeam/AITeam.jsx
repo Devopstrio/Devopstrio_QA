@@ -10,8 +10,8 @@ const teamData = {
         {
             name: "SagaDevan",
             role: "Head of AI Department",
-            stats: "<strong>6+ years of experience</strong> | 100+ AI projects | 10+ research papers",
-            desc: "Saga is an experienced AI architect with global leadership experience, holding both MSC and PhD degrees. Specializes in GenAI/ML Architecture; Expert in Agentic AI and RAG ecosystems building. Active Assistant Research Professor.",
+            stats: "<strong>Enterprise AI Strategy</strong>",
+            desc: "Saga is an experienced AI architect with global leadership experience, holding both MSC and PhD degrees. Specializes in GenAI/ML Architecture, Expert in Agentic AI and RAG ecosystems building. Active Assistant Research Professor.",
             image: Saga_Img
         }
     ],
@@ -20,8 +20,8 @@ const teamData = {
             name: "Mareeshwaran",
             role: "Head of AI Engineering",
             image: Maxim_Img,
-            stats: "<strong>8+ Years Experience</strong> | PhD in AI | Ex-Google",
-            desc: "Our mission is to bridge the gap between complex AI research and practical, scalable enterprise solutions. We don't just build models; we build value."
+            stats: "<strong>AI Engineering Excellence</strong>",
+            desc: "Mr. Mareeshwaran leads AI Engineering at Devopstrio, focusing on delivering high-impact, production-ready AI solutions. With expertise in MLOps, scalable ML systems, and applied AI research, he drives the development of intelligent, enterprise-grade applications. His work ensures that advanced AI capabilities are seamlessly integrated into business workflows, transforming data into measurable value."
         }
     ]
 };
@@ -33,28 +33,27 @@ const AITeam = ({ type = "consulting", title, onScheduleClick }) => {
     if (team.length === 0) return null;
 
     return (
-        <section className="dt-section-spacing">
-            <div className="dt-container">
-                <h2 className="dt-section-title">{displayTitle}</h2>
-                <div className="dt-team-showcase">
+        <section className="ait-section">
+            <div className="ait-container">
+                <h2 className="ait-title">{displayTitle}</h2>
+                <div className="ait-grid">
                     {team.map((member, idx) => (
-                        <div key={idx} className="dt-team-member-card">
-                            <div className="dt-team-member-image">
+                        <div key={idx} className="ait-card">
+                            <div className="ait-card-img">
                                 <img src={member.image} alt={member.name} />
                             </div>
-                            <div className="dt-team-member-details">
-                                <span className="dt-team-role-badge">{member.role}</span>
-                                <h3 className="dt-team-name">{member.name}</h3>
+                            <div className="ait-card-body">
+                                <span className="ait-badge">{member.role}</span>
+                                <h3 className="ait-name">{member.name}</h3>
                                 <div 
-                                    className="dt-team-stats" 
+                                    className="ait-stats" 
                                     dangerouslySetInnerHTML={{ __html: member.stats }}
                                 ></div>
-                                <p className="dt-team-desc">{member.desc}</p>
-                                <div className="dt-team-actions">
+                                <p className="ait-desc">{member.desc}</p>
+                                <div className="ait-actions">
                                     <button 
-                                        className="dt-btn-primary dt-btn-calendar" 
-                                        onClick={onScheduleClick}
-                                    >
+                                        className="ait-btn" 
+                                        onClick={onScheduleClick} >
                                         Schedule a call <FiCalendar />
                                     </button>
                                 </div>

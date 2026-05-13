@@ -187,7 +187,7 @@
 }
 
 .dt-hire-card-back {
-    background: var(--dt-card-bg);
+    background: var(--dt-accent);
     z-index: 2;
     transform: translateY(100%);
     opacity: 0;
@@ -816,7 +816,7 @@
 
 /* Contact Section */
 .dt-hire-contact {
-    padding: 60px 0;
+    padding: 20px 0;
 }
 
 .dt-hire-contact-grid {

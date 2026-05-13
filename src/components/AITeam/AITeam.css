@@ -1,117 +1,198 @@
-/* AITeam.css */
+/* AITeam.css - AI Team Component Styles */
 
-.dt-team-showcase {
+.ait-section {
+    padding: 60px 0;
+    background-color: transparent;
+}
+
+.ait-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.ait-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.ait-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #ce2453;
+}
+
+.ait-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
 }
 
-.dt-team-member-card {
+.ait-card {
     display: flex;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 32px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-.dt-team-member-card:hover {
-    border-color: rgba(206, 36, 83, 0.3);
-    box-shadow: 0 15px 35px rgba(206, 36, 83, 0.1);
+.ait-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(206, 36, 83, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.04);
 }
 
-.dt-team-member-image {
-    flex: 0 0 35%;
-    max-width: 350px;
+.ait-card-img {
+    flex: 0 0 38%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
 }
 
-.dt-team-member-image img {
+.ait-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.dt-team-member-details {
-    padding: 48px;
+.ait-card:hover .ait-card-img img {
+    transform: scale(1.05);
+}
+
+.ait-card-body {
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
 }
 
-.dt-team-role-badge {
+.ait-badge {
     display: inline-block;
     background: rgba(206, 36, 83, 0.1);
     color: #ce2453;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
     width: fit-content;
+    border: 1px solid rgba(206, 36, 83, 0.2);
 }
 
-.dt-team-name {
-    font-size: 35px;
+.ait-name {
+    font-size: 38px;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 16px;
+    line-height: 1.2;
 }
 
-.dt-team-stats {
+.ait-stats {
     font-size: 17px;
-    color: var(--text-muted, #a0a0a0);
+    color: #a1a1aa;
     margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.dt-team-stats strong {
+.ait-stats strong {
     color: #ffffff;
     font-weight: 700;
 }
 
-.dt-team-desc {
+.ait-desc {
     font-size: 18px;
     line-height: 1.7;
-    color: var(--text-muted, #a0a0a0);
-    margin-bottom: 32px;
+    color: #a1a1aa;
+    margin-bottom: 35px;
 }
 
-.dt-team-actions {
+.ait-actions {
     display: flex;
-    gap: 16px;
-    align-items: center;
+    gap: 20px;
 }
 
-.dt-btn-calendar {
+.ait-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    color: white;
+    background: linear-gradient(
+        90deg,
+        #522c72 0%,
+        #962964 10%,
+        #ce2453 35%,
+        #dd5c54 60%,
+        #e79e57 80%
+    );
+    box-shadow: 0 10px 20px rgba(206, 36, 83, 0.2);
 }
 
-/* Responsive */
+.ait-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(206, 36, 83, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .ait-card-img {
+        flex: 0 0 45%;
+    }
+    .ait-card-body {
+        padding: 40px;
+    }
+}
+
 @media (max-width: 900px) {
-    .dt-team-member-card {
+    .ait-card {
         flex-direction: column;
     }
 
-    .dt-team-member-image {
+    .ait-card-img {
         flex: none;
         width: 100%;
         max-width: 100%;
-        height: 350px;
+        height: 400px;
     }
 
-    .dt-team-member-details {
-        padding: 32px 24px;
+    .ait-card-body {
+        padding: 40px 30px;
     }
 
-    .dt-team-actions {
-        flex-direction: column;
+    .ait-name {
+        font-size: 32px;
+    }
+
+    .ait-title {
+        font-size: 34px;
+        text-align: center;
         width: 100%;
     }
-
-    .dt-team-actions button {
-        width: 100%;
-        justify-content: center;
+    .ait-title::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

@@ -15,11 +15,9 @@
   <url><loc>https://devopstrio.co.uk/services/cloud-architecture</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/cloud-migration</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/multi-cloud</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/services/gitops</loc><priority>0.7</priority></url> -->
   <url><loc>https://devopstrio.co.uk/services/devops-enablement</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/cicd</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/iac</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/services/serverless</loc><priority>0.7</priority></url> -->
   <url><loc>https://devopstrio.co.uk/services/security</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/iam</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/services/compliance</loc><priority>0.7</priority></url>
@@ -28,22 +26,17 @@
   <!-- Platform & Resources -->
   <url><loc>https://devopstrio.co.uk/platform/saas-applications</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/platform/retail</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/case-studies</loc><priority>0.7</priority></url>
-  <url><loc>https://devopstrio.co.uk/resources/roi-reports</loc><priority>0.6</priority></url> -->
-  <!-- <url><loc>https://devopstrio.co.uk/resources/benchmarks</loc><priority>0.6</priority></url> -->
-  <!-- <url><loc>https://devopstrio.co.uk/resources/white-papers</loc><priority>0.6</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/resources/white-papers</loc><priority>0.6</priority></url>
 
   <!-- Partners & Marketplace -->
   <url><loc>https://devopstrio.co.uk/partners/aws</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/partners/azure</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/partners/gcp</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/partners/servicenow</loc><priority>0.7</priority></url> -->
+  <url><loc>https://devopstrio.co.uk/partners/servicenow</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/marketplace</loc><priority>0.8</priority></url>
   <url><loc>https://devopstrio.co.uk/marketplace/cloud-infrastructure</loc><priority>0.7</priority></url>
   <url><loc>https://devopstrio.co.uk/marketplace/data-analytics</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/marketplace/enterprise-apps</loc><priority>0.7</priority></url> -->
   <url><loc>https://devopstrio.co.uk/marketplace/cx</loc><priority>0.7</priority></url>
-  <!-- <url><loc>https://devopstrio.co.uk/marketplace/ai-ml</loc><priority>0.7</priority></url> -->
 
   <!-- About & Events -->
   <url><loc>https://devopstrio.co.uk/about/overview</loc><priority>0.7</priority></url>

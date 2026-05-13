@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { 
+import {
     FiShield, FiLock, FiGlobe, FiBriefcase, FiArrowRight,
     FiPlus, FiMinus, FiFileText, FiAward, FiUsers, FiCpu, FiCheck
 
@@ -23,8 +23,8 @@ const DigitalSovereignty = () => {
 
 
     const focusAreas = [
-        { 
-            title: "Vendor independence", 
+        {
+            title: "Vendor independence",
             desc: "We reduce vendor lock-in by designing systems that preserve portability, ownership, and long-term freedom of choice. Our approach focuses on architectures that evolve over time without constraints from proprietary platforms or single-provider dependencies.",
             points: [
                 "Modular and portable system architecture created via tailored custom development;",
@@ -33,9 +33,9 @@ const DigitalSovereignty = () => {
                 "Clear ownership established for code, data models, and all operational artifacts."
             ]
         },
-        { 
-            title: "Operational clarity", 
-            desc: "We bring structure and visibility to how work is delivered and governed, helping organizations maintain control across teams, projects, and partners. This is supported by Adel, Andersen's delivery system, providing a consistent operational view overall.",
+        {
+            title: "Operational clarity",
+            desc: "We bring structure and visibility to how work is delivered and governed, helping organizations maintain control across teams, projects, and partners. This is supported by Adel, Devopstrio's delivery system, providing a consistent operational view overall.",
             points: [
                 "Centralized oversight of delivery processes enabled through the Adel platform;",
                 "Clear definition of roles, responsibilities, and transparent decision paths;",
@@ -43,8 +43,8 @@ const DigitalSovereignty = () => {
                 "A shared control layer supporting informed and timely management decisions."
             ]
         },
-        { 
-            title: "AI Evaluation", 
+        {
+            title: "AI Evaluation",
             desc: "We support AI initiatives with structures that ensure accountability, transparency, and regulatory alignment. This makes AI systems easier to explain, assess, and operate responsibly at scale across complex environments and use cases globally today.",
             points: [
                 "Evaluation of AI systems across risk, compliance, and governance dimensions;",
@@ -53,8 +53,8 @@ const DigitalSovereignty = () => {
                 "Technical evaluation of AI pilots with guidance on scaling to production and ROI."
             ]
         },
-        { 
-            title: "Cloud & Infrastructure", 
+        {
+            title: "Cloud & Infrastructure",
             desc: "We design infrastructure strategies that give organizations real control over where workloads run and how they are operated. The focus is on resilient, portable environments supporting secure collaboration, sovereign deployment, and operational stability.",
             points: [
                 "Hybrid and multi-cloud architectures combining flexibility with strong workload isolation;",
@@ -108,8 +108,8 @@ const DigitalSovereignty = () => {
                 <meta name="description" content="Take control of your digital future with Devopstrio's sovereignty services. Avoid vendor lock-in and ensure data compliance." />
             </Helmet>
 
-             {/* Hero Section */}
-              <Serviceshero/>
+            {/* Hero Section */}
+            <Serviceshero />
 
             {/* Overview Section */}
             <section className="dt-overview-section">
@@ -125,7 +125,7 @@ const DigitalSovereignty = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="dt-overview-banner">
                         <div className="dt-banner-text">
                             <h3>Gain clarity and define a clear, structured path toward digital sovereignty</h3>
@@ -178,12 +178,12 @@ const DigitalSovereignty = () => {
                         <h2 className="dt-tabs-title">Our service focus areas</h2>
                         <p className="dt-tabs-subtitle">We support organizations across key technical domains - from system architecture and delivery oversight to AI evaluation and cloud infrastructure design.</p>
                     </div>
-                    
+
                     <div className="dt-tabs-container">
                         <div className="dt-tabs-sidebar">
                             {focusAreas.map((area, i) => (
-                                <div 
-                                    key={i} 
+                                <div
+                                    key={i}
                                     className={`dt-tab-item ${activeTab === i ? 'active' : ''}`}
                                     onClick={() => setActiveTab(i)}
                                 >
@@ -191,7 +191,7 @@ const DigitalSovereignty = () => {
                                 </div>
                             ))}
                         </div>
-                        
+
                         <div className="dt-tabs-content">
                             <div className="dt-content-main">
                                 <p className="dt-content-desc">{focusAreas[activeTab].desc}</p>
@@ -217,11 +217,11 @@ const DigitalSovereignty = () => {
                         <h2 className="dt-papers-title">Digital sovereignty: white papers</h2>
                         <p className="dt-papers-subtitle">Devopstrio continuously deepens and broadens its expertise and regularly shares it through its white papers.</p>
                     </div>
-                    
+
                     <div className="dt-papers-tabs-nav">
                         {whitePapers.map((paper, i) => (
-                            <button 
-                                key={i} 
+                            <button
+                                key={i}
                                 className={`dt-paper-tab-btn ${activePaperTab === i ? 'active' : ''}`}
                                 onClick={() => setActivePaperTab(i)}
                             >
@@ -229,7 +229,7 @@ const DigitalSovereignty = () => {
                             </button>
                         ))}
                     </div>
-                    
+
                     <div className="dt-paper-content">
                         <div className="dt-paper-grid">
                             <div className="dt-paper-image-box">
@@ -289,7 +289,7 @@ const DigitalSovereignty = () => {
                         <h2 className="dt-insights-title">Insights from Devopstrio</h2>
                         <p className="dt-insights-subtitle">Our tech landscape is undergoing rapid change, from generative AI to mobile-first, screenless interactions and cloud migration. Devopstrio carefully tracks each trend and highlights what is most relevant for digital sovereignty.</p>
                     </div>
-                    
+
                     <div className="dt-insights-grid">
                         <div className="dt-insight-card">
                             <span className="dt-insight-tag">Article</span>
@@ -313,12 +313,12 @@ const DigitalSovereignty = () => {
 
             {/* Final CTA */}
             <AIConsultationForm
-             title="Need guidance on AI and its implications for your business?"
-             description="Our team of AI experts can help you navigate the complexities of AI and provide tailored solutions that meet your specific needs. Schedule a consultation to learn more."
-             formId="DigitalSovereigntyForm"
+                title="Need guidance on AI and its implications for your business?"
+                description="Our team of AI experts can help you navigate the complexities of AI and provide tailored solutions that meet your specific needs. Schedule a consultation to learn more."
+                formId="DigitalSovereigntyForm"
             />
 
-            <Cta />          
+            <Cta />
         </div>
     );
 };

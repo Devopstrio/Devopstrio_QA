@@ -318,8 +318,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-bottom: 80px;
-}
+  }
 
 .dt-tool-card {
   background: #0a0a0a;

@@ -797,7 +797,12 @@ const RetailPlatform = () => {
           </motion.div>
         </div>
       </section>
-      <Newsletter />
+      {/* ── CTA ── */}
+      <section className="rp-cta-section">
+        <div className="rp-container">
+          <Newsletter />
+        </div>
+      </section>
       <Cta />
     </div>
   );

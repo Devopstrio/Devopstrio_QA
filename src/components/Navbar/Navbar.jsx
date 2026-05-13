@@ -484,7 +484,7 @@ const Navbar = () => {
               },
               {
                 name: "Healthcare",
-                path: "/platform/retail",
+                path: "/platform/healthcare",
                 description: "Products for Telehealth, Telecare, Telemonitoring, EMR/EHR, Patient monitoring, etc.",
               },
               {

@@ -237,7 +237,7 @@
 
 .gi-map-marker {
   position: absolute;
-  background: rgba(255, 255, 255, 0.367);
+  background: rgba(68, 68, 68, 0.367);
   backdrop-filter: blur(8px);
   padding: 6px 12px;
   border-radius: 8px;
