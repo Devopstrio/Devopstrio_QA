@@ -21,9 +21,6 @@ import retailImg from "../../assets/images/aitools/retail.png";
 import logisticsImg from "../../assets/images/aitools/logistics.png";
 import musicImg from "../../assets/images/aitools/music.png";
 import realityImg from "../../assets/images/aitools/3d_reality.png";
-import socialImg from "../../assets/images/aitools/social.png";
-import supportAgentImg from "../../assets/images/aitools/support_agent.png";
-import dataScienceImg from "../../assets/images/aitools/data_science.png";
 import chatImg from "../../assets/images/aitools/chat.png";
 
 // Specific Tool Assets

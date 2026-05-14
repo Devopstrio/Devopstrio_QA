@@ -170,9 +170,48 @@
     transition: all 0.4s ease;
 }
 
-.hc-pl-metric-card:hover {
-    border-color: var(--hc-pl-primary);
-    transform: translateY(-5px);
+.hc-pl-metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #ce2453;
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.hc-pl-metric-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.hc-pl-metric-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.hc-pl-metric-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: hc-pl-liquid-wave 8s infinite linear;
+}
+
+@keyframes hc-pl-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .hc-pl-metric-front,
@@ -185,21 +224,21 @@
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hc-pl-metric-front {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1;
+    z-index: 5;
 }
 
 .hc-pl-metric-back {
-    background: #ce2453;
-    transform: translateY(100%);
-    z-index: 2;
-    border-bottom: 4px solid var(--hc-pl-primary);
+    background: transparent;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 5;
     justify-content: center;
 }
 
@@ -210,6 +249,7 @@
 
 .hc-pl-metric-card:hover .hc-pl-metric-back {
     transform: translateY(0);
+    opacity: 1;
 }
 
 .hc-pl-metric-val {
@@ -1145,9 +1185,9 @@
     transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hc-pl-trending-card-slide:hover .hc-pl-trending-media {
-    height: 100%; /* Image expands to fill background during hover */
-}
+/* .hc-pl-trending-card-slide:hover .hc-pl-trending-media {
+    height: 100%; 
+} */
 
 .hc-pl-trending-card-slide:hover .hc-pl-trending-media img {
     transform: scale(1.1);

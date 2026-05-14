@@ -118,7 +118,7 @@ const ContactPage = () => {
 
       setStatus({
         type: "success",
-        message: "✅ Message sent! We'll get back to you within 24 hours.",
+        message: "Message sent! We'll get back to you within 24 hours.",
       });
 
       setFormData({

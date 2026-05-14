@@ -123,12 +123,65 @@
     border-radius: 8px;
     text-align: center;
     min-width: 180px;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.dt-sec-trust-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dt-accent);
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-sec-trust-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .dt-sec-trust-card:hover {
     border-color: var(--dt-accent);
     transform: translateY(-5px);
+}
+
+.dt-sec-trust-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-sec-trust-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-sec-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-sec-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dt-trust-value,
+.dt-trust-label {
+    position: relative;
+    z-index: 5;
 }
 
 .dt-trust-value {

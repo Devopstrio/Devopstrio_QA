@@ -54,12 +54,65 @@
     border-radius: 4px;
     padding: 50px 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.dt-pwa-metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dt-accent);
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-pwa-metric-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .dt-pwa-metric-card:hover {
     border-color: var(--dt-accent);
     transform: translateY(-5px);
+}
+
+.dt-pwa-metric-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-pwa-metric-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-pwa-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-pwa-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dt-pwa-card-number,
+.dt-pwa-card-label {
+    position: relative;
+    z-index: 5;
 }
 
 .dt-pwa-card-number {
@@ -199,6 +252,45 @@
     cursor: pointer;
 }
 
+.dt-pwa-service-reveal-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dt-accent);
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-pwa-service-reveal-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dt-pwa-service-reveal-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-pwa-service-reveal-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-pwa-liquid-wave 8s infinite linear;
+}
+
 .dt-pwa-reveal-front,
 .dt-pwa-reveal-back {
     position: absolute;
@@ -211,7 +303,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dt-pwa-reveal-front h3 {
@@ -220,10 +312,15 @@
     color: #fff;
 }
 
+.dt-pwa-reveal-front {
+    z-index: 5;
+}
+
 .dt-pwa-reveal-back {
-    background: var(--dt-pure-black);
-    transform: translateY(100%);
-    border-bottom: 4px solid var(--dt-accent);
+    background: transparent;
+    transform: translateY(20px);
+    opacity: 0;
+    z-index: 5;
 }
 
 .dt-pwa-reveal-back p {
@@ -234,11 +331,13 @@
 }
 
 .dt-pwa-service-reveal-card:hover .dt-pwa-reveal-front {
-    transform: translateY(-100%);
+    transform: translateY(-20px);
+    opacity: 0;
 }
 
 .dt-pwa-service-reveal-card:hover .dt-pwa-reveal-back {
     transform: translateY(0);
+    opacity: 1;
 }
 
 /* CTA Banner - Cinematic Dark */

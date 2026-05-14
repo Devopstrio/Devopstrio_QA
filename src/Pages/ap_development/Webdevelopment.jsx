@@ -17,6 +17,7 @@ import '../../Style/ap_development/Webdevelopment.css';
 import AIConsultationForm from '../../components/AIConsultationForm/AIConsultationForm';
 import CTA from '../../components/Cta/Cta';
 import ServiceHero from '../../components/Hero/Serviceshero';
+import TechStack from '../../components/TechStack/TechStack';
 
 const Webdevelopment = () => {
     const [activeProcess, setActiveProcess] = useState(0);
@@ -24,53 +25,6 @@ const Webdevelopment = () => {
     const [activeTech, setActiveTech] = useState(0);
     const [activeOffering, setActiveOffering] = useState(0);
     const [openFaq, setOpenFaq] = useState(null);
-    const [activeTechTab, setActiveTechTab] = useState('Popular');
-
-    const technologyData = {
-        'Popular': [
-            { name: 'iOS', icon: 'https://cdn.simpleicons.org/apple/white' },
-            { name: 'Android', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg' },
-            { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-            { name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' }
-        ],
-        'Mobile': [
-            { name: 'iOS', icon: 'https://cdn.simpleicons.org/apple/white' },
-            { name: 'Android', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg' },
-            { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-            { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { name: 'Xamarin', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xamarin/xamarin-original.svg' }
-        ],
-        'Front-end': [
-            { name: 'React.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { name: 'Angular', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
-            { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' }
-        ],
-        'Back-end': [
-            { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-            { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-            { name: '.NET', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg' },
-            { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-            { name: 'Golang', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg' }
-        ],
-        'Database': [
-            { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-            { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-            { name: 'Oracle', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg' },
-            { name: 'MS Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-            { name: 'MS SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg' }
-        ],
-        'Cloud': [
-            { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
-            { name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-            { name: 'GCP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' }
-        ],
-        'CMS': [
-            { name: 'WordPress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
-            { name: 'Drupal', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg' },
-
-        ]
-    };
 
     React.useEffect(() => {
         const sections = document.querySelectorAll(".dt-pane-content");
@@ -588,43 +542,7 @@ const Webdevelopment = () => {
             </section>
 
             {/* Technologies for Web Development Section */}
-            <section className="dt-web-technologies">
-                <div className="dt-web-container">
-                    <div className="dt-web-tech-header">
-                        <h2 className="dt-tech-section-title">Technologies for Web Development</h2>
-                        <p className="dt-tech-section-subtitle">Here is what we can apply to realize your plans for Custom Web Development.</p>
-                    </div>
-
-                    {/* Category Tabs */}
-                    <div className="dt-tech-categories">
-                        {Object.keys(technologyData).map((cat) => (
-                            <button 
-                                key={cat}
-                                className={`dt-tech-cat-btn ${activeTechTab === cat ? 'active' : ''}`}
-                                onClick={() => setActiveTechTab(cat)}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Technology Carousel/Grid */}
-                    <div className="dt-tech-display-wrap">
-                        <button className="dt-tech-nav prev"><FiChevronLeft /></button>
-                        <div className="dt-tech-grid">
-                            {technologyData[activeTechTab].map((tech, i) => (
-                                <div key={i} className="dt-tech-item-card">
-                                    <div className="dt-tech-icon-box">
-                                        <img src={tech.icon} alt={tech.name} />
-                                    </div>
-                                    <span className="dt-tech-name">{tech.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                        <button className="dt-tech-nav next"><FiChevronRight /></button>
-                    </div>
-                </div>
-            </section>
+            <TechStack />
 
             {/* FAQ Section */}
             <section className="dt-web-faq">

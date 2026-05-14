@@ -320,13 +320,6 @@
     padding-left: 30px;
 }
 
-.dt-mini-tag::before {
-    content: '📢';
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
-
 .dt-features-header {
     text-align: center;
     margin-bottom: 80px;

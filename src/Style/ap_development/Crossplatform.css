@@ -126,13 +126,65 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.dt-metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #ce2453;
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-metric-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.15);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .dt-metric-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: #ce2453;
-    background: #0f0f0f;
+}
+
+.dt-metric-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-metric-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-cross-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-cross-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dt-metric-num,
+.dt-metric-label {
+    position: relative;
+    z-index: 5;
 }
 
 .dt-metric-num {
@@ -471,16 +523,66 @@
     transition: all 0.3s ease;
 }
 
+.dt-service-box-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #ce2453;
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-service-box-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dt-service-box-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-service-box-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-service-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-service-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 .dt-service-box-card:hover {
     border-color: #ce2453;
-    background: #0f0f0f;
 }
 
 .dt-service-box-title {
     font-size: 22px;
     font-weight: 600;
     line-height: 1.4;
-    transition: opacity 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 5;
+}
+
+.dt-service-box-card:hover .dt-service-box-title {
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .dt-service-box-hover {
@@ -489,16 +591,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ce2453;
+    background: transparent;
     padding: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
 }
 
 .dt-service-box-card:hover .dt-service-box-hover {
+    opacity: 1;
     transform: translateY(0);
 }
 
@@ -507,6 +612,7 @@
     font-weight: 500;
     line-height: 1.6;
     color: #fff;
+    text-align: center;
 }
 
 /* CTA Banner */

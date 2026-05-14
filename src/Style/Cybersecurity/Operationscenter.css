@@ -21,7 +21,7 @@
     font-size: 52px;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     letter-spacing: -1px;
     color: #fff;
 }
@@ -63,6 +63,65 @@
     border-radius: 8px;
     text-align: center;
     min-width: 160px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.dt-soc-trust-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dt-accent);
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-soc-trust-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dt-soc-trust-card:hover {
+    border-color: var(--dt-accent);
+    transform: translateY(-5px);
+}
+
+.dt-soc-trust-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-soc-trust-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-soc-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-soc-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dt-trust-value,
+.dt-trust-label {
+    position: relative;
+    z-index: 5;
 }
 
 .dt-trust-value {
@@ -96,7 +155,38 @@
     border: 1px solid var(--dt-border);
     padding: 40px;
     border-radius: 12px;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.dt-soc-value-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--dt-accent);
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 1;
+}
+
+.dt-soc-value-card::after {
+    content: '';
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: 100%;
+    left: -75%;
+    background: rgba(206, 36, 83, 0.2);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .dt-soc-value-card:hover {
@@ -104,16 +194,45 @@
     transform: translateY(-5px);
 }
 
+.dt-soc-value-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-soc-value-card:hover::after {
+    top: -80%;
+    opacity: 1;
+    animation: dt-soc-val-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-soc-val-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.dt-soc-value-card h3,
+.dt-soc-value-card p {
+    position: relative;
+    z-index: 5;
+}
+
 .dt-soc-value-card h3 {
     font-size: 22px;
     margin-bottom: 15px;
     color: #fff;
+    transition: color 0.3s ease;
 }
 
 .dt-soc-value-card p {
     color: var(--dt-text-dim);
     font-size: 15px;
     line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.dt-soc-value-card:hover h3,
+.dt-soc-value-card:hover p {
+    color: #fff;
 }
 
 /* Process Section */

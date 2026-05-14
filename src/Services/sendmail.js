@@ -1,5 +1,5 @@
 export const sendEmail = async (data) => {
-  const toEmail = data.toOverride || import.meta.env.VITE_FORM_SUBMIT_EMAIL || "meena.s@devopstrioglobal.com";
+  const toEmail = data.toOverride || import.meta.env.VITE_FORM_SUBMIT_EMAIL || "hellosuman29@airsworld.net";
   const endpoint = `https://formsubmit.co/ajax/${toEmail}`;
 
   let body;
@@ -46,14 +46,11 @@ export const sendEmail = async (data) => {
     body,
   });
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
-  }
-
   const result = await response.json();
 
-  if (!result.success) {
-    throw new Error("Email sending failed");
+  if (!response.ok || !result.success) {
+    const errorMsg = result.message || `HTTP error! Status: ${response.status}`;
+    throw new Error(errorMsg);
   }
 
   return result;

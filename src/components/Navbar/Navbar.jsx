@@ -498,9 +498,9 @@ const Navbar = () => {
                 description: "Solution for live streaming , video on demand, OTT and other media and entertainment needs",
               },
               {
-                name: "Telecommunication",
-                path: "/platform/telecommunication",
-                description: "Telecom software solutions with Channel Partner Management, OSS, BSS, Cloud Services and other telecom needs",
+                name: "Telecom",
+                path: "/platform/telecom",
+                description: "Custom software solutions for telecommunications, OSS/BSS, and network infrastructure",
               },
               {
                 name: "Automotive",
