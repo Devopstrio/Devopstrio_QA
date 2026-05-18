@@ -26,6 +26,7 @@ import {
   FiHelpCircle,
   FiDatabase,
 } from "react-icons/fi";
+import { LuFactory } from "react-icons/lu";
 import AuthorityInfoBar from "./AuthorityInfoBar";
 
 // MediaMenu API Data fetching
@@ -251,6 +252,16 @@ const Navbar = () => {
                 path: "/partners/azure",
                 description: "Azure cloud engineering and optimization, with DB and app migration.",
               },
+              {
+                name: "IAC",
+                path: "/services/iac",
+                description: "Infrastructure as Code services for seamless cloud management, automation, and deployment.",
+              },
+              {
+                name: "CICD",
+                path: "/services/cicd",
+                description: "CICD services for seamless cloud management, automation, and deployment.",
+              },
             ],
           },
           {
@@ -450,12 +461,8 @@ const Navbar = () => {
           // },
         ],
         card: {
-          title: "Build Secure & Scalable Cloud Platforms",
-          description:
-            "End-to-end cloud solutions tailored to your business needs",
           path: "/services",
           image: CloudPlatformsImage,
-          badge: "Expert-Led",
         },
       },
 
@@ -463,20 +470,10 @@ const Navbar = () => {
         path: "/platform",
         title: "Industries",
         categories: [
-             {
+          {
             name: "Industries",
-            icon: <FiLayers />,
+            icon: <LuFactory />,
             items: [
-              {
-                name: "SaaS Applications",
-                path: "/platform/saas-applications",
-                description: "Accelerate research and development",
-              },
-              {
-                name: "Retail & E-commerce",
-                path: "/platform/retail",
-                description: "Scalable platforms for retail",
-              },
               {
                 name: "Financial Services",
                 path: "/platform/financial-services",
@@ -506,18 +503,33 @@ const Navbar = () => {
                 name: "Automotive",
                 path: "/platform/automotive",
                 description: "Automotive IVI solutions, Connectivity, ADAS / AD and powertrain system Software",
-              }          
-            ],         
-          },    
+              }
+            ],
+          },
+          {
+            name: "Platform",
+            icon: <FiCpu />,
+            items: [
+              {
+                name: "SaaS Applications",
+                path: "/platform/saas-applications",
+                description: "Accelerate research and development",
+              },
+              {
+                name: "Retail & E-commerce",
+                path: "/platform/retail",
+                description: "Scalable platforms for retail",
+              },
+            ],
+          },
 
           /* Success Stories menu moved to About */
         ],
+
         card: {
-          title: "Industry-Focused Cloud Solutions",
-          description: "Tailored platforms for your specific industry needs",
           path: "/platform",
           image: CloudPlatformsImage,
-          badge: "Proven Results",
+
         },
       },
 
@@ -544,11 +556,11 @@ const Navbar = () => {
                 path: "/partners/gcp",
                 description: "Premier GCP partner",
               },
-              {
-                name: "ServiceNow",
-                path: "/partners/servicenow",
-                description: "Elite ServiceNow partner",
-              },
+              // {
+              //   name: "ServiceNow",
+              //   path: "/partners/servicenow",
+              //   description: "Elite ServiceNow partner",
+              // },
             ],
           },
           {
@@ -584,11 +596,9 @@ const Navbar = () => {
           },
         ],
         card: {
-          title: "Cloud Ecosystem",
-          description: "Leverage our extensive partner network",
           path: "/ecosystem",
           image: CloudPlatformsImage,
-          badge: "Elite Partner",
+
         },
       },
 
@@ -605,11 +615,6 @@ const Navbar = () => {
                 path: "/about/overview",
                 description: "Our mission and vision",
               },
-              // {
-              //   name: "Worldwide Locations",
-              //   path: "/about/locations",
-              //   description: "Global presence",
-              // },
               {
                 name: "Corporate Values",
                 path: "/about/values",
@@ -622,7 +627,92 @@ const Navbar = () => {
               },
             ],
           },
-          ...aboutSections.map((section) => {
+          ...aboutSections
+            .filter(section => section.name !== "Insights & Knowledge" && section.name !== "News & Events")
+            .map((section) => {
+            return {
+              ...section,
+              items: section.items.map((item) => {
+                // LIFE AT Devopstrio
+                if (item.name === "Celebrations") {
+                  return {
+                    ...item,
+                    description:
+                      "Moments that define our culture and shared achievements",
+                  };
+                }
+
+                if (item.name === "Community") {
+                  return {
+                    ...item,
+                    description:
+                      "Our involvement in social impact and tech communities",
+                  };
+                }
+
+                if (item.name === "Posters") {
+                  return {
+                    ...item,
+                    description:
+                      "Creative visuals showcasing events and milestones",
+                  };
+                }
+
+                if (item.name === "Team Culture") {
+                  return {
+                    ...item,
+                    description:
+                      "Inside look at collaboration, values and work environment",
+                  };
+                }
+
+                // SUCCESS STORIES Overrides
+                if (item.name === "Client Transformations") {
+                  return {
+                    ...item,
+                    description:
+                      "Real-world digital transformation case studies",
+                  };
+                }
+
+                if (item.name === "Impact Metrics") {
+                  return {
+                    ...item,
+                    description:
+                      "Measurable results and performance improvements",
+                  };
+                }
+
+                if (item.name === "Testimonials") {
+                  return {
+                    ...item,
+                    description: "What our clients say about working with us",
+                  };
+                }
+
+                // Fallback: Pick a "random" (deterministic) description from the pool
+                return {
+                  ...item,
+                  description:
+                    item.description || getDefaultDescription(item.name),
+                };
+              }),
+            };
+          }),
+        ],
+        card: {
+          path: "/about",
+          image: CloudPlatformsImage,
+        },
+      },
+
+      Insights: {
+        path: "/insights",
+        title: "Insights",
+        categories: [
+          ...aboutSections
+            .filter(section => section.name === "Insights & Knowledge" || section.name === "News & Events")
+            .map((section) => {
             return {
               ...section,
               items: section.items.map((item) => {
@@ -666,39 +756,6 @@ const Navbar = () => {
                   };
                 }
 
-                // LIFE AT Devopstrio
-                if (item.name === "Celebrations") {
-                  return {
-                    ...item,
-                    description:
-                      "Moments that define our culture and shared achievements",
-                  };
-                }
-
-                if (item.name === "Community") {
-                  return {
-                    ...item,
-                    description:
-                      "Our involvement in social impact and tech communities",
-                  };
-                }
-
-                if (item.name === "Posters") {
-                  return {
-                    ...item,
-                    description:
-                      "Creative visuals showcasing events and milestones",
-                  };
-                }
-
-                if (item.name === "Team Culture") {
-                  return {
-                    ...item,
-                    description:
-                      "Inside look at collaboration, values and work environment",
-                  };
-                }
-
                 // NEWS & EVENTS
                 if (item.name === "Achievements") {
                   return {
@@ -731,31 +788,6 @@ const Navbar = () => {
                   };
                 }
 
-                // SUCCESS STORIES Overrides
-                if (item.name === "Client Transformations") {
-                  return {
-                    ...item,
-                    description:
-                      "Real-world digital transformation case studies",
-                  };
-                }
-
-                if (item.name === "Impact Metrics") {
-                  return {
-                    ...item,
-                    description:
-                      "Measurable results and performance improvements",
-                  };
-                }
-
-                if (item.name === "Testimonials") {
-                  return {
-                    ...item,
-                    description: "What our clients say about working with us",
-                  };
-                }
-
-                // Fallback: Pick a "random" (deterministic) description from the pool
                 return {
                   ...item,
                   description:
@@ -766,11 +798,8 @@ const Navbar = () => {
           }),
         ],
         card: {
-          title: "Learn More About Devopstrio ",
-          description: "Discover our story, values, and vision",
-          path: "/about",
+          path: "/insights",
           image: CloudPlatformsImage,
-          badge: "Est. 2019",
         },
       },
     }),
@@ -782,7 +811,7 @@ const Navbar = () => {
     { label: "Services", path: "/services", mega: true },
     { label: "Industries", path: "/platform", mega: true },
     { label: "Ecosystem", path: "/ecosystem", mega: true },
-    { label: "Insights", path: "/insights", mega: false },
+    { label: "Insights", path: "/insights", mega: true },
     { label: "Careers", path: "/careers", mega: false },
     { label: "About", path: "/about", mega: true },
   ];
@@ -997,118 +1026,176 @@ const Navbar = () => {
                       <h3>{megaMenus[item.label].title}</h3>
                     </div>
 
-                    <div className="drio-mega-container">
-                      {/* 1. LEFT CATEGORY SIDEBAR */}
-                      <div className="drio-mega-categories-panel">
-                        {megaMenus[item.label].categories.map((category) => (
-                          <button
-                            key={category.name}
-                            className={`drio-category-btn ${activeCategory === category.name ? "drio-active" : ""}`}
-                            onMouseEnter={() => setActiveCategory(category.name)}
-                          >
-                            <div className="drio-category-content-left">
-                              <span className="drio-category-icon">
-                                {category.icon}
-                              </span>
-                              <span>{category.name}</span>
-                            </div>
-                            <FiChevronRight className="drio-category-arrow" />
-                          </button>
-                        ))}
-                      </div>
-
-                      {/* 2. MIDDLE DYNAMIC LINK GRID (Active Category Items) */}
-                      <div className="drio-mega-links-wrapper">
-                        {panelScroll.top && (
-                          <div
-                            className="drio-scroll-indicator top"
-                            onClick={() => scrollPanel("up")}
-                            title="Scroll Up"
-                          >
-                            <FiChevronUp />
-                          </div>
-                        )}
-                        <div
-                          className="drio-mega-links-panel"
-                          ref={linksPanelRef}
-                          onScroll={handlePanelScroll}
-                        >
-                          <div className="drio-panel-items">
-                            {megaMenus[item.label].categories
-                              .find((c) => c.name === activeCategory)
-                              ?.items.map((link) => (
-                                <Link
-                                  key={link.name}
-                                  to={link.path}
-                                  className="drio-panel-link"
-                                  onClick={() => {
-                                    setMobileMenuOpen(false);
-                                    setLockedMenu(null);
-                                    setActiveMenu("");
-                                    setActiveCategory(null);
-                                  }}
-                                >
-                                  <div className="drio-link-content">
-                                    <span className="drio-link-name">
-                                      {link.name}
-                                    </span>
-                                    {link.description && (
-                                      <span className="drio-link-description">
-                                        {link.description}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <FiChevronRight className="drio-link-arrow" />
-                                </Link>
-                              ))}
-                          </div>
-                        </div>
-                        {panelScroll.bottom && (
-                          <div
-                            className="drio-scroll-indicator bottom"
-                            onClick={() => scrollPanel("down")}
-                            title="Scroll Down"
-                          >
-                            <FiChevronDown />
-                          </div>
-                        )}
-                      </div>
-
-                      {/* 3. RIGHT SIDE FEATURED SIDEBAR */}
-                      <div className="drio-mega-card-panel">
-                        <div className="drio-nav-feature-card">
-                          <div className="drio-card-image-wrapper">
-                            <img
-                              src={megaMenus[item.label].card.image}
-                              alt={megaMenus[item.label].card.title}
-                              className="drio-card-image"
-                            />
-                          </div>
-                          <div className="drio-card-content">
-                            {megaMenus[item.label].card.badge && (
-                              <span className="drio-card-badge">
-                                {megaMenus[item.label].card.badge}
-                              </span>
-                            )}
-                            <h4>{megaMenus[item.label].card.title}</h4>
-                            <p>{megaMenus[item.label].card.description}</p>
-                            {megaMenus[item.label].card.button && (
-                              <Link
-                                to={megaMenus[item.label].card.path}
-                                className="drio-card-link"
-                                onClick={() => {
-                                  setMobileMenuOpen(false);
-                                  setLockedMenu(null);
-                                  setActiveMenu("");
-                                  setActiveCategory(null);
-                                }}
+                    <div className={`drio-mega-container ${(item.label !== "Services" && item.label !== "Industries") ? "drio-common-layout" : ""}`}>
+                      {(item.label === "Services" || item.label === "Industries") ? (
+                        <>
+                          {/* 1. LEFT CATEGORY SIDEBAR */}
+                          <div className="drio-mega-categories-panel">
+                            {megaMenus[item.label].categories.map((category) => (
+                              <button
+                                key={category.name}
+                                className={`drio-category-btn ${activeCategory === category.name ? "drio-active" : ""}`}
+                                onMouseEnter={() => setActiveCategory(category.name)}
                               >
-                                {megaMenus[item.label].card.button}
-                              </Link>
+                                <div className="drio-category-content-left">
+                                  <span className="drio-category-icon">
+                                    {category.icon}
+                                  </span>
+                                  <span>{category.name}</span>
+                                </div>
+                                <FiChevronRight className="drio-category-arrow" />
+                              </button>
+                            ))}
+                          </div>
+
+                          {/* 2. MIDDLE DYNAMIC LINK GRID (Active Category Items) */}
+                          <div className="drio-mega-links-wrapper">
+                            {panelScroll.top && (
+                              <div
+                                className="drio-scroll-indicator top"
+                                onClick={() => scrollPanel("up")}
+                                title="Scroll Up"
+                              >
+                                <FiChevronUp />
+                              </div>
+                            )}
+                            <div
+                              className="drio-mega-links-panel"
+                              ref={linksPanelRef}
+                              onScroll={handlePanelScroll}
+                            >
+                              <div className="drio-panel-items">
+                                {megaMenus[item.label].categories
+                                  .find((c) => c.name === activeCategory)
+                                  ?.items.map((link) => (
+                                    <Link
+                                      key={link.name}
+                                      to={link.path}
+                                      className="drio-panel-link"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setLockedMenu(null);
+                                        setActiveMenu("");
+                                        setActiveCategory(null);
+                                      }}
+                                    >
+                                      <div className="drio-link-content">
+                                        <span className="drio-link-name">
+                                          {link.name}
+                                        </span>
+                                        {link.description && (
+                                          <span className="drio-link-description">
+                                            {link.description}
+                                          </span>
+                                        )}
+                                      </div>
+                                      <FiChevronRight className="drio-link-arrow" />
+                                    </Link>
+                                  ))}
+                              </div>
+                            </div>
+                            {panelScroll.bottom && (
+                              <div
+                                className="drio-scroll-indicator bottom"
+                                onClick={() => scrollPanel("down")}
+                                title="Scroll Down"
+                              >
+                                <FiChevronDown />
+                              </div>
                             )}
                           </div>
-                        </div>
-                      </div>
+
+                          {/* 3. RIGHT SIDE FEATURED SIDEBAR */}
+                          <div className="drio-mega-card-panel">
+                            <div className="drio-nav-feature-card">
+                              <div className="drio-card-image-wrapper">
+                                <img
+                                  src={megaMenus[item.label].card.image}
+                                  alt={megaMenus[item.label].card.title}
+                                  className="drio-card-image"
+                                />
+                              </div>
+                              <div className="drio-card-content">
+                                {megaMenus[item.label].card.badge && (
+                                  <span className="drio-card-badge">
+                                    {megaMenus[item.label].card.badge}
+                                  </span>
+                                )}
+                                <h4>{megaMenus[item.label].card.title}</h4>
+                                <p>{megaMenus[item.label].card.description}</p>
+                                {megaMenus[item.label].card.button && (
+                                  <Link
+                                    to={megaMenus[item.label].card.path}
+                                    className="drio-card-link"
+                                    onClick={() => {
+                                      setMobileMenuOpen(false);
+                                      setLockedMenu(null);
+                                      setActiveMenu("");
+                                      setActiveCategory(null);
+                                    }}
+                                  >
+                                    {megaMenus[item.label].card.button}
+                                  </Link>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {/* NEW COMMON LAYOUT FOR ECOSYSTEM/ABOUT */}
+                          <div className="drio-mega-left-panel">
+                            <h3 className="drio-left-panel-title">{item.label} Overview</h3>
+                            <p className="drio-left-panel-desc">
+                              {item.label === "Ecosystem"
+                                ? "Since our establishment, our belief remains the same: Building strong relationships with partners is vital in a successful ecosystem."
+                                : item.label === "Insights"
+                                ? "Explore our latest research, news, and expert perspectives on the future of technology."
+                                : "Since our establishment, our belief remains the same: Building strong relationships with people is vital in a successful partnership."}
+                            </p>
+                            <Link
+                              to={megaMenus[item.label].path}
+                              className="drio-left-panel-link-underline"
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setLockedMenu(null);
+                                setActiveMenu("");
+                                setActiveCategory(null);
+                              }}
+                            >
+                              Learn more
+                            </Link>
+                          </div>
+                          
+                          <div className="drio-mega-common-grid">
+                            {megaMenus[item.label].categories.map(category => (
+                              <div key={category.name} className="drio-common-category-col">
+                                <h4 className="drio-common-small-heading">{category.name}</h4>
+                                <div className="drio-common-items-list">
+                                  {category.items.map(link => (
+                                    <Link
+                                      key={link.name}
+                                      to={link.path}
+                                      className="drio-common-item-link"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setLockedMenu(null);
+                                        setActiveMenu("");
+                                        setActiveCategory(null);
+                                      }}
+                                    >
+                                      <span className="drio-common-item-title">{link.name}</span>
+                                      {link.description && (
+                                        <span className="drio-common-item-desc">{link.description}</span>
+                                      )}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     {/* PREMIUM DARK BOTTOM STRIP */}

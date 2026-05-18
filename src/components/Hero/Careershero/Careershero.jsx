@@ -48,39 +48,39 @@ export default function CareersHero({ scrollId = "jobs-section" }) {
   ];
 
   return (
-    <section className="ch-hero">
-      <div className="ch-container">
-        <div className="ch-content-layer">
-          <div className="ch-tag">Innovate Impact Delivery</div>
-          <h1 className="ch-heading">
+    <section className="dev-cah-hero">
+      <div className="dev-cah-container">
+        <div className="dev-cah-content-layer">
+          <div className="dev-cah-tag">Innovate Impact Delivery</div>
+          <h1 className="dev-cah-heading">
             Our mission is to build the<br /> 
             <strong>Cloud Platform</strong> for the next generation.
           </h1>
-          <p className="ch-description">
+          <p className="dev-cah-description">
             We&apos;re redefining Cloud — shipping powerful,<br />
             groundbreaking features at every turn. Join us to<br />
             revolutionize how the world builds software.
           </p>
 
-          <div className="ch-actions">
+          <div className="dev-cah-actions">
             <button 
-              className="ch-btn-gradient" 
+              className="dev-cah-btn-gradient" 
               onClick={() => document.getElementById(scrollId)?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Our Impact
             </button>
-            <div className="ch-avatar-stack">
+            <div className="dev-cah-avatar-stack">
               <img src="https://i.pravatar.cc/150?u=1" alt="Team member" />
               <img src="https://i.pravatar.cc/150?u=2" alt="Team member" />
               <img src="https://i.pravatar.cc/150?u=3" alt="Team member" />
-              <div className="ch-avatar-count">+130</div>
+              <div className="dev-cah-avatar-count">+130</div>
             </div>
           </div>
         </div>
 
         {/* Precise Stair-Step Trend Grid */}
-        <div className="ch-grid-visual">
-          <div className="ch-grid-mesh">
+        <div className="dev-cah-grid-visual">
+          <div className="dev-cah-grid-mesh">
             {[...Array(600)].map((_, i) => {
               const COLS = 40;
               const row = Math.floor(i / COLS);
@@ -90,7 +90,7 @@ export default function CareersHero({ scrollId = "jobs-section" }) {
               const countForThisRow = rowCounts[row] || 0;
               const isVisible = (col >= (COLS - countForThisRow));
               
-              if (!isVisible) return <div key={i} className="ch-grid-empty" />;
+              if (!isVisible) return <div key={i} className="dev-cah-grid-empty" />;
 
               // Pseudo-unique mapping for each cube
               const colorIdx = (i * 11) % cubeColors.length;
@@ -100,27 +100,27 @@ export default function CareersHero({ scrollId = "jobs-section" }) {
               // Decide popup alignment based on screen position
               const isRightSide = col > 25;
               const isLeftSide = col < 10;
-              const popupClass = isRightSide ? "chx-popup-left" : isLeftSide ? "chx-popup-right" : "chx-popup-center";
+              const popupClass = isRightSide ? "dev-cahx-popup-left" : isLeftSide ? "dev-cahx-popup-right" : "dev-cahx-popup-center";
 
               return (
                 <div 
                   key={i} 
-                  className="ch-grid-square"
+                  className="dev-cah-grid-square"
                   style={{ backgroundColor: cubeColors[colorIdx] }}
                   onMouseEnter={() => setHoveredNode({ ...nodeData, index: i, align: popupClass })}
                   onMouseLeave={() => setHoveredNode(null)}
                 >
                   {hoveredNode && hoveredNode.index === i && (
-                    <div className={`chx-popup ${hoveredNode.align}`}>
+                    <div className={`dev-cahx-popup ${hoveredNode.align}`}>
                       {hoveredNode.image && (
-                        <img src={hoveredNode.image} alt="Milestone" className="chx-popup-image" />
+                        <img src={hoveredNode.image} alt="Milestone" className="dev-cahx-popup-image" />
                       )}
-                      <div className="chx-popup-content">
-                        <div className="chx-popup-title">{hoveredNode.title}</div>
-                        <div className="chx-popup-desc">{hoveredNode.desc}</div>
-                        <div className="chx-popup-tags">
+                      <div className="dev-cahx-popup-content">
+                        <div className="dev-cahx-popup-title">{hoveredNode.title}</div>
+                        <div className="dev-cahx-popup-desc">{hoveredNode.desc}</div>
+                        <div className="dev-cahx-popup-tags">
                           {hoveredNode.tags.map(tag => (
-                            <span key={tag} className={`chx-popup-tag chx-tag-${tag.toLowerCase()}`}>
+                            <span key={tag} className={`dev-cahx-popup-tag dev-cahx-tag-${tag.toLowerCase()}`}>
                               {tag}
                             </span>
                           ))}
@@ -134,7 +134,7 @@ export default function CareersHero({ scrollId = "jobs-section" }) {
           </div>
         </div>
 
-        <div className="ch-footer-note">
+        <div className="dev-cah-footer-note">
           Features, improvements, milestones over time.
         </div>
       </div>

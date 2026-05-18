@@ -753,7 +753,7 @@
 .quantum-step {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   opacity: 0;
@@ -766,7 +766,11 @@
 }
 
 .left-step {
-  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.right-step {
+  justify-content: flex-end;
 }
 
 /* Central Node */
@@ -816,7 +820,7 @@
 
 /* Card */
 .quantum-card {
-  width: 100%;
+  width: calc(50% - 60px);
   background: rgba(17, 17, 17, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

@@ -1,7 +1,7 @@
-/* Careershero.css — Scoped to ch- prefix */
+/* Careershero.css — Scoped to dev-cah- prefix */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-.ch-hero {
+.dev-cah-hero {
   min-height: 90vh;
   background: #000;
   font-family: 'Inter', sans-serif;
@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.ch-container {
+.dev-cah-container {
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -21,13 +21,13 @@
 }
 
 /* CONTENT LAYER */
-.ch-content-layer {
+.dev-cah-content-layer {
   position: relative;
   z-index: 10;
   max-width: 1000px;
 }
 
-.ch-tag {
+.dev-cah-tag {
   display: inline-block;
   padding: 6px 14px;
   border-radius: 6px;
@@ -37,7 +37,7 @@
   margin-bottom: 40px;
 }
 
-.ch-heading {
+.dev-cah-heading {
   font-size: clamp(2.8rem, 4.5vw, 3.1rem);
   font-weight: 500;
   line-height: 1.05;
@@ -46,11 +46,11 @@
   margin: 0 0 32px;
 }
 
-.ch-heading strong {
+.dev-cah-heading strong {
   font-weight: 400;
 }
 
-.ch-description {
+.dev-cah-description {
   font-size: 1.1rem;
   line-height: 1.5;
   color: rgba(172, 170, 170, 0.7);
@@ -58,17 +58,15 @@
   max-width: 1000px;
 }
 
-.ch-actions {
+.dev-cah-actions {
   display: flex;
   align-items: center;
-  position: relative;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  left: -320px;
   gap: 20px;
 }
 
-.ch-btn-gradient {
+.dev-cah-btn-gradient {
   padding: 12px 26px;
   background: linear-gradient(
     90deg,
@@ -87,23 +85,23 @@
   transition: transform 0.2s, opacity 0.2s;
 }
 
-.ch-btn-gradient:hover {
+.dev-cah-btn-gradient:hover {
   transform: translateY(-2px);
   opacity: 0.95;
 }
 
-.ch-avatar-wrapper {
+.dev-cah-avatar-wrapper {
   display: flex;
   align-items: center;
 }
 
-.ch-avatar-stack {
+.dev-cah-avatar-stack {
   display: flex;
   margin-left: 14px;
   align-items: center;
 }
 
-.ch-avatar-stack img {
+.dev-cah-avatar-stack img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -112,11 +110,11 @@
   object-fit: cover;
 }
 
-.ch-avatar-stack img:first-child {
+.dev-cah-avatar-stack img:first-child {
   margin-left: 0;
 }
 
-.ch-avatar-count {
+.dev-cah-avatar-count {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -132,7 +130,7 @@
 }
 
 /* GRID VISUAL */
-.ch-grid-visual {
+.dev-cah-grid-visual {
   position: absolute;
   bottom: -50px;
   right: 30px;
@@ -146,36 +144,36 @@
   perspective: 2000px; /* Base for 3D effects */
 }
 
-.ch-grid-mesh {
+.dev-cah-grid-mesh {
   display: grid;
   grid-template-columns: repeat(40, 1fr);
   gap: 4px;
   width: 100%;
 }
 
-.ch-grid-mesh > div {
+.dev-cah-grid-mesh > div {
   pointer-events: auto;
 }
 
-.ch-grid-square {
+.dev-cah-grid-square {
   aspect-ratio: 1;
   border-radius: 4px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ch-grid-square:hover {
+.dev-cah-grid-square:hover {
   filter: brightness(1.5);
   cursor: pointer;
   z-index: 50;
   transform: scale(1.15);
 }
 
-.ch-grid-empty {
+.dev-cah-grid-empty {
   visibility: hidden;
 }
 
 /* FOOTER NOTE */
-.ch-footer-note {
+.dev-cah-footer-note {
   position: absolute;
   bottom:-100px;
   left: 70px;
@@ -185,7 +183,7 @@
 }
 
 /* POPUP */
-.chx-popup {
+.dev-cahx-popup {
   position: absolute;
   bottom: calc(100% + 14px);
   width: 300px;
@@ -200,30 +198,30 @@
   pointer-events: none;
 }
 
-.chx-popup-image {
+.dev-cahx-popup-image {
   width: 100%;
   height: 120px;
   object-fit: cover;
   display: block;
 }
 
-.chx-popup-content {
+.dev-cahx-popup-content {
   padding: 16px;
 }
 
-.chx-popup-left { 
+.dev-cahx-popup-left { 
   right: 0; 
   transform-origin: bottom right;
   transform: rotateY(-12deg);
 }
 
-.chx-popup-right { 
+.dev-cahx-popup-right { 
   left: 0; 
   transform-origin: bottom left;
   transform: rotateY(12deg);
 }
 
-.chx-popup-center { 
+.dev-cahx-popup-center { 
   left: 50%; 
   transform: translateX(-50%) rotateY(0deg); 
   transform-origin: bottom center; 
@@ -242,7 +240,7 @@
 }
 
 /* Adjust centering animation to fix the transform conflict */
-.chx-popup-center {
+.dev-cahx-popup-center {
   animation: chPopupInCenter 0.25s ease-out forwards;
 }
 
@@ -251,7 +249,7 @@
   to { opacity: 1; transform: translate(-50%, 0) scale(1) rotateY(0deg); }
 }
 
-.chx-popup-title {
+.dev-cahx-popup-title {
   font-size: 1.05rem;
   font-weight: 800; /* Extra bold for clarity */
   color: #fff;
@@ -259,7 +257,7 @@
   letter-spacing: -0.2px;
 }
 
-.chx-popup-desc {
+.dev-cahx-popup-desc {
   font-size: 0.875rem;
   line-height: 1.5;
   color: #cecece; /* Sharper light gray */
@@ -267,49 +265,49 @@
   font-weight: 500;
 }
 
-.chx-popup-tags {
+.dev-cahx-popup-tags {
   display: flex;
   gap: 8px;
 }
 
-.chx-popup-tag {
+.dev-cahx-popup-tag {
   font-size: 0.65rem;
   font-weight: 600;
   padding: 3px 8px;
   border-radius: 5px;
 }
 
-.chx-tag-enhancement { background: rgba(110, 86, 207, 0.2); color: #9c89ef; }
-.chx-tag-workflows { background: rgba(0, 128, 0, 0.2); color: #4ade80; }
-.chx-tag-performance { background: rgba(178, 94, 9, 0.2); color: #fbbf24; }
-.chx-tag-core { background: rgba(0, 106, 220, 0.2); color: #60a5fa; }
-.chx-tag-team { background: rgba(205, 43, 49, 0.2); color: #f87171; }
-.chx-tag-growth { background: rgba(192, 38, 211, 0.2); color: #f472b6; }
+.dev-cahx-tag-enhancement { background: rgba(110, 86, 207, 0.2); color: #9c89ef; }
+.dev-cahx-tag-workflows { background: rgba(0, 128, 0, 0.2); color: #4ade80; }
+.dev-cahx-tag-performance { background: rgba(178, 94, 9, 0.2); color: #fbbf24; }
+.dev-cahx-tag-core { background: rgba(0, 106, 220, 0.2); color: #60a5fa; }
+.dev-cahx-tag-team { background: rgba(205, 43, 49, 0.2); color: #f87171; }
+.dev-cahx-tag-growth { background: rgba(192, 38, 211, 0.2); color: #f472b6; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .ch-grid-visual {
+  .dev-cah-grid-visual {
     width: 100%;
     opacity: 0.5;
   }
-  .ch-content-layer {
+  .dev-cah-content-layer {
     max-width: 100%;
     margin-top: 40px;
   }
-  .ch-heading {
+  .dev-cah-heading {
     font-size: 3.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .ch-container {
+  .dev-cah-container {
     padding: 0 30px;
   }
-  .ch-heading {
+  .dev-cah-heading {
     font-size: 2.5rem;
     letter-spacing: -1.5px;
   }
-  .ch-footer-note {
+  .dev-cah-footer-note {
     left: 30px;
   }
 }

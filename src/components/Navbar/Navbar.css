@@ -177,6 +177,121 @@
   gap: 30px;
 }
 
+.drio-mega-container.drio-common-layout {
+  grid-template-columns: 280px 1fr;
+  padding: 30px 48px;
+  gap: 50px;
+}
+
+/* LEFT PROMO PANEL FOR COMMON MENU */
+.drio-mega-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-right: 40px;
+  justify-content: flex-start;
+}
+
+.drio-left-panel-title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.drio-left-panel-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.drio-left-panel-link-underline {
+  color: #ce2453;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: 2px solid #ce2453;
+  padding-bottom: 3px;
+  width: fit-content;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.drio-left-panel-link-underline:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* COMMON MENU LAYOUT (ECOSYSTEM & ABOUT) */
+.drio-mega-common-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  max-height: 440px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.drio-mega-common-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.drio-common-category-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drio-common-small-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+.drio-common-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drio-common-item-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.drio-common-item-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.drio-common-item-desc {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.drio-common-item-link:hover .drio-common-item-title {
+  color: #ce2453;
+}
+
+.drio-common-item-link:hover .drio-common-item-desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* CATEGORY SIDEBAR */
 .drio-mega-categories-panel {
   display: flex;
@@ -553,22 +668,46 @@
   /* Reduced from 40px */
   height: 34px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
   /* Reduced from 20px */
   color: #fff;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
 }
 
 .drio-nav-social-item:hover {
-  background: #ce2453;
-  color: #fff;
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
+}
+
+.drio-nav-social-item.drio-brand-li {
+  background: #0077b5;
+}
+.drio-nav-social-item.drio-brand-li:hover {
+  box-shadow: 0 10px 20px rgba(0, 119, 181, 0.4);
+}
+
+.drio-nav-social-item.drio-brand-fb {
+  background: #1877f2;
+}
+.drio-nav-social-item.drio-brand-fb:hover {
+  box-shadow: 0 10px 20px rgba(24, 119, 242, 0.4);
+}
+
+.drio-nav-social-item.drio-brand-ig {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.drio-nav-social-item.drio-brand-ig:hover {
+  box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4);
+}
+
+.drio-nav-social-item.drio-brand-yt {
+  background: #ff0000;
+}
+.drio-nav-social-item.drio-brand-yt:hover {
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
 }
 
 .drio-mega-quick-links {

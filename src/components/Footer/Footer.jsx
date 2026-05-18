@@ -9,59 +9,95 @@ import {
   FiMapPin,
   FiPhone,
   FiChevronRight,
+  FiGlobe,
+  FiChevronDown
 } from "react-icons/fi";
+import Swal from "sweetalert2";
 import CertificationSlider from "../Certification/Certification";
+import CategoryPopup from "../Newsletter/CategoryPopup";
 import "./Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [showMoreOffices, setShowMoreOffices] = useState(false);
+  const [email, setEmail] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) {
+      Swal.fire({
+        icon: "warning",
+        title: "Email Required",
+        text: "Please enter your email address to continue.",
+        confirmButtonColor: "#ce2453",
+        background: "#0a0a0a",
+        color: "#fff",
+      });
+      return;
+    }
+    setShowPopup(true);
+  };
 
   const aiServices = [
-    { label: "Artificial Intelligence", path: "/services/artificial-intelligence" },
     { label: "AI Consulting", path: "/services/ai-consulting-services" },
     { label: "AI Tools", path: "/services/ai-tools" },
+    { label: "Artificial Intelligence", path: "/services/artificial-intelligence" },
     { label: "Data Science", path: "/services/data-science" },
     { label: "Database Creation", path: "/services/database-creation-and-management" },
     { label: "Hire AI Experts", path: "/services/hire-ai-experts" },
   ];
 
   const appServices = [
-    { label: "Mobile Development", path: "/services/mobile-development" },
-    { label: "Web Development", path: "/services/web-development" },
-    { label: "Cross-platform Dev", path: "/services/cross-platform-development" },
-    { label: "PWA Development", path: "/services/pwa-development" },
     { label: "CMS Web Development", path: "/services/cms-based-web-development" },
+    { label: "Cross-platform Dev", path: "/services/cross-platform-development" },
+    { label: "Mobile Development", path: "/services/mobile-development" },
+    { label: "PWA Development", path: "/services/pwa-development" },
+    { label: "Web Development", path: "/services/web-development" },
   ];
 
   const securityServices = [
-    { label: "Security Management", path: "/services/security-management" },
-    { label: "Security Ops Center", path: "/services/security-operations-center" },
-    { label: "Penetration Testing", path: "/services/penetration-testing" },
+    { label: "Digital Sovereignty", path: "/services/digital-sovereignty" },
     { label: "Digital Transformation", path: "/services/digital-transformation" },
     { label: "IT Consulting", path: "/services/it-consulting" },
-    { label: "Digital Sovereignty", path: "/services/digital-sovereignty" },
+    { label: "Penetration Testing", path: "/services/penetration-testing" },
+    { label: "Security Management", path: "/services/security-management" },
+    { label: "Security Ops Center", path: "/services/security-operations-center" },
   ];
 
   const cloudServices = [
-    { label: "DevOps Consulting", path: "/services/devops-enablement" },
-    { label: "Cloud Migration", path: "/services/cloud-migration" },
     { label: "CI/CD Pipeline", path: "/services/cicd" },
+    { label: "Cloud Migration", path: "/services/cloud-migration" },
+    { label: "DevOps Consulting", path: "/services/devops-enablement" },
     { label: "Infrastructure as Code", path: "/services/iac" },
     { label: "Kubernetes Solutions", path: "/services/cloud-architecture" },
   ];
 
   const industries = [
+    { label: "Automotive", path: "/platform/automotive" },
+    { label: "Financial Services", path: "/platform/financial-services" },
+    { label: "Healthcare", path: "/platform/healthcare" },
+    { label: "Logistics", path: "/platform/logistics" },
+    { label: "Media & Entertainment", path: "/platform/media-entertainment" },
     { label: "Retail & E-commerce", path: "/platform/retail" },
     { label: "SaaS Applications", path: "/platform/saas-applications" },
+    { label: "Telecom", path: "/platform/telecom" }
   ];
 
   const company = [
     { label: "About Us", path: "/about" },
-    { label: "Contact Us", path: "/contact" },
-    { label: "Newsletters", path: "/insights-knowledge/newsletters" },
+    { label: "Awards & Milestones", path: "/news-events/awards-milestones" },
     { label: "Blog", path: "/insights-knowledge/blogs" },
+    { label: "Case Studies", path: "/insights-knowledge/case-studies" },
+    { label: "Celebrations", path: "/life-at/celebrations" },
+    { label: "Client Transformations", path: "/success-stories/client-transformations" },
+    { label: "Contact Us", path: "/contact" },
     { label: "Events", path: "/news-events/industry-events" },
+    { label: "Overview", path: "/about/overview" },
+    { label: "Team Culture", path: "/life-at/team-culture" },
+    { label: "Testimonials", path: "/clients" },
+    { label: "Values", path: "/about/values" },
+    { label: "White Papers", path: "/insights-knowledge/white-paper" }
   ];
 
   const offices = [
@@ -110,166 +146,128 @@ const Footer = () => {
     <footer className="dt-footer">
       <div className="dt-footer-container">
         <div className="dt-footer-top-row">
-          {/* Logo & Description Column */}
-          <div className="dt-footer-brand-col">
-            <div className="dt-footer-logo">
-              <img
-                src="/images/Devopsrio_Main_logo.png"
-                alt="Devopstrio"
-                className="dt-footer-logo-img"
-              />
-              <span className="dt-footer-logo-text">Devopstrio</span>
-            </div>
-            <p className="dt-footer-description">
-              Transforming businesses through innovative DevOps solutions. We
-              help organizations achieve faster delivery, improved reliability,
-              and scalable infrastructure.
-            </p>
-
-            {/* Social Media */}
-            <div className="dt-footer-social">
-              <h4 className="dt-footer-social-title">Follow Us</h4>
-              <div className="dt-social-icons">
-                {socialMedia.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="dt-social-item"
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* Navigation Links Grid */}
           <div className="dt-footer-links-grid">
+            {/* Column 1 */}
             <div className="dt-footer-col">
-              <h4 className="dt-footer-title">AI & DATA</h4>
-              <ul className="dt-footer-list">
+              <h4 className="dt-footer-title">What We Do</h4>
+              <h5 className="dt-footer-subtitle">AI and Generative AI</h5>
+              <ul className="dt-footer-list dt-indented-list">
                 {aiServices.map((item) => (
                   <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
                 ))}
               </ul>
+              <h5 className="dt-footer-subtitle" style={{ marginTop: '20px' }}>Cloud & Security</h5>
+              <ul className="dt-footer-list dt-indented-list">
+                {[...cloudServices, ...securityServices].map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
             </div>
+
+            {/* Column 2 */}
             <div className="dt-footer-col">
-              <h4 className="dt-footer-title">DEVELOPMENT</h4>
+              <h4 className="dt-footer-title">Industries</h4>
               <ul className="dt-footer-list">
+                {industries.map((item) => (
+                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                ))}
+              </ul>
+              <h4 className="dt-footer-title" style={{ marginTop: '30px' }}>Applications</h4>
+              <ul className="dt-footer-list dt-indented-list">
                 {appServices.map((item) => (
                   <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
                 ))}
               </ul>
             </div>
+
+            {/* Column 3 */}
             <div className="dt-footer-col">
-              <h4 className="dt-footer-title">SECURITY</h4>
+              <h4 className="dt-footer-title">Who We Are</h4>
               <ul className="dt-footer-list">
-                {securityServices.map((item) => (
+                {company.map((item) => (
                   <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
                 ))}
               </ul>
             </div>
+
+            {/* Column 4 */}
             <div className="dt-footer-col">
-              <h4 className="dt-footer-title">CLOUD</h4>
+              <h4 className="dt-footer-title">Careers</h4>
               <ul className="dt-footer-list">
-                {cloudServices.map((item) => (
-                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
+                <li><Link to="/careers">Careers Overview</Link></li>
+                <li><Link to="/careers/jobs">Explore job opportunities</Link></li>
+              </ul>
+              <h4 className="dt-footer-title" style={{ marginTop: '30px' }}>Global Presence</h4>
+              <ul className="dt-footer-list">
+                {offices.map((office) => (
+                  <li key={office.city}>
+                    <Link to={`/contact?location=${office.city.toLowerCase()}#locations`}>{office.city} - {office.type}</Link>
+                  </li>
                 ))}
               </ul>
-            </div>
-            <div className="dt-footer-col">
-              <h4 className="dt-footer-title">COMPANY</h4>
-              <ul className="dt-footer-list">
-                {[...industries, ...company].map((item) => (
-                  <li key={item.label}><Link to={item.path}>{item.label}</Link></li>
-                ))}
-              </ul>
+              
+              <h4 className="dt-footer-title" style={{ marginTop: '30px', marginBottom: '15px' }}>Newsletter</h4>
+              <p className="dt-footer-newsletter-text">Subscribe to our newsletter for the latest tech insights and company updates.</p>
+              <form className="dt-footer-newsletter-form" onSubmit={handleSubscribe}>
+                <input 
+                  type="email" 
+                  placeholder="Your Email Address" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required 
+                />
+                <button type="submit" aria-label="Subscribe"><FiChevronRight /></button>
+              </form>
             </div>
           </div>
         </div>
 
-        {/* Offices Section */}
-        <div className="dt-footer-offices-section">
-          <div className="dt-footer-offices-header">
-            <h4 className="dt-footer-section-title">OUR OFFICES</h4>
-            <div className="dt-footer-see-more">
-              <button 
-                className={`dt-see-more-btn ${showMoreOffices ? 'active' : ''}`}
-                onClick={() => setShowMoreOffices(!showMoreOffices)}
+        {/* Bottom Social Bar */}
+        <div className="dt-footer-social-row">
+          <div className="dt-footer-logo-bottom">
+            <img src="/images/Devopsrio_Main_logo.png" alt="Devopstrio" />
+            <span>Devopstrio</span>
+          </div>
+
+          <div className="dt-social-icons-centered">
+            {socialMedia.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dt-social-item-text"
+                aria-label={social.name}
               >
-                {showMoreOffices ? 'See less' : 'See more'} <FiChevronRight />
-              </button>
-            </div>
+                {social.name}
+              </a>
+            ))}
           </div>
-          
-          <div className="dt-offices-slider-container">
-            <div className={`dt-offices-slider ${showMoreOffices ? 'slide-active' : ''}`}>
-              {offices.map((office, index) => (
-                <div key={`${office.city}-${index}`} className="dt-office-card">
-                  <h5 className="dt-office-city">{office.city}</h5>
-                  <p className="dt-office-type">
-                    <span className="dt-office-icon">{office.icon}</span>
-                    {office.type}
-                  </p>
-                  <p className="dt-office-address">{office.address}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+
+        
         </div>
 
-        {/* Contact Section */}
-        <div className="dt-footer-contact-section">
-          <div className="dt-contact-content">
-            <h4 className="dt-footer-section-title">CONTACT US</h4>
-            <div className="dt-contact-items">
-              <a href="tel:+44 7471 482903" className="dt-contact-link">
-                <FiPhone /> +44 7471 482903
-              </a>
-              <a href="mailto:info@devopstrioglobal.com" className="dt-contact-link">
-                <FiMail /> info@devopstrioglobal.com
-              </a>
-            </div>
-          </div>
-          <button 
-            className="dt-scroll-top" 
-            onClick={() => {
-              window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-              // Fallback for cases where html/body might be the scroll container
-              if (document.documentElement) {
-                document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-              }
-            }}
-            aria-label="Scroll to top"
-          >
-            <FiChevronRight style={{ transform: 'rotate(-90deg)' }} />
-          </button>
-        </div>
-
-        {/* Certifications Section */}
-        {/* <div className="dt-footer-certifications">
-          <CertificationSlider />
-        </div> */}
-
-        {/* Bottom Bar */}
-        <div className="dt-footer-bottom">
-          <div className="dt-bottom-left">
-            <p>© {currentYear} Devopstrio. All Rights Reserved. <Link to="/privacy-policy">Privacy Policy</Link>, <Link to="/footer-compliance">Compliance</Link> and <Link to="/cookie-policy">Cookie Policy</Link>.</p>
-            <p className="dt-recaptcha-text">This site is protected by reCAPTCHA and the Google <Link to="/disclaimer">Disclaimer</Link> and <Link to="/terms-of-service">Terms of Service</Link> apply.</p>
-          </div>
-          <div className="dt-bottom-right">
-            <div className="dt-rating-badges">
-              <Link to="/sitemap">
-                <div className="dt-rating-stars">★★★★★</div>
-                <div className="dt-rating-text">100+ REVIEWS</div>
-              </Link>
-            </div>
+        {/* Bottom Copyright Bar */}
+        <div className="dt-footer-copyright-row">
+          <span className="dt-copyright-text">Copyright © {currentYear} Devopstrio Limited</span>
+          <div className="dt-copyright-links">
+            <Link to="/contact">Contact Us</Link> <span className="dt-sep">/</span>
+            <Link to="/disclaimer">Disclaimer</Link> <span className="dt-sep">/</span>
+            <Link to="/privacy-policy">Privacy Statement</Link> <span className="dt-sep">/</span>
+            <Link to="/terms-of-service">Terms of use</Link> <span className="dt-sep">/</span>
+            <Link to="/sitemap">Sitemap</Link>
           </div>
         </div>
       </div>
+
+      {/* Popup for category selection */}
+      {showPopup && (
+        <CategoryPopup
+          email={email}
+          closePopup={() => setShowPopup(false)}
+        />
+      )}
     </footer>
 
   );

@@ -60,6 +60,7 @@ const Healthcare = lazy(() => import("./Pages/platform/Healthcare"));
 const LogisticsPage = lazy(() => import("./Pages/platform/Logistics"));
 const MediaEntainment = lazy(() => import("./Pages/platform/MediaEntainment"));
 const Telecom = lazy(() => import("./Pages/platform/Telecom"));
+const Automotive = lazy(() => import("./Pages/platform/Automotive"));
 const CaseStudies = lazy(() => import("./Pages/CaseStudies"));
 const ROIReports = lazy(() => import("./Pages/resources/ROIReports"));
 const Benchmarks = lazy(() => import("./Pages/resources/Benchmarks"));
@@ -227,6 +228,7 @@ function App() {
             <Route path="/platform/logistics" element={<LogisticsPage />} />
             <Route path="/platform/media-entertainment" element={<MediaEntainment />} />
             <Route path="/platform/telecom" element={<Telecom />} />
+            <Route path="/platform/automotive" element={<Automotive />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/resources/roi-reports" element={<ROIReports />} />
             <Route path="/resources/benchmarks" element={<Benchmarks />} />

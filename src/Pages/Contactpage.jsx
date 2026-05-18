@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { sendEmail } from "../Services/sendmail";
 import subbiah from "../assets/images/subaiya_dev.png";
 import GlobalOffices from "../components/GlobalOffices/GlobalOffices";
@@ -100,6 +101,27 @@ const ContactPage = () => {
   ];
 
   const [activeOffice, setActiveOffice] = useState(offices[0]);
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const locParam = searchParams.get("location");
+    if (locParam) {
+      const found = offices.find((o) => o.country.toLowerCase() === locParam.toLowerCase());
+      if (found) {
+        setActiveOffice(found);
+      }
+    }
+
+    if (location.hash === '#locations') {
+      setTimeout(() => {
+        const element = document.getElementById('locations');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.search, location.hash]);
 
   const handleChange = (e) => {
     setFormData({
@@ -472,7 +494,7 @@ const ContactPage = () => {
       {/* ============================================
           3. MAP SECTION
           ============================================ */}
-      <section className="dt_map_section">
+      <section className="dt_map_section" id="locations">
         <div className="dt_map_container">
           <div className="dt_map_header">
             <div className="dt_map_badge">
