@@ -86,7 +86,7 @@ const GlobalInternship = () => {
       </section>
 
       {/* Partners Section */}
-      <div className="partner-slider">
+      {/* <div className="partner-slider">
         <div className="partner-track">
           {[...PARTNERS, ...PARTNERS].map((item, i) => (
             <div className="partner-card" key={i}>
@@ -94,7 +94,7 @@ const GlobalInternship = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Stats Section */}
       <section className="gi-stats">
@@ -426,22 +426,22 @@ const GlobalInternship = () => {
             <div className="gi-domain-card">
               <h3>Cloud Engineering</h3>
               <p>Master AWS, Azure, and Google Cloud Infrastructure.</p>
-              <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
+              <button className="gi-view-btn"  onClick={() => window.open("https://devopstrio.co.uk/insights-knowledge/undefined/69fc1ee77230edf42505cfb7/reader", "_blank")}>View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
               <h3>AI on Security</h3>
               <p>Learn AI Security, Cyber Security and Data Security.</p>
-              <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
+              <button className="gi-view-btn"  onClick={() => window.open("https://devopstrio.co.uk/insights-knowledge/undefined/69fc1ee77230edf42505cfb7/reader", "_blank")}>View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
               <h3>AI on Digital Transformation</h3>
               <p>Learn Digital Transformation, and Cloud Engineering.</p>
-              <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
+              <button className="gi-view-btn"  onClick={() => window.open("https://devopstrio.co.uk/insights-knowledge/undefined/69fc1ee77230edf42505cfb7/reader", "_blank")}>View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
             <div className="gi-domain-card">
               <h3>AI on Automation </h3>
               <p>Learn AI, Machine Learning, Deep Learning and NLP.</p>
-              <button className="gi-view-btn">View Track <i className="ri-arrow-right-s-line"></i></button>
+              <button className="gi-view-btn"  onClick={() => window.open("https://devopstrio.co.uk/insights-knowledge/undefined/69fc1ee77230edf42505cfb7/reader", "_blank")}>View Track <i className="ri-arrow-right-s-line"></i></button>
             </div>
           </div>
         </div>
