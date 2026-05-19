@@ -888,8 +888,9 @@ export default function DataAnalytics() {
           </motion.div>
         </div>
       </section> */}
-
-      <Newsletter />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>
     </div>
   );
 }

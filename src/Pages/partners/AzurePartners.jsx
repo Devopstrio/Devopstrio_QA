@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Newsletter from "../../components/Newsletter/Newsletter";
@@ -30,6 +30,7 @@ import {
 } from "react-icons/fi";
 
 import "../../Style/partners/AzurePartners.css";
+import azureVideo from "../../assets/images/Partner/Azure_original.mp4";
 
 /* ── Variants ── */
 const fadeUp = {
@@ -386,6 +387,8 @@ const AzurePartners = () => {
   const [caseIdx, setCaseIdx] = useState(0);
   const [newsIdx, setNewsIdx] = useState(0);
   const [expandedSol, setExpandedSol] = useState(null); // Track expanded card index
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   const prevCase = () =>
     setCaseIdx((i) => (i - 1 + CASE_STUDIES.length) % CASE_STUDIES.length);
@@ -442,7 +445,7 @@ const AzurePartners = () => {
               >
                 Talk to Azure Experts <FiArrowRight />
               </button>
-             </div>
+            </div>
           </motion.div>
 
           <motion.div
@@ -451,20 +454,51 @@ const AzurePartners = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="az-video-card">
-              <img
-                src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900&q=80"
-                alt="Azure Cloud infrastructure"
-                className="az-video-thumb"
-              />
-              <div className="az-video-overlay" />
-              <button className="az-play-btn" aria-label="Play video">
-                <FiPlay />
-              </button>
-              <div className="az-video-label">
-                <span className="az-live-dot" />
-                Azure Partnership Overview · 3:12
-              </div>
+            <div className="az-video-card" onClick={() => !videoPlaying && setVideoPlaying(true)}>
+              {videoPlaying ? (
+                <video
+                  ref={videoRef}
+                  src={azureVideo}
+                  className="az-video-player"
+                  controls
+                  autoPlay
+                  playsInline
+                  onTimeUpdate={() => {
+                    if (videoRef.current) {
+                      localStorage.setItem("az_video_progress", videoRef.current.currentTime);
+                    }
+                  }}
+                  onLoadedMetadata={() => {
+                    if (videoRef.current) {
+                      const savedTime = localStorage.getItem("az_video_progress");
+                      if (savedTime) {
+                        videoRef.current.currentTime = parseFloat(savedTime);
+                      }
+                    }
+                  }}
+                  onEnded={() => {
+                    setVideoPlaying(false);
+                    localStorage.removeItem("az_video_progress");
+                  }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              ) : (
+                <>
+                  <img
+                    src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900&q=80"
+                    alt="Azure Cloud infrastructure"
+                    className="az-video-thumb"
+                  />
+                  <div className="az-video-overlay" />
+                  <button className="az-play-btn" aria-label="Play video">
+                    <FiPlay />
+                  </button>
+                  <div className="az-video-label">
+                    <span className="az-live-dot" />
+                    Azure Partnership Overview · 3:12
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         </div>

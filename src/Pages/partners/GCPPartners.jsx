@@ -35,6 +35,7 @@ import {
   FiCommand,
 } from "react-icons/fi";
 import "../../Style/partners/GCPPartners.css";
+import gcpVideo from "../../assets/images/Partner/GCP_Original.mp4";
 
 /* ─── Motion variants ─── */
 const fadeUp = {
@@ -411,6 +412,7 @@ const GCPPartners = () => {
   const [activeTab, setActiveTab] = useState("ai");
   const [caseIdx, setCaseIdx] = useState(0);
   const [expandedSol, setExpandedSol] = useState(null); // Track expanded card index
+  const [videoPlaying, setVideoPlaying] = useState(false);
   const [newsIdx, setNewsIdx] = useState(0);
 
   /* Scroll-driven hero parallax */
@@ -531,21 +533,34 @@ const GCPPartners = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="gcp-video-card">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
-                alt="Google Cloud Platform"
-                className="gcp-video-img"
-              />
-              <div className="gcp-video-tint" />
-              <button className="gcp-play" aria-label="Play overview">
-                <FiPlay />
-                <div className="gcp-play-ring" />
-              </button>
-              <div className="gcp-video-pill">
-                <span className="gcp-dot" />
-                GCP Partnership Overview · 4:28
-              </div>
+            <div className="gcp-video-card" onClick={() => !videoPlaying && setVideoPlaying(true)}>
+              {videoPlaying ? (
+                <video
+                  src={gcpVideo}
+                  className="gcp-video-player"
+                  controls
+                  autoPlay
+                  playsInline
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              ) : (
+                <>
+                  <img
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+                    alt="Google Cloud Platform"
+                    className="gcp-video-img"
+                  />
+                  <div className="gcp-video-tint" />
+                  <button className="gcp-play" aria-label="Play overview">
+                    <FiPlay />
+                    <div className="gcp-play-ring" />
+                  </button>
+                  <div className="gcp-video-pill">
+                    <span className="gcp-dot" />
+                    GCP Partnership Overview · 4:28
+                  </div>
+                </>
+              )}
               {/* floating metric card */}
               <motion.div
                 className="gcp-float-card"

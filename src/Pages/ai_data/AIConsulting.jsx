@@ -12,6 +12,16 @@ import thangalakshmi_dev from "../../assets/images/thangalakshmi_dev.png";
 
 import Servicehero from "../../components/Hero/Serviceshero";
 
+import AiConsulting_1 from "../../assets/images/Aiconsulting/AiConsulting_1.png"
+import AiConsulting_2 from "../../assets/images/Aiconsulting/AiConsulting_2.png"
+import AiConsulting_3 from "../../assets/images/Aiconsulting/AiConsulting_3.png"
+import AiConsulting_4 from "../../assets/images/Aiconsulting/AiConsulting_4.png"
+import AiConsulting_5 from "../../assets/images/Aiconsulting/AiConsulting_5.png"
+import AiConsulting_6 from "../../assets/images/Aiconsulting/AiConsulting_6.png"
+import AiConsulting_7 from "../../assets/images/Aiconsulting/AiConsulting_7.png"
+import AiConsulting_8 from "../../assets/images/Aiconsulting/AiConsulting_8.png"
+import AiConsulting_9 from "../../assets/images/Aiconsulting/AiConsulting_9.png"
+
 
 const AIConsulting = () => {
   const navigate = useNavigate();
@@ -24,7 +34,7 @@ const AIConsulting = () => {
   const scrollToElement = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - 120;
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition;
       const duration = 1500; // Slower, premium duration
@@ -81,7 +91,7 @@ const AIConsulting = () => {
 
     observerRef.current = new IntersectionObserver(handleIntersect, observerOptions);
 
-    const panes = document.querySelectorAll(".dt-pane-content");
+    const panes = document.querySelectorAll(".dt-aic-pane-content");
     panes.forEach((pane) => {
       if (pane) observerRef.current.observe(pane);
     });
@@ -181,7 +191,7 @@ const AIConsulting = () => {
   const expertiseData = [
     {
       category: "COMMON AI FEATURES",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
+      image: AiConsulting_1,
       title: "Core AI capabilities to power growth:",
       points: [
         "Natural language processing and intelligent chatbots;",
@@ -192,7 +202,7 @@ const AIConsulting = () => {
     },
     {
       category: "FINTECH AND BANKING",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      image: AiConsulting_2,
       title: "Transforming financial services through:",
       points: [
         "Automated fraud detection and dynamic risk assessment;",
@@ -203,7 +213,7 @@ const AIConsulting = () => {
     },
     {
       category: "HEALTHCARE",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      image: AiConsulting_3,
       title: "AI drives breakthroughs by:",
       points: [
         "Accelerating research and improving patient outcomes;",
@@ -214,7 +224,7 @@ const AIConsulting = () => {
     },
     {
       category: "SALES AND MARKETING",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+      image: AiConsulting_4,
       title: "Transforming marketing via:",
       points: [
         "Hyper-personalized customer journeys and content delivery;",
@@ -225,7 +235,7 @@ const AIConsulting = () => {
     },
     {
       category: "ENTERPRISE",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      image: AiConsulting_5,
       title: "Empowering enterprises via:",
       points: [
         "End-to-end process automation and operational efficiency;",
@@ -236,7 +246,7 @@ const AIConsulting = () => {
     },
     {
       category: "MANUFACTURING",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+      image: AiConsulting_6,
       title: "Revolutionizing manufacturing with:",
       points: [
         "Predictive maintenance for reduced operational downtime;",
@@ -247,7 +257,7 @@ const AIConsulting = () => {
     },
     {
       category: "RETAIL AND ECOMMERCE",
-      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80",
+      image: AiConsulting_7,
       title: "Elevating retail experiences by:",
       points: [
         "Visual search capabilities and smart product recommendations;",
@@ -258,7 +268,7 @@ const AIConsulting = () => {
     },
     {
       category: "EGOVERNMENT",
-      image: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&q=80",
+      image: AiConsulting_8,
       title: "Modernizing public services via:",
       points: [
         "Automated document processing and digital citizen portals;",

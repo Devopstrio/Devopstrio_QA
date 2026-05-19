@@ -25,7 +25,7 @@ import DAN_01 from "../../assets/images/DAN_01.png";
 import analyticsImg from "../../assets/images/datascience/analytics.png";
 import mlImg from "../../assets/images/datascience/ml.png";
 import bigDataImg from "../../assets/images/datascience/bigdata.png";
-import fintechImg from "../../assets/images/datascience/fintech.jpg";
+import fintechImg from "../../assets/images/datascience/temp_1.png";
 import healthtechImg from "../../assets/images/datascience/healthtech.png";
 import ecommerceImg from "../../assets/images/datascience/ecommerce.png";
 

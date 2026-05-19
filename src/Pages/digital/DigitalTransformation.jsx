@@ -136,6 +136,30 @@ const DigitalTransformation = () => {
             title: "Assessment and Implementation of Digital Printing Platforms",
             location: "Germany",
             image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=2073"
+        },
+        {
+            company: "optima corp",
+            title: "Intelligent Automation & Legacy Migration for Global Supply Chains",
+            location: "United States",
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            company: "helios health",
+            title: "Cloud-Native EHR Platform Modernization and Custom Patient Portal",
+            location: "United Kingdom",
+            image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            company: "vanguard trust",
+            title: "Secure Distributed Banking System and Real-Time AI Fraud Intelligence",
+            location: "Switzerland",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+        },
+        {
+            company: "aerojet industries",
+            title: "IoT Smart Manufacturing Ecosystem and AI Predictive Operations",
+            location: "Japan",
+            image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
         }
     ];
 
@@ -148,8 +172,11 @@ const DigitalTransformation = () => {
     const nextOutcome = () => setActiveOutcomeSlide((prev) => (prev + 1) % 2);
     const prevOutcome = () => setActiveOutcomeSlide((prev) => (prev === 0 ? 1 : 0));
 
+    const nextCaseSlide = () => setActiveCaseSlide((prev) => (prev + 1) % caseStudies.length);
+    const prevCaseSlide = () => setActiveCaseSlide((prev) => (prev === 0 ? caseStudies.length - 1 : prev - 1));
+
     return (
-        <div className="dt-transformation-page">
+        <div className="sev-dt-transformation-page">
             <Helmet>
                 <title>Digital Transformation Services | Devopstrio</title>
                 <meta name="description" content="Accelerate your business growth with Devopstrio's expert digital transformation and consulting services." />
@@ -158,23 +185,23 @@ const DigitalTransformation = () => {
             <Serviceshero/>
 
             {/* Modernizing Section */}
-            <section className="dt-modernizing-section">
-                <div className="dt-container">
-                    <div className="dt-modernizing-grid">
-                        <div className="dt-modernizing-text">
+            <section className="sev-dt-modernizing-section">
+                <div className="sev-dt-container">
+                    <div className="sev-dt-modernizing-grid">
+                        <div className="sev-dt-modernizing-text">
                             <h2>Modernizing processes, systems, and teams to scale your business.</h2>
                         </div>
-                        <div className="dt-modernizing-stats">
-                            <div className="dt-mod-stat-box">
-                                <span className="dt-mod-num">2,000+</span>
+                        <div className="sev-dt-modernizing-stats">
+                            <div className="sev-dt-mod-stat-box">
+                                <span className="sev-dt-mod-num">2,000+</span>
                                 <p>delivered projects</p>
                             </div>
-                            <div className="dt-mod-stat-box">
-                                <span className="dt-mod-num">19</span>
+                            <div className="sev-dt-mod-stat-box">
+                                <span className="sev-dt-mod-num">19</span>
                                 <p>years of engineering experience</p>
                             </div>
-                            <div className="dt-mod-stat-box">
-                                <span className="dt-mod-num">50+</span>
+                            <div className="sev-dt-mod-stat-box">
+                                <span className="sev-dt-mod-num">50+</span>
                                 <p>industry certifications and awards</p>
                             </div>
                         </div>
@@ -183,19 +210,19 @@ const DigitalTransformation = () => {
             </section>
 
             {/* Business Outcomes Carousel */}
-            <section className="dt-outcomes-carousel-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">Business outcomes of digital transformation</h2>
-                    <div className="dt-carousel-wrapper">
-                        <button className="dt-carousel-arrow prev" onClick={prevOutcome}><FiChevronLeft /></button>
-                        <div className="dt-carousel-track-container">
-                            <div className="dt-carousel-track" style={{ transform: `translateX(-${activeOutcomeSlide * 100}%)` }}>
+            <section className="sev-dt-outcomes-carousel-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">Business outcomes of digital transformation</h2>
+                    <div className="sev-dt-carousel-wrapper">
+                        <button className="sev-dt-carousel-arrow prev" onClick={prevOutcome}><FiChevronLeft /></button>
+                        <div className="sev-dt-carousel-track-container">
+                            <div className="sev-dt-carousel-track" style={{ transform: `translateX(-${activeOutcomeSlide * 100}%)` }}>
                                 {/* Slide 1 */}
-                                <div className="dt-carousel-slide">
-                                    <div className="dt-slide-grid">
+                                <div className="sev-dt-carousel-slide">
+                                    <div className="sev-dt-slide-grid">
                                         {outcomesData.slice(0, 3).map((item, i) => (
-                                            <div key={i} className="dt-outcome-card">
-                                                <div className="dt-outcome-icon">{item.icon}</div>
+                                            <div key={i} className="sev-dt-outcome-card">
+                                                <div className="sev-dt-outcome-icon">{item.icon}</div>
                                                 <h3>{item.title}</h3>
                                                 <p>{item.desc}</p>
                                             </div>
@@ -203,11 +230,11 @@ const DigitalTransformation = () => {
                                     </div>
                                 </div>
                                 {/* Slide 2 */}
-                                <div className="dt-carousel-slide">
-                                    <div className="dt-slide-grid">
+                                <div className="sev-dt-carousel-slide">
+                                    <div className="sev-dt-slide-grid">
                                         {outcomesData.slice(3, 6).map((item, i) => (
-                                            <div key={i} className="dt-outcome-card">
-                                                <div className="dt-outcome-icon">{item.icon}</div>
+                                            <div key={i} className="sev-dt-outcome-card">
+                                                <div className="sev-dt-outcome-icon">{item.icon}</div>
                                                 <h3>{item.title}</h3>
                                                 <p>{item.desc}</p>
                                             </div>
@@ -216,13 +243,13 @@ const DigitalTransformation = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="dt-carousel-arrow next" onClick={nextOutcome}><FiChevronRight /></button>
+                        <button className="sev-dt-carousel-arrow next" onClick={nextOutcome}><FiChevronRight /></button>
                     </div>
-                    <div className="dt-carousel-dots">
+                    <div className="sev-dt-carousel-dots">
                         {[0, 1].map((dot) => (
                             <span 
                                 key={dot} 
-                                className={`dt-dot ${activeOutcomeSlide === dot ? 'active' : ''}`}
+                                className={`sev-dt-dot ${activeOutcomeSlide === dot ? 'active' : ''}`}
                                 onClick={() => setActiveOutcomeSlide(dot)}
                             />
                         ))}
@@ -231,21 +258,21 @@ const DigitalTransformation = () => {
             </section>
 
             {/* What services cover (Refined Horizontal Tabs) */}
-            <section className="dt-services-cover-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title centered">What digital transformation services cover</h2>
+            <section className="sev-dt-services-cover-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title centered">What digital transformation services cover</h2>
                     
                     {/* Horizontal Pill Navigation with Arrows */}
-                    <div className="dt-pill-nav-wrapper">
-                        <button className="dt-nav-arrow left" onClick={() => scrollTabs('left')}>
+                    <div className="sev-dt-pill-nav-wrapper">
+                        <button className="sev-dt-nav-arrow left" onClick={() => scrollTabs('left')}>
                             <FiChevronLeft />
                         </button>
                         
-                        <div className="dt-pill-nav" ref={navRef}>
+                        <div className="sev-dt-pill-nav" ref={navRef}>
                             {servicesCovered.map((service, i) => (
                                 <button 
                                     key={i} 
-                                    className={`dt-pill-item ${activeServiceTab === i ? 'active' : ''}`}
+                                    className={`sev-dt-pill-item ${activeServiceTab === i ? 'active' : ''}`}
                                     onClick={() => setActiveServiceTab(i)}
                                 >
                                     {service.title}
@@ -253,20 +280,20 @@ const DigitalTransformation = () => {
                             ))}
                         </div>
 
-                        <button className="dt-nav-arrow right" onClick={() => scrollTabs('right')}>
+                        <button className="sev-dt-nav-arrow right" onClick={() => scrollTabs('right')}>
                             <FiChevronRight />
                         </button>
                     </div>
 
                     {/* Content Card (Black Theme) */}
-                    <div className="dt-service-display-card dark">
-                        <div className="dt-service-info-pane">
-                            <h3 className="dt-service-focus-title">{servicesCovered[activeServiceTab]?.title?.toUpperCase()}</h3>
-                            <p className="dt-service-main-desc">{servicesCovered[activeServiceTab]?.desc}</p>
+                    <div className="sev-dt-service-display-card dark">
+                        <div className="sev-dt-service-info-pane">
+                            <h3 className="sev-dt-service-focus-title">{servicesCovered[activeServiceTab]?.title?.toUpperCase()}</h3>
+                            <p className="sev-dt-service-main-desc">{servicesCovered[activeServiceTab]?.desc}</p>
                             
-                            <div className="dt-service-offer-box">
+                            <div className="sev-dt-service-offer-box">
                                 <h5>{servicesCovered[activeServiceTab]?.listTitle?.toUpperCase()}</h5>
-                                <ul className="dt-offer-checklist">
+                                <ul className="sev-dt-offer-checklist">
                                     {servicesCovered[activeServiceTab]?.points?.map((point, j) => (
                                         <li key={j}><FiCheckCircle /> {point}</li>
                                     ))}
@@ -274,7 +301,7 @@ const DigitalTransformation = () => {
                             </div>
                         </div>
                         
-                        <div className="dt-service-visual-pane">
+                        <div className="sev-dt-service-visual-pane">
                             <img 
                                 src={[
                                     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
@@ -288,7 +315,7 @@ const DigitalTransformation = () => {
                                     "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
                                 ][activeServiceTab]} 
                                 alt={servicesCovered[activeServiceTab]?.title} 
-                                className="dt-service-img"
+                                className="sev-dt-service-img"
                             />
                         </div>
                     </div>
@@ -296,36 +323,36 @@ const DigitalTransformation = () => {
             </section>
 
             {/* Alliances and Partnerships */}
-            <section className="dt-alliances-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">Alliances and partnerships</h2>
-                    <div className="dt-alliances-grid">
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" className="dt-alliance-logo" />
+            <section className="sev-dt-alliances-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">Alliances and partnerships</h2>
+                    <div className="sev-dt-alliances-grid">
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" className="sev-dt-alliance-logo" />
                         </div>
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="dt-alliance-logo inverted" />
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="sev-dt-alliance-logo " />
                         </div>
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" className="dt-alliance-logo" />
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" className="sev-dt-alliance-logo" />
                         </div>
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" className="dt-alliance-logo" />
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" className="sev-dt-alliance-logo" />
                         </div>
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" className="dt-alliance-logo" />
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" className="sev-dt-alliance-logo" />
                         </div>
-                        <div className="dt-alliance-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" className="dt-alliance-logo" />
+                        <div className="sev-dt-alliance-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" className="sev-dt-alliance-logo" />
                         </div>
-                        <div className="dt-alliance-item">
-                            <div className="dt-alliance-text-logo">
-                                <span className="dt-dynamics">Dynamics 365</span>
+                        <div className="sev-dt-alliance-item">
+                            <div className="sev-dt-alliance-text-logo">
+                                <span className="sev-dt-dynamics">Dynamics 365</span>
                             </div>
                         </div>
-                        <div className="dt-alliance-item">
-                            <div className="dt-alliance-text-logo">
-                                <span className="dt-creatio">Creatio</span>
+                        <div className="sev-dt-alliance-item">
+                            <div className="sev-dt-alliance-text-logo">
+                                <span className="sev-dt-creatio">Creatio</span>
                             </div>
                         </div>
                     </div>
@@ -333,26 +360,26 @@ const DigitalTransformation = () => {
             </section>
 
             {/* Digital transformation delivery */}
-            <section className="dt-delivery-process-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">Digital transformation delivery</h2>
-                    <p className="dt-section-subtitle">Devopstrio delivers digital transformation through a structured, end-to-end process – from assessment to scalable implementation and continuous optimization.</p>
+            <section className="sev-dt-delivery-process-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">Digital transformation delivery</h2>
+                    <p className="sev-dt-section-subtitle">Devopstrio delivers digital transformation through a structured, end-to-end process – from assessment to scalable implementation and continuous optimization.</p>
                     
-                    <div className="dt-delivery-accordion">
+                    <div className="sev-dt-delivery-accordion">
                         {deliverySteps.map((step, i) => (
                             <div 
                                 key={i} 
-                                className={`dt-delivery-item ${activeDeliveryStep === i ? 'active' : ''}`}
+                                className={`sev-dt-delivery-item ${activeDeliveryStep === i ? 'active' : ''}`}
                                 onClick={() => setActiveDeliveryStep(i)}
                             >
-                                <div className="dt-delivery-header">
-                                    <span className="dt-delivery-num">0{i + 1}</span>
+                                <div className="sev-dt-delivery-header">
+                                    <span className="sev-dt-delivery-num">0{i + 1}</span>
                                     <h4>{step.title}</h4>
-                                    <div className="dt-delivery-toggle">
+                                    <div className="sev-dt-delivery-toggle">
                                         {activeDeliveryStep === i ? <FiMinus /> : <FiPlus />}
                                     </div>
                                 </div>
-                                <div className={`dt-delivery-body ${activeDeliveryStep === i ? 'show' : ''}`}>
+                                <div className={`sev-dt-delivery-body ${activeDeliveryStep === i ? 'show' : ''}`}>
                                     <p>{step.desc}</p>
                                 </div>
                             </div>
@@ -362,122 +389,126 @@ const DigitalTransformation = () => {
             </section>
 
             {/* Case Studies Section */}
-            <section className="dt-case-studies-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">Digital transformation case studies</h2>
-                    <div className="dt-case-slider">
-                        <button className="dt-case-arrow prev"><FiChevronLeft /></button>
-                        <div className="dt-case-slide">
-                            <div className="dt-case-info">
-                                <div className="dt-case-client-logo">
-                                    <span className="dt-client-name">{caseStudies[activeCaseSlide].company}</span>
+            <section className="sev-dt-case-studies-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">Digital transformation case studies</h2>
+                    <div className="sev-dt-case-slider">
+                        <button className="sev-dt-case-arrow prev" onClick={prevCaseSlide}><FiChevronLeft /></button>
+                        <div className="sev-dt-case-slide">
+                            <div className="sev-dt-case-info">
+                                <div className="sev-dt-case-client-logo">
+                                    <span className="sev-dt-client-name">{caseStudies[activeCaseSlide].company}</span>
                                 </div>
                                 <h3>{caseStudies[activeCaseSlide].title}</h3>
-                                <span className="dt-case-location">{caseStudies[activeCaseSlide].location}</span>
+                                <span className="sev-dt-case-location">{caseStudies[activeCaseSlide].location}</span>
                             </div>
-                            <div className="dt-case-visual">
+                            <div className="sev-dt-case-visual">
                                 <img src={caseStudies[activeCaseSlide].image} alt="Case Study" />
                             </div>
                         </div>
-                        <button className="dt-case-arrow next"><FiChevronRight /></button>
+                        <button className="sev-dt-case-arrow next" onClick={nextCaseSlide}><FiChevronRight /></button>
                     </div>
-                    <div className="dt-case-dots">
+                    <div className="sev-dt-case-dots">
                         {[0, 1, 2, 3, 4].map((dot) => (
-                            <span key={dot} className={`dt-dot ${activeCaseSlide === dot ? 'active' : ''}`} />
+                            <span 
+                                key={dot} 
+                                className={`sev-dt-dot ${activeCaseSlide === dot ? 'active' : ''}`}
+                                onClick={() => setActiveCaseSlide(dot)}
+                            />
                         ))}
                     </div>
                 </div>
             </section>
             
             {/* Insights on digital transformation */}
-            <section className="dt-insights-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">Insights on digital transformation</h2>
-                    <p className="dt-section-subtitle">Insights from Devopstrio's experts based on real-world delivery experience across complex transformation programs.</p>
+            <section className="sev-dt-insights-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">Insights on digital transformation</h2>
+                    <p className="sev-dt-section-subtitle">Insights from Devopstrio's experts based on real-world delivery experience across complex transformation programs.</p>
 
-                    <div className="dt-insights-main-grid">
+                    <div className="sev-dt-insights-main-grid">
                         {/* Main Featured Video Card */}
-                        <div className="dt-insights-featured-card">
-                            <div className="dt-featured-visual">
+                        <div className="sev-dt-insights-featured-card">
+                            <div className="sev-dt-featured-visual">
                                 <img src="https://images.unsplash.com/photo-150700531286a-575d93e0829a?auto=format&fit=crop&q=80&w=1200" alt="Healthcare Transformation" />
-                                <span className="dt-duration-badge">0:37:48</span>
+                                <span className="sev-dt-duration-badge">0:37:48</span>
                             </div>
-                            <div className="dt-featured-info">
-                                <span className="dt-category-label">INTERVIEW</span>
+                            <div className="sev-dt-featured-info">
+                                <span className="sev-dt-category-label">INTERVIEW</span>
                                 <h3>Healthcare Transformation</h3>
                                 <p>Claus Torp Jensen, C-Suite Transformation Leader and CIO, speaks about how digital transformation, AI, and RPM are revolutionizing patient care and trust in virtual services.</p>
                             </div>
                         </div>
 
                         {/* Sidebar Talks */}
-                        <div className="dt-insights-sidebar">
-                            <div className="dt-sidebar-talk">
-                                <div className="dt-talk-thumb">
+                        <div className="sev-dt-insights-sidebar">
+                            <div className="sev-dt-sidebar-talk">
+                                <div className="sev-dt-talk-thumb">
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200" alt="Expert 1" />
-                                    <span className="dt-duration-mini">0:56</span>
+                                    <span className="sev-dt-duration-mini">0:56</span>
                                 </div>
-                                <div className="dt-talk-content">
-                                    <span className="dt-category-label">EXPERT TALKS</span>
+                                <div className="sev-dt-talk-content">
+                                    <span className="sev-dt-category-label">EXPERT TALKS</span>
                                     <h4>Why is digitalization not only for large companies?</h4>
                                 </div>
                             </div>
-                            <div className="dt-sidebar-talk">
-                                <div className="dt-talk-thumb">
+                            <div className="sev-dt-sidebar-talk">
+                                <div className="sev-dt-talk-thumb">
                                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200" alt="Expert 2" />
-                                    <span className="dt-duration-mini">0:41</span>
+                                    <span className="sev-dt-duration-mini">0:41</span>
                                 </div>
-                                <div className="dt-talk-content">
-                                    <span className="dt-category-label">EXPERT TALKS</span>
+                                <div className="sev-dt-talk-content">
+                                    <span className="sev-dt-category-label">EXPERT TALKS</span>
                                     <h4>The future of contactless payments in retail</h4>
                                 </div>
                             </div>
-                            <div className="dt-sidebar-talk">
-                                <div className="dt-talk-thumb">
+                            <div className="sev-dt-sidebar-talk">
+                                <div className="sev-dt-talk-thumb">
                                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="Expert 3" />
-                                    <span className="dt-duration-mini">1:12</span>
+                                    <span className="sev-dt-duration-mini">1:12</span>
                                 </div>
-                                <div className="dt-talk-content">
-                                    <span className="dt-category-label">EXPERT TALKS</span>
+                                <div className="sev-dt-talk-content">
+                                    <span className="sev-dt-category-label">EXPERT TALKS</span>
                                     <h4>Scalability challenges in cloud transformation</h4>
                                 </div>
                             </div>
-                            <div className="dt-sidebar-talk">
-                                <div className="dt-talk-thumb">
+                            <div className="sev-dt-sidebar-talk">
+                                <div className="sev-dt-talk-thumb">
                                     <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200" alt="Expert 4" />
-                                    <span className="dt-duration-mini">0:28</span>
+                                    <span className="sev-dt-duration-mini">0:28</span>
                                 </div>
-                                <div className="dt-talk-content">
-                                    <span className="dt-category-label">EXPERT TALKS</span>
+                                <div className="sev-dt-talk-content">
+                                    <span className="sev-dt-category-label">EXPERT TALKS</span>
                                     <h4>AI-driven decision making for CEOs</h4>
                                 </div>
                             </div>
-                            <div className="dt-sidebar-talk">
-                                <div className="dt-talk-thumb">
+                            <div className="sev-dt-sidebar-talk">
+                                <div className="sev-dt-talk-thumb">
                                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200" alt="Expert 5" />
-                                    <span className="dt-duration-mini">0:52</span>
+                                    <span className="sev-dt-duration-mini">0:52</span>
                                 </div>
-                                <div className="dt-talk-content">
-                                    <span className="dt-category-label">EXPERT TALKS</span>
+                                <div className="sev-dt-talk-content">
+                                    <span className="sev-dt-category-label">EXPERT TALKS</span>
                                     <h4>Building resilient engineering cultures</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="dt-insights-bottom-grid">
-                        <div className="dt-bottom-insight-card text-card">
-                            <div className="dt-bottom-info">
-                                <span className="dt-category-label">BANKING</span>
+                    <div className="sev-dt-insights-bottom-grid">
+                        <div className="sev-dt-bottom-insight-card text-card">
+                            <div className="sev-dt-bottom-info">
+                                <span className="sev-dt-category-label">BANKING</span>
                                 <h4>How Technology Is Driving Transformation in Banking</h4>
                             </div>
                         </div>
-                        <div className="dt-bottom-insight-card visual-card">
-                            <div className="dt-bottom-visual">
+                        <div className="sev-dt-bottom-insight-card visual-card">
+                            <div className="sev-dt-bottom-visual">
                                 <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" alt="Logistics" />
-                                <span className="dt-reading-badge">Reading time: 8 mins</span>
+                                <span className="sev-dt-reading-badge">Reading time: 8 mins</span>
                             </div>
-                            <div className="dt-bottom-info">
-                                <span className="dt-category-label">ARTICLE</span>
+                            <div className="sev-dt-bottom-info">
+                                <span className="sev-dt-category-label">ARTICLE</span>
                                 <h4>Digital Technologies in Logistics</h4>
                             </div>
                         </div>
@@ -486,17 +517,17 @@ const DigitalTransformation = () => {
             </section>
 
             {/* FAQ Section */}
-            <section className="dt-faq-dig-section">
-                <div className="dt-container">
-                    <h2 className="dt-section-title">FAQ</h2>
-                    <div className="dt-faq-list">
+            <section className="sev-dt-faq-dig-section">
+                <div className="sev-dt-container">
+                    <h2 className="sev-dt-section-title">FAQ</h2>
+                    <div className="sev-dt-faq-list">
                         {faqs.map((faq, i) => (
-                            <div key={i} className={`dt-faq-item ${activeFaq === i ? 'active' : ''}`} onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
-                                <div className="dt-faq-header">
+                            <div key={i} className={`sev-dt-faq-item ${activeFaq === i ? 'active' : ''}`} onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
+                                <div className="sev-dt-faq-header">
                                     <h4>{faq.q}</h4>
                                     <span>{activeFaq === i ? <FiMinus /> : <FiPlus />}</span>
                                 </div>
-                                <div className={`dt-faq-body ${activeFaq === i ? 'show' : ''}`}>
+                                <div className={`sev-dt-faq-body ${activeFaq === i ? 'show' : ''}`}>
                                     <p>{faq.a}</p>
                                 </div>
                             </div>
@@ -505,8 +536,8 @@ const DigitalTransformation = () => {
                 </div>
             </section>
             
-            <section className="dt-consultation-section">
-                <div className="dt-container">
+            <section className="sev-dt-consultation-section">
+                <div className="sev-dt-container">
                     <AIConsultingForm />
                 </div>
             </section>

@@ -561,7 +561,7 @@ const Automotive = () => {
             </section>
 
             {/* 13. CONSULTATION FORM CONTAINER */}
-            <div style={{ margin: "60px auto", maxWidth: "1250px" }}>
+            <div style={{ margin: "0 auto", maxWidth: "1200px" }}>
                 <AIConsultationForm />
             </div>
         </div>

@@ -23,7 +23,7 @@
 
 /* Stats Section */
 .dt-pentest-stats {
-    padding: 80px 0;
+    padding: 60px 0;
     border-bottom: 1px solid var(--dt-border);
 }
 
@@ -436,8 +436,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .dt-framework-card h4 {
@@ -446,19 +449,76 @@
     color: #fff;
     margin-bottom: 20px;
     line-height: 1.3;
+    position: relative;
+    z-index: 5;
+    transition: color 0.4s ease;
 }
 
 .dt-framework-card p {
     font-size: 15px;
     line-height: 1.6;
     color: #888;
+    position: relative;
+    z-index: 5;
+    transition: color 0.4s ease;
+}
+
+.dt-framework-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #ce245471;
+    opacity: 0;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 2;
+}
+
+.dt-framework-card::after {
+    content: '';
+    position: absolute;
+    width: 280%;
+    height: 280%;
+    top: 100%;
+    left: -90%;
+    background: rgba(206, 36, 84, 0.298);
+    border-radius: 42%;
+    transition: top 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
 }
 
 .dt-framework-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--dt-accent);
+    border-color: #ce2454f4;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(206, 36, 83, 0.1);
+    box-shadow: 0 15px 35px rgba(206, 36, 83, 0.25);
+}
+
+.dt-framework-card:hover h4 {
+    color: #fff;
+}
+
+.dt-framework-card:hover p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dt-framework-card:hover::before {
+    height: 100%;
+    opacity: 0.15;
+}
+
+.dt-framework-card:hover::after {
+    top: -90%;
+    opacity: 1;
+    animation: dt-framework-liquid-wave 8s infinite linear;
+}
+
+@keyframes dt-framework-liquid-wave {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @media (max-width: 1024px) {
@@ -479,14 +539,9 @@
     background: #050505;
 }
 
-/* Process Section */
-.dt-pentest-process {
-    padding: 100px 0;
-    background: #000;
-}
 /* FAQ Section */
 .dt-pentest-faq {
-    padding: 100px 0;
+    padding: 40px 0;
     background: #000;
 }
 
@@ -666,7 +721,7 @@
 
 /* Success Story Slider */
 .dt-pentest-success {
-    padding: 100px 0;
+    padding: 60px 0;
     background: #050505;
 }
 
@@ -777,7 +832,7 @@
 }
 
 .dt-dot.active {
-    background: var(--dt-accent);
+    background: #ce2453 !important;
 }
 
 @media (max-width: 1100px) {

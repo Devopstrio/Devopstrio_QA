@@ -468,3 +468,44 @@
     display: none;
   }
 }
+
+/* Independent Column Scrolling for Desktop */
+@media (min-width: 1025px) {
+  .ps-Devopstrio-layout {
+    height: 780px;
+    min-height: auto;
+  }
+
+  .ps-Devopstrio-sidebar {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .ps-Devopstrio-main {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+/* Custom Sleek Scrollbars */
+.ps-Devopstrio-sidebar::-webkit-scrollbar,
+.ps-Devopstrio-main::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ps-Devopstrio-sidebar::-webkit-scrollbar-track,
+.ps-Devopstrio-main::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ps-Devopstrio-sidebar::-webkit-scrollbar-thumb,
+.ps-Devopstrio-main::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.ps-Devopstrio-sidebar::-webkit-scrollbar-thumb:hover,
+.ps-Devopstrio-main::-webkit-scrollbar-thumb:hover {
+  background: var(--Devopstrio-accent);
+}

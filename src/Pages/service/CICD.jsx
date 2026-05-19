@@ -641,8 +641,12 @@ const CICD = () => {
         </div>
       </section>
 
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+
+        <Newsletter />
+      </div>
+
       <Cta />
-      <Newsletter />
     </div>
   );
 };

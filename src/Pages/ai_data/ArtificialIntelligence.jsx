@@ -27,6 +27,18 @@ import Serviceshero from "../../components/Hero/Serviceshero";
 
 // images
 import trandes_5 from "../../assets/images/trandes_5.jpg";
+import service_1 from "../../assets/images/Ai_build_case/service_1.png"
+import service_2 from "../../assets/images/Ai_build_case/service_2.png"
+import service_3 from "../../assets/images/Ai_build_case/service_3.png"
+import service_4 from "../../assets/images/Ai_build_case/service_4.png"
+import service_5 from "../../assets/images/Ai_build_case/service_5.png"
+import service_6 from "../../assets/images/Ai_build_case/service_6.png"
+import service_7 from "../../assets/images/Ai_build_case/service_7.png"
+import service_8 from "../../assets/images/Ai_build_case/service_8.png"
+import service_9 from "../../assets/images/Ai_build_case/service_9.png"
+import service_10 from "../../assets/images/Ai_build_case/service_10.png"
+import Vision_1 from "../../assets/images/Ai_build_case/Vision_1.jpg"
+
 
 const ArtificialIntelligence = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -111,68 +123,75 @@ const ArtificialIntelligence = () => {
 
     const aiBuildCases = [
         {
-            image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
+            image: service_7,
             category: 'Customer Experience',
             title: 'Scale Service Operations with AI Copilots',
             desc: 'Deploy intent-aware assistants that handle complex customer queries, reducing response times while maintaining a personal touch at scale.',
             footer: 'Case Study'
         },
         {
-            image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800',
+            image: service_2,
             category: 'Operations',
             title: 'Anticipate Market Shifts with Predictive Intel',
             desc: 'Transform historical data into future certainty with high-precision ML models that forecast demand and mitigate operational risks in real-time.',
             footer: 'Technical Paper'
         },
         {
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+            image: service_8,
             category: 'Growth & Marketing',
             title: 'Personalize at Scale with Real-Time Adaptivity',
             desc: 'Drive massive user retention with deep learning algorithms that deliver hyper-relevant experiences tailored to individual behavior in milliseconds.',
             footer: 'Article'
         },
         {
-            image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800',
+            image: service_4,
             category: 'Process Automation',
             title: 'Automate Complex Logic with Agentic Workflows',
             desc: 'Orchestrate multi-step business processes using autonomous agents that reason, plan, and execute across your entire enterprise software stack.',
             footer: 'Video Overview'
         },
         {
-            image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800',
+            image: service_9,
             category: 'Healthcare',
             title: 'Precision Diagnostics with Computer Vision',
             desc: 'Assist medical professionals with AI models that detect anomalies in imaging with superhuman accuracy, accelerating treatment decisions.',
             footer: 'Research Report'
         },
         {
-            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800',
+            image: service_3,
             category: 'Finance',
             title: 'Autonomous Fraud Detection Networks',
             desc: 'Secure trillions in transactions with real-time neural networks that identify fraudulent patterns before they impact your bottom line.',
             footer: 'White Paper'
         },
         {
-            image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+            image: service_5,
             category: 'Manufacturing',
             title: 'Predictive Maintenance for Smart Factories',
             desc: 'Eliminate downtime with IoT-integrated AI that predicts equipment failure weeks in advance, optimizing global supply chain logistics.',
             footer: 'Success Story'
         },
         {
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
+            image: service_10,
             category: 'Cybersecurity',
             title: 'Self-Healing Security Infrastructures',
             desc: 'Deploy AI-driven defense systems that autonomously patch vulnerabilities and neutralize zero-day threats in milliseconds.',
             footer: 'Security Audit'
         },
         {
-            image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
+            image: service_1,
             category: 'Supply Chain',
             title: 'Real-Time Logistics Orchestration',
             desc: 'Optimize global delivery networks with AI that reroutes shipments dynamically based on weather, port congestion, and fuel costs.',
             footer: 'Case Study'
         },
+        {
+            image: service_6,
+            category: 'Retail',
+            title: 'Hyper-Personalized Retail Experiences',
+            desc: 'Drive unprecedented customer loyalty with AI recommendation engines that adapt to individual preferences in real-time, increasing conversion rates exponentially.',
+            footer: 'Success Story'
+        }
     ];
 
     const totalOriginalCards = aiBuildCases.length;
@@ -389,7 +408,7 @@ const ArtificialIntelligence = () => {
 
                     <div className="dt-bento-layout">
                         <div className="dt-bento-cell dt-cell-hero">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Team" />
+                            <img src={Vision_1} alt="Team" />
                         </div>
                         <div className="dt-bento-cell dt-cell-dark dt-cell-narrative">
                             <span className="dt-cell-index">01</span>

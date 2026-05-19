@@ -1764,7 +1764,9 @@ const ProvideServices = () => {
       </div>
 
       {/* NewsLetter */}
-      <Newsletter />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>
       {/* Cta */}
       <Cta />
     </div>

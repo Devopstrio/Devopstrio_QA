@@ -8,6 +8,11 @@ import AIConsultationForm from '../../components/AIConsultationForm/AIConsultati
 import { sendEmail } from '../../Services/sendmail';
 import '../../Style/ap_development/CMSdevelopment.css';
 
+
+// ==================== Images ====================
+import CMS_DEVELOPMENT from '../../assets/images/datascience/Cms.png';
+
+
 const CMSdevelopment = () => {
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,7 +149,7 @@ const CMSdevelopment = () => {
                     <div className="dt-cms-steps-layout">
                         <div className="dt-cms-steps-left">
                             <div className="dt-cms-visual">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="CMS Architecture" />
+                                <img src={CMS_DEVELOPMENT} alt="CMS Architecture" />
                             </div>
                         </div>
                         <div className="dt-cms-steps-right">

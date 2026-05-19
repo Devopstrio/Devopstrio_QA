@@ -544,7 +544,9 @@ const CloudInfrastructure = () => {
       </section>
 
       {/* Footer CTA Components */}
-      <Newsletter />
+      <div style={{ margin:"0 auto",maxWidth:"1240px" }}>
+        <Newsletter />
+      </div>
     </div>
   );
 };

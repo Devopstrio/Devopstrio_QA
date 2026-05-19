@@ -21,14 +21,17 @@ import '../../Style/Cybersecurity/Penetrationtesting.css';
 
 // Assets (reusing available ones)
 import caseStudyImg from '../../assets/images/security.png';
-import devsecopsImg from '../../assets/images/Site_img/devsecops.png';
-import healthcareImg from '../../assets/images/healthcare_security_story_1778189940058.png';
+import devsecopsImg from '../../assets/images/datascience/devsecopsImg.jpg';
+import healthcareImg from '../../assets/images/datascience/healthcareImg.jpg';
 import blockchainImg from '../../assets/images/blockchain_banking_security_1778190085792.png';
 import iso27001 from '../../assets/images/ISO27001.png';
 import gdpr from '../../assets/images/GDPR_certification.png';
 import cyberEssentials from '../../assets/images/Cyber_essentials.png';
 import owasp from '../../assets/images/OWASP.png';
 import hipaa from '../../assets/images/HIPAA.png';
+import iso42001 from '../../assets/images/ISO42001.png';
+import iso9001 from '../../assets/images/ISO9001.png';
+import microsoftSecurity from '../../assets/images/Microsoft-Solutions-Partner-Colour-Security.png';
 
 
 const PenetrationTesting = () => {
@@ -318,9 +321,9 @@ const PenetrationTesting = () => {
                         <div className="dt-cert-logo"><img src={gdpr} alt="CISM" /></div>
                         <div className="dt-cert-logo"><img src={cyberEssentials} alt="GIAC" /></div>
                         <div className="dt-cert-logo"><img src={hipaa} alt="GWAPT" /></div>
-                        <div className="dt-cert-logo"><img src={iso27001} alt="GXPN" /></div>
-                        <div className="dt-cert-logo"><img src={owasp} alt="CREST" /></div>
-                        <div className="dt-cert-logo"><img src={gdpr} alt="GDPR" /></div>
+                        <div className="dt-cert-logo"><img src={iso42001} alt="GXPN" /></div>
+                        <div className="dt-cert-logo"><img src={iso9001} alt="CREST" /></div>
+                        <div className="dt-cert-logo"><img src={microsoftSecurity} alt="Microsoft Security Partner" /></div>
                     </div>
                 </div>
             </section>

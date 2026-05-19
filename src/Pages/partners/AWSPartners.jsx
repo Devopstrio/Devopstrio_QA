@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Newsletter from "../../components/Newsletter/Newsletter";
@@ -46,6 +46,9 @@ import awsHeroThumb from "../../assets/partners/aws/aws-hero-thumb.svg";
 import awsBannerModernization from "../../assets/partners/aws/aws-banner-modernization.svg";
 
 import aws_dashboard from "../../assets/images/Site_img/aws_dashboard.png"
+
+//videos 
+import awsVideo from "../../assets/images/Partner/AWS_Original.mp4";
 
 const TABS = [
   { id: "ai", label: "AI & GenAI", icon: <FiCpu /> },
@@ -472,6 +475,8 @@ const AWSPartners = () => {
   const [caseIdx, setCaseIdx] = useState(0);
   const [newsIdx, setNewsIdx] = useState(0);
   const [expandedSol, setExpandedSol] = useState(null);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   const prevCase = () =>
     setCaseIdx((i) => (i - 1 + CASE_STUDIES.length) % CASE_STUDIES.length);
@@ -532,20 +537,51 @@ const AWSPartners = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="aws-video-card">
-              <img
-                src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=900&q=80"
-                alt="AWS Cloud infrastructure"
-                className="aws-video-thumb"
-              />
-              <div className="aws-video-overlay" />
-              <button className="aws-play-btn" aria-label="Play video">
-                <FiPlay />
-              </button>
-              <div className="aws-video-label">
-                <span className="aws-live-dot" />
-                AWS Partnership Overview · 3:24
-              </div>
+            <div className="aws-video-card" onClick={() => !videoPlaying && setVideoPlaying(true)}>
+              {videoPlaying ? (
+                <video
+                  ref={videoRef}
+                  src={awsVideo}
+                  className="aws-video-player"
+                  controls
+                  autoPlay
+                  playsInline
+                  onTimeUpdate={() => {
+                    if (videoRef.current) {
+                      localStorage.setItem("aws_video_progress", videoRef.current.currentTime);
+                    }
+                  }}
+                  onLoadedMetadata={() => {
+                    if (videoRef.current) {
+                      const savedTime = localStorage.getItem("aws_video_progress");
+                      if (savedTime) {
+                        videoRef.current.currentTime = parseFloat(savedTime);
+                      }
+                    }
+                  }}
+                  onEnded={() => {
+                    setVideoPlaying(false);
+                    localStorage.removeItem("aws_video_progress");
+                  }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              ) : (
+                <>
+                  <img
+                    src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=900&q=80"
+                    alt="AWS Cloud infrastructure"
+                    className="aws-video-thumb"
+                  />
+                  <div className="aws-video-overlay" />
+                  <button className="aws-play-btn" aria-label="Play video">
+                    <FiPlay />
+                  </button>
+                  <div className="aws-video-label">
+                    <span className="aws-live-dot" />
+                    AWS Partnership Overview · 3:24
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         </div>

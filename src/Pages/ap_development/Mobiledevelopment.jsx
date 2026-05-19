@@ -14,6 +14,17 @@ import {
 import '../../Style/ap_development/Mobiledevelopment.css';
 
 
+//images
+import OleksandrK from '../../assets/images/mobile_senior.jpg';
+import AyanaT from '../../assets/images/seeedsxwoiw.jpg';
+import RichG from '../../assets/images/uieuue.jpg';
+import cross_paltform from '../../assets/images/datascience/eyuwtr.png'
+import Euopcarr from '../../assets/images/datascience/Europcar.png'
+import GlobeBank from '../../assets/images/datascience/GlobeBank.png'
+import Vivid from '../../assets/images/datascience/Vivid.png'
+
+
+
 // Components
 import ServiceHero from '../../components/Hero/Serviceshero';
 import AIConsultationForm from '../../components/AIConsultationForm/AIConsultationForm';
@@ -74,7 +85,7 @@ const Mobiledevelopment = () => {
             company: "Vivid Health",
             title: "Telehealth & Wellness",
             desc: "A comprehensive health platform connecting patients with doctors through high-definition video calls, integrated health records, and real-time wearable data synchronization.",
-            img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200&h=800",
+            img:"https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200&h=800" ,
             location: "Germany"
         }
     ];
@@ -429,8 +440,8 @@ const Mobiledevelopment = () => {
                             {
                                 name: "Oleksandr K.",
                                 role: "Senior Mobile App Developer",
-                                rate: "$65/hour",
-                                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400",
+                                // rate: "$65/hour",
+                                img:OleksandrK,
                                 skills: ["Java", "Android Jetpack", "Kotlin", "Firebase", "Gradle"],
                                 prev: "vivid",
                                 prevColor: "#a855f7"
@@ -438,8 +449,8 @@ const Mobiledevelopment = () => {
                             {
                                 name: "Ayana T.",
                                 role: "Mobile App Developer",
-                                rate: "$50/hour",
-                                img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400",
+                                // rate: "$50/hour",
+                                img:AyanaT,
                                 skills: ["Swift", "Objective-C", "RxSwift", "Combine", "SwiftUI", "HealthKit"],
                                 prev: "UPWork",
                                 prevColor: "#ef4444"
@@ -447,8 +458,8 @@ const Mobiledevelopment = () => {
                             {
                                 name: "Rich G.",
                                 role: "Mobile App Developer",
-                                rate: "$40/hour",
-                                img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400",
+                                // rate: "$40/hour",
+                                img: RichG,
                                 skills: ["Flutter", "Dart", "Xamarin", "React Native", "JavaScript"],
                                 prev: "Europcar",
                                 prevColor: "#22c55e"
@@ -457,7 +468,7 @@ const Mobiledevelopment = () => {
                             <div key={i} className="dt-mobile-expert-card">
                                 <div className="dt-mobile-expert-visual">
                                     <img src={member.img} alt={member.name} />
-                                    <div className="dt-mobile-expert-rate">{member.rate}</div>
+                                    {/* <div className="dt-mobile-expert-rate">{member.rate}</div> */}
                                 </div>
                                 <div className="dt-mobile-expert-info">
                                     <h4>{member.name}</h4>
@@ -589,7 +600,7 @@ const Mobiledevelopment = () => {
                         {/* Featured Article */}
                         <div className="dt-mobile-insights-featured">
                             <div className="dt-mobile-featured-img">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=500" alt="Development Timeline" />
+                                <img src={cross_paltform} alt="Development Timeline" />
                             </div>
                             <div className="dt-mobile-featured-content">
                                 <span className="dt-mobile-read-time">Reading time: 13 mins</span>

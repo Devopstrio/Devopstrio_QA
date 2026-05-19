@@ -19,12 +19,36 @@ import CTA from '../../components/Cta/Cta';
 import ServiceHero from '../../components/Hero/Serviceshero';
 import TechStack from '../../components/TechStack/TechStack';
 
+
+// ============== Images =================
+import CUSTOMER_WEB from '../../assets/images/datascience/CUSTOMER_WEB_PORTALS.png';
+import EMPLOYEE_WEB from '../../assets/images/datascience/CUSTOMER_WEB.png';
+import WEB_APPS from '../../assets/images/datascience/EMPLOYEE_WEB.png';
+import ENTERPRISE_WEB from '../../assets/images/datascience/WEB_APPS.png';
+import CORPORATE_WEB from '../../assets/images/datascience/ENTERPRISE_WEB.png';
+
+
+
+
+
+
+
+
 const Webdevelopment = () => {
     const [activeProcess, setActiveProcess] = useState(0);
     const [activeProject, setActiveProject] = useState(0);
     const [activeTech, setActiveTech] = useState(0);
     const [activeOffering, setActiveOffering] = useState(0);
     const [openFaq, setOpenFaq] = useState(null);
+    const [tabStartIndex, setTabStartIndex] = useState(0);
+
+    React.useEffect(() => {
+        if (activeProject < tabStartIndex) {
+            setTabStartIndex(activeProject);
+        } else if (activeProject >= tabStartIndex + 4) {
+            setTabStartIndex(activeProject - 3);
+        }
+    }, [activeProject, tabStartIndex]);
 
     React.useEffect(() => {
         const sections = document.querySelectorAll(".dt-pane-content");
@@ -164,8 +188,7 @@ const Webdevelopment = () => {
                 "Communication",
                 "Transaction management"
             ],
-            img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200&h=800",
-            logo: "https://www.verivox.de/static/img/verivox-logo.svg"
+            img: CUSTOMER_WEB,
         },
         {
             tab: "EMPLOYEE WEB PORTALS",
@@ -178,8 +201,7 @@ const Webdevelopment = () => {
                 "Work tracking and training",
                 "HR flows, remote work support, etc."
             ],
-            img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200&h=800",
-            logo: "https://4jet.de/templates/4jet/img/logo.png"
+            img: EMPLOYEE_WEB,
         },
         {
             tab: "WEB APPS FOR FRONT OFFICE",
@@ -192,8 +214,7 @@ const Webdevelopment = () => {
                 "Help desks",
                 "Analytical reporting"
             ],
-            img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200&h=800",
-            logo: "https://www.fti-group.com/fileadmin/user_upload/FTI_Group_Logo.png"
+            img: WEB_APPS,
         },
         {
             tab: "ENTERPRISE WEB PRESENCE DEVELOPMENT",
@@ -206,8 +227,7 @@ const Webdevelopment = () => {
                 "Advanced CMS",
                 "Single sign-on functionalities"
             ],
-            img: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=1200&h=800",
-            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1024px-Siemens-logo.svg.png"
+            img: ENTERPRISE_WEB,
         },
         {
             tab: "CORPORATE WEB PRESENCE DEVELOPMENT",
@@ -220,8 +240,7 @@ const Webdevelopment = () => {
                 "Integration with dedicated platforms",
                 "Contact channels"
             ],
-            img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200&h=800",
-            logo: "https://www.redcross.ch/themes/custom/src_theme/logo.svg"
+            img: CORPORATE_WEB,
         }
     ];
 
@@ -383,15 +402,18 @@ const Webdevelopment = () => {
                             <FiChevronLeft />
                         </button>
                         <div className="dt-solutions-tabs">
-                            {portfolioProjects.map((proj, i) => (
-                                <button 
-                                    key={i} 
-                                    className={`dt-solution-tab ${activeProject === i ? 'active' : ''}`}
-                                    onClick={() => setActiveProject(i)}
-                                >
-                                    {proj.tab}
-                                </button>
-                            ))}
+                            {portfolioProjects.slice(tabStartIndex, tabStartIndex + 4).map((proj, i) => {
+                                const originalIndex = tabStartIndex + i;
+                                return (
+                                    <button 
+                                        key={originalIndex} 
+                                        className={`dt-solution-tab ${activeProject === originalIndex ? 'active' : ''}`}
+                                        onClick={() => setActiveProject(originalIndex)}
+                                    >
+                                        {proj.tab}
+                                    </button>
+                                );
+                            })}
                         </div>
                         <button className="dt-nav-arrow next" onClick={() => setActiveProject((activeProject + 1) % portfolioProjects.length)}>
                             <FiChevronRight />
@@ -409,13 +431,13 @@ const Webdevelopment = () => {
                                     className="dt-solution-img" 
                                 />
                             </div>
-                            <div className="dt-solution-brand-footer">
+                            {/* <div className="dt-solution-brand-footer">
                                 <img 
                                     src={portfolioProjects[activeProject].logo} 
                                     alt={portfolioProjects[activeProject].company} 
                                     className="dt-solution-brand-logo" 
                                 />
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Right: Project Details */}
