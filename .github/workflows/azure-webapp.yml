@@ -60,13 +60,21 @@ jobs:
             exit 1
           fi
           echo "QA build completed successfully."
+
+      # Zip build package
+      - name: Prepare Deployment Package
+        run: |
+          cd dist
+          zip -r ../app.zip .
+          cd ..
+
       # Deploy to QA
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./dist
+          package: ./app.zip
 
   # ==========================================
   # PRODUCTION DEPLOYMENT (MANUAL)
@@ -109,10 +117,18 @@ jobs:
             exit 1
           fi
           echo "Production build completed successfully."
+
+      # Zip build package
+      - name: Prepare Deployment Package
+        run: |
+          cd dist
+          zip -r ../app.zip .
+          cd ..
+
       # Deploy to Production
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
-          package: ./dist
+          package: ./app.zip
