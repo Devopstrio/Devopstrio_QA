@@ -29,8 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      # Checkout Repository
+      # Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -41,11 +40,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install Dependencies
+      # Install dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build Application
+      # Build application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -53,18 +52,15 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify Build Output
+      # Verify build output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
-
-          echo "Build completed successfully."
-          ls -la dist
-
-      # Deploy to QA Azure Web App
+          echo "QA build completed successfully."
+      # Deploy to QA
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
@@ -82,8 +78,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
-
-      # Checkout Repository
+      # Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -94,11 +89,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install Dependencies
+      # Install dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build Application
+      # Build application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -106,18 +101,15 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify Build Output
+      # Verify build output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
-
           echo "Production build completed successfully."
-          ls -la dist
-
-      # Deploy to Production Azure Web App
+      # Deploy to Production
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
