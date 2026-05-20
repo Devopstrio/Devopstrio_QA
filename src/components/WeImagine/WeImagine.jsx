@@ -7,7 +7,7 @@ const DATA = [
     id: "ideas",
     title: "We imagine",
     subtitle: "We Design Intelligent Digital Solutions",
-    desc: "We develop AI-powered systems, automation frameworks, and data-driven platforms that open up new revenue streams and operational efficiency.",
+    desc: "We develop <a href='/services/artificial-intelligence' class='about-inline-link'>AI-powered systems</a>, automation frameworks, and data-driven platforms that open up new revenue streams and operational efficiency.",
     points: [
       "Integrated Multi-Cloud Design",
       "Practical DevOps and Operational Knowledge",
@@ -20,7 +20,7 @@ const DATA = [
     id: "develop",
     title: "We develop",
     subtitle: "We Build High-Performance Software",
-    desc: "To increase release velocity, fortify security posture, and guarantee enterprise-grade scalability, we optimise development workflows.",
+    desc: "To increase release velocity, fortify <a href='/services/security' class='about-inline-link'>security posture</a>, and guarantee enterprise-grade scalability, we optimise <a href='/services/devops-enablement' class='about-inline-link'>development workflows</a>.",
     points: [
       "Scalability at the Enterprise Level",
       "Architecture that is Secure and Compliant",
@@ -33,7 +33,7 @@ const DATA = [
     id: "modernize",
     title: "We modernize",
     subtitle: "We Modernize Infrastructure & Applications",
-    desc: "We use scalable DevOps techniques, automation, and AI-driven workflows to convert legacy systems into agile, cloud-native environments.",
+    desc: "We use scalable <a href='/services/explore' class='about-inline-link'>DevOps techniques</a>, automation, and AI-driven workflows to convert legacy systems into agile, <a href='/services/cloud-architecture' class='about-inline-link'>cloud-native environments</a>.",
     points: [
       "Automation of Processes Driven by AI",
       "Cloud-Native Development",
@@ -46,7 +46,7 @@ const DATA = [
     id: "manage",
     title: "We manage",
     subtitle: "Optimize operations",
-    desc: "We transform and optimize operations to reduce costs, enhance efficiency, and enable sustainable growth.",
+    desc: "We transform and <a href='/services/ai-consulting-services' class='about-inline-link'>optimize operations</a> to reduce costs, enhance efficiency, and enable sustainable growth.",
     points: [
       "24/7 Proactive Monitoring",
       "Predictive Maintenance",
@@ -106,7 +106,7 @@ export default function WeImagine() {
               </div>
 
               <div className="section-text">
-                <p className="section-desc">{section.desc}</p>
+                <p className="section-desc" dangerouslySetInnerHTML={{ __html: section.desc }}></p>
 
                 <ul className="section-points">
                   {section.points.map((point, i) => (

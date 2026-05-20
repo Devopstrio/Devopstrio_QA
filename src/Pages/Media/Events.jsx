@@ -540,9 +540,8 @@ const Events = () => {
                         <button
                           key={cat.slug}
                           onClick={() => setActiveCategory(cat.slug)}
-                          className={`event-category-btn ${
-                            activeCategory === cat.slug ? "active" : ""
-                          }`}
+                          className={`event-category-btn ${activeCategory === cat.slug ? "active" : ""
+                            }`}
                         >
                           {cat.icon || (
                             <FiFileText className="event-category-btn-icon" />
@@ -594,8 +593,9 @@ const Events = () => {
 
       {/* NEW: Premium Call to Action Section from visual design */}
       <PremiumCTA />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

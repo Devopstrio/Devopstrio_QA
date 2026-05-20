@@ -29,10 +29,16 @@ import { FaWhatsapp, FaAws, FaMicrosoft, FaGoogle } from "react-icons/fa";
 import useSEO from "../hooks/useSEO";
 
 const ContactPage = () => {
-  useSEO(
-    "Contact Devopstrio | Enterprise DevOps Consulting UK",
-    "Contact Devopstrio for enterprise DevOps consulting, cloud migration, and AI-powered infrastructure solutions. Speak with our experts today.",
-  );
+  useSEO({
+    title: "Contact Devopstrio | Enterprise DevOps Consulting UK & Global Offices",
+    description: "Get in touch with Devopstrio for elite enterprise DevOps consulting, secure cloud migration, and AI-powered infrastructure solutions. Speak with our engineers today.",
+    keywords: "contact Devopstrio, DevOps consulting London, cloud support USA, Devopstrio India Bangalore, tech consulting Chennai, PASUVI Thoothukudi office, enterprise cloud advice, hire DevOps team, WhatsApp tech support",
+    ogTitle: "Contact Devopstrio | Enterprise DevOps Consulting UK",
+    ogDescription: "Have a challenge? We have solutions. Speak to our elite engineering team in London, Tennessee, Bangalore, Chennai, or Thoothukudi.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-contact.jpg",
+    ogUrl: "https://devopstrio.com/contact",
+    canonicalUrl: "https://devopstrio.com/contact"
+  });
 
   const [formData, setFormData] = useState({
     fullName: "",

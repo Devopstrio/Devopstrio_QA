@@ -467,8 +467,9 @@ const Serverless = () => {
         </div>
       </section>
 
-      <Newsletter />
-      {/* <Cta /> */}
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>      {/* <Cta /> */}
     </div>
   );
 };

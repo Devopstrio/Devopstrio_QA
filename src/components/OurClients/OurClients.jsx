@@ -36,11 +36,7 @@ export default function OurClients() {
             <span>Every system connected</span>
           </h2>
 
-          <p>
-            We help organizations of all sizes, from start-ups to global
-            enterprises, across financial services, media & comms, retail &
-            consumer goods, and professional services.
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: "We help organizations of all sizes, from start-ups to global enterprises, across <a href='/platform/financial-services' class='about-inline-link'>financial services</a>, media & comms, <a href='/platform/retail' class='about-inline-link'>retail & consumer goods</a>, and <a href='/services/explore' class='about-inline-link'>professional services</a>." }}></p>
 
           {/* <div className="clients-brand">
             <img src={DevopsrioMainLogo} alt="Devopstrio " />

@@ -760,7 +760,9 @@ const AIML = () => {
         </div>
       </section>
 
-      <Newsletter />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>      
       <Cta />
     </div>
   );

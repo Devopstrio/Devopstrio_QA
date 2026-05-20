@@ -410,3 +410,19 @@
     max-height: 50%;
   }
 }
+
+/* ===== INLINE SEO LINKS ===== */
+.about-inline-link {
+  color: #ce2453;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(206, 36, 83, 0.4);
+  transition: all 0.3s ease;
+}
+
+.about-inline-link:hover {
+  color: #e79e57;
+  border-bottom-style: solid;
+  border-bottom-color: #e79e57;
+  text-shadow: 0 0 10px rgba(231, 158, 87, 0.3);
+}

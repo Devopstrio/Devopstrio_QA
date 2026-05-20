@@ -22,10 +22,7 @@ export default function PartnerEcosystem() {
           Our Partner <span>Ecosystem</span>
         </h2>
 
-        <p className="partner-subtitle">
-          Bringing together the best of our partner network to create competitive
-          advantage for your business.
-        </p>
+        <p className="partner-subtitle" dangerouslySetInnerHTML={{ __html: "Bringing together the best of our <a href='/ecosystem' class='about-inline-link'>partner network</a> to create competitive advantage for your business." }}></p>
 
         {/* SLIDER */}
         <div className="partner-slider">

@@ -33,10 +33,16 @@ const API_BASE_URL =
 const COMPANY_NAME = "Devopstrio";
 
 const JobPortal = () => {
-  useSEO(
-    "Explore Careers | Devopstrio",
-    "Join our global team of cloud architects and engineers. Find the right job you deserve.",
-  );
+  useSEO({
+    title: "Careers & Job Opportunities | Devopstrio",
+    description: "Join our global team of cloud architects, DevOps engineers, and machine learning experts at Devopstrio. Find the right job you deserve and shape the future of cloud computing.",
+    keywords: "Devopstrio careers, DevOps engineer jobs, cloud architect careers, machine learning jobs, IT jobs UK, remote engineering jobs, remote cloud engineer, software developer career, tech hiring",
+    ogTitle: "Careers & Job Opportunities at Devopstrio",
+    ogDescription: "Revolutionize your career with powerful cloud and DevOps tools. Join a team dedicated to automation, security, and digital transformation.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-careers.jpg",
+    ogUrl: "https://devopstrio.com/careers/jobs",
+    canonicalUrl: "https://devopstrio.com/careers/jobs"
+  });
 
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -228,8 +234,8 @@ const JobPortal = () => {
     <div className="jp-page">
       {/* ── HERO ── */}
       <section className="jp-hero">
-        <motion.button 
-          className="jp-back-btn" 
+        <motion.button
+          className="jp-back-btn"
           onClick={() => navigate("/careers")}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -239,7 +245,7 @@ const JobPortal = () => {
         </motion.button>
 
         <div className="jp-wrap">
-          <motion.div 
+          <motion.div
             className="jp-hero-top-text"
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -262,7 +268,7 @@ const JobPortal = () => {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="jp-search-bar"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -282,7 +288,7 @@ const JobPortal = () => {
               />
               <AnimatePresence>
                 {showRoleList && filteredRoles.length > 0 && (
-                  <motion.div 
+                  <motion.div
                     className="jp-suggestions"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -318,7 +324,7 @@ const JobPortal = () => {
               />
               <AnimatePresence>
                 {showLocationList && filteredLocations.length > 0 && (
-                  <motion.div 
+                  <motion.div
                     className="jp-suggestions"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -340,8 +346,8 @@ const JobPortal = () => {
                 )}
               </AnimatePresence>
             </div>
-            <button 
-              className="jp-search-submit" 
+            <button
+              className="jp-search-submit"
               onClick={() => jobsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
             >
               Explore
@@ -349,7 +355,7 @@ const JobPortal = () => {
           </motion.div>
 
           {/* ── VIDEO CALL MOCKUP CARD ── */}
-          <motion.div 
+          <motion.div
             className="jp-hero-mockup"
             initial={{ opacity: 0, scale: 0.95, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -361,7 +367,7 @@ const JobPortal = () => {
                 alt="Main Caller"
               />
               <div className="jp-mockup-tag">Jay Presenting</div>
-              <motion.div 
+              <motion.div
                 className="jp-mockup-floating-card"
                 animate={{ rotate: [-6, -4, -6], y: [0, -5, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -373,7 +379,7 @@ const JobPortal = () => {
               </motion.div>
               <div className="jp-mockup-controls">
                 {[FiMic, FiVideo, FiMonitor, FiMoreHorizontal].map((Icon, i) => (
-                    <button key={i}><Icon /></button>
+                  <button key={i}><Icon /></button>
                 ))}
                 <button className="hangup">
                   <FiPhone />
@@ -382,11 +388,11 @@ const JobPortal = () => {
             </div>
             <div className="jp-mockup-side">
               {[12, 13, 14, 15].map((u, i) => (
-                  <div key={i} className="jp-side-video">
+                <div key={i} className="jp-side-video">
                   <img src={`https://i.pravatar.cc/300?u=${u}`} alt={`v${i}`} />
                 </div>
               ))}
-              <motion.div 
+              <motion.div
                 className="jp-mockup-chat"
                 initial={{ x: 20, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -405,15 +411,15 @@ const JobPortal = () => {
       </section>
 
       {/* ── FEATURED JOBS ── */}
-      <motion.section 
-        className="jp-section jp-wrap" 
+      <motion.section
+        className="jp-section jp-wrap"
         ref={jobsSectionRef}
         {...fadeUp}
       >
         <h2 className="jp-section-title">Featured Job Circulars</h2>
         {filteredJobs.length > 0 ? (
           <>
-            <motion.div 
+            <motion.div
               className="jp-job-grid"
               variants={staggerContainer}
               initial="initial"
@@ -439,8 +445,8 @@ const JobPortal = () => {
                     <FiMapPin /> {job.location || "Hybrid"}
                   </div>
                   <p className="jp-job-desc">
-                    {job.description?.length > 120 
-                      ? `${job.description.substring(0, 120)}...` 
+                    {job.description?.length > 120
+                      ? `${job.description.substring(0, 120)}...`
                       : (job.description || "Join our team of cloud experts. We are looking for talented individuals to collaborate and innovate.")}
                   </p>
                   <div className="jp-job-foot">
@@ -522,7 +528,7 @@ const JobPortal = () => {
       </motion.section>
 
       {/* ── TESTIMONIALS ── */}
-      <motion.section 
+      <motion.section
         className="jp-testimonials-wrap jp-wrap"
         {...fadeUp}
       >
@@ -534,18 +540,18 @@ const JobPortal = () => {
             and challenging.
           </p>
         </div>
-        <motion.div 
-            className="jp-test-grid"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
+        <motion.div
+          className="jp-test-grid"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
         >
           {testimonials.map((t, i) => (
-            <motion.div 
-                key={i} 
-                className="jp-test-card"
-                variants={fadeUp}
+            <motion.div
+              key={i}
+              className="jp-test-card"
+              variants={fadeUp}
             >
               <div className="jp-test-label">Testimonial</div>
               <p className="jp-test-content">{t.text}</p>
@@ -565,7 +571,7 @@ const JobPortal = () => {
       </motion.section>
 
       {/* ── MATCH / CV SECTION ── */}
-      <motion.section 
+      <motion.section
         className="jp-wrap"
         {...fadeUp}
       >
@@ -627,38 +633,38 @@ const JobPortal = () => {
         </div>
       </motion.section>
       {/* ── NEWSLETTER ── */}
-      <div style={{maxWidth: "1250px", margin: "0 auto"}}>
-      <Newsletter />
-      </div>
-     
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>     
+
       {/* ── MODAL ── */}
       <AnimatePresence>
         {selectedJob && (
-            <motion.div 
-                className="jp-overlay" 
-                onClick={closeModal}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+          <motion.div
+            className="jp-overlay"
+            onClick={closeModal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="jp-modal"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
-            <motion.div 
-                className="jp-modal" 
-                onClick={(e) => e.stopPropagation()}
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            >
-                <div
+              <div
                 style={{
-                    padding: "32px",
-                    borderBottom: "1px solid var(--jp-border)",
-                    position: "relative",
+                  padding: "32px",
+                  borderBottom: "1px solid var(--jp-border)",
+                  position: "relative",
                 }}
-                >
+              >
                 <button
-                    onClick={closeModal}
-                    style={{
+                  onClick={closeModal}
+                  style={{
                     position: "absolute",
                     top: "24px",
                     right: "24px",
@@ -667,56 +673,56 @@ const JobPortal = () => {
                     color: "#fff",
                     cursor: "pointer",
                     fontSize: "24px",
-                    }}
+                  }}
                 >
-                    <FiX />
+                  <FiX />
                 </button>
                 <h2
-                    style={{
+                  style={{
                     fontSize: "2rem",
                     fontWeight: "800",
                     color: "#fff",
                     margin: "0",
-                    }}
+                  }}
                 >
-                    {selectedJob.position || selectedJob.title}
+                  {selectedJob.position || selectedJob.title}
                 </h2>
-                </div>
-                <div style={{ padding: "32px", flex: 1, overflowY: "auto" }}>
+              </div>
+              <div style={{ padding: "32px", flex: 1, overflowY: "auto" }}>
                 <h3 style={{ color: "#fff", marginBottom: "16px" }}>
-                    Description
+                  Description
                 </h3>
                 <p style={{ color: "var(--jp-muted)", lineHeight: "1.8" }}>
-                    {selectedJob.description}
+                  {selectedJob.description}
                 </p>
-                </div>
-                <div
+              </div>
+              <div
                 style={{
-                    padding: "24px 32px",
-                    borderTop: "1px solid var(--jp-border)",
-                    display: "flex",
-                    justifyContent: "flex-end",
+                  padding: "24px 32px",
+                  borderTop: "1px solid var(--jp-border)",
+                  display: "flex",
+                  justifyContent: "flex-end",
                 }}
-                >
+              >
                 <motion.button
-                    className="jp-apply-btn"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => handleApply(selectedJob._id)}
-                    style={{
+                  className="jp-apply-btn"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleApply(selectedJob._id)}
+                  style={{
                     background: "var(--jp-accent-gradient)",
                     color: "#fff",
                     border: "none",
                     padding: "12px 32px",
                     borderRadius: "30px",
                     fontWeight: "700",
-                    }}
+                  }}
                 >
-                    Apply Now
+                  Apply Now
                 </motion.button>
-                </div>
+              </div>
             </motion.div>
-            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

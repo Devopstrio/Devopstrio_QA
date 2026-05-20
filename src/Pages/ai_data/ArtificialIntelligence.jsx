@@ -45,10 +45,16 @@ const ArtificialIntelligence = () => {
     const [activeBenefitSet, setActiveBenefitSet] = useState(0);
     const scrollRef = useRef(null);
 
-    useSEO(
-        "AI Software Development Services | Devopstrio",
-        "Empower your business with custom AI solutions. From Generative AI to Predictive Analytics, Devopstrio delivers enterprise-grade AI software development services."
-    );
+    useSEO({
+        title: "AI Software Development Services & Custom Solutions | Devopstrio",
+        description: "Empower your business with custom AI solutions. From Generative AI to Predictive Analytics, Devopstrio delivers enterprise-grade AI software development, NLP, and computer vision services.",
+        keywords: "AI software development services, custom AI solutions, Generative AI development, predictive analytics enterprise, AI transformation consulting, AI chatbot NLP, legacy system modernization, AI document management, Devopstrio AI",
+        ogTitle: "Enterprise AI Software Development Services | Devopstrio",
+        ogDescription: "Scale operations with AI copilots, anticipate market shifts with predictive intelligence, and automate complex logic with agentic workflows.",
+        ogImage: "https://devopstrio.com/assets/images/devopstrio-og-ai.jpg",
+        ogUrl: "https://devopstrio.com/services/artificial-intelligence",
+        canonicalUrl: "https://devopstrio.com/services/artificial-intelligence"
+    });
 
     const useCases = [
         {

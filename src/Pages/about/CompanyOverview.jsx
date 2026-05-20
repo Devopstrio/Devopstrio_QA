@@ -716,8 +716,9 @@ const CompanyOverview = () => {
       </section>
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

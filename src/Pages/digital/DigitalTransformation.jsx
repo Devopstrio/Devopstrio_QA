@@ -11,6 +11,20 @@ import AIConsultingForm from '../../components/AIConsultationForm/AIConsultation
 
 // Assets
 import Cta from '../../components/Cta/Cta';
+import { Import } from 'lucide-react';
+
+
+//image 
+import Digital1 from '../../assets/images/Digital/Digital_1.jpg';
+import Digital2 from '../../assets/images/Digital/Digital_2.png';
+import Digital3 from '../../assets/images/Digital/Digital_3.jpg';
+import Digital4 from '../../assets/images/Digital/Digital_4.jpg';
+import Digital5 from '../../assets/images/Digital/Digital_5.jpg';
+import Digital6 from '../../assets/images/Digital/Digital_6.jpg';
+import Digital7 from '../../assets/images/Digital/Digital_7.jpg';
+import Digital8 from '../../assets/images/Digital/Digital_8.png';
+import Digital9 from '../../assets/images/Digital/Digital_9.jpg';
+
 
 const DigitalTransformation = () => {
     const [activeServiceTab, setActiveServiceTab] = useState(0);
@@ -304,15 +318,15 @@ const DigitalTransformation = () => {
                         <div className="sev-dt-service-visual-pane">
                             <img 
                                 src={[
-                                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
-                                    "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                                    Digital1,
+                                    Digital2,
+                                    Digital3,
+                                    Digital4,
+                                    Digital5,
+                                    Digital6,
+                                    Digital7,
+                                    Digital8,
+                                    Digital9
                                 ][activeServiceTab]} 
                                 alt={servicesCovered[activeServiceTab]?.title} 
                                 className="sev-dt-service-img"

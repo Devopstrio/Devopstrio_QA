@@ -1080,8 +1080,9 @@ const AzurePartners = () => {
               </div>
             </div>
           </div>
-          <Newsletter />
-        </div>
+          <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+            <Newsletter />
+          </div>        </div>
       </section>
 
       {/* ════════ 11. FINAL CTA BANNER ════════ */}

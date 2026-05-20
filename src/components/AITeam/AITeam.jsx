@@ -2,26 +2,26 @@ import { FiCalendar } from 'react-icons/fi';
 import './AITeam.css';
 
 // Images
-import Saga_Img from "../../assets/images/Colleague/Saga_2.png";
-import Maxim_Img from "../../assets/images/Colleague/maresh4.png";
+import Saga_Img from "../../assets/images/Exprience/Experience_1.jpg";
+import Maxim_Img from "../../assets/images/Exprience/Experience_4.png";
 
 const teamData = {
     consulting: [
         {
-            name: "SagaDevan",
+            name: "Irfan",
             role: "Head of AI Department",
             stats: "<strong>Enterprise AI Strategy</strong>",
-            desc: "Saga is an experienced AI architect with global leadership experience, holding both MSC and PhD degrees. Specializes in GenAI/ML Architecture, Expert in Agentic AI and RAG ecosystems building. Active Assistant Research Professor.",
+            desc: "Irfan is an experienced AI architect with global leadership experience, holding both MSC and PhD degrees. Specializes in GenAI/ML Architecture, Expert in Agentic AI and RAG ecosystems building. Active Assistant Research Professor.",
             image: Saga_Img
         }
     ],
     hire: [
         {
-            name: "Mareeshwaran",
+            name: "Deeshana",
             role: "Head of AI Engineering",
             image: Maxim_Img,
             stats: "<strong>AI Engineering Excellence</strong>",
-            desc: "Mr. Mareeshwaran leads AI Engineering at Devopstrio, focusing on delivering high-impact, production-ready AI solutions. With expertise in MLOps, scalable ML systems, and applied AI research, he drives the development of intelligent, enterprise-grade applications. His work ensures that advanced AI capabilities are seamlessly integrated into business workflows, transforming data into measurable value."
+            desc: "Ms. Deeshana leads AI Engineering at Devopstrio, focusing on delivering high-impact, production-ready AI solutions. With expertise in MLOps, scalable ML systems, and applied AI research, she drives the development of intelligent, enterprise-grade applications. Her work ensures that advanced AI capabilities are seamlessly integrated into business workflows, transforming data into measurable value."
         }
     ]
 };

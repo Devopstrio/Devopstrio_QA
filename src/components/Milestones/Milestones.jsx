@@ -18,49 +18,49 @@ const Milestones = () => {
       year: "2019",
       title: "Origins in Bangalore, India",
       description:
-        "We opened a small office in Bangalore, India, to reach clients worldwide through platforms like Upwork. This move helped us grow from a startup into a thriving small business, expanding both our reach and impact in the global market.",
+        "We opened a small office in Bangalore, India, to reach clients worldwide through platforms like Upwork. This move helped us grow from a startup into a thriving small business, expanding both our reach and impact in the <a href='/marketplace' class='about-inline-link'>global market</a>.",
       color: "#F4D7C1",
     },
     {
       year: "2020",
       title: "Global Expansion: London Headquarters",
       description:
-        "Amid the challenges of the COVID-19 pandemic, we took a bold step and opened a new office in London—now our global headquarters. This move helped us expand into the UK market, with a clear focus on cloud transformation for industries like law, oil & gas, and banking. By zeroing in on these sectors, we deliver smart, secure, and efficient tech solutions that truly make a difference. With our base in London, we’re building stronger partnerships and reaching more clients in today’s fast-changing digital world..",
+        "Amid the challenges of the COVID-19 pandemic, we took a bold step and opened a new office in London—now our global headquarters. This move helped us expand into the UK market, with a clear focus on <a href='/services/cloud-migration' class='about-inline-link'>cloud transformation</a> for industries like law, oil & gas, and <a href='/platform/financial-services' class='about-inline-link'>banking</a>. By zeroing in on these sectors, we deliver smart, secure, and efficient tech solutions that truly make a difference. With our base in London, we’re building stronger partnerships and reaching more clients in today’s fast-changing digital world.",
       color: "#F4D7C1",
     },
     {
       year: "2021",
       title: "Business Expansion and Strategic Focus",
       description:
-        "Our focus has grown beyond just cloud transformation; we now embrace a full multi-cloud strategy, working across Azure, AWS, and Google Cloud Platform (GCP). Alongside this, we’ve expanded into the healthcare and banking sectors, delivering custom solutions designed to meet the unique challenges and opportunities of these critical industries.",
+        "Our focus has grown beyond just cloud transformation; we now embrace a full <a href='/services/multi-cloud' class='about-inline-link'>multi-cloud strategy</a>, working across Azure, AWS, and Google Cloud Platform (GCP). Alongside this, we’ve expanded into the <a href='/platform/healthcare' class='about-inline-link'>healthcare</a> and <a href='/platform/financial-services' class='about-inline-link'>banking sectors</a>, delivering custom solutions designed to meet the unique challenges and opportunities of these critical industries.",
       color: "#F4D7C1",
     },
     {
       year: "2023",
       title: "Product Services",
       description:
-        "With talented remote teams across India, the US, and the UK, we’ve built a suite of smart, industry-focused products for healthcare, banking, and retail. In healthcare, our solutions boost patient care and streamline operations. In banking, we enhance service delivery and strengthen security. And in retail, we help create better customer experiences and smarter inventory systems. This global collaboration lets us tailor every solution to real-world industry needs, without compromising on quality.",
+        "With talented remote teams across India, the US, and the UK, we’ve built a suite of smart, industry-focused products for <a href='/platform/healthcare' class='about-inline-link'>healthcare</a>, <a href='/platform/financial-services' class='about-inline-link'>banking</a>, and <a href='/platform/retail' class='about-inline-link'>retail</a>. In healthcare, our solutions boost patient care and streamline operations. In banking, we enhance service delivery and strengthen security. And in retail, we help create better customer experiences and smarter <a href='/services/explore' class='about-inline-link'>inventory systems</a>. This global collaboration lets us tailor every solution to real-world industry needs, without compromising on quality.",
       color: "#F4D7C1",
     },
     {
       year: "2024",
       title: "Opened a new office in the US",
       description:
-        "We’re excited to share our plans to expand in the U.S. as we double down on AI-driven solutions and multi-cloud expertise. This next chapter will help us serve our clients even better and meet the rising demand for smart, scalable technologies in a rapidly evolving market.",
+        "We’re excited to share our plans to expand in the U.S. as we double down on <a href='/services/artificial-intelligence' class='about-inline-link'>AI-driven solutions</a> and <a href='/services/multi-cloud' class='about-inline-link'>multi-cloud expertise</a>. This next chapter will help us serve our clients even better and meet the rising demand for smart, scalable technologies in a rapidly evolving market.",
       color: "#F4D7C1",
     },
     {
       year: "2025",
       title: "Expansion in Offshore Capacity & Strategic Partner Empowerment",
       description:
-         "We have strategically expanded our operational footprint to support our growing global customer base and expanding portfolio of Data & AI solutions. This includes inauguration a new office in the United States and two additional branch offices in Tamil Nadu, India. As part of our commitment to scalability and customer success, we are ramping up both our offshore and onshore delivery teams. This expansion enables us to: -> Accelerate time-to-market for enterprise-grade Data & AI products. -> Enhance support coverage across multiple time zones.-> Leverage regional talent pools for specialised skill sets.-> Strengthen strategic partnerships through co-innovation and shared delivery models.By increasing headcount and investing in capability centers, we are future-proofing our service delivery and ensuring that our clients receive consistent, high-quality, and scalable solutions tailored to their evolving needs.",      
+         "We have strategically expanded our operational footprint to support our growing global customer base and expanding portfolio of <a href='/services/data-science' class='about-inline-link'>Data & AI solutions</a>. This includes inauguration a new office in the United States and two additional branch offices in Tamil Nadu, India. As part of our commitment to scalability and customer success, we are ramping up both our offshore and onshore delivery teams. This expansion enables us to: -> Accelerate time-to-market for enterprise-grade Data & AI products. -> Enhance support coverage across multiple time zones. -> Leverage regional talent pools for specialised skill sets. -> Strengthen <a href='/ecosystem' class='about-inline-link'>strategic partnerships</a> through co-innovation and shared delivery models. By increasing headcount and investing in capability centers, we are future-proofing our service delivery and ensuring that our clients receive consistent, high-quality, and scalable solutions tailored to their evolving needs.",      
       color: "#F4D7C1",
     },
     {
       year: "2026",
       title: "Evolution",
       description: 
-        "We focused on strengthening global operations, enhancing AI and automation capabilities, and deepening enterprise partnerships. This year reflects smarter scaling, stronger execution, and measurable global impact.",
+        "We focused on strengthening <a href='/about/overview' class='about-inline-link'>global operations</a>, enhancing <a href='/services/ai-tools' class='about-inline-link'>AI and automation capabilities</a>, and deepening enterprise partnerships. This year reflects smarter scaling, stronger execution, and measurable global impact.",
       color: "#F4D7C1",
     }
   ];
@@ -99,7 +99,7 @@ const Milestones = () => {
             
             <div className="ms-content-box" key={`content-${activeYearIndex}`}>
               <h3 className="ms-title">{milestones[activeYearIndex].title}</h3>
-              <p className="ms-desc">{milestones[activeYearIndex].description}</p>
+              <p className="ms-desc" dangerouslySetInnerHTML={{ __html: milestones[activeYearIndex].description }}></p>
             </div>
           </div>
         </div>

@@ -331,7 +331,7 @@ const CloudSecurity = () => {
       {/* ════════════════════════════════════
           1. HERO SLIDER  (SaaS cinematic)
           ════════════════════════════════════ */}
-        <Serviceshero />  {/* End of Serviceshero */}
+      <Serviceshero />  {/* End of Serviceshero */}
       {/* ════════════════════════════════════
           2. LIVE THREAT TICKER (marquee)
           ════════════════════════════════════ */}
@@ -822,8 +822,9 @@ const CloudSecurity = () => {
       </section>
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

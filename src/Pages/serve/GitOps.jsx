@@ -561,7 +561,7 @@ const GitOps = () => {
           </motion.div>
         </div>
       </section>
-        {/* ════ 5. FULL-BLEED IMAGE BREAK ════ */}
+      {/* ════ 5. FULL-BLEED IMAGE BREAK ════ */}
       <section className="go-image-break">
         <img
           src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1600&q=80"
@@ -660,7 +660,7 @@ const GitOps = () => {
         </div>
       </section>
 
-    
+
 
       {/* ════ 7. CINEMATIC FIXED BANNER ════ */}
       <section className="go-fixed-banner">
@@ -754,8 +754,9 @@ const GitOps = () => {
       </section>
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

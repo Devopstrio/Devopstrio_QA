@@ -31,10 +31,16 @@ import { FiBox, FiLayers, FiActivity, FiFileText } from "react-icons/fi";
 import useSEO from "../hooks/useSEO";
 
 const Insightspage = () => {
-  useSEO(
-    "DevOps & Cloud Insights | AI & Engineering Blog",
-    "Explore expert insights on DevOps, cloud migration, AI-driven automation, Kubernetes, and enterprise digital transformation strategies.",
-  );
+  useSEO({
+    title: "DevOps & Cloud Insights | AI & Engineering Blog | Devopstrio",
+    description: "Explore expert insights, tech blogs, and research papers on DevOps automation, secure cloud migration, AI-driven operations, Kubernetes scalability, and enterprise digital transformation strategies.",
+    keywords: "DevOps blog, cloud computing insights, AI automation research, Kubernetes guides, tech journey timeline, Devopstrio insights, DevOps professional community, cloud architecture blog",
+    ogTitle: "DevOps & Cloud Insights Blog | Devopstrio",
+    ogDescription: "Stay ahead of the curve. Dive into six years of technical excellence, enterprise case studies, and modern engineering blogs from the Devopstrio team.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-insights.jpg",
+    ogUrl: "https://devopstrio.com/insights",
+    canonicalUrl: "https://devopstrio.com/insights"
+  });
 
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
@@ -90,8 +96,8 @@ const Insightspage = () => {
     // Observe all sections
     const sections = document.querySelectorAll(
       ".dt-section-header, .dt-integrations-section, .dt-timeline-section, " +
-        ".dt-featured-section, .dt-library-section, .dt-newsletter-section, " +
-        ".dt-cta-section, .dt-explanation-section",
+      ".dt-featured-section, .dt-library-section, .dt-newsletter-section, " +
+      ".dt-cta-section, .dt-explanation-section",
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -379,10 +385,10 @@ const Insightspage = () => {
                         <FaCalendarAlt />{" "}
                         {insight.date
                           ? new Date(insight.date).toLocaleDateString("en-US", {
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                            })
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })
                           : "Recently"}
                       </span>
                       <span className="dt-meta-item">
@@ -556,13 +562,13 @@ const Insightspage = () => {
                           <FaCalendarAlt />{" "}
                           {insight.date
                             ? new Date(insight.date).toLocaleDateString(
-                                "en-US",
-                                {
-                                  day: "numeric",
-                                  month: "short",
-                                  year: "numeric",
-                                },
-                              )
+                              "en-US",
+                              {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                              },
+                            )
                             : "Recently"}
                         </span>
                         <span>
@@ -601,8 +607,9 @@ const Insightspage = () => {
       </section>
 
       {/* NEWSLETTER SECTION */}
-      <Newsletter />
-
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>
       {/* CTA */}
       <Cta />
     </div>

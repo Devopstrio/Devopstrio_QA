@@ -477,10 +477,10 @@ const Compliance = () => {
             <motion.div
               // key={activeFramework}
               className="cg-fw-panel"
-              // initial={{ opacity: 0, y: 20 }}
-              // animate={{ opacity: 1, y: 0 }}
-              // exit={{ opacity: 0, y: -15 }}
-              // transition={{ duration: 0.4 }}
+            // initial={{ opacity: 0, y: 20 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: -15 }}
+            // transition={{ duration: 0.4 }}
             >
               <div className="cg-fw-panel-text">
                 <div
@@ -877,8 +877,9 @@ const Compliance = () => {
       </section>
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

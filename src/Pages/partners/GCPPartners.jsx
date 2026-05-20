@@ -1074,12 +1074,13 @@ const GCPPartners = () => {
               </div>
             </div>
           </div>
-          <Newsletter />
-        </div>
+          <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+            <Newsletter />
+          </div>        </div>
       </section>
 
       <Cta />
-      
+
     </div>
   );
 };

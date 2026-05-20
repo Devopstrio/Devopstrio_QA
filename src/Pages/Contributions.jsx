@@ -30,10 +30,16 @@ import Cta from "../components/Cta/Cta";
 import "../Style/Contributions.css";
 
 const Contributions = () => {
-  useSEO(
-    "Contributions - Devopstrio ",
-    "Discover Devopstrio’s commitment to the open-source community, our contributions to cloud engineering, and our initiatives in building a collaborative tech ecosystem.",
-  );
+  useSEO({
+    title: "Open Source Contributions | Devopstrio Integration Ecosystem",
+    description: "Discover Devopstrio's commitment to the open-source community. Explore our featured projects including CloudScaler AI, SecOps Pipeline Builder, and TerraCognita.",
+    keywords: "Devopstrio open source contributions, CloudScaler AI, SecOps Pipeline Builder, TerraCognita, MetricFlow observability, KubeChaos, Kubernetes tools, GitHub open source, Devopstrio integrations",
+    ogTitle: "Open Source Contributions & Initiatives | Devopstrio",
+    ogDescription: "We actively sponsor critical open-source infrastructure and maintainers. Learn more about our DevOps meetups and Code for Tomorrow initiatives.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-contributions.jpg",
+    ogUrl: "https://devopstrio.com/contributions",
+    canonicalUrl: "https://devopstrio.com/contributions"
+  });
 
   const integrationNodes = [
     { x: 400, y: 50, icon: <FiCloud color="#00E5FF" /> },
@@ -358,8 +364,10 @@ const Contributions = () => {
       </section>
 
       {/* 5. NEWSLETTER & CTA */}
-      <Newsletter />
-      <Cta />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>     
+       <Cta />
     </div>
   );
 };

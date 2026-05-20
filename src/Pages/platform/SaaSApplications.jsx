@@ -531,7 +531,7 @@ const SaaSApplications = () => {
         </motion.div>
       </section> */}
 
-         {/* ════════════════════════════════════
+      {/* ════════════════════════════════════
           2. STATS ROW
           ════════════════════════════════════ */}
       <section className="sa-stats-section">
@@ -995,9 +995,10 @@ const SaaSApplications = () => {
           </div>
         </div>
       </section>
-      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
-        <Newsletter />
-      </div>
+      
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>      
       <Cta />
 
     </div>

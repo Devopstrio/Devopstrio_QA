@@ -180,43 +180,43 @@ const PROCESS_STEPS = [
 ];
 
 const CAPABILITIES = [
-    { 
-        title: "Business process reconstruction", 
+    {
+        title: "Business process reconstruction",
         icon: <FiActivity />,
         details: "We analyze and redesign core financial workflows to improve efficiency, reduce operational costs, and eliminate legacy bottlenecks using modern automation."
     },
-    { 
-        title: "Cyber and IT security", 
+    {
+        title: "Cyber and IT security",
         icon: <FiShield />,
         details: "Implementing multi-layered security protocols, including end-to-end encryption, real-time threat detection, and strict compliance with global financial regulations."
     },
-    { 
-        title: "Implementation of CI/CD Flows", 
+    {
+        title: "Implementation of CI/CD Flows",
         icon: <FiZap />,
         details: "Streamlining financial software delivery with automated pipelines that ensure rapid, reliable, and secure code deployment without service interruptions."
     },
-    { 
-        title: "UX/UI", 
+    {
+        title: "UX/UI",
         icon: <FiPieChart />,
         details: "Designing intuitive, high-performance interfaces for complex financial data visualization, ensuring seamless user journeys for both retail and institutional clients."
     },
-    { 
-        title: "QA Automation", 
+    {
+        title: "QA Automation",
         icon: <FiCpu />,
         details: "Leveraging AI-driven testing frameworks to validate complex financial transactions, API integrations, and system resilience under peak loads."
     },
-    { 
-        title: "Big Data and Analytics", 
+    {
+        title: "Big Data and Analytics",
         icon: <FiDatabase />,
         details: "Extracting actionable insights from high-volume financial datasets to drive predictive modeling, fraud detection, and personalized customer experiences."
     },
-    { 
-        title: "Mobile Engineering", 
+    {
+        title: "Mobile Engineering",
         icon: <FiSmartphone />,
         details: "Building secure, high-fidelity mobile banking and investment applications with native performance and advanced biometric authentication."
     },
-    { 
-        title: "Web Engineering", 
+    {
+        title: "Web Engineering",
         icon: <FiGlobe />,
         details: "Developing scalable, enterprise-grade web platforms for digital banking, insurance management, and decentralized financial services."
     },
@@ -940,8 +940,8 @@ const FinancialServices = () => {
                                     <div className="fs-scope-col">
                                         <div className="fs-partners-grid">
                                             {TECH_SCOPE_DATA.digitalBanking.partners.map((p, i) => (
-                                                <motion.div 
-                                                    key={i} 
+                                                <motion.div
+                                                    key={i}
                                                     className="fs-partner-card"
                                                     initial={{ opacity: 0, scale: 0.9 }}
                                                     whileInView={{ opacity: 1, scale: 1 }}
@@ -949,10 +949,10 @@ const FinancialServices = () => {
                                                     viewport={{ once: true }}
                                                 >
                                                     <div className="fs-partner-logo-box">
-                                                        <img 
-                                                            src={p.logo} 
-                                                            alt={p.name} 
-                                                            className="fs-partner-logo" 
+                                                        <img
+                                                            src={p.logo}
+                                                            alt={p.name}
+                                                            className="fs-partner-logo"
                                                             onError={(e) => {
                                                                 e.target.style.display = 'none';
                                                                 e.target.parentNode.classList.add('fallback');
@@ -971,74 +971,74 @@ const FinancialServices = () => {
                     </AnimatePresence>
                 </div>
             </section>
-        {/* 5.5 Financial Software Service provide */}
-        <section className="fs-services-provide">
-            <div className="fs-container">
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeUp}
-                    className="fs-sec-head left-aligned"
-                >
-                    <h2 className="fs-sec-h2">Financial software development services we provide</h2>
-                </motion.div>
+            {/* 5.5 Financial Software Service provide */}
+            <section className="fs-services-provide">
+                <div className="fs-container">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={fadeUp}
+                        className="fs-sec-head left-aligned"
+                    >
+                        <h2 className="fs-sec-h2">Financial software development services we provide</h2>
+                    </motion.div>
 
-                <div className="fs-services-provide-layout">
-                    {/* Left side: Navigation links */}
-                    <div className="fs-services-nav">
-                        {SERVICES_PROVIDE.map((service) => (
-                            <button
-                                key={service.id}
-                                className={`fs-service-nav-btn ${activeService === service.id ? "active" : ""}`}
-                                onClick={() => {
-                                    setActiveService(service.id);
-                                    // Smooth scroll to top of content area on mobile/small screens
-                                    if (window.innerWidth < 1024) {
-                                        const el = document.querySelector('.fs-service-detail');
-                                        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                    }
-                                }}
+                    <div className="fs-services-provide-layout">
+                        {/* Left side: Navigation links */}
+                        <div className="fs-services-nav">
+                            {SERVICES_PROVIDE.map((service) => (
+                                <button
+                                    key={service.id}
+                                    className={`fs-service-nav-btn ${activeService === service.id ? "active" : ""}`}
+                                    onClick={() => {
+                                        setActiveService(service.id);
+                                        // Smooth scroll to top of content area on mobile/small screens
+                                        if (window.innerWidth < 1024) {
+                                            const el = document.querySelector('.fs-service-detail');
+                                            el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                        }
+                                    }}
+                                >
+                                    {service.title}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Right side: Detailed content */}
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeService}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3 }}
+                                className="fs-service-detail"
                             >
-                                {service.title}
-                            </button>
-                        ))}
+                                {(() => {
+                                    const current = SERVICES_PROVIDE.find(s => s.id === activeService);
+                                    return (
+                                        <>
+                                            <p className="fs-service-desc">{current.desc}</p>
+                                            <div className="fs-service-assist-box">
+                                                <h4 className="fs-service-assist-title">{current.assistTitle}</h4>
+                                                <ul className="fs-service-points">
+                                                    {current.points.map((p, idx) => (
+                                                        <li key={idx} className="fs-service-point">
+                                                            <FiCheck className="fs-service-point-icon" />
+                                                            <span>{p}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </>
+                                    );
+                                })()}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
-
-                    {/* Right side: Detailed content */}
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeService}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                            className="fs-service-detail"
-                        >
-                            {(() => {
-                                const current = SERVICES_PROVIDE.find(s => s.id === activeService);
-                                return (
-                                    <>
-                                        <p className="fs-service-desc">{current.desc}</p>
-                                        <div className="fs-service-assist-box">
-                                            <h4 className="fs-service-assist-title">{current.assistTitle}</h4>
-                                            <ul className="fs-service-points">
-                                                {current.points.map((p, idx) => (
-                                                    <li key={idx} className="fs-service-point">
-                                                        <FiCheck className="fs-service-point-icon" />
-                                                        <span>{p}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </>
-                                );
-                            })()}
-                        </motion.div>
-                    </AnimatePresence>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
             {/* 6 PROCESS SECTION (Redesigned) */}
@@ -1099,23 +1099,23 @@ const FinancialServices = () => {
 
                     <div className="fs-knowledge-layout">
                         {/* Left Side: Featured Article */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             className="fs-knowledge-featured"
                         >
                             <div className="fs-featured-img-wrap">
-                                <img 
-                                    src="/images/NewFolder/Groups_94.png" 
-                                    alt="Neobank guide" 
+                                <img
+                                    src="/images/NewFolder/Groups_94.png"
+                                    alt="Neobank guide"
                                 />
                             </div>
                             <div className="fs-featured-info">
                                 <span className="fs-article-time">Reading time: {FEATURED_ARTICLE.time}</span>
                                 <h3 className="fs-featured-h3">{FEATURED_ARTICLE.title}</h3>
                                 <p className="fs-featured-p">Learn how to start a neobank with the Devopstrio guide.</p>
-                                <button 
+                                <button
                                     className="fs-cap-link-btn"
                                     onClick={() => setSelectedArticle(FEATURED_ARTICLE)}
                                 >
@@ -1127,7 +1127,7 @@ const FinancialServices = () => {
                         {/* Right Side: Article List */}
                         <div className="fs-knowledge-list">
                             {ARTICLES.map((article, i) => (
-                                <motion.div 
+                                <motion.div
                                     key={i}
                                     initial={{ opacity: 0, x: 30 }}
                                     whileInView={{ opacity: 1, x: 0 }}
@@ -1139,7 +1139,7 @@ const FinancialServices = () => {
                                         <h4 className="fs-article-h4">{article.title}</h4>
                                         <div className="fs-article-meta">
                                             <span className="fs-article-time">Reading time: {article.time}</span>
-                                            <button 
+                                            <button
                                                 className="fs-cap-link-btn"
                                                 onClick={() => setSelectedArticle(article)}
                                             >
@@ -1157,14 +1157,14 @@ const FinancialServices = () => {
             {/* Knowledge Modal */}
             <AnimatePresence>
                 {selectedArticle && (
-                    <motion.div 
+                    <motion.div
                         className="fs-modal-overlay"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedArticle(null)}
                     >
-                        <motion.div 
+                        <motion.div
                             className="fs-modal-content"
                             initial={{ scale: 0.9, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -1265,9 +1265,10 @@ const FinancialServices = () => {
 
                 </div>
             </section>
-            <div className="fs-container">
-                <Newsletter />
-            </div>
+            
+                <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+                    <Newsletter />
+                </div>            
             <Cta />
         </div>
     );

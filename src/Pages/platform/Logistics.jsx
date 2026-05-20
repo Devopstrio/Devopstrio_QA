@@ -393,7 +393,7 @@ const Logistics = () => {
 
 
             {/* Technologies for Logistics Software Development */}
-            <TechStack 
+            <TechStack
                 title="Our tech stack for logistics software development"
                 subtitle="Andersen applies a diverse, modern tech stack for logistics software development to address complex business requirements and evolving logistics challenges. We select and combine technologies that enable seamless integration, improve system performance, and support scalable, future-ready logistics solutions."
             />
@@ -404,7 +404,7 @@ const Logistics = () => {
                     <h2 className="plt-lg-sec-h2 plt-lg-insights-main-h2">
                         Logistics software development insights and best practices
                     </h2>
-                    
+
                     <div className="plt-lg-insights-grid">
                         {/* LEFT: Featured Insight */}
                         <div className="plt-lg-insight-featured">
@@ -477,9 +477,10 @@ const Logistics = () => {
 
             {/* 7. CTA */}
             <section className="plt-lg-cta-section">
-                <div className="plt-lg-container">
-                    <Newsletter />
-                </div>
+                
+                    <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+                        <Newsletter />
+                    </div>                
             </section>
 
             <Cta />
@@ -487,14 +488,14 @@ const Logistics = () => {
             {/* Insight Modal */}
             <AnimatePresence>
                 {selectedInsight && (
-                    <motion.div 
+                    <motion.div
                         className="plt-lg-modal-overlay"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedInsight(null)}
                     >
-                        <motion.div 
+                        <motion.div
                             className="plt-lg-modal-container"
                             initial={{ scale: 0.9, opacity: 0, y: 20 }}
                             animate={{ scale: 1, opacity: 1, y: 0 }}

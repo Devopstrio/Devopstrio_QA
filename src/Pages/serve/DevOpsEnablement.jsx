@@ -58,7 +58,7 @@ import "../../Style/serve/DevOpsEnablement.css";
 //images
 import first from "../../assets/images/Site_img/square_image_2.png";
 import second from "../../assets/images/Site_img/square_image_2.png";
-import third from "../../assets/images/Site_img/square_image_2.png"; 
+import third from "../../assets/images/Site_img/square_image_2.png";
 import fourth from "../../assets/images/Site_img/square_image_2.png";
 
 // Animation variants
@@ -522,38 +522,38 @@ const DevOpsEnablement = () => {
       </section>
 
       {/* ========== 7. TOOLS GRID ========== */}
-        <section className="de-tools-section">
-          <div className="de-container">
-            <motion.div
-              className="de-section-header"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <p className="de-label de-gradient-text">TOOLCHAIN</p>
-              <h2 className="de-section-title">Technology Ecosystem</h2>
-              <p className="de-section-desc">
-                We work with the best-in-class tools across the DevOps landscape.
-              </p>
-            </motion.div>
+      <section className="de-tools-section">
+        <div className="de-container">
+          <motion.div
+            className="de-section-header"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <p className="de-label de-gradient-text">TOOLCHAIN</p>
+            <h2 className="de-section-title">Technology Ecosystem</h2>
+            <p className="de-section-desc">
+              We work with the best-in-class tools across the DevOps landscape.
+            </p>
+          </motion.div>
 
-            <motion.div
-              className="de-tools-grid"
-              variants={stagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {tools.map((t, i) => (
-                <motion.div key={i} className="de-tool-item" variants={scaleIn}>
-                  <span className="de-tool-icon">{t.icon}</span>
-                  <span className="de-tool-name">{t.name}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+          <motion.div
+            className="de-tools-grid"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {tools.map((t, i) => (
+              <motion.div key={i} className="de-tool-item" variants={scaleIn}>
+                <span className="de-tool-icon">{t.icon}</span>
+                <span className="de-tool-name">{t.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* ========== 8. RESULTS DASHBOARD ========== */}
       <section className="de-results-section">
@@ -674,8 +674,9 @@ const DevOpsEnablement = () => {
           </div>
         </div>
       </section>
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

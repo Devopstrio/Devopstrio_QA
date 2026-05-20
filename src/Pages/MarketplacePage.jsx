@@ -534,8 +534,9 @@ const MarketplacePage = () => {
         </div>
       </section>
 
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

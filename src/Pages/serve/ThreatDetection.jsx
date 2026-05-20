@@ -682,7 +682,7 @@ const ThreatDetection = () => {
                     style={{ "--nc": s.color }}
                   ></div>
                   {/* Animated scan line over image */}
-         
+
                   {/* Corner badge */}
                   <div
                     className="td-panel-corner-badge"
@@ -942,8 +942,9 @@ const ThreatDetection = () => {
       </section>
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

@@ -18,10 +18,16 @@ import { useEffect } from "react";
 import useSEO from "../hooks/useSEO";
 
 export default function PlatformPage() {
-  useSEO(
-    "Enterprise DevOps company in UK  | Best DevOps & Cloud Platform Company in UK",
-    "Our AI-powered DevOps platform integrates automation, cloud-native infrastructure, and real-time intelligence to accelerate enterprise digital transformation",
-  );
+  useSEO({
+    title: "Enterprise DevOps & Cloud Platform Company | Devopstrio",
+    description: "Our AI-powered DevOps platform integrates automation, cloud-native infrastructure, and real-time intelligence to accelerate enterprise digital transformation.",
+    keywords: "DevOps platform, cloud-native architecture, enterprise automation platform, AI workflow automation, Kubernetes microservices orchestration, SaaS scaling, retail cloud solutions, data intelligence platform, Devopstrio platform",
+    ogTitle: "Enterprise DevOps & Cloud Platform | Devopstrio",
+    ogDescription: "Leverage intelligent automation, real-time analytics, and secure multi-cloud scaling to transform your enterprise infrastructure with Devopstrio.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-platform.jpg",
+    ogUrl: "https://devopstrio.com/platform",
+    canonicalUrl: "https://devopstrio.com/platform"
+  });
 
   useEffect(() => {
     // Scroll animation observer

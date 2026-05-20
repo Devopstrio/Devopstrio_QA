@@ -324,8 +324,9 @@ const Ecosystempage = () => {
       </section> */}
 
       {/* 7. NEWSLETTER SECTION */}
-      <Newsletter />
-
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+      </div>     
       {/* 8. CTA SECTION */}
       <Cta />
     </div>

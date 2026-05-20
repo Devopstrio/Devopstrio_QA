@@ -111,10 +111,16 @@ const ALL_COLLEAGUE_PHOTOS = [
 ];
 
 const Careerspage = () => {
-  useSEO(
-    "Careers at Devopstrio | DevOps & Cloud Engineering Jobs",
-    "Join Devopstrio&apos;s team of cloud architects, DevOps engineers, and AI specialists.",
-  );
+  useSEO({
+    title: "Careers at Devopstrio | DevOps & Cloud Engineering Jobs",
+    description: "Join Devopstrio's world-class team of cloud architects, DevOps engineers, and AI specialists. Explore internships, view JDs, and build a career with global impact.",
+    keywords: "careers at Devopstrio, DevOps jobs UK, cloud engineering careers, tech recruitment, remote software engineer positions, UI UX design internship, digital marketing intern, hire SRE analyst, Devopstrio careers",
+    ogTitle: "Careers at Devopstrio | DevOps & Cloud Engineering Jobs",
+    ogDescription: "Join a fast-paced environment designed to scale your skills. Work on the bleeding edge of AI and DevOps with mentorship from industry leaders.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-careers-hub.jpg",
+    ogUrl: "https://devopstrio.com/careers",
+    canonicalUrl: "https://devopstrio.com/careers"
+  });
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({

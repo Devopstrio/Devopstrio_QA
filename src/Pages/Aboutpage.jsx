@@ -16,7 +16,7 @@ import Newsletter from "../components/Newsletter/Newsletter";
 import Cta from "../components/Cta/Cta";
 import Milestones from "../components/Milestones/Milestones";
 import CertificationSlider from "../components/Certification/Certification";
-import Pinboard  from "../components/Pinboard/Pinboard";
+import Pinboard from "../components/Pinboard/Pinboard";
 
 
 //cloud image
@@ -40,7 +40,7 @@ import Team8 from "../assets/images/oviya_dev.png";
 
 
 // Story Section Images - Unsplash URLs for "Merging Cloud Power with AI Intelligence"
-const StoryImage1 =cloud1; // AI/Cloud abstract
+const StoryImage1 = cloud1; // AI/Cloud abstract
 const StoryImage2 = cloud; // Data center
 const StoryImage3 = cloud2; // AI robot
 const StoryImage4 =
@@ -74,10 +74,16 @@ import useSEO from "../hooks/useSEO";
 
 const Aboutpage = () => {
 
-  useSEO(
-    "About Devopstrio | DevOps & Cloud Engineering Company UK",
-    "Learn about Devopstrio’s mission, vision, and global expertise in AI-driven cloud engineering, DevOps automation, and secure digital infrastructure solutions.",
-  );
+  useSEO({
+    title: "About Devopstrio | DevOps & Cloud Engineering Company UK",
+    description: "Learn about Devopstrio's mission, vision, and global expertise in AI-driven cloud engineering, DevOps automation, and secure digital infrastructure solutions.",
+    keywords: "About Devopstrio, DevOps Company UK, Cloud Engineering Experts, AI-driven DevOps, Secure Digital Infrastructure, Cloud Native Consulting, Manikandan Founder Devopstrio, Enterprise Automation Solutions",
+    ogTitle: "About Devopstrio | DevOps & Cloud Engineering Company UK",
+    ogDescription: "Discover how Devopstrio merges cloud power with AI intelligence to deliver resilient, scalable, and autonomous infrastructure solutions for global enterprises.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-about.jpg",
+    ogUrl: "https://devopstrio.com/about",
+    canonicalUrl: "https://devopstrio.com/about"
+  });
 
   // Company Stats
   // const companyStats = [
@@ -303,9 +309,9 @@ const Aboutpage = () => {
             {/* Left: Illustration */}
             <div className="about-doc-visual">
               <div className="about-doc-img-box">
-                <img 
-                  src="/images/New/freepick_2.png" 
-                  alt="Our Mission" 
+                <img
+                  src="/images/New/freepick_2.png"
+                  alt="Our Mission"
                 />
               </div>
             </div>
@@ -315,18 +321,18 @@ const Aboutpage = () => {
               <div className="about-doc-badge">OUR PURPOSE</div>
               <h2 className="about-doc-h2">OUR <span className="about-accent-dot">MISSION</span></h2>
               <p className="about-doc-lead">
-                To empower enterprises by simplifying the complex. We deliver 
-                intelligent, AI-driven cloud ecosystems that act as a seamless 
-                extension of your team, turning infrastructure into your 
+                To empower enterprises by <a href="/services/explore" className="about-inline-link">simplifying the complex</a>. We deliver
+                intelligent, <a href="/services/artificial-intelligence" className="about-inline-link">AI-driven cloud ecosystems</a> that act as a seamless
+                extension of your team, turning infrastructure into your
                 greatest competitive advantage.
               </p>
               <p className="about-doc-p">
-                We believe that technology should be an enabler, not a hurdle. 
-                Our mission is to bridge the gap between human ambition and 
-                technical excellence by providing tools that are as intuitive 
+                We believe that technology should be an enabler, not a hurdle.
+                Our mission is to bridge the gap between human ambition and
+                <a href="/services/cloud-architecture" className="about-inline-link">technical excellence</a> by providing tools that are as intuitive
                 as they are powerful.
               </p>
-              
+
               <div className="about-doc-dots-top"></div>
             </div>
           </div>
@@ -342,25 +348,24 @@ const Aboutpage = () => {
               <div className="about-doc-badge">OUR FUTURE</div>
               <h2 className="about-doc-h2">OUR <span className="about-accent-dot">VISION</span></h2>
               <p className="about-doc-lead">
-                To architect a future where software never fails. We envision 
-                a world powered by the perfect synergy of AI intelligence 
-                and human creativity.
+                To architect a future where software never fails. We envision
+                a world powered by the <a href="/services/ai-consulting-services" className="about-inline-link">perfect synergy of AI intelligence</a> and human creativity.
               </p>
               <p className="about-doc-p">
-                We strive to create resilient digital foundations that allow 
-                innovation to flourish without limits, where every line of code 
+                We strive to create <a href="/services/devops-enablement" className="about-inline-link">resilient digital foundations</a> that allow
+                innovation to flourish without limits, where every line of code
                 is a step toward a more efficient, automated, and imaginative world.
               </p>
-              
+
               <div className="about-doc-dots-bottom"></div>
             </div>
 
             {/* Right: Illustration */}
             <div className="about-doc-visual">
               <div className="about-doc-img-box">
-                <img 
-                  src="/images/New/freepick_1.png" 
-                  alt="Our Vision" 
+                <img
+                  src="/images/New/freepick_1.png"
+                  alt="Our Vision"
                 />
               </div>
             </div>
@@ -371,7 +376,7 @@ const Aboutpage = () => {
       {/* 4. CORE VALUES - PROCESS DESIGN */}
       <Pinboard items={coreValues} />
 
-      
+
 
       {/* 7. OUR TEAM */}
       <section className="about-team-section reveal">
@@ -420,10 +425,15 @@ const Aboutpage = () => {
       <GlobalPresence />
 
       {/* 10. NEWSLETTER */}
-      <Newsletter />
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>     
+    
 
       {/* 11. CTA */}
-      <Cta />
+      <div className="about-cta">
+        <Cta />
+      </div>
       <CertificationSlider />
     </div>
   );

@@ -98,8 +98,9 @@ export default function CategoryPage() {
             </p>
           </div>
         </div>
-        <Newsletter />
-      </div>
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>      </div>
     );
   }
 
@@ -217,7 +218,8 @@ export default function CategoryPage() {
           ))}
         </div>
       </div>
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 }

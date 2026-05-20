@@ -637,7 +637,7 @@ const AWSPartners = () => {
               <div className="aws-banner-feat-image">
                 <div className="aws-feat-img-card">
                   <img
-                    src={aws_dashboard} 
+                    src={aws_dashboard}
                     alt="AWS Infrastructure"
                   />
                   <div className="aws-feat-img-overlay" />
@@ -1283,8 +1283,9 @@ const AWSPartners = () => {
               </div>
             </div>
           </div>
-          <Newsletter />
-        </div>
+          <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+            <Newsletter />
+          </div>        </div>
       </section>
 
       {/* ════════ 11. FINAL CTA BANNER ════════ */}

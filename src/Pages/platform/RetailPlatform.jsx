@@ -798,11 +798,10 @@ const RetailPlatform = () => {
         </div>
       </section>
       {/* ── CTA ── */}
-      <section className="rp-cta-section">
-        <div className="rp-container">
-          <Newsletter />
-        </div>
-      </section>
+      
+          <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+            <Newsletter />
+          </div>        
       <Cta />
     </div>
   );

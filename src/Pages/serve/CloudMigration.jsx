@@ -409,7 +409,7 @@ const CloudMigration = () => {
               </span>
               <h2>Migrate Without Downtime</h2>
               <p>
-              Our cloud migration approach ensures your applications stay fully operational throughout the entire migration process
+                Our cloud migration approach ensures your applications stay fully operational throughout the entire migration process
               </p>
               <ul className="cloud-migration-feature-list">
                 <li>
@@ -449,7 +449,7 @@ const CloudMigration = () => {
                 Why Businesses Choose Our Cloud Migration Services
               </h2>
               <p className="cloud-migration-section-description">
-              We combine secure, scalable cloud migration solutions with accelerated deployment to deliver a fast, reliable, and cost-efficient transformation.
+                We combine secure, scalable cloud migration solutions with accelerated deployment to deliver a fast, reliable, and cost-efficient transformation.
               </p>
             </div>
             <div className="cloud-migration-benefits-grid">
@@ -593,8 +593,9 @@ const CloudMigration = () => {
           </div>
         </div>
       </section>
-      <Newsletter />
-      <Cta />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>      <Cta />
 
       {/* Case Study Modal */}
       <AnimatePresence>

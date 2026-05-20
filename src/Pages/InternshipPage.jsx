@@ -21,10 +21,16 @@ import useSEO from "../hooks/useSEO";
 import CtaFinalies from "../components/CtaFinalies/CtaFinalies";
 
 const InternshipPage = () => {
-  useSEO(
-    "Student Internship Program | Devopstrio",
-    "Join Devopstrio's internship program. Gain real-world experience in DevOps, Cloud, AI, and more. Apply today.",
-  );
+  useSEO({
+    title: "Student Internship Program | Devopstrio Careers",
+    description: "Join Devopstrio's global internship program. Gain real-world production-grade experience in Platform Engineering, Full-Stack Ops, AI Integration, and Design Systems.",
+    keywords: "student internship program, Devopstrio internships, cloud engineering intern, DevOps student jobs, machine learning internship, full-stack software engineer intern, global tech internship, tech builder career",
+    ogTitle: "Student Internship Program at Devopstrio",
+    ogDescription: "Step into a space where your ideas matter. Learn to master Kubernetes, Terraform, AWS, and AI systems with senior engineer mentorship.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-internships.jpg",
+    ogUrl: "https://devopstrio.com/careers/internship",
+    canonicalUrl: "https://devopstrio.com/careers/internship"
+  });
 
   useEffect(() => {
     // Premium Cursor Glow Interaction

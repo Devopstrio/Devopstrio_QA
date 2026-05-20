@@ -689,10 +689,10 @@ const CloudArchitecture = () => {
       </section>
 
       {/* CTA Section */}
-      <div style={{maxWidth:"1240px", margin:"auto"}}>
-      <Newsletter />
-      </div>
-      <Cta 
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>     
+      <Cta
         heading="Ready to Transform Your Cloud Infrastructure?"
         description="Join 200+ businesses that have modernized their cloud environments with scalable, secure, and high-performance solutions."
       />

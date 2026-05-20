@@ -90,20 +90,20 @@ const IndividualCategoryPage = () => {
     const filteredPosts = useMemo(() => {
         return posts.filter(post => {
             const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase());
-            
-            const matchesCap = selectedFilters.capability === "All" || 
-                               post.category?.name === selectedFilters.capability || 
-                               (post.tags && post.tags.includes(selectedFilters.capability)) ||
-                               post.title.toLowerCase().includes(selectedFilters.capability.toLowerCase());
 
-            const matchesInd = selectedFilters.industry === "All" || 
-                               post.text === selectedFilters.industry ||
-                               post.title.toLowerCase().includes(selectedFilters.industry.toLowerCase());
-            
-            const matchesPlatform = selectedFilters.platform === "All" || 
-                                   post.title.toLowerCase().includes(selectedFilters.platform.toLowerCase()) ||
-                                   (post.tags && post.tags.some(tag => tag.toLowerCase() === selectedFilters.platform.toLowerCase()));
-            
+            const matchesCap = selectedFilters.capability === "All" ||
+                post.category?.name === selectedFilters.capability ||
+                (post.tags && post.tags.includes(selectedFilters.capability)) ||
+                post.title.toLowerCase().includes(selectedFilters.capability.toLowerCase());
+
+            const matchesInd = selectedFilters.industry === "All" ||
+                post.text === selectedFilters.industry ||
+                post.title.toLowerCase().includes(selectedFilters.industry.toLowerCase());
+
+            const matchesPlatform = selectedFilters.platform === "All" ||
+                post.title.toLowerCase().includes(selectedFilters.platform.toLowerCase()) ||
+                (post.tags && post.tags.some(tag => tag.toLowerCase() === selectedFilters.platform.toLowerCase()));
+
             return matchesSearch && matchesCap && matchesInd && matchesPlatform;
         });
     }, [posts, searchQuery, selectedFilters]);
@@ -228,11 +228,11 @@ const IndividualCategoryPage = () => {
             {openDropdown === field && (
                 <ul className="icp-dropdown-list">
                     {options.map(opt => (
-                        <li 
+                        <li
                             key={opt}
                             className={`icp-dropdown-item ${selectedFilters[field] === opt ? 'active' : ''}`}
                             onClick={() => {
-                                setSelectedFilters({...selectedFilters, [field]: opt});
+                                setSelectedFilters({ ...selectedFilters, [field]: opt });
                                 setCurrentPage(1);
                             }}
                         >
@@ -267,17 +267,17 @@ const IndividualCategoryPage = () => {
                 {/* Universal Filter Bar */}
                 <div className="icp-universal-filter-bar">
                     <div className="icp-filter-label">Filter by:</div>
-                    
+
                     <div className="icp-filter-dropdown-group">
                         {/* <CustomDropdown 
                             label="Industry" 
                             options={filterOptions.industries} 
                             field="industry" 
                         /> */}
-                        <CustomDropdown 
-                            label="All Platform" 
-                            options={filterOptions.platforms} 
-                            field="platform" 
+                        <CustomDropdown
+                            label="All Platform"
+                            options={filterOptions.platforms}
+                            field="platform"
                         />
                     </div>
 
@@ -400,9 +400,9 @@ const IndividualCategoryPage = () => {
                                 {previewDoc.title}
                             </div>
                             <div className="pd-doc-modal-actions">
-                                <button 
-                                    onClick={() => handleDownloadFile(previewDoc.url, previewDoc.title)} 
-                                    className="pd-doc-action-btn" 
+                                <button
+                                    onClick={() => handleDownloadFile(previewDoc.url, previewDoc.title)}
+                                    className="pd-doc-action-btn"
                                     title="Download"
                                 >
                                     <FiDownload />
@@ -437,11 +437,11 @@ const IndividualCategoryPage = () => {
                                 >
                                     <FiLink />
                                 </button> */}
-                                <Link 
-                                    to={`/${sectionSlug}/${categorySlug}/${previewDoc.id}/reader`} 
+                                <Link
+                                    to={`/${sectionSlug}/${categorySlug}/${previewDoc.id}/reader`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="pd-doc-action-btn" 
+                                    className="pd-doc-action-btn"
                                     title="View Fullscreen"
                                 >
                                     <FiExternalLink />
@@ -462,8 +462,9 @@ const IndividualCategoryPage = () => {
                     </div>
                 </div>
             )}
-            <Newsletter />
-        </div>
+            <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+                <Newsletter />
+            </div>        </div>
     );
 };
 

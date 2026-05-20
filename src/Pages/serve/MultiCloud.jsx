@@ -477,7 +477,7 @@ const MultiCloud = () => {
               <div className="mc-img-gradient-overlay"></div>
 
               {/* Floating Architecture Card */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-arch-card"
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -511,7 +511,7 @@ const MultiCloud = () => {
               </motion.div>
 
               {/* Floating Code Windows */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-code-card-1"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -526,7 +526,7 @@ const MultiCloud = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-code-card-2"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -540,7 +540,7 @@ const MultiCloud = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="mc-code-symbol"
                 animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 3, repeat: Infinity }}
@@ -566,9 +566,9 @@ const MultiCloud = () => {
             >
               <img src={images.governance} alt="Cloud Governance" />
               <div className="mc-img-gradient-overlay"></div>
-              
+
               {/* Security Score Card */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-security-score-card"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -584,10 +584,10 @@ const MultiCloud = () => {
                 </div>
                 <div className="mc-score-graph">
                   <svg viewBox="0 0 100 40">
-                    <path 
-                      d="M0,35 Q10,10 20,25 T40,15 T60,30 T80,10 T100,20" 
-                      fill="none" 
-                      stroke="rgba(255, 255, 255, 0.4)" 
+                    <path
+                      d="M0,35 Q10,10 20,25 T40,15 T60,30 T80,10 T100,20"
+                      fill="none"
+                      stroke="rgba(255, 255, 255, 0.4)"
                       strokeWidth="2"
                     />
                   </svg>
@@ -602,7 +602,7 @@ const MultiCloud = () => {
               </motion.div>
 
               {/* Verify Bubble */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-verify-bubble"
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -812,7 +812,7 @@ const MultiCloud = () => {
               <div className="mc-img-gradient-overlay"></div>
 
               {/* Pipeline Card */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-pipeline-card"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -835,7 +835,7 @@ const MultiCloud = () => {
               </motion.div>
 
               {/* GitHub/DevOps Stat Card */}
-              <motion.div 
+              <motion.div
                 className="mc-float-glass-card mc-devops-stat-card"
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -1069,8 +1069,9 @@ const MultiCloud = () => {
         </div>
       </section> */}
 
-      <Newsletter />
-      <Cta />
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>      <Cta />
 
       {/* ========== CASE STUDY MODAL ========== */}
       <AnimatePresence>

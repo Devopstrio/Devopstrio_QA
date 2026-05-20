@@ -51,11 +51,7 @@ export default function WhyDevopstrio() {
               </div>
               <div>
                 <h4>Cloud-Native Core</h4>
-                <p>
-                  Using Azure, AWS, and GCP best practices, we design
-                  cloud-native environments that optimise scalability, uptime,
-                  and cost effectiveness.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: "Using <a href='/partners/azure' class='about-inline-link'>Azure</a>, <a href='/partners/aws' class='about-inline-link'>AWS</a>, and <a href='/partners/gcp' class='about-inline-link'>GCP</a> best practices, we design <a href='/services/cloud-architecture' class='about-inline-link'>cloud-native environments</a> that optimise scalability, uptime, and cost effectiveness." }}></p>
               </div>
             </div>
 
@@ -65,11 +61,7 @@ export default function WhyDevopstrio() {
               </div>
               <div>
                 <h4>Security-First Culture</h4>
-                <p>
-                  Through proactive monitoring, compliance controls, and
-                  DevSecOps automation, security is not an afterthought but
-                  rather integrated into every deployment.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: "Through <a href='/services/explore' class='about-inline-link'>proactive monitoring</a>, compliance controls, and <a href='/services/security' class='about-inline-link'>DevSecOps automation</a>, security is not an afterthought but rather integrated into every deployment." }}></p>
               </div>
             </div>
 
@@ -79,11 +71,7 @@ export default function WhyDevopstrio() {
               </div>
               <div>
                 <h4>Infrastructure Agnostic</h4>
-                <p>
-                  We create adaptable infrastructure strategies that reduce
-                  vendor lock-in and maximise long-term performance, whether
-                  they are multi-cloud or hybrid.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: "We create adaptable infrastructure strategies that reduce vendor lock-in and maximise long-term performance, whether they are <a href='/services/multi-cloud' class='about-inline-link'>multi-cloud</a> or hybrid." }}></p>
               </div>
             </div>
           </div>

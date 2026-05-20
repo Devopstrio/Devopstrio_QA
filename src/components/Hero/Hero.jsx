@@ -48,10 +48,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Description with fade-in */}
-            <p className="hero-description">
-                 We design, build, and operate intelligent cloud platforms on Azure, AWS, and GCP accelerating innovation, reducing cost, and enabling autonomous operations through AI.
-            </p>
+            <p className="hero-description" dangerouslySetInnerHTML={{ __html: "We design, build, and operate intelligent cloud platforms on <a href='/partners/azure' class='about-inline-link'>Azure</a>, <a href='/partners/aws' class='about-inline-link'>AWS</a>, and <a href='/partners/gcp' class='about-inline-link'>GCP</a> accelerating innovation, reducing cost, and enabling <a href='/services/artificial-intelligence' class='about-inline-link'>autonomous operations through AI</a>." }}></p>
 
             {/* Premium CTA Buttons with Animated Icons */}
             <div className="hero-actions">

@@ -242,7 +242,7 @@ const Values = () => {
 
   return (
     <div className="vl-page">
-  
+
 
       {/* ── HERO ── */}
       <AboutHero />
@@ -479,7 +479,7 @@ const Values = () => {
           ════════════════════════════════ */}
       <section className="vl-manifesto-section" ref={manifestoRef}>
         <motion.div className="vl-manifesto-bg-img" style={{ y: manifestoY }}>
-        <video src="/images/Values_mog.mp4" autoPlay loop muted playsInline />
+          <video src="/images/Values_mog.mp4" autoPlay loop muted playsInline />
           <div className="vl-manifesto-overlay" />
         </motion.div>
 
@@ -701,8 +701,9 @@ const Values = () => {
       </section> */}
 
       <Cta />
-      <Newsletter />
-    </div>
+      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+        <Newsletter />
+      </div>    </div>
   );
 };
 

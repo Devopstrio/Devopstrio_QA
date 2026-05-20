@@ -57,10 +57,16 @@ export default function ServicesPage() {
     }
   };
 
-  useSEO(
-    "DevOps & Cloud Services UK | Cloud Migration & DevSecOps",
-    "Explore Devopstrio’s DevOps, cloud migration, CI/CD automation, DevSecOps, and infrastructure as code services designed for scalable enterprise transformation.",
-  );
+  useSEO({
+    title: "DevOps & Cloud Services UK | Cloud Migration & DevSecOps | Devopstrio",
+    description: "Explore Devopstrio’s DevOps services, cloud migration solutions, automated CI/CD pipelines, DevSecOps integration, and Infrastructure as Code (IaC) designed for scalable enterprise growth.",
+    keywords: "Devops services UK, Devopstrio cloud engineering, enterprise cloud migration, automated CI/CD pipelines, DevSecOps integration, infrastructure as code, cloud security solutions, Kubernetes orchestration, zero-trust cloud architecture",
+    ogTitle: "DevOps & Cloud Services UK | Devopstrio",
+    ogDescription: "Discover how Devopstrio drives high-performance cloud architecture, automated pipelines, and highly scalable cloud-native environments for enterprise digital transformation.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-services.jpg",
+    ogUrl: "https://devopstrio.com/services",
+    canonicalUrl: "https://devopstrio.com/services"
+  });
 
   useEffect(() => {
     // Elements to observe

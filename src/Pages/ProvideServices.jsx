@@ -1568,10 +1568,16 @@ const integrations = [
 ];
 
 const ProvideServices = () => {
-  useSEO(
-    "Ecosystem & Integrations Services | Devopstrio",
-    "Explore 268+ enterprise integrations Services across 30+ categories. We secure and accelerate your entire delivery pipeline from code to cloud."
-  );
+  useSEO({
+    title: "Ecosystem & Integrations Services | Devopstrio",
+    description: "Explore 268+ enterprise integrations and services across 30+ categories. We secure, connect, and accelerate your entire delivery pipeline from code to cloud.",
+    keywords: "Devopstrio ecosystem, DevOps tools integration, secure delivery pipeline, cloud native security stack, Amazon GuardDuty integration, Qualys VMDR, ServiceNow integration, SIEM tool connections, SOAR automated response, Microsoft Sentinel integration",
+    ogTitle: "Security & Cloud Ecosystem Integrations | Devopstrio",
+    ogDescription: "Connect your entire security and DevOps stack with 268+ integrations. Accelerate, observe, and protect your enterprise environment in real-time.",
+    ogImage: "https://devopstrio.com/assets/images/devopstrio-og-integrations.jpg",
+    ogUrl: "https://devopstrio.com/services/explore",
+    canonicalUrl: "https://devopstrio.com/services/explore"
+  });
 
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -1764,9 +1770,10 @@ const ProvideServices = () => {
       </div>
 
       {/* NewsLetter */}
-      <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
-        <Newsletter />
-      </div>
+      
+        <div style={{ margin: "0 auto", maxWidth: "1240px" }}>
+          <Newsletter />
+        </div>      
       {/* Cta */}
       <Cta />
     </div>

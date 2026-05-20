@@ -41,7 +41,7 @@ import gdpr from '../../assets/images/GDPR_certification.png';
 import cyberEssentials from '../../assets/images/Cyber_essentials.png';
 import owasp from '../../assets/images/OWASP.png';
 import hipaa from '../../assets/images/HIPAA.png';
-import securityImg from '../../assets/images/security.png';
+import securityImg from '../../assets/images/datascience/Security_cuber_ddj.png';
 import cloudImg from '../../assets/images/cloud.png';
 import aiHeroImg from '../../assets/images/ai_hero_bg.png';
 
