@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       deploy_production:
-        description: 'Deploy to Production Environment'
+        description: 'Deploy to Production'
         required: true
         default: 'false'
         type: choice
@@ -22,14 +22,18 @@ env:
 jobs:
 
   # ==========================================
-  # QA DEPLOYMENT (AUTOMATIC)
+  # QA DEPLOYMENT (AUTO)
   # ==========================================
   deploy-qa:
     name: Deploy QA Environment
     runs-on: ubuntu-latest
 
+    # Only run on push
+    if: github.event_name == 'push'
+
     steps:
-      # Checkout repository
+
+      # Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -40,11 +44,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install dependencies
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build application
+      # Build Application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -52,20 +56,23 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify build output
+      # Verify Build
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
-          echo "QA build completed successfully."
-      # Deploy to QA
+
+          echo "QA Build Successful"
+          ls -la dist
+
+      # Deploy QA
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-QA'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
           package: ./dist
 
   # ==========================================
@@ -75,10 +82,12 @@ jobs:
     name: Deploy Production Environment
     runs-on: ubuntu-latest
 
+    # Manual trigger only
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
-      # Checkout repository
+
+      # Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -89,11 +98,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install dependencies
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build application
+      # Build Application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -101,15 +110,18 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify build output
+      # Verify Build
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
-          echo "Production build completed successfully."
-      # Deploy to Production
+
+          echo "Production Build Successful"
+          ls -la dist
+
+      # Deploy Production
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
