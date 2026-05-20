@@ -28,27 +28,35 @@ jobs:
     name: Deploy QA Environment
     runs-on: ubuntu-latest
 
-    # Only run on push
+    # Auto deploy only on push
     if: github.event_name == 'push'
 
     steps:
 
-      # Checkout Repository
+      # ==========================================
+      # CHECKOUT
+      # ==========================================
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
+      # ==========================================
+      # SETUP NODE
+      # ==========================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install Dependencies
+      # ==========================================
+      # INSTALL DEPENDENCIES
+      # ==========================================
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build Application
+      # ==========================================
+      # BUILD APPLICATION
+      # ==========================================
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -56,7 +64,9 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify Build
+      # ==========================================
+      # VERIFY BUILD OUTPUT
+      # ==========================================
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
@@ -67,7 +77,21 @@ jobs:
           echo "QA Build Successful"
           ls -la dist
 
-      # Deploy QA
+      # ==========================================
+      # VERIFY QA SECRET
+      # ==========================================
+      - name: Verify QA Secret
+        run: |
+          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" ]; then
+            echo "ERROR: QA Publish Profile Secret Missing"
+            exit 1
+          else
+            echo "QA Publish Profile Secret Found"
+          fi
+
+      # ==========================================
+      # DEPLOY TO QA
+      # ==========================================
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
@@ -82,27 +106,35 @@ jobs:
     name: Deploy Production Environment
     runs-on: ubuntu-latest
 
-    # Manual trigger only
+    # Manual deploy only
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
 
-      # Checkout Repository
+      # ==========================================
+      # CHECKOUT
+      # ==========================================
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
+      # ==========================================
+      # SETUP NODE
+      # ==========================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install Dependencies
+      # ==========================================
+      # INSTALL DEPENDENCIES
+      # ==========================================
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build Application
+      # ==========================================
+      # BUILD APPLICATION
+      # ==========================================
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -110,7 +142,9 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify Build
+      # ==========================================
+      # VERIFY BUILD OUTPUT
+      # ==========================================
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
@@ -121,7 +155,21 @@ jobs:
           echo "Production Build Successful"
           ls -la dist
 
-      # Deploy Production
+      # ==========================================
+      # VERIFY PROD SECRET
+      # ==========================================
+      - name: Verify Production Secret
+        run: |
+          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}" ]; then
+            echo "ERROR: Production Publish Profile Secret Missing"
+            exit 1
+          else
+            echo "Production Publish Profile Secret Found"
+          fi
+
+      # ==========================================
+      # DEPLOY TO PRODUCTION
+      # ==========================================
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
