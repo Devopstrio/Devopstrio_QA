@@ -29,7 +29,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
+
+      # Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -40,11 +41,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install dependencies
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build application
+      # Build Application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -52,29 +53,24 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify build output
+      # Verify Build Output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
-          echo "QA build completed successfully."
 
-      # Zip build package
-      - name: Prepare Deployment Package
-        run: |
-          cd dist
-          zip -r ../app.zip .
-          cd ..
+          echo "Build completed successfully."
+          ls -la dist
 
-      # Deploy to QA
+      # Deploy to QA Azure Web App
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./app.zip
+          package: ./dist
 
   # ==========================================
   # PRODUCTION DEPLOYMENT (MANUAL)
@@ -86,7 +82,8 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
-      # Checkout repository
+
+      # Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -97,11 +94,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # Install dependencies
+      # Install Dependencies
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # Build application
+      # Build Application
       - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
@@ -109,26 +106,21 @@ jobs:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # Verify build output
+      # Verify Build Output
       - name: Verify Build Output
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found."
             exit 1
           fi
+
           echo "Production build completed successfully."
+          ls -la dist
 
-      # Zip build package
-      - name: Prepare Deployment Package
-        run: |
-          cd dist
-          zip -r ../app.zip .
-          cd ..
-
-      # Deploy to Production
+      # Deploy to Production Azure Web App
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
-          package: ./app.zip
+          package: ./dist
