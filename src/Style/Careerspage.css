@@ -6,25 +6,44 @@
 
 /* ── TOKENS ── */
 :root {
-  --c-bg: #000000;
-  --c-surface: #0d0d0d;
-  --c-border: #1e1e1e;
-  --c-text: #ffffff;
-  --c-muted: #888888;
-  --c-subtle: #444444;
-  --c-accent: linear-gradient(90deg,
-      #522c72 0%,
-      #962964 25%,
-      #ce2453 50%,
-      #dd5c54 75%,
-      #e79e57 100%);
-  --c-accent-hover: #ce2453;
-  --c-accent-after-bg: #ce24544e;
-  --c-grad: linear-gradient(90deg, #522c72, #ce2453, #e79e57);
+  --ai-primary: #ce2453;
+  --ai-secondary: #e79e57;
+  --ai-accent: #ffcc00;
+  --ai-bg: #000000;
+  --ai-bg-alt: #050505;
+  --ai-text: #ffffff;
+  --ai-text-dim: rgba(255, 255, 255, 0.388);
+  --ai-gradient: linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%);
+  --ai-glass: rgba(255, 255, 255, 0.03);
+  --ai-border: rgba(255, 255, 255, 0.08);
+
+  --c-bg: var(--ai-bg);
+  --c-surface: var(--ai-bg-alt);
+  --c-border: var(--ai-border);
+  --c-text: var(--ai-text);
+  --c-muted: var(--ai-text-dim);
+  --c-subtle: var(--ai-border);
+  --c-accent: var(--ai-gradient);
+  --c-accent-hover: var(--ai-primary);
+  --c-accent-after-bg: rgba(206, 36, 83, 0.2);
+  --c-grad: var(--ai-gradient);
   --c-font: 'Inter', sans-serif;
   --c-radius: 10px;
   --c-max: 1300px;
 }
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .cp-giSideTab {
   position: fixed;
@@ -362,12 +381,6 @@
   position: relative;
   overflow: hidden;
   padding: 20px 0 20px;
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
-    linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: -webkit-linear-gradient(left, transparent, black 15%, black 85%, transparent),
-    -webkit-linear-gradient(top, transparent, black 15%, black 85%, transparent);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
 }
 
 .cp-builders-grid {
@@ -395,8 +408,8 @@
 }
 
 .cp-builder-node.is-empty {
-  opacity: 0.35;
-  /* Increased visibility as requested */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .cp-builder-node img {
@@ -623,8 +636,6 @@
 .cp-intern-grid {
   position: absolute;
   inset: -100px;
-
-  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
   filter: blur(0.5px);
   opacity: 0.5;
   animation: cpGridMove 20s linear infinite;
@@ -685,11 +696,7 @@
   object-fit: contain;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-  /* Bottom Blur/Fade Effect */
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-}
+  }
 
 .cp-intern-narrative {
   flex: 0.9;

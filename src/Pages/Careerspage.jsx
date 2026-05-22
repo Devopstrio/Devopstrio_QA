@@ -207,11 +207,15 @@ const Careerspage = () => {
     const revealElements = document.querySelectorAll(".reveal");
     revealElements.forEach((el) => observer.observe(el));
 
-    // Preload Images for the Builders grid
-    ALL_COLLEAGUE_PHOTOS.forEach((photo) => {
-      const img = new Image();
-      img.src = photo;
-    });
+    // Preload Images for the Builders grid only if not already done in this browser session
+    const hasPreloaded = localStorage.getItem("colleague_images_preloaded");
+    if (!hasPreloaded) {
+      ALL_COLLEAGUE_PHOTOS.forEach((photo) => {
+        const img = new Image();
+        img.src = photo;
+      });
+      localStorage.setItem("colleague_images_preloaded", "true");
+    }
 
     return () => observer.disconnect();
   }, []);

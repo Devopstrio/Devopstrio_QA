@@ -17,6 +17,7 @@ import Cta from "../components/Cta/Cta";
 import Milestones from "../components/Milestones/Milestones";
 import CertificationSlider from "../components/Certification/Certification";
 import Pinboard from "../components/Pinboard/Pinboard";
+import CSRCommitment from "../components/CSRCommitment/CSRCommitment";
 
 
 //cloud image
@@ -377,6 +378,9 @@ const Aboutpage = () => {
       <Pinboard items={coreValues} />
 
 
+       {/* CSR & SUSTAINABILITY */}
+      <CSRCommitment />
+
 
       {/* 7. OUR TEAM */}
       <section className="about-team-section reveal">
@@ -423,6 +427,7 @@ const Aboutpage = () => {
       </section>
 
       <GlobalPresence />
+      
 
       {/* 10. NEWSLETTER */}
         <div style={{ margin: "0 auto", maxWidth: "1240px" }}>

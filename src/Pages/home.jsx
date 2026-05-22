@@ -9,6 +9,7 @@ import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
 import GlobalOffices from "../components/GlobalOffices/GlobalOffices";
 import CoreSolutions from "../components/CoreSolutions/CoreSolutions";
 import JoinLeaders from "../components/JoinLeaders/JoinLeaders";
+
 import useSEO from "../hooks/useSEO";
 
 export default function Home() {
@@ -50,6 +51,7 @@ export default function Home() {
 
       {/* OUR CLIENTS */}
       <OurClients />
+
       {/* GLOBAL OFFICES */}
       <GlobalOffices limit={3} />
 

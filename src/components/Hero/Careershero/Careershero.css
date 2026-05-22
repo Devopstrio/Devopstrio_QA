@@ -1,11 +1,24 @@
 /* Careershero.css — Scoped to dev-cah- prefix */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+:root {
+  --ai-primary: #ce2453;
+  --ai-secondary: #e79e57;
+  --ai-accent: #ffcc00;
+  --ai-bg: #000000;
+  --ai-bg-alt: #050505;
+  --ai-text: #ffffff;
+  --ai-text-dim: rgba(255, 255, 255, 0.388);
+  --ai-gradient: linear-gradient(135deg, var(--ai-primary) 0%, var(--ai-secondary) 100%);
+  --ai-glass: rgba(255, 255, 255, 0.03);
+  --ai-border: rgba(255, 255, 255, 0.08);
+}
+
 .dev-cah-hero {
   min-height: 90vh;
-  background: #000;
+  background: var(--ai-bg);
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: var(--ai-text);
   position: relative;
   /* overflow: hidden; */
   display: flex;
@@ -33,7 +46,7 @@
   border-radius: 6px;
   font-size: 1.8rem;
   font-weight: 500;
-  color: #ce2453;
+  color: var(--ai-primary);
   margin-bottom: 40px;
 }
 
@@ -42,7 +55,7 @@
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: 1px;
-  color:#fff;
+  color: var(--ai-text);
   margin: 0 0 32px;
 }
 
@@ -53,7 +66,7 @@
 .dev-cah-description {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: rgba(172, 170, 170, 0.7);
+  color: var(--ai-text-dim);
   margin-bottom: 80px;
   max-width: 1000px;
 }
@@ -68,15 +81,8 @@
 
 .dev-cah-btn-gradient {
   padding: 12px 26px;
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  color: #fff;
+  background: var(--ai-gradient);
+  color: var(--ai-text);
   border: none;
   border-radius: 12px;
   font-size: 1.1rem;
@@ -105,7 +111,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 3px solid #000;
+  border: 3px solid var(--ai-bg);
   margin-left: -14px;
   object-fit: cover;
 }
@@ -118,15 +124,15 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #222;
-  border: 3px solid #000;
+  background: var(--ai-bg-alt);
+  border: 3px solid var(--ai-bg);
   margin-left: -14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ccc;
+  color: var(--ai-text-dim);
 }
 
 /* GRID VISUAL */
@@ -178,7 +184,7 @@
   bottom:-100px;
   left: 70px;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--ai-text-dim);
   font-weight: 400;
 }
 
@@ -187,8 +193,8 @@
   position: absolute;
   bottom: calc(100% + 14px);
   width: 300px;
-  background: #080808; /* Deep solid black for maximum contrast */
-  border: 1px solid #222; /* Crisper, visible border */
+  background: var(--ai-bg-alt); /* Deep solid black for maximum contrast */
+  border: 1px solid var(--ai-border); /* Crisper, visible border */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.8);
@@ -252,7 +258,7 @@
 .dev-cahx-popup-title {
   font-size: 1.05rem;
   font-weight: 800; /* Extra bold for clarity */
-  color: #fff;
+  color: var(--ai-text);
   margin-bottom: 6px;
   letter-spacing: -0.2px;
 }
@@ -260,7 +266,7 @@
 .dev-cahx-popup-desc {
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #cecece; /* Sharper light gray */
+  color: var(--ai-text-dim); /* Sharper light gray */
   margin-bottom: 12px;
   font-weight: 500;
 }

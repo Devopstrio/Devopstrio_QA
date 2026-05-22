@@ -117,6 +117,7 @@ const DigitalSovereignty = lazy(() => import("./Pages/digital/DigitalSovereignty
 
 // ========== OTHER PAGES ==========
 const NotFoundPage = lazy(() => import("./Pages/NotFoundPage"));
+const CSRPage = lazy(() => import("./Pages/CSRPage"));
 
 import "./App.css";
 
@@ -176,6 +177,8 @@ function App() {
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/sustainability" element={<CSRPage />} />
+            <Route path="/csr" element={<CSRPage />} />
 
             {/* ===== SERVICES SUB-ROUTES ===== */}
             {/* ===== Cloud Services ===== */}

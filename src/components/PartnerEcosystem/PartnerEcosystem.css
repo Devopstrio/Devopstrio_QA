@@ -26,14 +26,14 @@
    PARTNER ECOSYSTEM
    =============================== */
 
-.partner-ecosystem {
+.partnerecosys-partner-ecosystem {
   background: #000;
   color: #ffffff;
   overflow: hidden;
   position: relative;
 }
 
-.partner-container {
+.partnerecosys-partner-container {
   max-width: 1250px;
   margin: 0 auto;
   padding: 0 32px;
@@ -42,7 +42,7 @@
 }
 
 /* Background gradient effects */
-.partner-ecosystem::before {
+.partnerecosys-partner-ecosystem::before {
   content: "";
   position: absolute;
   top: 0;
@@ -67,21 +67,21 @@
    HEADER
    =============================== */
 
-.partner-title {
-  font-size: 48px;
+.partnerecosys-partner-title {
+  font-size: 3px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.1;
 }
 
-.partner-title span {
+.partnerecosys-partner-title span {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.partner-subtitle {
+.partnerecosys-partner-subtitle {
   max-width: 720px;
   font-size: 18px;
   line-height: 1.6;
@@ -93,20 +93,20 @@
    SLIDER
    =============================== */
 
-.partner-slider {
+.partnerecosys-partner-slider {
   width: 100%;
   overflow: hidden;
   position: relative;
   padding: 20px 0;
 }
 
-.partner-track {
+.partnerecosys-partner-track {
   display: flex;
   width: max-content;
   animation: scroll 40s linear infinite;
 }
 
-.partner-slider:hover .partner-track {
+.partnerecosys-partner-slider:hover .partnerecosys-partner-track {
   animation-play-state: paused;
 }
 
@@ -114,7 +114,7 @@
    CARD
    =============================== */
 
-.partner-card {
+.partnerecosys-partner-card {
   min-width: 220px;
   height: 120px;
   margin-right: 24px;
@@ -132,7 +132,7 @@
   overflow: hidden;
 }
 
-.partner-card::before {
+.partnerecosys-partner-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -146,7 +146,7 @@
 }
 
 /* IMAGE */
-.partner-card img {
+.partnerecosys-partner-card img {
   max-width: 70%;
   max-height: 60%;
   object-fit: contain;
@@ -160,7 +160,7 @@
 }
 
 /* HOVER EFFECTS */
-.partner-card:hover {
+.partnerecosys-partner-card:hover {
   /* /* background: rgba(255, 255, 255, 0.1);
   border-color: rgba(206, 36, 83, 0.4); 
   box-shadow: 0 10px 30px rgba(82, 44, 114, 0.3),
@@ -168,11 +168,11 @@
   transform: translateY(-4px);
 }
 
-.partner-card:hover::before {
+.partnerecosys-partner-card:hover::before {
   opacity: 0.1;
 }
 
-.partner-card:hover img {
+.partnerecosys-partner-card:hover img {
   filter: grayscale(0%) brightness(1.1);
   transform: scale(1.15); /* IMAGE ZOOM */
 }
@@ -194,7 +194,7 @@
    LINK
    =============================== */
 
-.partner-link {
+.partnerecosys-partner-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -211,7 +211,7 @@
   padding: 8px 0;
 }
 
-.partner-link::after {
+.partnerecosys-partner-link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -222,19 +222,19 @@
   transition: width 0.3s ease;
 }
 
-.partner-link:hover {
+.partnerecosys-partner-link:hover {
   gap: 12px;
 }
 
-.partner-link:hover::after {
+.partnerecosys-partner-link:hover::after {
   width: 100%;
 }
 
-.partner-link-arrow {
+.partnerecosys-partner-link-arrow {
   transition: transform 0.3s ease;
 }
 
-.partner-link:hover .partner-link-arrow {
+.partnerecosys-partner-link:hover .partnerecosys-partner-link-arrow {
   transform: translateX(4px);
 }
 
@@ -244,29 +244,29 @@
 
 /* 4K Ultra Wide */
 @media (min-width: 2560px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 90px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     max-width: 2100px;
     padding: 0 40px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 62px;
     margin-bottom: 24px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 24px;
     max-width: 1000px;
     margin-bottom: 80px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 320px;
     height: 180px;
     margin-right: 48px;
     border-radius: 20px;
   }
-  .partner-card img {
+  .partnerecosys-partner-card img {
     max-width: 80%;
     max-height: 70%;
   }
@@ -274,19 +274,19 @@
 
 /* Large Desktops */
 @media (min-width: 1440px) and (max-width: 2559px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     max-width: 1260px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 56px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 20px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 220px;
     height: 120px;
   }
@@ -294,20 +294,20 @@
 
 /* Laptops / Normal Desktops */
 @media (max-width: 1280px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     padding: 0 32px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 44px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 18px;
     margin-bottom: 56px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 220px;
     height: 120px;
     margin-right: 24px;
@@ -316,17 +316,17 @@
 
 /* Tablets */
 @media (max-width: 992px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 40px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 17px;
     margin-bottom: 48px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 190px;
     height: 110px;
     margin-right: 20px;
@@ -335,27 +335,27 @@
 
 /* Mobile Landscape & Standard Tabs */
 @media (max-width: 720px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     padding: 0 24px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 34px;
     margin-bottom: 16px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 16px;
     margin-bottom: 40px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 160px;
     height: 90px;
     margin-right: 16px;
     border-radius: 10px;
   }
-  .partner-card img {
+  .partnerecosys-partner-card img {
     max-width: 65%;
     max-height: 55%;
   }
@@ -363,21 +363,21 @@
 
 /* Base Mobile */
 @media (max-width: 480px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     padding: 0 16px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 28px;
     margin-bottom: 12px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 15px;
     margin-bottom: 32px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 140px;
     height: 80px;
     margin-right: 12px;
@@ -387,32 +387,32 @@
 
 /* Small, Narrow Phones */
 @media (max-width: 360px) {
-  .partner-ecosystem {
+  .partnerecosys-partner-ecosystem {
     padding: 40px 0;
   }
-  .partner-container {
+  .partnerecosys-partner-container {
     padding: 0 12px;
   }
-  .partner-title {
+  .partnerecosys-partner-title {
     font-size: 24px;
   }
-  .partner-subtitle {
+  .partnerecosys-partner-subtitle {
     font-size: 14px;
     margin-bottom: 24px;
   }
-  .partner-card {
+  .partnerecosys-partner-card {
     min-width: 120px;
     height: 70px;
     margin-right: 8px;
   }
-  .partner-card img {
+  .partnerecosys-partner-card img {
     max-width: 60%;
     max-height: 50%;
   }
 }
 
 /* ===== INLINE SEO LINKS ===== */
-.about-inline-link {
+.partnerecosys-about-inline-link {
   color: #ce2453;
   text-decoration: none;
   font-weight: 600;
@@ -420,7 +420,7 @@
   transition: all 0.3s ease;
 }
 
-.about-inline-link:hover {
+.partnerecosys-about-inline-link:hover {
   color: #e79e57;
   border-bottom-style: solid;
   border-bottom-color: #e79e57;
