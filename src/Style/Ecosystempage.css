@@ -1,537 +1,743 @@
-/* Style/Ecosystempage.css - Dark Theme with New Gradient */
+/* Style/Ecosystempage.css - Ultra Premium Dark Theme Design */
 
-/* ===== BASE STYLES ===== */
-.ecosystem-corporate-wrapper {
+.ecosystem-page-wrapper {
   color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
-.corporate-container {
-  max-width: 1250px;
+.eco-container {
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ===== SECTION HEADERS ===== */
-.corporate-section-header {
+.eco-section {
+  padding: 60px 0;
+}
+
+/* Base Pill / Badge */
+.eco-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(206, 36, 83, 0.08);
+  border: 1px solid rgba(206, 36, 83, 0.15);
+  color: #ce2453;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: 0.8px;
+}
+
+.eco-pill-danger {
+  background: rgba(231, 76, 60, 0.08);
+  border-color: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+}
+
+.eco-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.eco-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #888888;
+  margin-bottom: 40px;
+}
+
+/* Centered Header Layouts */
+.eco-section-header-centered {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
-.corporate-section-header h2 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.eco-section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-top: 8px;
   margin-bottom: 16px;
-  letter-spacing: -0.02em;
 }
 
-.corporate-subhead {
-  font-size: 1.125rem;
-  color: #a0a0a0;
-  max-width: 600px;
+.eco-section-subtitle {
+  font-size: 1.15rem;
+  color: #888888;
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* ===== 1. WHY PARTNER SECTION ===== */
-.corporate-why-partner {
-  padding: 40px 0;
+/* 2. ECOSYSTEM OVERVIEW SPLIT */
+.eco-overview {}
+
+.eco-overview-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.corporate-three-column {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.eco-overview-stats {
+  display: flex;
   gap: 40px;
 }
 
-.corporate-benefit-block {
-  text-align: center;
-  padding: 0 20px;
-}
-
-.corporate-benefit-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    90deg,
-    rgba(82, 44, 114, 0.1),
-    rgba(150, 41, 100, 0.15),
-    rgba(206, 36, 83, 0.2),
-    rgba(221, 92, 84, 0.15),
-    rgba(231, 158, 87, 0.1)
-  );
-  border-radius: 50%;
-  color: #ce2453;
-}
-
-.corporate-benefit-block h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+.eco-stat-item h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #ffffff;
-}
-
-.corporate-benefit-block p {
-  color: #a0a0a0;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* ===== 2. STRATEGIC PARTNERS ===== */
-.corporate-strategic-partners {
-  padding: 40px 0;
-}
-
-.corporate-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.corporate-partner-card {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 32px 24px;
-  transition: all 0.2s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.corporate-partner-card:hover {
-  border-color: #ce2453;
-  box-shadow: 0 8px 16px rgba(206, 36, 83, 0.1);
-}
-
-.corporate-card-logo {
-  height: 60px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.corporate-card-logo img {
-  max-height: 100%;
-  max-width: 130px;
-  object-fit: contain;
-  transition: all 0.2s;
-}
-
-.corporate-partner-card:hover img {
-  filter: brightness(1) grayscale(0);
-}
-
-.corporate-partner-card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.corporate-partner-card p {
-  color: #a0a0a0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.corporate-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(
-    90deg,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 500;
+}
+
+.eco-stat-item p {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dense Tooltip Logo Cloud */
+.eco-logo-cloud-card {
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.eco-logo-cloud-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.eco-logo-cloud-card p {
   font-size: 0.9rem;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s;
-  align-self: flex-start;
+  color: #888888;
+  margin-bottom: 28px;
+  line-height: 1.5;
 }
 
-.corporate-card-link:hover {
-  gap: 8px;
-  border-bottom-color: #ce2453;
-}
-
-/* ===== 3. ECOSYSTEM LOGOS ===== */
-.corporate-ecosystem-logos {
-  padding: 40px 0;
-}
-
-.corporate-logo-grid {
+.eco-logo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
-.corporate-logo-item {
+.eco-logo-item {
+  height: 60px;
   background: #ffffff;
   border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  padding: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
+  cursor: pointer;
 }
 
-.corporate-logo-item:hover {
-  border-color: #ce2453;
-  box-shadow: 0 4px 12px rgba(206, 36, 83, 0.15);
-}
-
-.corporate-logo-item img {
+.eco-logo-item img {
+  max-height: 100%;
   max-width: 100%;
-  max-height: 80px;
   object-fit: contain;
-  opacity: 0.7;
-  transition: all 0.2s;
+  opacity: 0.8;
+  transition: all 0.3s;
 }
 
-.corporate-logo-item:hover img {
-  filter: grayscale(0) brightness(1);
+.eco-logo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.15);
+  border-color: #ce2453;
+}
+
+.eco-logo-item:hover img {
   opacity: 1;
 }
 
-.corporate-logo-tooltip {
+/* Dynamic Tooltip */
+.eco-logo-tooltip {
   position: absolute;
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   background: #ce2453;
   color: white;
-  font-size: 0.75rem;
-  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
   border-radius: 4px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s;
   z-index: 10;
+  box-shadow: 0 5px 15px rgba(206, 36, 83, 0.3);
 }
 
-.corporate-logo-item:hover .corporate-logo-tooltip {
+.eco-logo-item:hover .eco-logo-tooltip {
   opacity: 1;
-  bottom: -40px;
+  bottom: -38px;
 }
 
-/* ===== 4. COLLABORATION BANNER ===== */
-.corporate-collaboration-banner {
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  padding: 80px 0;
-  color: white;
-  border-bottom: 1px solid #2a2a2a;
+/* 3. PRODUCT ECOSYSTEM GRID */
+.eco-product-grid-section {}
+
+.eco-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.eco-partner-card {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.eco-partner-card:hover {
+  transform: translateY(-8px);
+  border-color: #ce2453;
+  box-shadow: 0 20px 40px rgba(206, 36, 83, 0.1);
+}
+
+.eco-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.eco-partner-logo-wrapper {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.eco-partner-logo-wrapper img {
+  max-height: 100%;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.eco-card-badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05);
+  color: #888888;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+}
+
+.eco-partner-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.eco-partner-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #888888;
+  flex-grow: 1;
+}
+
+.eco-card-sparkle {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  color: #888888;
+  transition: all 0.3s;
+}
+
+.eco-partner-card:hover .eco-card-sparkle {
+  color: #ce2453;
+  transform: translate(2px, -2px);
+}
+
+/* 4. BUSINESS OUTCOMES */
+.eco-outcomes {}
+
+.eco-outcomes-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.eco-outcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.eco-outcome-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.eco-check-icon {
+  color: #ce2453;
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 1.2rem;
+}
+
+.eco-outcome-row strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.eco-outcome-row p {
+  font-size: 0.95rem;
+  color: #888888;
+  line-height: 1.5;
+}
+
+/* Highlight Banner Card */
+.eco-highlight-banner-card {
+  background: linear-gradient(135deg, #100816 0%, #170b1b 100%);
+  border: 1px solid #281438;
+  border-radius: 24px;
+  padding: 45px;
   position: relative;
   overflow: hidden;
 }
 
-.corporate-collaboration-banner::before {
-  content: '';
+.eco-highlight-banner-card::before {
+  content: "";
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
-  bottom: 0;
-  background: rgba(10, 10, 10, 0.6);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(206, 36, 83, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.corporate-banner-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+.eco-banner-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(206, 36, 83, 0.15);
+  border: 1px solid rgba(206, 36, 83, 0.25);
+  color: #ce2453;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-.corporate-banner-content h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+.eco-highlight-banner-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
   line-height: 1.3;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
-.corporate-banner-content p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 32px;
-  color: rgba(255, 255, 255, 0.9);
+.eco-highlight-banner-card p {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
-.corporate-banner-cta {
+.eco-banner-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ffffff;
-  color: #0a0a0a;
-  padding: 12px 32px;
-  border-radius: 40px;
+  color: #ffffff;
   font-weight: 600;
+  font-size: 0.92rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
-.corporate-banner-cta:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.eco-banner-link svg {
+  transition: transform 0.2s;
 }
 
-/* ===== 5. CONTACT SECTION ===== */
-.corporate-contact {
-  background: #0a0a0a;
-  padding: 80px 0;
+.eco-banner-link:hover {
+  color: #ce2453;
 }
 
-.corporate-contact-grid {
+.eco-banner-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* 5. AI SECURITY & COMPLIANCE */
+.eco-security {}
+
+.eco-security-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.corporate-contact-info h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.corporate-contact-info p {
-  color: #a0a0a0;
-  line-height: 1.7;
-  margin-bottom: 32px;
-  font-size: 1.1rem;
-}
-
-.corporate-contact-details {
-  margin-bottom: 32px;
-}
-
-.corporate-contact-item {
-  display: flex;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 28px;
+  padding: 60px;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-  color: #a0a0a0;
 }
 
-.corporate-contact-item svg {
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 20px;
+.eco-security-left h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-.corporate-trust-badges {
+.eco-security-left p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #888888;
+  margin-bottom: 32px;
+}
+
+.eco-security-badges {
   display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+}
+
+.eco-badge-item {
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: #111;
+  border: 1px solid #222;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0a0a0;
+  transition: all 0.3s;
+}
+
+.eco-badge-item:hover {
+  border-color: #ce2453;
+  color: #ffffff;
+}
+
+/* Terminal Mockup */
+.eco-terminal-mockup {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.eco-terminal-header {
+  background: #0d0d0d;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #151515;
+}
+
+.eco-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.eco-dot-red {
+  background: #ff5f56;
+}
+
+.eco-dot-yellow {
+  background: #ffbd2e;
+}
+
+.eco-dot-green {
+  background: #27c93f;
+}
+
+.eco-terminal-title {
+  color: #666;
+  font-size: 0.72rem;
+  margin-left: 8px;
+}
+
+.eco-terminal-body {
+  padding: 24px;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #d0d0d0;
+}
+
+.eco-term-green {
+  color: #27c93f;
+}
+
+.eco-term-gold {
+  color: #ffbd2e;
+}
+
+/* 6. TECH STACKS */
+.eco-tech-stacks {}
+
+.eco-stacks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.eco-stack-card {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 20px;
+  padding: 40px 35px;
+  transition: all 0.3s;
+}
+
+.eco-stack-card:hover {
+  border-color: #ce2453;
+  transform: translateY(-6px);
+}
+
+.eco-stack-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.eco-stack-card p {
+  font-size: 0.92rem;
+  color: #888888;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.eco-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eco-stack-tags span {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #a0a0a0;
+}
+
+/* 7. WHY CHOOSE OUR ECOSYSTEM (THREE COLUMN) */
+.eco-why-ecosystem {}
+
+.eco-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.eco-benefit-block {
+  text-align: center;
+  padding: 40px 30px;
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.eco-benefit-block:hover {
+  border-color: #ce2453;
+  transform: translateY(-6px);
+}
+
+.eco-benefit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(206, 36, 83, 0.08);
+  border: 1px solid rgba(206, 36, 83, 0.15);
+  color: #ce2453;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.eco-benefit-block h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.eco-benefit-block p {
+  color: #888888;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* 8. GLOBAL DELIVERY SUPPORT */
+.eco-global-support {}
+
+.eco-global-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 28px;
+  padding: 60px;
+  align-items: center;
+}
+
+.eco-global-left h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.eco-global-left p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #888888;
+  margin-bottom: 32px;
+}
+
+.eco-support-details {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.trust-badge {
-  display: inline-flex;
+.eco-support-row {
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.eco-support-row strong {
+  color: #ffffff;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.eco-support-row span {
+  color: #ce2453;
+}
+
+/* SLA Commitments dashboard */
+.eco-sla-box {
+  background: #050505;
+  border: 1px solid #1a1a1a;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.eco-sla-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #151515;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.eco-sla-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 30px;
-  font-size: 0.85rem;
+  padding: 12px 0;
+  border-bottom: 1px solid #111;
+  font-size: 0.92rem;
+}
+
+.eco-sla-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.eco-sla-row span {
   color: #a0a0a0;
 }
 
-.trust-badge svg {
-  color: #ce2453;
-  font-size: 14px;
+.eco-sla-row strong {
+  color: #27c93f;
+  font-weight: 700;
 }
 
-/* Contact Form */
-.corporate-contact-form {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 40px;
-}
+/* Media Queries */
+@media (max-width: 1024px) {
 
-.corporate-form-row {
-  margin-bottom: 20px;
-}
+  .eco-overview-split,
+  .eco-outcomes-split,
+  .eco-security-card,
+  .eco-global-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-.corporate-form-row input,
-.corporate-form-row textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #ffffff;
-  background: #0a0a0a;
-  transition: all 0.2s;
-}
-
-.corporate-form-row input:focus,
-.corporate-form-row textarea:focus {
-  outline: none;
-  border-color: #ce2453;
-  background: #111111;
-}
-
-.corporate-form-row input::placeholder,
-.corporate-form-row textarea::placeholder {
-  color: #6c6c6c;
-}
-
-.corporate-submit-btn {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.corporate-submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(206, 36, 83, 0.3);
-}
-
-.corporate-form-note {
-  font-size: 0.85rem;
-  color: #6c6c6c;
-  margin-top: 16px;
-  text-align: center;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1200px) {
-  .corporate-card-grid {
+  .eco-product-grid,
+  .eco-stacks-grid,
+  .eco-three-column {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .corporate-logo-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .corporate-three-column {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .corporate-contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .corporate-banner-content h2 {
-    font-size: 1.75rem;
   }
 }
 
 @media (max-width: 768px) {
-  .corporate-section-header h2 {
-    font-size: 1.75rem;
+  .eco-main-title {
+    font-size: 2.2rem;
   }
-  
-  .corporate-card-grid {
+
+  .eco-section-title {
+    font-size: 2.0rem;
+  }
+
+  .eco-product-grid,
+  .eco-stacks-grid,
+  .eco-three-column {
     grid-template-columns: 1fr;
   }
-  
-  .corporate-logo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .corporate-contact-form {
-    padding: 30px;
-  }
-}
 
-@media (max-width: 480px) {
-  .corporate-container {
-    padding: 0 16px;
+  .eco-security-card,
+  .eco-global-card {
+    padding: 40px 24px;
   }
-  
-  .corporate-logo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .corporate-banner-content h2 {
-    font-size: 1.5rem;
-  }
-  
-  .corporate-trust-badges {
+
+  .eco-overview-stats {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 20px;
   }
 }

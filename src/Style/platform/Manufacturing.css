@@ -1,0 +1,852 @@
+/* Manufacturing Premium Smart Factory Styling - Dark Glassmorphism */
+
+.plt-mfg-page {
+  color: #ffffff;
+  font-family: 'Inter', 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+.plt-mfg-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.plt-mfg-sec-h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.plt-mfg-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plt-mfg-btn-primary {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.25);
+}
+
+.plt-mfg-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.4);
+}
+
+/* 1. Hero Section */
+.plt-mfg-hero {
+  padding: 60px 0;
+}
+
+.plt-mfg-hero-h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.plt-mfg-hero-p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+/* Hero Live Stats Row */
+.plt-mfg-metrics-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 80px;
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.plt-mfg-metric-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.plt-mfg-metric-icon-wrap {
+  color: #ce2453;
+  font-size: 1.75rem;
+  padding: 12px;
+  background: rgba(206, 36, 83, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(206, 36, 83, 0.15);
+}
+
+.plt-mfg-metric-info h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.plt-mfg-metric-desc {
+  font-size: 0.92rem;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* 2. Processes Section */
+.plt-mfg-processes-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-processes-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.plt-mfg-processes-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plt-mfg-process-btn {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 20px 24px;
+  border-radius: 12px;
+  color: #9ca3af;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plt-mfg-process-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+}
+
+.plt-mfg-process-btn.active {
+  background: linear-gradient(90deg, rgba(82, 44, 114, 0.3) 0%, rgba(206, 36, 83, 0.3) 100%);
+  border-color: #ce2453;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.15);
+}
+
+.plt-mfg-process-btn-icon {
+  font-size: 1.15rem;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+
+.plt-mfg-process-btn.active .plt-mfg-process-btn-icon {
+  transform: translateX(4px);
+  opacity: 1;
+  color: #ce2453;
+}
+
+.plt-mfg-process-display {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 48px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.plt-mfg-process-display h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #ffffff 0%, #e5e7eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plt-mfg-process-display-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 32px;
+}
+
+.plt-mfg-process-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plt-mfg-outcome-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: #e5e7eb;
+}
+
+.plt-mfg-outcome-checkmark {
+  color: #ce2453;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.plt-mfg-process-scope-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-top: 16px;
+  backdrop-filter: blur(5px);
+}
+
+.plt-mfg-process-scope-box h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* 3. Core Capabilities Section */
+.plt-mfg-choose {
+  padding: 60px 0;
+}
+
+.plt-mfg-sec-subtitle {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+.plt-mfg-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.plt-mfg-choose-card {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.plt-mfg-choose-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 0 10px 30px rgba(206, 36, 83, 0.1);
+}
+
+.plt-mfg-card-icon {
+  font-size: 2.25rem;
+  color: #ce2453;
+  margin-bottom: 24px;
+}
+
+.plt-mfg-choose-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.plt-mfg-choose-card p {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.98rem;
+  flex-grow: 1;
+}
+
+/* 4. Why Rely Grid Section */
+.plt-mfg-rely-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-rely-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.plt-mfg-rely-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 32px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.plt-mfg-rely-card:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.plt-mfg-rely-card h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.plt-mfg-rely-card p {
+  color: #9ca3af;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.plt-mfg-rely-cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 32px 48px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.plt-mfg-rely-cta-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* 5. Accordion Services Section */
+.plt-mfg-services-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.plt-mfg-services-item {
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  background: rgba(28, 28, 28, 0.2);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.plt-mfg-services-item:hover {
+  border-color: rgba(256, 256, 256, 0.08);
+}
+
+.plt-mfg-services-item.open {
+  border-color: rgba(206, 36, 83, 0.3);
+  background: rgba(28, 28, 28, 0.4);
+}
+
+.plt-mfg-services-header {
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.plt-mfg-services-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.plt-mfg-services-toggle-icon {
+  font-size: 1.5rem;
+  color: #ce2453;
+  transition: transform 0.3s ease;
+}
+
+.plt-mfg-services-item.open .plt-mfg-services-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.plt-mfg-services-content {
+  padding: 0 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.plt-mfg-services-content p {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 900px;
+}
+
+.plt-mfg-services-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+/* 6. Case Studies / Slider Section */
+.plt-mfg-case-section {
+  padding: 60px 0; 
+}
+
+.plt-mfg-case-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.plt-mfg-case-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.plt-mfg-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.plt-mfg-arrow-btn:hover {
+  background: rgba(206, 36, 83, 0.1);
+  border-color: #ce2453;
+  color: #ce2453;
+}
+
+.plt-mfg-case-slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.plt-mfg-case-slide {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.plt-mfg-case-content-col span.case-tag {
+  color: #ce2453;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.plt-mfg-case-content-col h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.plt-mfg-case-content-col p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+.plt-mfg-case-img-col {
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.plt-mfg-case-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plt-mfg-dots-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.plt-mfg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.plt-mfg-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #ce2453;
+}
+
+/* 7. CTA Expert Banner */
+.plt-mfg-cta-banner-wrapper {
+  padding: 60px 0;
+}
+
+.plt-mfg-expert-cta-banner {
+  background: radial-gradient(circle at top right, rgba(206, 36, 83, 0.1), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.plt-mfg-expert-cta-left h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.plt-mfg-expert-cta-left p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* 8. Key Tech Grid Section */
+.plt-mfg-tech-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.plt-mfg-tech-card {
+  background: rgba(28, 28, 28, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.plt-mfg-tech-card:hover {
+  border-color: rgba(206, 36, 83, 0.2);
+  background: rgba(28, 28, 28, 0.4);
+}
+
+.plt-mfg-tech-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.plt-mfg-tech-card p {
+  color: #9ca3af;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* 9. Expert Profile Section (Flush height card layout) */
+.plt-mfg-expert-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-expert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.plt-mfg-expert-img-part {
+  position: relative;
+  height: 100%;
+}
+
+.plt-mfg-expert-img-part img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.plt-mfg-expert-info-part {
+  background: rgba(28, 28, 28, 0.3);
+  padding: 40px 36px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.plt-mfg-expert-role {
+  color: #ce2453;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.plt-mfg-expert-info-part h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.plt-mfg-expert-bio {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+.plt-mfg-expert-schedule-btn {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.35);
+  align-self: flex-start;
+}
+
+.plt-mfg-expert-schedule-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.5);
+}
+
+/* 10. Testimonials Slider Section */
+.plt-mfg-testimonial-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-testimonial-card {
+  background: rgba(28, 28, 28, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 900px;
+  margin: 36px auto 0 auto;
+  position: relative;
+}
+
+.plt-mfg-quote-icon {
+  font-size: 3rem;
+  color: rgba(206, 36, 83, 0.15);
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.plt-mfg-testimonial-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 32px;
+}
+
+.plt-mfg-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.plt-mfg-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ce2453;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.plt-mfg-author-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.plt-mfg-author-info p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* 11. FAQ Accordion Section */
+.plt-mfg-faq-section {
+  padding: 60px 0;
+}
+
+.plt-mfg-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plt-mfg-faq-item {
+  background: rgba(28, 28, 28, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.plt-mfg-faq-item.open {
+  border-color: rgba(206, 36, 83, 0.3);
+  background: rgba(28, 28, 28, 0.3);
+}
+
+.plt-mfg-faq-q {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.plt-mfg-faq-icon {
+  font-size: 1.2rem;
+  color: #ce2453;
+  transition: transform 0.3s;
+}
+
+.plt-mfg-faq-item.open .plt-mfg-faq-icon {
+  transform: rotate(45deg);
+}
+
+.plt-mfg-faq-a {
+  padding: 0 32px 24px 32px;
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .plt-mfg-processes-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plt-mfg-expert-grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+  .plt-mfg-expert-img-part {
+    height: 350px;
+  }
+  .plt-mfg-case-slide {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .plt-mfg-hero-h1 {
+    font-size: 2.8rem;
+  }
+  .plt-mfg-sec-h2 {
+    font-size: 2rem;
+  }
+  .plt-mfg-expert-cta-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 40px;
+  }
+  .plt-mfg-processes-sidebar {
+    gap: 8px;
+  }
+}

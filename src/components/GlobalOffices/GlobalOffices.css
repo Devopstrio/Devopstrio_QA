@@ -62,7 +62,14 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1.5px;
-  background: rgba(206, 36, 83, 0.12);
+  background:linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
   border: 1px solid rgba(206, 36, 83, 0.3);
   margin-bottom: 24px;
   text-transform: uppercase;

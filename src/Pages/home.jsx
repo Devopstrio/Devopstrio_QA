@@ -5,12 +5,15 @@ import UnifiedIntegrations from "../components/UnifiedIntegrations/UnifiedIntegr
 import WeImagine from "../components/WeImagine/WeImagine";
 import OurClients from "../components/OurClients/OurClients";
 import PartnerEcosystem from "../components/PartnerEcosystem/PartnerEcosystem";
-import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
+import BusinessOverview from "../components/BusinessOverview/BusinessOverview";
 import GlobalOffices from "../components/GlobalOffices/GlobalOffices";
-import CoreSolutions from "../components/CoreSolutions/CoreSolutions";
+import CoreServices from "../components/CoreServices/CoreServices";
 import JoinLeaders from "../components/JoinLeaders/JoinLeaders";
+import Insights from "../components/Insights/Insights";
 
 import useSEO from "../hooks/useSEO";
+import IndustrySpecialization from "../components/IndustrySpecialization/IndustrySpecialization";
+import CaseStudies from "../components/CaseStudies/CaseStudies";
 
 export default function Home() {
   useSEO({
@@ -32,29 +35,35 @@ export default function Home() {
       {/* PARTNER_ECOSYSTEM */}
       <PartnerEcosystem />
 
-      {/* WhatWeDo */}
-      <WhatWeDo />
+      {/* Business Overview */}
+      <BusinessOverview />
+
+         {/* CORE SERVICES */}
+      <CoreServices />
+
+      {/* INDUSTRY SPECIALIZATION */}
+      <IndustrySpecialization />
+         
+      {/* WE IMAGINE / PRODUCTS */}
+      <WeImagine />
+      
+      {/* CASE STUDIES */}
+      <CaseStudies />
+
+
       {/* WHY Devopstrio  */}
       <WhyDevopstrio/>
 
-      {/* CORE SOLUTIONS */}
-      {/* <CoreSolutions /> */}
-
-      {/* WE IMAGINE / PRODUCTS */}
-      <WeImagine />
-
-      {/* CLOUD & AI OFFERINGS */}
-      {/* <CloudAIOfferings /> */}
-
-      {/* UNIFIED INTEGRATIONS (NEW COMPONENT) */}
-      {/* <UnifiedIntegrations /> */}
 
       {/* OUR CLIENTS */}
       <OurClients />
+      
+      {/* INSIGHTS / FEATURED CONTENT */}
+      <Insights />
 
       {/* GLOBAL OFFICES */}
       <GlobalOffices limit={3} />
-
+ 
       {/* JOIN THE LEADERS */}
       <JoinLeaders />
     </>

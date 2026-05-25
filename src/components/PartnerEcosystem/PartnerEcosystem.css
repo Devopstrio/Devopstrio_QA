@@ -41,34 +41,13 @@
   z-index: 1;
 }
 
-/* Background gradient effects */
-.partnerecosys-partner-ecosystem::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(82, 44, 114, 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 50%,
-      rgba(206, 36, 83, 0.05) 0%,
-      transparent 50%
-    );
-  z-index: 0;
-}
 
 /* ===============================
    HEADER
    =============================== */
 
 .partnerecosys-partner-title {
-  font-size: 3px;
+  font-size: 48px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.1;
@@ -94,10 +73,10 @@
    =============================== */
 
 .partnerecosys-partner-slider {
+  container-type: inline-size;
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 20px 0;
 }
 
 .partnerecosys-partner-track {
@@ -115,7 +94,8 @@
    =============================== */
 
 .partnerecosys-partner-card {
-  min-width: 220px;
+  flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
+  min-width: calc((100cqw - (5 * 24px)) / 6);
   height: 120px;
   margin-right: 24px;
 
@@ -261,7 +241,8 @@
     margin-bottom: 80px;
   }
   .partnerecosys-partner-card {
-    min-width: 320px;
+    flex: 0 0 calc((100cqw - (5 * 48px)) / 6);
+    min-width: calc((100cqw - (5 * 48px)) / 6);
     height: 180px;
     margin-right: 48px;
     border-radius: 20px;
@@ -287,7 +268,8 @@
     font-size: 20px;
   }
   .partnerecosys-partner-card {
-    min-width: 220px;
+    flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
+    min-width: calc((100cqw - (5 * 24px)) / 6);
     height: 120px;
   }
 }
@@ -308,7 +290,8 @@
     margin-bottom: 56px;
   }
   .partnerecosys-partner-card {
-    min-width: 220px;
+    flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
+    min-width: calc((100cqw - (5 * 24px)) / 6);
     height: 120px;
     margin-right: 24px;
   }
@@ -327,7 +310,8 @@
     margin-bottom: 48px;
   }
   .partnerecosys-partner-card {
-    min-width: 190px;
+    flex: 0 0 calc((100cqw - (3 * 20px)) / 4);
+    min-width: calc((100cqw - (3 * 20px)) / 4);
     height: 110px;
     margin-right: 20px;
   }
@@ -350,7 +334,8 @@
     margin-bottom: 40px;
   }
   .partnerecosys-partner-card {
-    min-width: 160px;
+    flex: 0 0 calc((100cqw - (2 * 16px)) / 3);
+    min-width: calc((100cqw - (2 * 16px)) / 3);
     height: 90px;
     margin-right: 16px;
     border-radius: 10px;
@@ -378,7 +363,8 @@
     margin-bottom: 32px;
   }
   .partnerecosys-partner-card {
-    min-width: 140px;
+    flex: 0 0 calc((100cqw - (1 * 12px)) / 2);
+    min-width: calc((100cqw - (1 * 12px)) / 2);
     height: 80px;
     margin-right: 12px;
     border-radius: 8px;
@@ -401,7 +387,8 @@
     margin-bottom: 24px;
   }
   .partnerecosys-partner-card {
-    min-width: 120px;
+    flex: 0 0 calc((100cqw - (1 * 8px)) / 2);
+    min-width: calc((100cqw - (1 * 8px)) / 2);
     height: 70px;
     margin-right: 8px;
   }

@@ -1,0 +1,575 @@
+/* Premium Life Sciences Platform Styling */
+.plt-lifesci-page {
+  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  padding: 40px;
+}
+
+.plt-lifesci-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 1. Hero Section */
+.plt-lifesci-hero-section {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.plt-lifesci-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.plt-lifesci-hero-title-area {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.plt-lifesci-hero-h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.plt-lifesci-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Stats Card Box */
+.plt-lifesci-hero-card {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.plt-lifesci-hero-card-left h3 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.plt-lifesci-hero-card-left p {
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.plt-lifesci-hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.plt-lifesci-hero-stat-item {
+  border-left: 2px solid rgba(206, 36, 83, 0.5);
+  padding-left: 20px;
+}
+
+.plt-lifesci-hero-stat-val {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ce2453;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.plt-lifesci-hero-stat-lbl {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* 2. Choose Us Section */
+.plt-lifesci-choose-section {
+  padding: 60px 0;
+}
+
+.plt-lifesci-choose-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.plt-lifesci-sec-h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.plt-lifesci-choose-p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+.plt-lifesci-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.plt-lifesci-choose-card {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 36px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plt-lifesci-choose-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plt-lifesci-choose-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(206, 36, 83, 0.3);
+  background: rgba(25, 25, 25, 0.5);
+}
+
+.plt-lifesci-choose-card:hover::before {
+  opacity: 1;
+}
+
+.plt-lifesci-choose-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(206, 36, 83, 0.1);
+  color: #ce2453;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+}
+
+.plt-lifesci-choose-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.plt-lifesci-choose-card p {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* 3. Interactive Value Chains Section */
+.plt-lifesci-value-chain-section {
+  padding: 60px 0;
+}
+
+.plt-lifesci-tabs-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.plt-lifesci-tabs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plt-lifesci-tab-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 18px 24px;
+  text-align: left;
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plt-lifesci-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+}
+
+.plt-lifesci-tab-btn.active {
+  background: rgba(206, 36, 83, 0.08);
+  border-color: rgba(206, 36, 83, 0.3);
+  color: #ce2453;
+}
+
+.plt-lifesci-tab-content-panel {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 48px;
+  backdrop-filter: blur(10px);
+}
+
+.plt-lifesci-tab-content-panel h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.plt-lifesci-tab-content-panel p.tab-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d1d5db;
+  margin-bottom: 32px;
+}
+
+.plt-lifesci-tab-content-panel h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ce2453;
+  margin-bottom: 16px;
+}
+
+.plt-lifesci-tab-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.plt-lifesci-tab-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.plt-lifesci-bullet-icon {
+  color: #ce2453;
+  flex-shrink: 0;
+}
+
+.plt-lifesci-tab-cta-btn {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.25);
+}
+
+.plt-lifesci-tab-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.4);
+}
+
+/* 4. Expert Section */
+.plt-lifesci-expert-section {
+  padding: 60px 0;
+}
+
+.plt-lifesci-expert-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  max-height: 500px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  overflow: hidden;
+}
+
+.plt-lifesci-expert-img-part {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.plt-lifesci-expert-img-part img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-position: top;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.plt-lifesci-expert-info-part {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.plt-lifesci-expert-badge {
+  background: rgba(206, 36, 83, 0.1);
+  border: 1px solid rgba(206, 36, 83, 0.2);
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.plt-lifesci-expert-badge span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ce2453;
+}
+
+.plt-lifesci-expert-info-part h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.plt-lifesci-expert-info-part p.expert-title {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.plt-lifesci-expert-info-part p.expert-bio {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.plt-lifesci-expert-schedule-btn {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.35);
+}
+
+.plt-lifesci-expert-schedule-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.5);
+}
+
+
+
+.plt-lifesci-btn-primary {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.25);
+}
+
+.plt-lifesci-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.4);
+}
+
+/* 5. Interview Banner */
+.plt-lifesci-interview-section {
+  padding: 60px 0;
+}
+
+.plt-lifesci-interview-card {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+  align-items: center;
+}
+
+.plt-lifesci-interview-text {
+  padding: 48px;
+}
+
+.plt-lifesci-interview-text h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+.plt-lifesci-interview-media {
+  position: relative;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+.plt-lifesci-interview-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.plt-lifesci-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(206, 36, 83, 0.9);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(206, 36, 83, 0.4);
+}
+
+.plt-lifesci-play-btn:hover {
+  transform: scale(1.1);
+  background: #ce2453;
+  box-shadow: 0 15px 30px rgba(206, 36, 83, 0.6);
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .plt-lifesci-hero-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plt-lifesci-tabs-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plt-lifesci-expert-card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plt-lifesci-interview-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .plt-lifesci-hero-h1 {
+    font-size: 2.75rem;
+  }
+  .plt-lifesci-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .plt-lifesci-tab-bullets {
+    grid-template-columns: 1fr;
+  }
+  .plt-lifesci-hero-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .plt-lifesci-expert-cta-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

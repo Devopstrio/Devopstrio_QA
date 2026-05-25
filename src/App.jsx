@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
@@ -11,113 +10,126 @@ import ChatBot from "./components/ChatBot/ChatBot";
 import ScrollToTop from "./layout/ScrollToTop";
 
 //=============== Pages ==================
-const Home = lazy(() => import("./Pages/home"));
-const ContactPage = lazy(() => import("./Pages/Contactpage"));
-const ProvideServices = lazy(() => import("./Pages/ProvideServices"));
-const Servicespage = lazy(() => import("./Pages/ServicesPage"));
-const Platformpage = lazy(() => import("./Pages/Platformpage"));
-const ClientSuccess = lazy(() => import("./Pages/ClientSuccesspage"));
-const Ecosystempage = lazy(() => import("./Pages/Ecosystempage"));
-const Aboutpage = lazy(() => import("./Pages/Aboutpage"));
-const Careerspage = lazy(() => import("./Pages/Careerspage"));
-const Insightspage = lazy(() => import("./Pages/Insightspage"));
-const Contributions = lazy(() => import("./Pages/Contributions"));
-const PrivacyPolicy = lazy(() => import("./Pages/Privacypolicy"));
+import Home from "./Pages/home";
+import ContactPage from "./Pages/Contactpage";
+import ProvideServices from "./Pages/ProvideServices";
+import Servicespage from "./Pages/ServicesPage";
+import Platformpage from "./Pages/Platformpage";
+import ClientSuccess from "./Pages/ClientSuccesspage";
+import Ecosystempage from "./Pages/Ecosystempage";
+import Aboutpage from "./Pages/Aboutpage";
+import Careerspage from "./Pages/Careerspage";
+import Insightspage from "./Pages/Insightspage";
+import Contributions from "./Pages/Contributions";
+import PrivacyPolicy from "./Pages/Privacypolicy";
 import FooterCompliance from "./Pages/FooterCompliance";
-const TermsofService = lazy(() => import("./Pages/TermsofService"));
-const Sitemap = lazy(() => import("./Pages/Sitemap"));
-const CookiePolicy = lazy(() => import("./Pages/CookiePolicy"));
-const Disclaimer = lazy(() => import("./Pages/Disclaimer.jsx"));
-const JobPortal = lazy(() => import("./Pages/JobPortal"));
+import TermsofService from "./Pages/TermsofService";
+import Sitemap from "./Pages/Sitemap";
+import CookiePolicy from "./Pages/CookiePolicy";
+import Disclaimer from "./Pages/Disclaimer.jsx";
+import JobPortal from "./Pages/JobPortal";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
-const GlobalInternshipPage = lazy(() => import("./Pages/globalinternship/GlobalInternshipPage"));
+import GlobalInternshipPage from "./Pages/globalinternship/GlobalInternshipPage";
 
 // ========== serve SUB-PAGES ==========
 // Cloud serve
-const CloudArchitecture = lazy(() => import("./Pages/serve/CloudArchitecture"));
-const CloudMigration = lazy(() => import("./Pages/serve/CloudMigration"));
-const MultiCloud = lazy(() => import("./Pages/serve/MultiCloud"));
-const CloudOptimization = lazy(() => import("./Pages/serve/CloudOptimization"));
-const Serverless = lazy(() => import("./Pages/serve/Serverless"));
+import CloudArchitecture from "./Pages/serve/CloudArchitecture";
+import CloudMigration from "./Pages/serve/CloudMigration";
+import MultiCloud from "./Pages/serve/MultiCloud";
+import CloudOptimization from "./Pages/serve/CloudOptimization";
+import Serverless from "./Pages/serve/Serverless";
 
 // DevOps & Platform
-const DevOpsEnablement = lazy(() => import("./Pages/serve/DevOpsEnablement"));
-const CICD = lazy(() => import("./Pages/service/CICD"));
-const IaC = lazy(() => import("./Pages/serve/IaC"));
+import DevOpsEnablement from "./Pages/serve/DevOpsEnablement";
+import CICD from "./Pages/service/CICD";
+import IaC from "./Pages/serve/IaC";
 
 // Security & Reliability
-const CloudSecurity = lazy(() => import("./Pages/serve/CloudSecurity"));
-const IAM = lazy(() => import("./Pages/serve/IAM"));
-const Compliance = lazy(() => import("./Pages/serve/Compliance"));
-const ThreatDetection = lazy(() => import("./Pages/serve/ThreatDetection"));
+import CloudSecurity from "./Pages/serve/CloudSecurity";
+import IAM from "./Pages/serve/IAM";
+import Compliance from "./Pages/serve/Compliance";
+import ThreatDetection from "./Pages/serve/ThreatDetection";
 // const GitOps = lazy(() => import("./Pages/serve/GitOps"));
 
 // ========== PLATFORM SUB-PAGES ==========
-const SaaSApplications = lazy(() => import("./Pages/platform/SaaSApplications"));
-const RetailPlatform = lazy(() => import("./Pages/platform/RetailPlatform"));
-const FinancialServices = lazy(() => import("./Pages/platform/FinancialServices"));
-const Healthcare = lazy(() => import("./Pages/platform/Healthcare"));
-const LogisticsPage = lazy(() => import("./Pages/platform/Logistics"));
-const MediaEntainment = lazy(() => import("./Pages/platform/MediaEntainment"));
-const Telecom = lazy(() => import("./Pages/platform/Telecom"));
-const Automotive = lazy(() => import("./Pages/platform/Automotive"));
-const CaseStudies = lazy(() => import("./Pages/CaseStudies"));
-const ROIReports = lazy(() => import("./Pages/resources/ROIReports"));
-const Benchmarks = lazy(() => import("./Pages/resources/Benchmarks"));
-const WhitePapers = lazy(() => import("./Pages/Media/IndividualCategoryPage"));
+import SaaSApplications from "./Pages/platform/SaaSApplications";
+import RetailPlatform from "./Pages/platform/RetailPlatform";
+import FinancialServices from "./Pages/platform/FinancialServices";
+import Healthcare from "./Pages/platform/Healthcare";
+import LogisticsPage from "./Pages/platform/Logistics";
+import MediaEntainment from "./Pages/platform/MediaEntainment";
+import Telecom from "./Pages/platform/Telecom";
+import Automotive from "./Pages/platform/Automotive";
+import LifeSciences from "./Pages/platform/LifeSciences";
+import Manufacturing from "./Pages/platform/Manufacturing";
+import TravelHospitality from "./Pages/platform/TravelHospitality";
+// import IGaming from "./Pages/platform/IGaming";
+// import ELearning from "./Pages/platform/ELearning";
+// import RealEstate from "./Pages/platform/RealEstate";
+// import Aviation from "./Pages/platform/Aviation";
+// import OilGas from "./Pages/platform/OilGas";
+// import Legal from "./Pages/platform/Legal";
+import Agriculture from "./Pages/platform/Agriculture";
+// import Energy from "./Pages/platform/Energy";
+// import GISDevelopment from "./Pages/platform/GISDevelopment";
+// import PublicSector from "./Pages/platform/PublicSector";
+import CaseStudies from "./Pages/CaseStudies";
+import ROIReports from "./Pages/resources/ROIReports";
+import Benchmarks from "./Pages/resources/Benchmarks";
+import WhitePapers from "./Pages/Media/IndividualCategoryPage";
 
 // ========== ECOSYSTEM SUB-PAGES ==========
 // Partners
-const AWSPartners = lazy(() => import("./Pages/partners/AWSPartners"));
-const AzurePartners = lazy(() => import("./Pages/partners/AzurePartners"));
-const GCPPartners = lazy(() => import("./Pages/partners/GCPPartners"));
-const ServiceNowPartners = lazy(() => import("./Pages/partners/ServiceNowPartners"));
+import AWSPartners from "./Pages/partners/AWSPartners";
+import AzurePartners from "./Pages/partners/AzurePartners";
+import GCPPartners from "./Pages/partners/GCPPartners";
+import ServiceNowPartners from "./Pages/partners/ServiceNowPartners";
 
 // Marketplace
-const MarketplacePage = lazy(() => import("./Pages/MarketplacePage"));
-const CloudInfrastructureMarketplace = lazy(() => import("./Pages/marketplace/CloudInfrastructure"));
-const DataAnalyticsMarketplace = lazy(() => import("./Pages/marketplace/DataAnalytics"));
-const EnterpriseAppsMarketplace = lazy(() => import("./Pages/marketplace/EnterpriseApps"));
-const CXMarketplace = lazy(() => import("./Pages/marketplace/CX"));
-const AIMLMarketplace = lazy(() => import("./Pages/marketplace/AIML"));
+import MarketplacePage from "./Pages/MarketplacePage";
+import CloudInfrastructureMarketplace from "./Pages/marketplace/CloudInfrastructure";
+import DataAnalyticsMarketplace from "./Pages/marketplace/DataAnalytics";
+import EnterpriseAppsMarketplace from "./Pages/marketplace/EnterpriseApps";
+import CXMarketplace from "./Pages/marketplace/CX";
+import AIMLMarketplace from "./Pages/marketplace/AIML";
 
 // ========== ABOUT SUB-PAGES ==========
-const CompanyOverview = lazy(() => import("./Pages/about/CompanyOverview"));
+import CompanyOverview from "./Pages/about/CompanyOverview";
 // import Locations from "./Pages/about/Locations";
-const Values = lazy(() => import("./Pages/about/Values"));
-const Events = lazy(() => import("./Pages/Media/Events"));
+import Values from "./Pages/about/Values";
+import Events from "./Pages/Media/Events";
 
 // ========== CAREERS SUB-PAGES ==========
-const CandidateApplyPage = lazy(() => import("./Pages/CandidateApplyPage"));
-const InternshipPage = lazy(() => import("./Pages/InternshipPage"));
-const CategoryPage = lazy(() => import("./Pages/Media/CategoryPage"));
-const PostDetail = lazy(() => import("./Pages/Media/PostDetail"));
-const DocumentReader = lazy(() => import("./Pages/Media/DocumentReader"));
+import CandidateApplyPage from "./Pages/CandidateApplyPage";
+import InternshipPage from "./Pages/InternshipPage";
+import CategoryPage from "./Pages/Media/CategoryPage";
+import PostDetail from "./Pages/Media/PostDetail";
+import DocumentReader from "./Pages/Media/DocumentReader";
 
 // ========== AI & DATA SUB-PAGES ==========
-const ArtificialIntelligence = lazy(() => import("./Pages/ai_data/ArtificialIntelligence"));
-const AIConsulting = lazy(() => import("./Pages/ai_data/AIConsulting"));
-const AiTools = lazy(() => import("./Pages/ai_data/AiTools"));
-const DataScience = lazy(() => import("./Pages/ai_data/DataScience"));
-const DBCreation = lazy(() => import("./Pages/ai_data/DBCreation"));
-const HireAi = lazy(() => import("./Pages/ai_data/HireAi"));
+import ArtificialIntelligence from "./Pages/ai_data/ArtificialIntelligence";
+import AIConsulting from "./Pages/ai_data/AIConsulting";
+import AiTools from "./Pages/ai_data/AiTools";
+import DataScience from "./Pages/ai_data/DataScience";
+import DBCreation from "./Pages/ai_data/DBCreation";
+import HireAi from "./Pages/ai_data/HireAi";
 
 // ========== APPLICATION DEVELOPMENT SUB-PAGES ==========
-const Mobiledevelopment = lazy(() => import("./Pages/ap_development/Mobiledevelopment"));
-const Webdevelopment = lazy(() => import("./Pages/ap_development/Webdevelopment"));
-const Crossplatform = lazy(() => import("./Pages/ap_development/Crossplatform"));
-const PWAdevelopment = lazy(() => import("./Pages/ap_development/PWAdevelopment"));
-const CMSdevelopment = lazy(() => import("./Pages/ap_development/CMSdevelopment"));
-const ITSecurity = lazy(() => import("./Pages/Cybersecurity/ITSecurity"));
-const OperationsCenter = lazy(() => import("./Pages/Cybersecurity/Operationscenter"));
-const PenetrationTesting = lazy(() => import("./Pages/Cybersecurity/Penetrationtesting"));
-const DigitalTransformation = lazy(() => import("./Pages/digital/DigitalTransformation"));
-const ITConsulting = lazy(() => import("./Pages/digital/ITConsulting"));
-const DigitalSovereignty = lazy(() => import("./Pages/digital/DigitalSovereignty"));
+import Mobiledevelopment from "./Pages/ap_development/Mobiledevelopment";
+import Webdevelopment from "./Pages/ap_development/Webdevelopment";
+import Crossplatform from "./Pages/ap_development/Crossplatform";
+import PWAdevelopment from "./Pages/ap_development/PWAdevelopment";
+import CMSdevelopment from "./Pages/ap_development/CMSdevelopment";
+import ITSecurity from "./Pages/Cybersecurity/ITSecurity";
+import OperationsCenter from "./Pages/Cybersecurity/Operationscenter";
+import PenetrationTesting from "./Pages/Cybersecurity/Penetrationtesting";
+import DigitalTransformation from "./Pages/digital/DigitalTransformation";
+import ITConsulting from "./Pages/digital/ITConsulting";
+import DigitalSovereignty from "./Pages/digital/DigitalSovereignty";
 
 // ========== OTHER PAGES ==========
-const NotFoundPage = lazy(() => import("./Pages/NotFoundPage"));
-const CSRPage = lazy(() => import("./Pages/CSRPage"));
+import NotFoundPage from "./Pages/NotFoundPage";
+import CSRPage from "./Pages/CSRPage";
 
 import "./App.css";
 
@@ -153,7 +165,6 @@ function App() {
           <CookieBanner />
           <ScrollToTop />
           <Navbar />
-          <Suspense fallback={<div style={{height: "100vh", backgroundColor: "#000", display: "flex", justifyContent: "center", alignItems: "center", color: "#fff"}}>Loading...</div>}>
           <Routes>
             {/* ===== Home ===== */}
             <Route path="/" element={<Home />} />
@@ -232,6 +243,19 @@ function App() {
             <Route path="/platform/media-entertainment" element={<MediaEntainment />} />
             <Route path="/platform/telecom" element={<Telecom />} />
             <Route path="/platform/automotive" element={<Automotive />} />
+            <Route path="/platform/life-sciences" element={<LifeSciences />} />
+            <Route path="/platform/manufacturing" element={<Manufacturing />} />
+            <Route path="/platform/travel-hospitality" element={<TravelHospitality />} />
+            {/* <Route path="/platform/igaming" element={<IGaming />} /> */}
+            {/* <Route path="/platform/elearning" element={<ELearning />} /> */}
+            {/* <Route path="/platform/real-estate" element={<RealEstate />} /> */}
+            {/* <Route path="/platform/aviation" element={<Aviation />} /> */}
+            {/* <Route path="/platform/oil-gas" element={<OilGas />} /> */}
+            {/* <Route path="/platform/legal" element={<Legal />} /> */}
+            <Route path="/platform/agriculture" element={<Agriculture />} />
+            {/* <Route path="/platform/energy" element={<Energy />} /> */}
+            {/* <Route path="/platform/gis-development" element={<GISDevelopment />} /> */}
+            {/* <Route path="/platform/public-sector" element={<PublicSector />} /> */}
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/resources/roi-reports" element={<ROIReports />} />
             <Route path="/resources/benchmarks" element={<Benchmarks />} />
@@ -278,7 +302,6 @@ function App() {
             {/* <Route path="/services/incident-response"element={<IncidentResponse />}/> */}
 
           </Routes>
-        </Suspense>
           {/* ===== CHATBOT ===== */}
           <ChatBot />
           {/* ===== FOOTER ===== */}

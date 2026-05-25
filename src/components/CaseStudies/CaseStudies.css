@@ -1,0 +1,291 @@
+/* ==========================================================================
+   CaseStudies.css - Premium Left-Aligned Modern Mockup Layout
+   ========================================================================== */
+
+:root {
+  --cs-bg: #000000;
+  --cs-accent: #ce2453;
+  --cs-text-primary: #ffffff;
+  --cs-text-secondary: #a1a1aa;
+  
+  /* Cohesive Multi-Color Signature Gradient */
+  --cs-gradient: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  
+  --cs-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.casestudies-root {
+  position: relative;
+  background-color: var(--cs-bg);
+  padding: 80px 24px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--cs-text-primary);
+}
+
+.casestudies-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left-Aligned Header Row */
+.casestudies-header {
+  text-align: left;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.casestudies-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--cs-gradient);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.casestudies-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--cs-text-primary);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.casestudies-title span {
+  background: var(--cs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.casestudies-subtitle {
+  font-size: 1.05rem;
+  color: var(--cs-text-secondary);
+  max-width: 700px;
+  line-height: 1.65;
+  margin: 0;
+  text-align: left;
+}
+
+/* Filters Bar */
+.casestudies-filters {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.casestudies-filter-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: none;
+  color: var(--cs-text-secondary);
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: var(--cs-transition);
+}
+
+.casestudies-filter-btn:hover {
+  background: rgba(206, 36, 83, 0.08);
+  color: var(--cs-text-primary);
+  transform: translateY(-2px);
+}
+
+.casestudies-filter-btn.active {
+  background: var(--cs-gradient);
+  color: #ffffff;
+  box-shadow: 0 8px 24px -4px rgba(206, 36, 83, 0.4);
+}
+
+/* Mockup Layout Container */
+.casestudies-main-layout {
+  display: grid;
+  grid-template-columns: 1.45fr 2.55fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Left Portrait */
+.casestudies-portrait-wrap {
+  border-radius: 24px;
+  height: 500px;
+}
+
+.casestudies-portrait-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Cards Grid Row */
+.casestudies-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.casestudies-modern-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  transform-origin: bottom center;
+}
+
+/* Stepped Progressive Card Sizes (mockup sign indication design style) */
+.casestudies-modern-card.card-idx-0 {
+  transform: scale(0.92);
+  opacity: 0.75;
+}
+
+.casestudies-modern-card.card-idx-1 {
+  transform: scale(1.0);
+  opacity: 0.92;
+}
+
+.casestudies-modern-card.card-idx-2 {
+  transform: scale(1.08);
+  opacity: 1;
+  z-index: 2;
+}
+
+.casestudies-modern-card.card-idx-0:hover {
+  transform: scale(0.96) translateY(-4px);
+  opacity: 0.9;
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.casestudies-modern-card.card-idx-1:hover {
+  transform: scale(1.04) translateY(-4px);
+  opacity: 1;
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Highlighted (3rd Card) solid color theme */
+.casestudies-modern-card.highlighted {
+  background: linear-gradient(
+    150deg,
+     #ce2453 0%,
+    #dd5c54 50%,
+    #e79e57 100%
+  );
+  border-color: #ce2453;
+  box-shadow: 0 15px 35px rgba(206, 36, 83, 0.35);
+}
+
+.casestudies-modern-card.card-idx-2:hover {
+  transform: scale(1.12) translateY(-4px);
+  box-shadow: 0 20px 45px rgba(206, 36, 83, 0.5);
+}
+
+/* Card Top Metric Block */
+.casestudies-card-top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.casestudies-card-metric-val {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.casestudies-modern-card:not(.highlighted) .casestudies-card-metric-val {
+  background: var(--cs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.casestudies-card-metric-lbl {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  letter-spacing: 0.05em;
+}
+
+.casestudies-modern-card:not(.highlighted) .casestudies-card-metric-lbl {
+  color: var(--cs-accent);
+}
+
+/* Typography modern */
+.casestudies-card-title-modern {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.casestudies-card-desc-modern {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.casestudies-modern-card.highlighted .casestudies-card-desc-modern {
+  color: #f3f4f6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .casestudies-main-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .casestudies-portrait-wrap {
+    height: 360px;
+  }
+}
+
+@media (max-width: 900px) {
+  .casestudies-cards-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .casestudies-root {
+    padding: 60px 24px;
+  }
+  .casestudies-title {
+    font-size: 2.25rem;
+  }
+}

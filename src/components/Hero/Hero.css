@@ -12,14 +12,18 @@
 
   --primary-gradient: linear-gradient(
     90deg,
-    var(--ai-primary) 0%,
-    #dd5c54 50%,
-    var(--ai-secondary) 100%
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
   );
   --primary-gradient-light: linear-gradient(
     90deg,
-    rgba(206, 36, 83, 0.8) 0%,
-    rgba(221, 92, 84, 0.8) 50%,
+    rgba(82, 44, 114, 0.8) 0%,
+    rgba(150, 41, 100, 0.8) 25%,
+    rgba(206, 36, 83, 0.8) 50%,
+    rgba(221, 92, 84, 0.8) 75%,
     rgba(231, 158, 87, 0.8) 100%
   );
 }

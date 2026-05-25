@@ -17,13 +17,13 @@
 /* ===============================
    PRO SERVICES SECTION
    =============================== */
-.pro-services-section {
+.spg-pro-services-section {
   background: #000;
   position: relative;
   overflow: hidden;
 }
 
-.pro-services-container {
+.spg-pro-services-container {
   display: flex;
   flex-direction: column;
   gap:40px;
@@ -33,7 +33,7 @@
   padding: 0 40px;
 }
 
-.pro-service-block {
+.spg-pro-service-block {
   display: flex;
   align-items: center;
   background: transparent;
@@ -46,24 +46,24 @@
   transform: translateY(60px);
 }
 
-.pro-service-block.show {
+.spg-pro-service-block.spg-show {
   gap: 60px;
   opacity: 1;
   transform: translateY(0);
   z-index: 1;
 }
 
-.pro-service-block.reverse {
+.spg-pro-service-block.spg-reverse {
   flex-direction: row-reverse;
   gap:60px;
 }
 
-.pro-service-block:hover {
+.spg-pro-service-block:hover {
   /* border-color: rgba(206, 36, 83, 0.4); */
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
 
-.pro-service-bg-glow {
+.spg-pro-service-bg-glow {
   position: absolute;
   top: -150px;
   left: -150px;
@@ -74,19 +74,19 @@
   pointer-events: none;
 }
 
-.pro-service-bg-glow.alt {
+.spg-pro-service-bg-glow.spg-alt {
   left: auto;
   right: -150px;
   /* background: radial-gradient(circle, rgba(221, 92, 84, 0.1) 0%, transparent 60%); */
 }
 
-.pro-service-content {
+.spg-pro-service-content {
   flex: 1;
   position: relative;
   z-index: 40;
 }
 
-.pro-badge {
+.spg-pro-badge {
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
@@ -96,14 +96,14 @@
   text-transform: uppercase;
 }
 
-.pro-service-content h2 {
+.spg-pro-service-content h2 {
   font-size: 42px;
   color: #ffffff;
   margin-bottom: 24px;
   line-height: 1.2;
 }
 
-.pro-service-content p {
+.spg-pro-service-content p {
   color: #aaa;
   font-size: 17px;
   line-height: 1.8;
@@ -111,7 +111,7 @@
   max-width: 600px;
 }
 
-.pro-features {
+.spg-pro-features {
   list-style: none;
   padding: 0;
   display: flex;
@@ -119,7 +119,7 @@
   gap: 20px;
 }
 
-.pro-features li {
+.spg-pro-features li {
   display: flex;
   align-items: flex-start;
   gap: 20px;
@@ -130,13 +130,13 @@
   transition: all 0.3s ease;
 }
 
-.pro-features li:hover {
+.spg-pro-features li:hover {
   background: rgba(255, 255, 255, 0.04);
   border-left-color: #ce2453;
   transform: translateX(5px);
 }
 
-.pro-icon-box {
+.spg-pro-icon-box {
   width: 45px;
   height: 45px;
   background: rgba(206, 36, 83, 0.1);
@@ -148,20 +148,20 @@
   flex-shrink: 0;
 }
 
-.pro-feature-text strong {
+.spg-pro-feature-text strong {
   display: block;
   font-size: 14px;
   color: #fff;
   margin-bottom: 6px;
 }
 
-.pro-feature-text span {
+.spg-pro-feature-text span {
   font-size: 14px;
   color: #888;
   line-height: 1.5;
 }
 
-.pro-service-visual {
+.spg-pro-service-visual {
   flex: 1;
   position: relative;
   z-index: 2;
@@ -170,7 +170,7 @@
   justify-content: center;
 }
 
-.pro-image-wrapper {
+.spg-pro-image-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -181,11 +181,11 @@
   transform: scale(1.3);
 }
 
-/* .pro-service-block:hover .pro-image-wrapper {
+/* .spg-pro-service-block:hover .spg-pro-image-wrapper {
   transform: scale(1.05) translateY(-5px);
 } */
 
-.pro-image-wrapper img {
+.spg-pro-image-wrapper img {
   width: 100%;
   max-width: 650px;
   height: auto;
@@ -198,7 +198,7 @@
 /* ============================================
    CORE VALUES SECTION
    ============================================ */
-.core-values {
+.spg-core-values {
   background: #000000;
   padding: 40px 40px;
   text-align: center;
@@ -209,7 +209,7 @@
   margin: 0 auto;
 }
 
-.core-values::before {
+.spg-core-values::before {
   content: '';
   position: absolute;
   top: 0;
@@ -220,7 +220,7 @@
   pointer-events: none;
 }
 
-.section-badge {
+.spg-section-badge {
   display: inline-block;
   background: rgba(82, 44, 114, 0.2);
   color: #ce2453;
@@ -235,7 +235,7 @@
   margin-bottom: 20px;
 }
 
-.products-title {
+.spg-products-title {
   font-size: 48px;
   font-weight: 800;
   color: #ffffff;
@@ -243,14 +243,14 @@
   margin-bottom: 40px;
 }
 
-.products-title span {
+.spg-products-title span {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.values-grid {
+.spg-values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -259,7 +259,7 @@
   z-index: 2;
 }
 
-.value-card {
+.spg-value-card {
   background: rgba(17, 17, 17, 0.8);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -271,19 +271,19 @@
   transform: translateY(30px);
 }
 
-.value-card.show {
+.spg-value-card.spg-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.value-card:hover {
+.spg-value-card:hover {
   transform: translateY(-10px);
   border-color: #ce2453;
   box-shadow: 0 30px 50px rgba(206, 36, 83, 0.15);
   background: #111;
 }
 
-.value-icon {
+.spg-value-icon {
   font-size: 48px;
   margin-bottom: 20px;
   background: var(--primary-gradient);
@@ -291,13 +291,13 @@
   -webkit-text-fill-color: transparent;
 }
 
-.value-card h3 {
+.spg-value-card h3 {
   font-size: 24px;
   color: #fff;
   margin-bottom: 15px;
 }
 
-.value-card p {
+.spg-value-card p {
   color: #aaa;
   line-height: 1.7;
 }
@@ -305,7 +305,7 @@
 /* ============================================
    APPROACH SECTION
    ============================================ */
-.approach-section {
+.spg-approach-section {
   background: #000;
   padding: 40px 0;
   text-align: center;
@@ -313,7 +313,7 @@
   overflow: hidden;
 }
 
-.approach-section::before {
+.spg-approach-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -324,7 +324,7 @@
   pointer-events: none;
 }
 
-.approach-content {
+.spg-approach-content {
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -333,14 +333,14 @@
   z-index: 2;
 }
 
-.approach-content h2 {
+.spg-approach-content h2 {
   font-size: 48px;
   color: #fff;
   margin: 20px 0 30px;
   line-height: 1.2;
 }
 
-.approach-content p {
+.spg-approach-content p {
   color: #aaa;
   max-width: 700px;
   margin: 0 auto 60px;
@@ -348,25 +348,25 @@
   line-height: 1.8;
 }
 
-.metrics {
+.spg-metrics {
   display: flex;
   justify-content: center;
   gap: 100px;
   margin-top: 40px;
 }
 
-.metrics div {
+.spg-metrics div {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
 }
 
-.metrics div.show {
+.spg-metrics div.spg-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.metrics h3 {
+.spg-metrics h3 {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -376,7 +376,7 @@
   background-clip: text;
 }
 
-.metrics span {
+.spg-metrics span {
   color: #aaa;
   font-size: 16px;
   font-weight: 500;
@@ -386,14 +386,14 @@
 /* ============================================
    BUSINESS DOMAINS SECTION
    ============================================ */
-.business-domains-section {
+.spg-business-domains-section {
   padding: 40px 0;
   position: relative;
   background-color: #000;
   overflow: hidden;
 }
 
-.bd-right-backdrop {
+.spg-bd-right-backdrop {
   position: absolute;
   top: 50%;
   left: calc((100vw - 1220px) / 2 + 420px); /* Synchronized with container start + content width */
@@ -408,7 +408,7 @@
   border-right: none;
 }
 
-.bd-container {
+.spg-bd-container {
   display: flex;
   align-items: center;
   position: relative;
@@ -421,14 +421,14 @@
   min-height: 400px;
 }
 
-.bd-left {
+.spg-bd-left {
   flex: 0 0 480px;
   padding-right: 60px;
   position: relative;
   z-index: 10;
 }
 
-.bd-title {
+.spg-bd-title {
   font-size: 48px;
   font-weight: 800;
   color: #fff;
@@ -436,27 +436,27 @@
   line-height: 1.1;
 }
 
-.bd-title span {
+.spg-bd-title span {
   background: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.bd-subtitle {
+.spg-bd-subtitle {
   font-size: 16px;
   color: #aaa;
   line-height: 1.7;
   max-width: 90%;
 }
 
-.bd-nav-arrows {
+.spg-bd-nav-arrows {
   display: flex;
   gap: 15px;
   margin-top: 30px;
 }
 
-.bd-arrow {
+.spg-bd-arrow {
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -471,14 +471,14 @@
   font-size: 18px;
 }
 
-.bd-arrow:hover {
+.spg-bd-arrow:hover {
   background: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
   border-color: transparent;
   color: #fff;
   box-shadow: 0 5px 15px rgba(221, 92, 84, 0.3);
 }
 
-.bd-cards-slider {
+.spg-bd-cards-slider {
   flex: 1;
   display: flex;
   gap: 30px;
@@ -491,11 +491,11 @@
   z-index: 5;
 }
 
-.bd-cards-slider::-webkit-scrollbar {
+.spg-bd-cards-slider::-webkit-scrollbar {
   display: none;
 }
 
-.bd-card {
+.spg-bd-card {
   flex: 0 0 320px;
   background: #151515;
   border-radius: 20px;
@@ -505,36 +505,36 @@
   transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-.bd-card:hover {
+.spg-bd-card:hover {
   transform: translateY(-10px);
   border-color: rgba(221, 92, 84, 0.3);
 }
 
-.bd-card-img {
+.spg-bd-card-img {
   width: 100%;
   height: 200px;
   overflow: hidden;
 }
 
-.bd-card-img img {
+.spg-bd-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.bd-card:hover .bd-card-img img {
+.spg-bd-card:hover .spg-bd-card-img img {
   transform: scale(1.05);
 }
 
-.bd-card-content {
+.spg-bd-card-content {
   padding: 24px 28px;
   background: #161616;
   color: #fff;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.bd-card-num {
+.spg-bd-card-num {
   font-size: 13px;
   font-weight: 700;
   background: linear-gradient(90deg, #522c72 0%, #962964 25%, #ce2453 50%, #dd5c54 75%, #e79e57 100%);
@@ -545,7 +545,7 @@
   display: inline-block;
 }
 
-.bd-card-content h3 {
+.spg-bd-card-content h3 {
   font-size: 20px;
   font-weight: 800;
   color: #fff;
@@ -556,14 +556,14 @@
 /* ============================================
    LEADERSHIP SECTION
    ============================================ */
-.leadership-section {
+.spg-leadership-section {
   background: #000000;
   padding: 40px 0;
   position: relative;
   overflow: hidden;
 }
 
-.leadership-content {
+.spg-leadership-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -574,37 +574,37 @@
   padding: 0 40px;
 }
 
-.leadership-left {
+.spg-leadership-left {
   opacity: 0;
   transform: translateX(-30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.leadership-left.show {
+.spg-leadership-left.spg-show {
   opacity: 1;
   transform: translateX(0);
 }
 
-.leadership-left h2 {
+.spg-leadership-left h2 {
   font-size: 42px;
   color: #fff;
   margin: 20px 0 25px;
   line-height: 1.2;
 }
 
-.leadership-left p {
+.spg-leadership-left p {
   color: #aaa;
   line-height: 1.8;
   margin-bottom: 30px;
   font-size: 17px;
 }
 
-.leadership-left ul {
+.spg-leadership-left ul {
   list-style: none;
   padding: 0;
 }
 
-.leadership-left li {
+.spg-leadership-left li {
   color: #ccc;
   margin-bottom: 15px;
   font-size: 17px;
@@ -613,18 +613,18 @@
   gap: 10px;
 }
 
-.leadership-right {
+.spg-leadership-right {
   opacity: 0;
   transform: translateX(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.leadership-right.show {
+.spg-leadership-right.spg-show {
   opacity: 1;
   transform: translateX(0);
 }
 
-.leadership-stats {
+.spg-leadership-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -636,16 +636,16 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.leadership-stats div {
+.spg-leadership-stats div {
   text-align: center;
   transition: transform 0.3s ease;
 }
 
-.leadership-stats div:hover {
+.spg-leadership-stats div:hover {
   transform: scale(1.1);
 }
 
-.leadership-stats h3 {
+.spg-leadership-stats h3 {
   font-size: 36px;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
@@ -653,7 +653,7 @@
   margin-bottom: 8px;
 }
 
-.leadership-stats span {
+.spg-leadership-stats span {
   color: #aaa;
   font-size: 14px;
 }
@@ -661,13 +661,13 @@
 /* ============================================
    QUANTUM TIMELINE SECTION
    ============================================ */
-.quantum-timeline-section {
+.spg-quantum-timeline-section {
   padding: 40px 0;
   background: #000;
   position: relative;
 }
 
-.quantum-timeline-container {
+.spg-quantum-timeline-container {
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -676,11 +676,11 @@
 }
 
 /* Header */
-.quantum-header {
+.spg-quantum-header {
   text-align: center;
   margin-bottom: 80px;
 }
-.quantum-badge {
+.spg-quantum-badge {
   display: inline-block;
   background: rgba(82, 44, 114, 0.2);
   color: #ce2453;
@@ -693,20 +693,20 @@
   margin-bottom: 18px;
   text-transform: uppercase;
 }
-.quantum-title {
+.spg-quantum-title {
   font-size: 44px;
   font-weight: 800;
   color: #fff;
   margin-bottom: 16px;
   line-height: 1.2;
 }
-.quantum-title span {
+.spg-quantum-title span {
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.quantum-subtitle {
+.spg-quantum-subtitle {
   font-size: 17px;
   color: #aaa;
   max-width: 600px;
@@ -715,7 +715,7 @@
 }
 
 /* Track */
-.quantum-track {
+.spg-quantum-track {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -723,7 +723,7 @@
   gap: 60px;
 }
 
-.quantum-center-line {
+.spg-quantum-center-line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -733,7 +733,7 @@
   transform: translateX(-50%);
   border-radius: 2px;
 }
-.quantum-center-line::after {
+.spg-quantum-center-line::after {
   content: '';
   position: absolute;
   top: 0;
@@ -745,12 +745,12 @@
   box-shadow: 0 0 15px rgba(221, 92, 84, 0.8);
   transition: height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.quantum-track:hover .quantum-center-line::after {
+.spg-quantum-track:hover .spg-quantum-center-line::after {
   height: 100%;
 }
 
 /* Steps */
-.quantum-step {
+.spg-quantum-step {
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -760,21 +760,21 @@
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.quantum-step.show, .quantum-step.active {
+.spg-quantum-step.spg-show, .spg-quantum-step.spg-active {
   opacity: 1;
   transform: translateY(0);
 }
 
-.left-step {
+.spg-left-step {
   justify-content: flex-start;
 }
 
-.right-step {
+.spg-right-step {
   justify-content: flex-end;
 }
 
 /* Central Node */
-.quantum-node {
+.spg-quantum-node {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -786,7 +786,7 @@
   justify-content: center;
   z-index: 3;
 }
-.quantum-core {
+.spg-quantum-core {
   width: 14px;
   height: 14px;
   background: #dd5c54;
@@ -796,12 +796,12 @@
   z-index: 2;
   transition: all 0.3s ease;
 }
-.quantum-step:hover .quantum-core {
+.spg-quantum-step:hover .spg-quantum-core {
   transform: scale(1.3);
   box-shadow: 0 0 20px #e79e57;
   background: #e79e57;
 }
-.quantum-pulse {
+.spg-quantum-pulse {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -819,7 +819,7 @@
 }
 
 /* Card */
-.quantum-card {
+.spg-quantum-card {
   width: calc(50% - 60px);
   background: rgba(17, 17, 17, 0.6);
   backdrop-filter: blur(10px);
@@ -833,13 +833,13 @@
   z-index: 2;
 }
 
-.quantum-card:hover {
+.spg-quantum-card:hover {
   transform: translateY(-5px);
   border-color: rgba(221, 92, 84, 0.3);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-.quantum-card-glow {
+.spg-quantum-card-glow {
   position: absolute;
   top: -60px;
   right: -60px;
@@ -849,12 +849,12 @@
   z-index: -1;
   transition: all 0.4s ease;
 }
-.quantum-card:hover .quantum-card-glow {
+.spg-quantum-card:hover .spg-quantum-card-glow {
   transform: scale(1.5);
   background: radial-gradient(circle, rgba(221, 92, 84, 0.2) 0%, transparent 70%);
 }
 
-.quantum-step-number {
+.spg-quantum-step-number {
   position: absolute;
   top: 15px;
   right: 25px;
@@ -865,29 +865,29 @@
   transition: color 0.4s ease;
   pointer-events: none;
 }
-.quantum-card:hover .quantum-step-number {
+.spg-quantum-card:hover .spg-quantum-step-number {
   color: rgba(221, 92, 84, 0.08);
 }
 
-.quantum-icon {
+.spg-quantum-icon {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-.quantum-card h3 {
+.spg-quantum-card h3 {
   font-size: 24px;
   color: #fff;
   margin-bottom: 12px;
 }
 
-.quantum-card p {
+.spg-quantum-card p {
   font-size: 15px;
   color: #aaa;
   line-height: 1.7;
 }
 
 /* Connectors */
-.quantum-card::before {
+.spg-quantum-card::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -896,7 +896,7 @@
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
 }
-.left-step .quantum-card::before {
+.spg-left-step .spg-quantum-card::before {
   left: -40px; /* Connects right side of the left-step card to the center track */
   width: 0; /* Wait, it's easier to use a structural line or omit. Let's omit structural lines to keep it clean. Remove content inside. */
 }
@@ -904,70 +904,70 @@
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1300px) {
-  .bd-container {
+  .spg-bd-container {
     padding-left: 40px;
   }
 }
 
 @media (max-width: 992px) {
-  .pro-services-section {
+  .spg-pro-services-section {
     padding: 60px 0;
   }
   
-  .pro-services-container,
-  .core-values,
-  .approach-content,
-  .leadership-content,
-  .quantum-timeline-container {
+  .spg-pro-services-container,
+  .spg-core-values,
+  .spg-approach-content,
+  .spg-leadership-content,
+  .spg-quantum-timeline-container {
     padding: 0 30px;
   }
 
-  .bd-container {
+  .spg-bd-container {
     padding: 0 30px;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .pro-service-block,
-  .pro-service-block.reverse {
+  .spg-pro-service-block,
+  .spg-pro-service-block.spg-reverse {
     flex-direction: column;
     padding: 40px;
   }
 
-  .pro-image-wrapper img {
+  .spg-pro-image-wrapper img {
     min-height: 400px;
     height: auto;
   }
   
-  .values-grid {
+  .spg-values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .leadership-content {
+  .spg-leadership-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .metrics {
+  .spg-metrics {
     gap: 50px;
     flex-wrap: wrap;
   }
   
-  .leadership-stats {
+  .spg-leadership-stats {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .bd-container {
+  .spg-bd-container {
     flex-direction: column;
     align-items: flex-start;
   }
-  .bd-left {
+  .spg-bd-left {
     flex: none;
     width: 100%;
     margin-bottom: 40px;
     padding-right: 0;
   }
-  .bd-right-backdrop {
+  .spg-bd-right-backdrop {
     left: 0;
     border-radius: 0;
     height: 100%;
@@ -978,162 +978,162 @@
     height: 400px;
     background: #080808;
   }
-  .bd-cards-slider {
+  .spg-bd-cards-slider {
     width: 100%;
     padding: 20px 0;
   }
   
-  .quantum-step {
+  .spg-quantum-step {
     flex-direction: column !important;
     gap: 30px;
   }
-  .quantum-card {
+  .spg-quantum-card {
     width: 100%;
   }
-  .quantum-node {
+  .spg-quantum-node {
     position: relative;
     left: auto;
     top: auto;
     transform: none;
     margin-bottom: -15px;
   }
-  .quantum-center-line {
+  .spg-quantum-center-line {
     display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .pro-services-section {
+  .spg-pro-services-section {
     padding: 50px 0;
   }
   
-  .pro-services-container,
-  .core-values,
-  .approach-content,
-  .bd-container,
-  .leadership-content,
-  .quantum-timeline-container {
+  .spg-pro-services-container,
+  .spg-core-values,
+  .spg-approach-content,
+  .spg-bd-container,
+  .spg-leadership-content,
+  .spg-quantum-timeline-container {
     padding: 0 25px;
   }
   
-  .pro-service-block {
+  .spg-pro-service-block {
     padding: 30px 20px;
     border-radius: 20px;
   }
 
-  .pro-service-content h2 {
+  .spg-pro-service-content h2 {
     font-size: 32px;
   }
   
-  .pro-image-wrapper img {
+  .spg-pro-image-wrapper img {
     min-height: 300px;
     height: auto;
   }
   
-  .values-grid {
+  .spg-values-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   
-  .products-title {
+  .spg-products-title {
     font-size: 36px;
   }
   
-  .metrics {
+  .spg-metrics {
     flex-direction: column;
     gap: 30px;
   }
   
-  .leadership-stats {
+  .spg-leadership-stats {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .cta-buttons {
+  .spg-cta-buttons {
     flex-direction: column;
     gap: 15px;
   }
   
-  .cta-btn {
+  .spg-cta-btn {
     width: 100%;
     text-align: center;
   }
 
-  .bd-title {
+  .spg-bd-title {
     font-size: 36px;
   }
 
-  .quantum-timeline-section {
+  .spg-quantum-timeline-section {
     padding: 60px 0;
   }
-  .quantum-card {
+  .spg-quantum-card {
     padding: 30px 20px;
   }
-  .quantum-title {
+  .spg-quantum-title {
     font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .pro-services-container,
-  .core-values,
-  .approach-content,
-  .bd-container,
-  .leadership-content,
-  .quantum-timeline-container {
+  .spg-pro-services-container,
+  .spg-core-values,
+  .spg-approach-content,
+  .spg-bd-container,
+  .spg-leadership-content,
+  .spg-quantum-timeline-container {
     padding: 0 20px;
   }
   
-  .pro-image-wrapper img {
+  .spg-pro-image-wrapper img {
     min-height: 280px;
     height: auto;
   }
   
-  .pro-service-content h2 {
+  .spg-pro-service-content h2 {
     font-size: 28px;
   }
   
-  .metrics h3 {
+  .spg-metrics h3 {
     font-size: 40px;
   }
   
-  .value-card {
+  .spg-value-card {
     padding: 30px;
   }
   
-  .cta-section h2 {
+  .spg-cta-section h2 {
     font-size: 36px;
   }
 
-  .bd-card {
+  .spg-bd-card {
     flex: 0 0 280px;
   }
-  .bd-title {
+  .spg-bd-title {
     font-size: 30px;
   }
 
-  .quantum-title {
+  .spg-quantum-title {
     font-size: 30px;
   }
-  .quantum-card {
+  .spg-quantum-card {
     padding: 30px 15px;
   }
 }
 
 /* Stagger animation delays */
 
-.value-card:nth-child(1) { transition-delay: 0.1s; }
-.value-card:nth-child(2) { transition-delay: 0.25s; }
-.value-card:nth-child(3) { transition-delay: 0.4s; }
+.spg-value-card:nth-child(1) { transition-delay: 0.1s; }
+.spg-value-card:nth-child(2) { transition-delay: 0.25s; }
+.spg-value-card:nth-child(3) { transition-delay: 0.4s; }
 
-.metrics div:nth-child(1) { transition-delay: 0.1s; }
-.metrics div:nth-child(2) { transition-delay: 0.3s; }
-.metrics div:nth-child(3) { transition-delay: 0.5s; }
+.spg-metrics div:nth-child(1) { transition-delay: 0.1s; }
+.spg-metrics div:nth-child(2) { transition-delay: 0.3s; }
+.spg-metrics div:nth-child(3) { transition-delay: 0.5s; }
 
 /* ============================================
    FLOATING CARDS - Premium UI Elements
    ============================================ */
-.floating-card {
+.spg-floating-card {
   position: absolute;
   background: rgba(10, 10, 10, 0.7);
   -webkit-backdrop-filter: blur(20px);
@@ -1152,7 +1152,7 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.floating-card::after {
+.spg-floating-card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -1172,14 +1172,14 @@
 }
 
 /* Precise Safe Placements */
-.cloud-card-1 { 
+.spg-cloud-card-1 { 
     display: none; /* Replaced by orbit arc */
 }
 
 /* ============================================
    CLOUD ORBIT ARC DESIGN
    ============================================ */
-.cloud-orbit-wrap {
+.spg-cloud-orbit-wrap {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1193,7 +1193,7 @@
     justify-content: center;
 }
 
-.orbit-circle {
+.spg-orbit-circle {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1203,11 +1203,11 @@
     pointer-events: none;
 }
 
-.c-1 { width: 440px; height: 440px; }
-.c-2 { width: 620px; height: 620px; opacity: 0.6; }
-.c-3 { width: 780px; height: 780px; opacity: 0.3; }
+.spg-c-1 { width: 440px; height: 440px; }
+.spg-c-2 { width: 620px; height: 620px; opacity: 0.6; }
+.spg-c-3 { width: 780px; height: 780px; opacity: 0.3; }
 
-.orbit-node {
+.spg-orbit-node {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -1230,7 +1230,7 @@
     50% { transform: translateY(-12px) scale(1.05); }
 }
 
-.node-glow {
+.spg-node-glow {
     position: absolute;
     inset: -10px;
     border-radius: 50%;
@@ -1240,29 +1240,29 @@
 }
 
 /* Arc Positioning */
-.n-1 { top: 32%; left: 22%; --gc: rgba(0, 120, 212, 0.4); animation-delay: -0.5s; color: #0078d4; } /* Azure */
-.n-2 { top: 15%; right: 33%; --gc: rgba(255, 153, 0, 0.4); animation-delay: -1.5s; color: #ff9900; } /* AWS */
-.n-3 { top: 48%; right: 14%; --gc: rgba(66, 133, 244, 0.4); animation-delay: -2.5s; color: #4285f4; } /* Google */
+.spg-n-1 { top: 32%; left: 22%; --gc: rgba(0, 120, 212, 0.4); animation-delay: -0.5s; color: #0078d4; } /* Azure */
+.spg-n-2 { top: 15%; right: 33%; --gc: rgba(255, 153, 0, 0.4); animation-delay: -1.5s; color: #ff9900; } /* AWS */
+.spg-n-3 { top: 48%; right: 14%; --gc: rgba(66, 133, 244, 0.4); animation-delay: -2.5s; color: #4285f4; } /* Google */
 
 
 /* Precise Safe Placements */
 
-.cloud-card-2 { bottom: 8%; right: -2%; width: 180px; flex-direction: row; align-items: center; animation-delay: -3s; }
+.spg-cloud-card-2 { bottom: 8%; right: -2%; width: 180px; flex-direction: row; align-items: center; animation-delay: -3s; }
 
-.devops-card-1 { top:25%; right: 60% ; width: 160px; animation-delay: -1s; }
-.devops-card-2 { bottom: 3%; right:5%; width: 190px; flex-direction: row; align-items: center; animation-delay: -4s; }
+.spg-devops-card-1 { top:25%; right: 60% ; width: 160px; animation-delay: -1s; }
+.spg-devops-card-2 { bottom: 3%; right:5%; width: 190px; flex-direction: row; align-items: center; animation-delay: -4s; }
 
-.security-card-1 { top: 15%; right: 12%; width: 150px; animation-delay: -2s; }
-.security-card-2 { bottom: 20%; right: 8%; width: 200px; flex-direction: row; align-items: center; animation-delay: -5s; }
+.spg-security-card-1 { top: 15%; right: 12%; width: 150px; animation-delay: -2s; }
+.spg-security-card-2 { bottom: 20%; right: 8%; width: 200px; flex-direction: row; align-items: center; animation-delay: -5s; }
 
 
 /* Responsive adjustments for placement */
-.reverse .floating-card {
+.spg-reverse .spg-floating-card {
   left: auto;
 }
 
 /* Card Badge & Labels */
-.card-badge {
+.spg-card-badge {
   font-size: 9px;
   font-weight: 800;
   color: #ce2453;
@@ -1271,31 +1271,31 @@
   opacity: 0.8;
 }
 
-.card-label {
+.spg-card-label {
   font-size: 11px;
   font-weight: 600;
   color: #fff;
   text-align: center;
 }
 
-.card-text {
+.spg-card-text {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.card-text strong {
+.spg-card-text strong {
   font-size: 13px;
   color: #fff;
 }
 
-.card-text span {
+.spg-card-text span {
   font-size: 10px;
   color: #888;
 }
 
 /* Icon Graphics */
-.card-icons-row {
+.spg-card-icons-row {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -1303,11 +1303,11 @@
   font-size: 18px;
 }
 
-.icon-azure { color: #0078d4; }
-.icon-aws { color: #ff9900; }
-.icon-gcp { color: #4285f4; }
+.spg-icon-azure { color: #0078d4; }
+.spg-icon-aws { color: #ff9900; }
+.spg-icon-gcp { color: #4285f4; }
 
-.icon-circle {
+.spg-icon-circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -1320,23 +1320,23 @@
   flex-shrink: 0;
 }
 
-.icon-circle.alt { background: rgba(206, 36, 83, 0.15); color: #ce2453; }
-.icon-circle.sec { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.spg-icon-circle.spg-alt { background: rgba(206, 36, 83, 0.15); color: #ce2453; }
+.spg-icon-circle.spg-sec { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
 
 /* Visual Components (Mini-Graphics) */
-.pipeline-visual {
+.spg-pipeline-visual {
   display: flex;
   align-items: center;
   gap: 4px;
   padding: 6px 0;
 }
 
-.p-node { width: 6px; height: 6px; border-radius: 50%; background: #333; }
-.p-node.active { background: #ce2453; box-shadow: 0 0 10px #ce2453; }
-.p-line { flex: 1; height: 1px; background: #333; }
-.p-line.active { background: #ce2453; }
+.spg-p-node { width: 6px; height: 6px; border-radius: 50%; background: #333; }
+.spg-p-node.spg-active { background: #ce2453; box-shadow: 0 0 10px #ce2453; }
+.spg-p-line { flex: 1; height: 1px; background: #333; }
+.spg-p-line.spg-active { background: #ce2453; }
 
-.security-visual {
+.spg-security-visual {
   height: 40px;
   display: flex;
   align-items: center;
@@ -1344,9 +1344,9 @@
   position: relative;
 }
 
-.main-shield { font-size: 24px; color: #22c55e; z-index: 2; }
+.spg-main-shield { font-size: 24px; color: #22c55e; z-index: 2; }
 
-.radar-circle {
+.spg-radar-circle {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1366,7 +1366,7 @@
 /* ============================================
    END-TO-END DEVOPS SECTION
    ============================================ */
-.sv-e2e-section {
+.spg-sv-e2e-section {
   background: #000;
   padding: 30px 40px;
   position: relative;
@@ -1374,27 +1374,27 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.sv-e2e-container {
+.spg-sv-e2e-container {
   max-width: 1290px;
   margin: 0 auto;
   text-align: center;
 }
 
-.sv-e2e-grid {
+.spg-sv-e2e-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-.sv-e2e-content {
+.spg-sv-e2e-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 800px;
 }
 
-.sv-e2e-badge {
+.spg-sv-e2e-badge {
   color: #ce2453;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1403,7 +1403,7 @@
   display: block;
 }
 
-.sv-e2e-title {
+.spg-sv-e2e-title {
   font-size: 54px;
   font-weight: 800;
   color: #fff;
@@ -1411,7 +1411,7 @@
   margin-bottom: 24px;
 }
 
-.sv-e2e-desc {
+.spg-sv-e2e-desc {
   color: #bbb;
   font-size: 19px;
   line-height: 1.6;
@@ -1420,19 +1420,19 @@
 
 /* Pipeline Flow Visual */
 /* S-Shaped Pipeline Visual */
-.sv-e2e-visual {
+.spg-sv-e2e-visual {
   width: 100%;
   max-width: 1100px;
 }
 
-.sv-s-pipeline-container {
+.spg-sv-s-pipeline-container {
   position: relative;
   width: 1000px;
   height: 480px;
   margin: 0 auto;
 }
 
-.sv-s-line-svg {
+.spg-sv-s-line-svg {
   position: absolute;
   top: -50px;
   left: 0;
@@ -1441,7 +1441,7 @@
   z-index: 1;
 }
 
-.sv-s-path-bg {
+.spg-sv-s-path-bg {
   filter: drop-shadow(0 0 10px rgba(206, 36, 83, 0.2));
   animation: svPathDraw 3s ease-in-out infinite alternate;
 }
@@ -1451,14 +1451,14 @@
   to { stroke-dashoffset: 50; }
 }
 
-.sv-s-steps {
+.spg-sv-s-steps {
   position: relative;
   z-index: 2;
   width: 100%;
   height: 100%;
 }
 
-.sv-s-step {
+.spg-sv-s-step {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -1468,7 +1468,7 @@
   transition: all 0.4s ease;
 }
 
-.sv-s-icon {
+.spg-sv-s-icon {
   width: 70px;
   height: 70px;
   background: #000;
@@ -1484,7 +1484,7 @@
   position: relative;
 }
 
-.sv-s-icon::after {
+.spg-sv-s-icon::after {
   content: '';
   position: absolute;
   inset: -8px;
@@ -1498,13 +1498,13 @@
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-.sv-s-step:hover .sv-s-icon {
+.spg-sv-s-step:hover .spg-sv-s-icon {
   transform: scale(1.1);
   background: #ce2453;
   box-shadow: 0 0 30px rgba(206, 36, 83, 0.6);
 }
 
-.sv-s-info strong {
+.spg-sv-s-info strong {
   display: block;
   font-size: 15px;
   color: #fff;
@@ -1512,23 +1512,23 @@
   letter-spacing: 1px;
 }
 
-.sv-s-info p {
+.spg-sv-s-info p {
   font-size: 13px;
   color: #999;
   line-height: 1.4;
 }
 
 /* Positioning steps on the S curve */
-.step-plan { top: 70px; left: 0px; }
-.step-code { top: 70px; left: 400px; }
-.step-build { top: 70px; left: 800px; }
+.spg-step-plan { top: 70px; left: 0px; }
+.spg-step-code { top: 70px; left: 400px; }
+.spg-step-build { top: 70px; left: 800px; }
 
-.step-test { top: 310px; left: 800px; }
-.step-deploy { top: 310px; left: 400px; }
-.step-monitor { top: 310px; left: 0px; }
+.spg-step-test { top: 310px; left: 800px; }
+.spg-step-deploy { top: 310px; left: 400px; }
+.spg-step-monitor { top: 310px; left: 0px; }
 
 @media (max-width: 1100px) {
-  .sv-s-pipeline-container {
+  .spg-sv-s-pipeline-container {
     width: 100%;
     height: auto;
     display: flex;
@@ -1536,27 +1536,27 @@
     align-items: center;
     gap: 40px;
   }
-  .sv-s-line-svg { display: none; }
-  .sv-s-steps {
+  .spg-sv-s-line-svg { display: none; }
+  .spg-sv-s-steps {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
-  .sv-s-step {
+  .spg-sv-s-step {
     position: static;
     width: auto;
   }
 }
 
 @media (max-width: 600px) {
-  .sv-s-steps { grid-template-columns: 1fr; }
+  .spg-sv-s-steps { grid-template-columns: 1fr; }
 }
 
 /* WHAT WE OFFER SECTION */
 /* ============================================
    TECH STACK MARQUEE
    ============================================ */
-.sv-tech-marquee-section {
+.spg-sv-tech-marquee-section {
   padding: 60px 0;
   background: #000;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1564,7 +1564,7 @@
   overflow: hidden;
 }
 
-.marquee-label {
+.spg-marquee-label {
   text-align: center;
   font-size: 10px;
   font-weight: 800;
@@ -1574,23 +1574,23 @@
   text-transform: uppercase;
 }
 
-.marquee-outer {
+.spg-marquee-outer {
   width: 100%;
   display: flex;
 }
 
-.marquee-inner {
+.spg-marquee-inner {
   display: flex;
   white-space: nowrap;
   animation: marquee-scroll 45s linear infinite;
 }
 
-.marquee-item-wrapper {
+.spg-marquee-item-wrapper {
   display: flex;
   align-items: center;
 }
 
-.marquee-tech-name {
+.spg-marquee-tech-name {
   font-size: 16px;
   font-weight: 800;
   color: #555;
@@ -1600,7 +1600,7 @@
   cursor: default;
 }
 
-.marquee-tech-name:hover {
+.spg-marquee-tech-name:hover {
   color: #fff;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
@@ -1609,7 +1609,7 @@
   text-shadow: none;
 }
 
-.marquee-divider {
+.spg-marquee-divider {
   width: 1px;
   height: 15px;
   background: rgba(255, 255, 255, 0.08);
@@ -1621,14 +1621,14 @@
 }
 
 @media (max-width: 768px) {
-  .sv-tech-marquee-section {
+  .spg-sv-tech-marquee-section {
     padding: 40px 0;
   }
-  .marquee-tech-name {
+  .spg-marquee-tech-name {
     font-size: 12px;
     padding: 0 20px;
   }
-  .marquee-label {
+  .spg-marquee-label {
     font-size: 9px;
     margin-bottom: 25px;
   }
@@ -1636,9 +1636,9 @@
 
 
 @media (max-width: 1200px) {
-  .sv-e2e-grid { grid-template-columns: 1fr; gap: 40px; }
+  .spg-sv-e2e-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 768px) {
-  .sv-e2e-title { font-size: 32px; }
+  .spg-sv-e2e-title { font-size: 32px; }
 }

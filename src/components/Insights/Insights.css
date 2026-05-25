@@ -1,0 +1,277 @@
+/* ==========================================================================
+   Insights.css - Featured Thought Leadership Premium Pure Black Theme
+   ========================================================================== */
+
+.insights-root {
+  background-color: #000000; /* Pure black theme */
+  padding: 40px 24px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Subtle background glows for visual excellence */
+.insights-root::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(206, 36, 83, 0.06) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.insights-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Center-Aligned Mockup Header */
+.insights-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.insights-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 1.5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.insights-pill-icon {
+  color: #ffffff;
+}
+
+.insights-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.insights-title span {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mockup double underline accents */
+.insights-accent-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.insights-accent-lines .line-short {
+  width: 28px;
+  height: 3px;
+  background-color: #ce2453;
+  border-radius: 4px;
+}
+
+.insights-accent-lines .line-long {
+  width: 44px;
+  height: 3px;
+  background-color: rgba(206, 36, 83, 0.3);
+  border-radius: 4px;
+}
+
+/* 3-Column Grid */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 50px;
+}
+
+/* Premium Dark Card Style matching mockup */
+.insights-card {
+  background: rgba(255, 255, 255, 0.015);
+  border-radius: 24px;
+  overflow: visible;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.insights-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Image Wrap with rounded top */
+.insights-img-wrap {
+  position: relative;
+  height: 230px;
+  border-radius: 24px 24px 0 0;
+  overflow: visible;
+}
+
+.insights-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px 24px 0 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.85;
+}
+
+.insights-card:hover .insights-img-wrap img {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* Circular Overlapping Icon Badge */
+.insights-icon-badge {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #000000; /* Overlaps clean dark card */
+  box-shadow: 0 8px 24px rgba(206, 36, 83, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.insights-card:hover .insights-icon-badge {
+  transform: translateX(-50%) scale(1.08) rotate(5deg);
+  box-shadow: 0 10px 28px rgba(150, 41, 100, 0.4);
+}
+
+/* Card Body */
+.insights-card-body {
+  padding: 50px 32px 32px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.insights-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.insights-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Rounded Pill CTA Button matching primary multi-stop brand gradient */
+.insights-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(206, 36, 83, 0.3);
+}
+
+.insights-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(206, 36, 83, 0.5);
+}
+
+.insights-cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+.insights-cta-btn:hover .insights-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive adjust */
+@media (max-width: 1024px) {
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .insights-title {
+    font-size: 2.1rem;
+  }
+}

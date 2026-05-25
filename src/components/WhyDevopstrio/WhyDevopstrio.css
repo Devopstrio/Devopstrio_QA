@@ -38,7 +38,7 @@
   margin: 0 auto;
   padding: 0 12px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: center;
   gap: 80px;
 }
@@ -47,14 +47,15 @@
 
 .adv-image-wrap {
   position: relative;
-  padding: 0px;
+  max-width: 90%;
+  top: 80px;
+  margin: 0 auto;
 }
 
 .adv-image {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
-  top: 64px;
   border-radius: 22px;
   display: block;
   filter: contrast(1.05) saturate(1.05);
@@ -63,25 +64,24 @@
 .adv-image-wrap::before {
   content: "";
   position: absolute;
-  inset: -140px;
-  left: -140px;
+  inset: -30px;
+  left: -30px;
   background: radial-gradient(
     circle at center,
-    rgba(82, 44, 114, 0.605) 0%,
-    rgba(150, 41, 100, 0.434) 25%,
-    rgba(206, 36, 83, 0.12) 45%,
-    rgba(221, 92, 84, 0.05) 60%,
-    transparent 75%
+    rgba(82, 44, 114, 0.28) 0%,
+    rgba(150, 41, 100, 0.16) 25%,
+    rgba(206, 36, 83, 0.05) 45%,
+    transparent 70%
   );
-  filter: blur(110px);
+  filter: blur(60px);
   z-index: 0;
-  animation: glowPulse 9s ease-in-out infinite;
+  animation: none;
 }
 
 .adv-image-wrap::after {
   content: "";
   position: absolute;
-  inset: -30px;
+  inset: -15px;
   border-radius: 24px;
   z-index: 0;
 }
@@ -140,7 +140,7 @@
   position: absolute;
   z-index: 3;
   bottom: 85px;
-  left: 400px;
+  left: 250px;
   background: rgba(25, 25, 25, 0.9);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);

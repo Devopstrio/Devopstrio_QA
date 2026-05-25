@@ -19,7 +19,7 @@ export default function PartnerEcosystem() {
       <div className="partnerecosys-partner-container">
 
         <h2 className="partnerecosys-partner-title">
-          Our Partner <span>Ecosystem</span>
+          Trusted <span>By</span>
         </h2>
 
         <p className="partnerecosys-partner-subtitle" dangerouslySetInnerHTML={{ __html: "Bringing together the best of our <a href='/ecosystem' class='partnerecosys-about-inline-link'>partner network</a> to create competitive advantage for your business." }}></p>

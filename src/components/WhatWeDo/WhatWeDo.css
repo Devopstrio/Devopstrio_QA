@@ -39,18 +39,7 @@
   background: #000;
 }
 
-/* Background decorative elements - subtle gradient glow */
-.what-we-do::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  /* background: radial-gradient(circle, rgba(82, 44, 114, 0.08) 0%, transparent 70%); */
-  border-radius: 50%;
-  z-index: 0;
-}
+
 
 .what-we-do::after {
   content: "";
@@ -83,7 +72,7 @@
   border-radius: 50px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 80px 0 16px;
+  margin: 20px 0 16px;
   position: relative;
   overflow: hidden;
   transform: translateY(20px);

@@ -159,6 +159,9 @@ const GlobalPresence = () => {
 
       {/* ===== Title + Filters ===== */}
       <div className="gp-header">
+        <span className="gp-pill">
+          <span>Global Presence</span>
+        </span>
         <h2>Our Global Presence</h2>
 
         <div className="gp-filters">

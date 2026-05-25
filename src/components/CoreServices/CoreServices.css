@@ -1,0 +1,485 @@
+:root {
+  --cs-bg-black: #000000;
+  --cs-card-dark: #0A0A0B;
+  --cs-border: rgba(255, 255, 255, 0.05);
+  --cs-accent-rose: #ce2453;
+  --cs-accent-yellow: #EAB308;
+  --cs-text-white: #FFFFFF;
+  --cs-text-muted: rgba(255, 255, 255, 0.6);
+  
+  --cs-signature-gradient: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+}
+
+.coreservs-root {
+  background: var(--cs-bg-black);
+  color: var(--cs-text-white);
+  padding: 80px 0;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+.coreservs-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ============================================
+   HEADER ROW
+============================================ */
+.coreservs-header {
+  text-align: left;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.coreservs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--cs-signature-gradient);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.coreservs-title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--cs-text-white);
+  text-align: left;
+}
+
+.coreservs-title span {
+  background: var(--cs-signature-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.coreservs-subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--cs-text-muted);
+  max-width: 780px;
+  text-align: left;
+}
+
+
+/* ============================================
+   WORKSPACE LAYOUT (SIDEBAR + PANEL)
+============================================ */
+.coreservs-workspace {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* ============================================
+   LEFT SIDEBAR: MENU
+============================================ */
+.coreservs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.coreservs-menu-btn {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--cs-text-white);
+}
+
+.coreservs-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+.coreservs-menu-btn.active {
+  background: rgba(206, 36, 83, 0.08);
+  border-color: rgba(206, 36, 83, 0.35);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.coreservs-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 18px;
+  transition: all 0.3s ease;
+}
+
+.coreservs-menu-btn.active .coreservs-btn-icon {
+  background: var(--cs-accent-rose);
+  border-color: var(--cs-accent-rose);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(206, 36, 83, 0.4);
+}
+
+.coreservs-btn-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  flex: 1;
+}
+
+.coreservs-menu-btn.active .coreservs-btn-text {
+  color: #fff;
+}
+
+.coreservs-btn-arrow {
+  color: var(--cs-accent-rose);
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   RIGHT PANEL LAYOUT
+============================================ */
+.coreservs-panel {
+  background: var(--cs-card-dark);
+  border: 1px solid var(--cs-border);
+  border-radius: 28px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* PANEL DETAILS LEFT */
+.coreservs-panel-details {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.coreservs-panel-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--cs-text-white);
+  letter-spacing: -0.5px;
+}
+
+.coreservs-caps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.coreservs-cap-item {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.coreservs-cap-text {
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.coreservs-cap-arrow {
+  color: var(--cs-accent-rose);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coreservs-cap-item:hover {
+  transform: translateX(6px);
+  color: #fff;
+}
+
+.coreservs-cap-item:hover .coreservs-cap-text {
+  color: var(--cs-accent-rose);
+}
+
+.coreservs-cap-item:hover .coreservs-cap-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.coreservs-cap-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cs-accent-rose);
+  box-shadow: 0 0 10px var(--cs-accent-rose);
+  display: inline-block;
+}
+
+.coreservs-panel-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cs-text-muted);
+  margin-bottom: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 20px;
+}
+
+.coreservs-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cs-text-white);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  max-width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.coreservs-all-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.coreservs-all-link:hover {
+  color: var(--cs-accent-rose);
+  transform: translateX(4px);
+}
+
+.coreservs-all-link:hover::after {
+  background: var(--cs-accent-rose);
+}
+
+/* ============================================
+   PANEL RIGHT: ILLUSTRATION GRAPHIC
+============================================ */
+.coreservs-panel-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.coreservs-graphic-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 30s linear infinite;
+}
+
+.coreservs-graphic-inner {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px dashed rgba(206, 36, 83, 0.25);
+  position: absolute;
+}
+
+.coreservs-graphic-core {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--cs-accent-rose);
+  box-shadow: 0 0 40px rgba(206, 36, 83, 0.6);
+  position: absolute;
+  z-index: 2;
+  animation: breathing 4s ease-in-out infinite;
+}
+
+/* Branching Petals/Cards Arrangement around the circle */
+.coreservs-graphic-card {
+  width: 60px;
+  height: 90px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.coreservs-graphic-card.c1 { transform: rotate(0deg) translateY(-120px) rotate(0deg); }
+.coreservs-graphic-card.c2 { transform: rotate(60deg) translateY(-120px) rotate(-60deg); }
+.coreservs-graphic-card.c3 { transform: rotate(120deg) translateY(-120px) rotate(-120deg); }
+.coreservs-graphic-card.c4 { transform: rotate(180deg) translateY(-120px) rotate(-180deg); }
+.coreservs-graphic-card.c5 { transform: rotate(240deg) translateY(-120px) rotate(-240deg); }
+.coreservs-graphic-card.c6 { transform: rotate(300deg) translateY(-120px) rotate(-300deg); }
+
+/* Animation triggers */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes breathing {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 60px rgba(234, 179, 8, 0.8); }
+  100% { transform: scale(0.95); opacity: 0.85; }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+@media (max-width: 1200px) {
+  .coreservs-workspace {
+    gap: 30px;
+    grid-template-columns: 280px 1fr;
+  }
+  
+  .coreservs-panel {
+    padding: 36px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .coreservs-panel-graphic {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .coreservs-workspace {
+    grid-template-columns: 1fr;
+  }
+  
+  .coreservs-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    gap: 12px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .coreservs-sidebar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  .coreservs-menu-btn {
+    white-space: nowrap;
+    width: auto;
+    padding: 14px 20px;
+  }
+  
+  .coreservs-menu-btn:hover {
+    transform: none;
+  }
+  
+  .coreservs-btn-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .coreservs-root {
+    padding: 60px 0;
+  }
+  
+  .coreservs-title {
+    font-size: 36px;
+  }
+  
+  .coreservs-panel {
+    padding: 28px;
+  }
+  
+  .coreservs-panel-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coreservs-root {
+    padding: 50px 0;
+  }
+  
+  .coreservs-title {
+    font-size: 28px;
+  }
+  
+  .coreservs-subtitle {
+    font-size: 14px;
+  }
+  
+  .coreservs-cap-item {
+    font-size: 15px;
+  }
+  
+  .coreservs-panel-graphic {
+    display: none; /* Hide graphic on small screens for cleaner mobile layout */
+  }
+  
+  .coreservs-panel {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}

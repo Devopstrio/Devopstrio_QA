@@ -415,7 +415,7 @@ const Insightspage = () => {
       </section>
 
       {/* COMPANY JOURNEY TIMELINE - HORIZONTAL WITH SINGLE LINE */}
-      <section className="dt-timeline-section">
+      <section className="dt-timeline-ins-section">
         <div className="dt-container">
           <div className="dt-section-header">
             <span className="dt-badge">OUR JOURNEY</span>

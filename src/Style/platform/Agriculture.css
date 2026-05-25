@@ -1,0 +1,669 @@
+/* Agriculture Platform Premium Styling - Dark Glassmorphism */
+
+.plt-agri-page {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', 'Outfit', sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+.plt-agri-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.plt-agri-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Common Section Headers */
+.plt-agri-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 48px auto;
+}
+
+.plt-agri-section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #ffffff 0%, #e5e7eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.plt-agri-section-header p {
+  color: #9ca3af;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* 1. Hero Section */
+.plt-agri-hero {
+  padding: 60px 0px;
+}
+
+.plt-agri-hero-layout {
+  max-width: 900px;
+}
+
+.plt-agri-hero-h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+/* 2. Hero Subtitle & Metrics Section */
+.plt-agri-metrics-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.plt-agri-metrics-left h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  background: linear-gradient(90deg, #ffffff 0%, #d1d5db 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.plt-agri-metrics-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.plt-agri-metric-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 28px 24px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.plt-agri-metric-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(206, 36, 83, 0.3);
+}
+
+.plt-agri-metric-card h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.plt-agri-metric-lbl {
+  color: #ce2453;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plt-agri-metric-card p {
+  color: #9ca3af;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* 3. Services Section */
+.plt-agri-services-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.plt-agri-service-card {
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 40px 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.plt-agri-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(206, 36, 83, 0.3);
+  box-shadow: 0 10px 30px rgba(206, 36, 83, 0.15);
+}
+
+.plt-agri-service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(206, 36, 83, 0.1);
+  border: 1px solid rgba(206, 36, 83, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ce2453;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.plt-agri-service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.plt-agri-service-card p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 4. Call To Action Intermediate Banner */
+.plt-agri-cta-banner {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-cta-card {
+  background: linear-gradient(90deg, rgba(82, 44, 114, 0.15) 0%, rgba(206, 36, 83, 0.05) 100%);
+  border: 1px solid rgba(206, 36, 83, 0.25);
+  border-radius: 20px;
+  padding: 40px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.plt-agri-cta-left h3 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.plt-agri-btn-cta {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.35);
+  flex-shrink: 0;
+}
+
+.plt-agri-btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.5);
+}
+
+/* 5. Why Choose Section */
+.plt-agri-why-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.plt-agri-why-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 36px 32px;
+  transition: border-color 0.3s ease;
+}
+
+.plt-agri-why-card:hover {
+  border-color: rgba(206, 36, 83, 0.2);
+}
+
+.plt-agri-why-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.plt-agri-why-card p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 6. Multi-Step Pricing Estimator Section */
+.plt-agri-pricing-estimator {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-estimator-card {
+  background: rgba(28, 28, 28, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 56px;
+  backdrop-filter: blur(10px);
+}
+
+.plt-agri-estimator-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.plt-agri-step-block h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.plt-agri-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.plt-agri-choice-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  padding: 12px 24px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plt-agri-choice-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.plt-agri-choice-btn.active {
+  background: linear-gradient(90deg, rgba(82, 44, 114, 0.25) 0%, rgba(206, 36, 83, 0.1) 100%);
+  border-color: #ce2453;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(206, 36, 83, 0.15);
+}
+
+.plt-agri-checkbox, .plt-agri-radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  color: #ce2453;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.plt-agri-checkbox {
+  border-radius: 4px;
+}
+
+.plt-agri-radio {
+  border-radius: 50%;
+  font-size: 0.55rem;
+}
+
+.plt-agri-choice-btn.active .plt-agri-checkbox,
+.plt-agri-choice-btn.active .plt-agri-radio {
+  border-color: #ce2453;
+}
+
+/* Slider styling */
+.plt-agri-slider-container {
+  margin-top: 12px;
+  max-width: 600px;
+}
+
+.plt-agri-range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  transition: background 0.3s;
+}
+
+.plt-agri-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ce2453;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(206, 36, 83, 0.5);
+  transition: transform 0.2s;
+}
+
+.plt-agri-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.plt-agri-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Price Box */
+.plt-agri-price-display-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.plt-agri-price-left span {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.plt-agri-price-left h3 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 6px 0;
+  background: linear-gradient(90deg, #ffffff 0%, #e79e57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plt-agri-price-left p {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+/* Primary Purple/Orange Button */
+.plt-agri-btn-primary {
+  background: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(206, 36, 83, 0.35);
+}
+
+.plt-agri-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(206, 36, 83, 0.5);
+}
+
+/* 5.5. Reliable Partner Section Styling (mockup dark theme) */
+.plt-agri-partner-section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.plt-agri-partner-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.plt-agri-partner-header-left {
+  flex: 1;
+}
+
+.plt-agri-partner-header-left h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ffffff 0%, #e5e7eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plt-agri-partner-header-right {
+  flex: 1;
+}
+
+.plt-agri-partner-header-right p {
+  color: #9ca3af;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.plt-agri-partner-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.plt-agri-partner-feature-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.plt-agri-partner-feature-card:hover {
+  border-color: rgba(206, 36, 83, 0.2);
+  transform: translateY(-4px);
+}
+
+.plt-agri-partner-feat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(206, 36, 83, 0.08);
+  border: 1px solid rgba(206, 36, 83, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ce2453;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.plt-agri-partner-feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.plt-agri-partner-feature-card p {
+  color: #9ca3af;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.plt-agri-partner-banner-wrap {
+  width: 100%;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  margin-bottom: 48px;
+}
+
+.plt-agri-partner-banner-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.plt-agri-partner-metrics-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 32px 0;
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.plt-agri-partner-metric-item {
+  text-align: center;
+  flex: 1;
+}
+
+.plt-agri-partner-metric-item h4 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.plt-agri-partner-metric-item p {
+  color: #9ca3af;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.plt-agri-partner-metric-divider {
+  width: 1px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 7. Consultation Form Section */
+.plt-agri-consultation-section {
+  padding: 60px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .plt-agri-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .plt-agri-metrics-right {
+    grid-template-columns: 1fr;
+  }
+  .plt-agri-services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .plt-agri-why-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .plt-agri-partner-header-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .plt-agri-partner-features {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .plt-agri-partner-banner-wrap {
+    height: 260px;
+  }
+  .plt-agri-partner-metrics-row {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+  }
+  .plt-agri-partner-metric-divider {
+    display: none;
+  }
+  .plt-agri-cta-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 32px;
+  }
+  .plt-agri-price-display-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .plt-agri-hero-h1 {
+    font-size: 2.8rem;
+  }
+  .plt-agri-estimator-card {
+    padding: 28px;
+  }
+}

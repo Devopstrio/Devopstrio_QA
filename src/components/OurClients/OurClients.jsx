@@ -1,4 +1,5 @@
 import "./OurClients.css";
+import { Users } from "lucide-react";
 
 import DevopsrioMainLogo from "/images/Devopsrio_Main_logo.png";
 import HumanexLogo from "../../assets/images/bp-logo.svg";
@@ -29,7 +30,9 @@ export default function OurClients() {
       <div className="our-clients-container">
         {/* LEFT CONTENT */}
         <div className="our-clients-text">
-          <span className="clients-pill">OUR CLIENTS</span>
+          <span className="clients-pill">
+            <span>Our Clients</span>
+          </span>
 
           <h2>
             One platform <br />

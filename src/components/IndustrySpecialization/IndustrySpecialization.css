@@ -1,0 +1,326 @@
+/* ==========================================================================
+   IndustrySpecialization.css - Premium Split Slider Theme (#ce2453)
+   ========================================================================== */
+
+:root {
+  --indspec-bg: #000000; /* Pure black theme */
+  --indspec-accent: #ce2453; /* Primary accent color requested by user */
+  --indspec-accent-rgb: 206, 36, 83;
+  --indspec-text-primary: #ffffff;
+  --indspec-text-secondary: #a1a1aa;
+  --indspec-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Matches CoreServices Signature Gradient Theme */
+  --indspec-signature-gradient: linear-gradient(
+    90deg,
+    #522c72 0%,
+    #962964 25%,
+    #ce2453 50%,
+    #dd5c54 75%,
+    #e79e57 100%
+  );
+}
+
+/* Section Wrapper */
+.indspec-root {
+  position: relative;
+  background-color: var(--indspec-bg);
+  padding: 60px 24px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.indspec-container {
+  max-width: 1230px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Split Workspace layout */
+.indspec-workspace {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+/* Left Panel: Content & Navigation */
+.indspec-left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 12px;
+}
+
+.indspec-header {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.indspec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--indspec-signature-gradient);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.indspec-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--indspec-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.indspec-title span {
+  background: var(--indspec-signature-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.indspec-subtitle {
+  font-size: 1.02rem;
+  color: var(--indspec-text-secondary);
+  line-height: 1.65;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+/* Slider buttons at the bottom */
+.indspec-controls {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.indspec-control-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.01);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--indspec-transition);
+}
+
+.indspec-control-btn:hover {
+  background: var(--indspec-signature-gradient);
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(var(--indspec-accent-rgb), 0.3);
+}
+
+/* Right Panel: Slider Track Wrapper */
+.indspec-slider-wrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.indspec-slider-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 12px 4px 32px 4px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.indspec-slider-track::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+/* Card Styling */
+.indspec-card {
+  width: 340px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: var(--indspec-transition);
+  overflow: hidden;
+}
+
+/* Dynamic Radial Glow under each card on hover */
+.indspec-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(var(--indspec-accent-rgb), 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: var(--indspec-transition);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.indspec-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(var(--indspec-accent-rgb), 0.25);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.indspec-card:hover::before {
+  opacity: 1;
+}
+
+/* Top Row: Index number & icon */
+.indspec-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.indspec-card-num {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--indspec-text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.indspec-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px dashed rgba(var(--indspec-accent-rgb), 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--indspec-accent);
+  transition: var(--indspec-transition);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.indspec-card:hover .indspec-icon-wrap {
+  border-style: solid;
+  border-color: var(--indspec-accent);
+  background: var(--indspec-signature-gradient);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(var(--indspec-accent-rgb), 0.35);
+  transform: scale(1.05);
+}
+
+/* Card titles and descriptions */
+.indspec-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  color: var(--indspec-text-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.indspec-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--indspec-text-secondary);
+  margin-bottom: 28px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* Action chevron at the bottom of the card */
+.indspec-card-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: var(--indspec-transition);
+  position: relative;
+  z-index: 2;
+}
+
+.indspec-action-arrow {
+  color: var(--indspec-accent);
+  transition: var(--indspec-transition);
+}
+
+.indspec-card:hover .indspec-card-action {
+  color: var(--indspec-accent);
+}
+
+.indspec-card:hover .indspec-action-arrow {
+  transform: translateX(6px);
+}
+
+/* Responsive Grid adjustments */
+@media (max-width: 1024px) {
+  .indspec-workspace {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .indspec-left-panel {
+    padding-right: 0;
+  }
+  
+  .indspec-subtitle {
+    margin-bottom: 24px;
+  }
+  
+  .indspec-controls {
+    display: none; /* Hide scroll controls in favor of native mobile touch scroll */
+  }
+  
+  .indspec-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .indspec-root {
+    padding: 60px 24px;
+  }
+  
+  .indspec-title {
+    font-size: 2rem;
+  }
+  
+  .indspec-card {
+    width: 300px;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .indspec-title {
+    font-size: 1.75rem;
+  }
+}

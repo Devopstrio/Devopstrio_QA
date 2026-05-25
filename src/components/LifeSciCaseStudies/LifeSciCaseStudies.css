@@ -1,0 +1,127 @@
+/* Life Sciences Page Case Studies Component Styles */
+.plt-lifesci-case-section {
+  padding: 60px 0;
+}
+
+.plt-lifesci-case-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.plt-lifesci-case-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.plt-lifesci-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.plt-lifesci-arrow-btn:hover {
+  background: rgba(206, 36, 83, 0.1);
+  border-color: #ce2453;
+  color: #ce2453;
+}
+
+.plt-lifesci-case-slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.plt-lifesci-case-slide {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+  background: rgba(28, 28, 28, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.plt-lifesci-case-content-col span.case-tag {
+  color: #ce2453;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.plt-lifesci-case-content-col h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.plt-lifesci-case-content-col p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+.plt-lifesci-case-img-col {
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.plt-lifesci-case-img-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots tracker */
+.plt-lifesci-dots-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.plt-lifesci-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.plt-lifesci-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #ce2453;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .plt-lifesci-case-slide {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .plt-lifesci-case-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
