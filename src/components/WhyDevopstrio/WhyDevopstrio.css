@@ -38,7 +38,7 @@
   margin: 0 auto;
   padding: 0 12px;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   gap: 80px;
 }
@@ -139,8 +139,8 @@
 .adv-float-card {
   position: absolute;
   z-index: 3;
-  bottom: 85px;
-  left: 250px;
+  bottom:85px;
+  right: -50px;
   background: rgba(25, 25, 25, 0.9);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -299,7 +299,7 @@
   .adv-float-card {
     width: 380px;
     padding: 32px;
-    left: 550px;
+    left: -100px;
     bottom: 120px;
   }
   .adv-float-number {
@@ -330,7 +330,7 @@
     font-size: 40px;
   }
   .adv-float-card {
-    left: 320px;
+    left: -35px;
   }
 }
 

@@ -41,7 +41,7 @@ import Team5 from "../assets/images/Sermaraj_dev.png";
 import Team6 from "../assets/images/thangalakshmi_dev.png";
 import Team7 from "../assets/images/punitha_dev.png";
 import Team8 from "../assets/images/oviya_dev.png";
-import coreValuesGraphic from "../assets/images/about_core_values_graphic.png";
+import coreValuesGraphic from "../assets/images/about_core_values_graphic_q.png";
 
 // Story Section Images
 const StoryImage1 = cloud1;
@@ -192,7 +192,63 @@ const Aboutpage = () => {
       {/* 1. HERO SECTION */}
       <AboutHero />
 
-      {/* 1.5 clutch */}
+      {/* 1.5 CLUTCH & IAOP SHOWCASE BANNER */}
+      <section className="about-clutch-section reveal">
+        <div className="about-container">
+          <div className="about-clutch-card">
+            
+            {/* Left Side: Value Statement */}
+            <div className="about-clutch-left">
+              <p className="about-clutch-text">
+                We specialize in developing software solutions through the synergy of skilled professionals and efficient processes.
+              </p>
+            </div>
+
+            {/* Middle Divider */}
+            <div className="about-clutch-divider"></div>
+
+            {/* Right Side: IAOP Logo & Clutch Star Ratings */}
+            <div className="about-clutch-right">
+              
+              {/* IAOP Logo */}
+              <div className="about-clutch-logo-box">
+                <svg className="clutch-iaop-svg" viewBox="0 0 160 50" fill="none">
+                  {/* Left Circle Arc emblem */}
+                  <path d="M40 25 C40 12, 18 12, 18 25 C18 38, 40 38, 40 25" stroke="#cbd5e1" strokeWidth="2.5" fill="none" />
+                  <path d="M12 25 L46 25" stroke="#cbd5e1" strokeWidth="2.5" />
+                  <circle cx="28" cy="20" r="1.5" fill="#cbd5e1" />
+                  {/* IAOP Text */}
+                  <text x="52" y="34" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="900" fontSize="27" fill="#cbd5e1" letterSpacing="0.5">IAOP</text>
+                </svg>
+              </div>
+
+              {/* clutch ratings */}
+              <div className="about-clutch-info">
+                <span className="clutch-rating-text">4.9 ON CLUTCH</span>
+                <div className="clutch-stars">
+                  {/* 5 Stars constructed using scalable vectors with 90% filling on the last star for 4.9 rating */}
+                  <svg className="clutch-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z" fill="#EAB308"/></svg>
+                  <svg className="clutch-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z" fill="#EAB308"/></svg>
+                  <svg className="clutch-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z" fill="#EAB308"/></svg>
+                  <svg className="clutch-star-svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z" fill="#EAB308"/></svg>
+                  <svg className="clutch-star-svg" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="half-clutch-star-grad">
+                        <stop offset="90%" stopColor="#EAB308"/>
+                        <stop offset="90%" stopColor="#475569"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192z" fill="url(#half-clutch-star-grad)"/>
+                  </svg>
+                </div>
+                <span className="clutch-reviews-count">100+ reviews</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* 2. OUR CORE VALUES (PREMIUM TECHNICAL SPLIT LAYOUT) */}
       <section className="about-values-section reveal">

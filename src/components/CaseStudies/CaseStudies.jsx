@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight, Server, Shield, Brain, Sparkles, TrendingUp } from "lucide-react";
 import "./CaseStudies.css";
-import Success_Stories from "../../assets/images/Success_Stories.png"
+import Success_Stories from "../../assets/images/Success_Stories_1.png"
 
 const CATEGORIES = [
   { id: "all", label: "All Cases" },

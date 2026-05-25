@@ -11,32 +11,9 @@ export default function WhyDevopstrio() {
   return (
     <section className="adv-root">
       <div className="adv-container">
-        {/* LEFT SIDE */}
+        
+        {/* LEFT SIDE: Copy & Features Content */}
         <div className="adv-left">
-          <div className="adv-image-wrap">
-            <div className="data-bg"></div>
-            <img
-              src={advances}
-              alt="Advantage Illustration"
-              className="adv-image"
-            />
-            {/* FLOATING CARD */}
-            <div className="adv-float-card">
-              <div className="adv-float-number">100+</div>
-              <div className="adv-float-text">Experts Onboard</div>
-
-              <div className="adv-avatars">
-                <span />
-                <span />
-                <span />
-                <span className="adv-more">+45</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT SIDE */}
-        <div className="adv-right">
           <span className="adv-pill">THE ADVANTAGE</span>
 
           <h2 className="adv-title">
@@ -76,6 +53,31 @@ export default function WhyDevopstrio() {
             </div>
           </div>
         </div>
+
+        {/* RIGHT SIDE: Tech Illustration Grid */}
+        <div className="adv-right">
+          <div className="adv-image-wrap">
+            <div className="data-bg"></div>
+            <img
+              src={advances}
+              alt="Advantage Illustration"
+              className="adv-image"
+            />
+            {/* FLOATING CARD */}
+            <div className="adv-float-card">
+              <div className="adv-float-number">100+</div>
+              <div className="adv-float-text">Experts Onboard</div>
+
+              <div className="adv-avatars">
+                <span />
+                <span />
+                <span />
+                <span className="adv-more">+45</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
