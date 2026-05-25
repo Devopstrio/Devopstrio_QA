@@ -58,34 +58,34 @@ const Insightspage = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("dt-visible");
+          entry.target.classList.add("insightsp-dt-visible");
 
           // For timeline items with staggered animation
-          if (entry.target.classList.contains("dt-timeline-section")) {
-            const items = entry.target.querySelectorAll(".dt-timeline-item");
+          if (entry.target.classList.contains("insightsp-dt-timeline-section")) {
+            const items = entry.target.querySelectorAll(".insightsp-dt-timeline-item");
             items.forEach((item, index) => {
               setTimeout(() => {
-                item.classList.add("dt-visible");
+                item.classList.add("insightsp-dt-visible");
               }, index * 100);
             });
           }
 
           // For featured cards stagger
-          if (entry.target.classList.contains("dt-featured-section")) {
-            const cards = entry.target.querySelectorAll(".dt-featured-card");
+          if (entry.target.classList.contains("insightsp-dt-featured-section")) {
+            const cards = entry.target.querySelectorAll(".insightsp-dt-featured-card");
             cards.forEach((card, index) => {
               setTimeout(() => {
-                card.classList.add("dt-visible");
+                card.classList.add("insightsp-dt-visible");
               }, index * 100);
             });
           }
 
           // For article cards stagger
-          if (entry.target.classList.contains("dt-library-section")) {
-            const articles = entry.target.querySelectorAll(".dt-article-card");
+          if (entry.target.classList.contains("insightsp-dt-library-section")) {
+            const articles = entry.target.querySelectorAll(".insightsp-dt-article-card");
             articles.forEach((article, index) => {
               setTimeout(() => {
-                article.classList.add("dt-visible");
+                article.classList.add("insightsp-dt-visible");
               }, index * 100);
             });
           }
@@ -95,9 +95,9 @@ const Insightspage = () => {
 
     // Observe all sections
     const sections = document.querySelectorAll(
-      ".dt-section-header, .dt-integrations-section, .dt-timeline-section, " +
-      ".dt-featured-section, .dt-library-section, .dt-newsletter-section, " +
-      ".dt-cta-section, .dt-explanation-section",
+      ".insightsp-dt-section-header, .insightsp-dt-integrations-section, .insightsp-dt-timeline-section, " +
+      ".insightsp-dt-featured-section, .insightsp-dt-library-section, .insightsp-dt-newsletter-section, " +
+      ".insightsp-dt-cta-section, .insightsp-dt-explanation-section",
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -330,26 +330,26 @@ const Insightspage = () => {
       <Insightshero />
 
       {/* FEATURED INSIGHTS SECTION */}
-      <section className="dt-featured-section">
-        <div className="dt-container">
-          <div className="dt-section-header">
-            <span className="dt-badge">FEATURED CONTENT</span>
+      <section className="insightsp-dt-featured-section">
+        <div className="insightsp-dt-container">
+          <div className="insightsp-dt-section-header">
+            <span className="insightsp-dt-badge">FEATURED CONTENT</span>
             <h2>Must-Read Insights</h2>
             <p>Hand-picked articles and research for DevOps professionals</p>
           </div>
 
-          <div className="dt-featured-grid">
+          <div className="insightsp-dt-featured-grid">
             {loading ? (
-              <div className="dt-loading-grid">
+              <div className="insightsp-dt-loading-grid">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="dt-skeleton-card"></div>
+                  <div key={i} className="insightsp-dt-skeleton-card"></div>
                 ))}
               </div>
             ) : featuredInsights.length > 0 ? (
               featuredInsights.map((insight, index) => (
                 <div
                   key={insight.id}
-                  className="dt-featured-card"
+                  className="insightsp-dt-featured-card"
                   onClick={() =>
                     navigate(
                       `/${insight.section?.slug}/${insight.category?.slug}/${insight.id}`,
@@ -357,16 +357,16 @@ const Insightspage = () => {
                   }
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="dt-featured-badge">
-                    <span className="dt-badge-icon">
+                  <div className="insightsp-dt-featured-badge">
+                    <span className="insightsp-dt-badge-icon">
                       {getFeaturedBadgeIcon(index)}
                     </span>
-                    <span className="dt-badge-text">
+                    <span className="insightsp-dt-badge-text">
                       {getFeaturedBadgeText(index, insight.category?.name)}
                     </span>
                   </div>
                   <div
-                    className="dt-featured-content"
+                    className="insightsp-dt-featured-content"
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -374,14 +374,14 @@ const Insightspage = () => {
                     }}
                   >
                     <h3>{insight.title}</h3>
-                    <p className="dt-featured-desc" style={{ flexGrow: 0.7 }}>
+                    <p className="insightsp-dt-featured-desc" style={{ flexGrow: 0.7 }}>
                       {insight.excerpt || insight.title}
                     </p>
-                    <div className="dt-featured-meta">
-                      <span className="dt-meta-item">
+                    <div className="insightsp-dt-featured-meta">
+                      <span className="insightsp-dt-meta-item">
                         <FaUserTie /> {insight.author}
                       </span>
-                      <span className="dt-meta-item">
+                      <span className="insightsp-dt-meta-item">
                         <FaCalendarAlt />{" "}
                         {insight.date
                           ? new Date(insight.date).toLocaleDateString("en-US", {
@@ -391,7 +391,7 @@ const Insightspage = () => {
                           })
                           : "Recently"}
                       </span>
-                      <span className="dt-meta-item">
+                      <span className="insightsp-dt-meta-item">
                         <FaClock /> {insight.readTime} min read
                       </span>
                     </div>
@@ -415,42 +415,42 @@ const Insightspage = () => {
       </section>
 
       {/* COMPANY JOURNEY TIMELINE - HORIZONTAL WITH SINGLE LINE */}
-      <section className="dt-timeline-ins-section">
-        <div className="dt-container">
-          <div className="dt-section-header">
-            <span className="dt-badge">OUR JOURNEY</span>
+      <section className="insightsp-dt-timeline-section">
+        <div className="insightsp-dt-container">
+          <div className="insightsp-dt-section-header">
+            <span className="insightsp-dt-badge">OUR JOURNEY</span>
             <h2>Six Years of DevOps Excellence</h2>
             <p>
               From startup to industry leader - our path of innovation and
               growth
             </p>
           </div>
-          <div className="dt-timeline-header"></div>
-          <div className="dt-timeline-harp">
+          <div className="insightsp-dt-timeline-header"></div>
+          <div className="insightsp-dt-timeline-harp">
             {/* Main timeline wrapper with horizontal line */}
-            <div className="dt-timeline-wrapper">
+            <div className="insightsp-dt-timeline-wrapper">
               {/* Single straight horizontal line */}
-              <div className="dt-timeline-line"></div>
+              <div className="insightsp-dt-timeline-line"></div>
 
               {/* Timeline steps */}
-              <div className="dt-timeline-steps">
+              <div className="insightsp-dt-timeline-steps">
                 {companyMilestones.map((milestone) => (
-                  <div key={milestone.id} className="dt-timeline-item">
+                  <div key={milestone.id} className="insightsp-dt-timeline-item">
                     {/* Year marker on the line */}
-                    <div className="dt-year-marker">
-                      <span className="dt-year">{milestone.year}</span>
+                    <div className="insightsp-dt-year-marker">
+                      <span className="insightsp-dt-year">{milestone.year}</span>
                     </div>
 
                     {/* Content card (alternates top/bottom via CSS) */}
-                    <div className="dt-milestone-card">
-                      <div className="dt-milestone-icon">{milestone.icon}</div>
+                    <div className="insightsp-dt-milestone-card">
+                      <div className="insightsp-dt-milestone-icon">{milestone.icon}</div>
                       <h3>{milestone.title}</h3>
                       <p>{milestone.description}</p>
 
                       {/* Explanation tooltip */}
-                      <div className="dt-milestone-explanation">
-                        <FaInfoCircle className="dt-info-icon" />
-                        <div className="dt-explanation-tooltip">
+                      <div className="insightsp-dt-milestone-explanation">
+                        <FaInfoCircle className="insightsp-dt-info-icon" />
+                        <div className="insightsp-dt-explanation-tooltip">
                           <p>{milestone.explanation}</p>
                         </div>
                       </div>
@@ -464,10 +464,10 @@ const Insightspage = () => {
       </section>
 
       {/* INSIGHTS GRID SECTION */}
-      <section className="dt-library-section">
-        <div className="dt-container">
-          <div className="dt-section-header">
-            <span className="dt-badge">INSIGHTS LIBRARY</span>
+      <section className="insightsp-dt-library-section">
+        <div className="insightsp-dt-container">
+          <div className="insightsp-dt-section-header">
+            <span className="insightsp-dt-badge">INSIGHTS LIBRARY</span>
             <h2>Latest Articles & Resources</h2>
             <p>
               Stay ahead with the latest DevOps trends, tutorials, and best
@@ -476,11 +476,11 @@ const Insightspage = () => {
           </div>
 
           {/* Categories Filter */}
-          <div className="dt-filter-bar">
+          <div className="insightsp-dt-filter-bar">
             {dynamicCategories.map((category, index) => (
               <button
                 key={index}
-                className={`dt-filter-btn ${activeCategoryFilter === category.name ? "active-filter" : ""}`}
+                className={`insightsp-dt-filter-btn ${activeCategoryFilter === category.name ? "active-filter" : ""}`}
                 style={{
                   background:
                     activeCategoryFilter === category.name
@@ -493,38 +493,38 @@ const Insightspage = () => {
                 }}
                 onClick={() => setActiveCategoryFilter(category.name)}
               >
-                <span className="dt-filter-icon">{category.icon}</span>
-                <span className="dt-filter-name">{category.name}</span>
-                <span className="dt-filter-count">{category.count}</span>
+                <span className="insightsp-dt-filter-icon">{category.icon}</span>
+                <span className="insightsp-dt-filter-name">{category.name}</span>
+                <span className="insightsp-dt-filter-count">{category.count}</span>
               </button>
             ))}
           </div>
 
           {/* Search Bar */}
-          <div className="dt-search-wrapper">
-            <FaSearch className="dt-search-icon" />
+          <div className="insightsp-dt-search-wrapper">
+            <FaSearch className="insightsp-dt-search-icon" />
             <input
               type="text"
               placeholder="Search insights by title, category, or topic..."
-              className="dt-search-input"
+              className="insightsp-dt-search-input"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
 
           {/* Insights Grid */}
-          <div className="dt-articles-grid">
+          <div className="insightsp-dt-articles-grid">
             {loading ? (
-              <div className="dt-loading-grid">
+              <div className="insightsp-dt-loading-grid">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="dt-skeleton-card"></div>
+                  <div key={i} className="insightsp-dt-skeleton-card"></div>
                 ))}
               </div>
             ) : libraryPosts.length > 0 ? (
               libraryPosts.map((insight) => (
                 <div
                   key={insight.id}
-                  className="dt-article-card"
+                  className="insightsp-dt-article-card"
                   onClick={() =>
                     navigate(
                       `/${insight.section?.slug}/${insight.category?.slug}/${insight.id}`,
@@ -532,19 +532,19 @@ const Insightspage = () => {
                   }
                   style={{ cursor: "pointer" }}
                 >
-                  <div className="dt-article-image">
+                  <div className="insightsp-dt-article-image">
                     <img
                       src={insight.image || "/images/placeholder.jpg"}
                       alt={insight.title}
                     />
-                    <span className="dt-article-category">
-                      <span className="dt-cat-icon">
+                    <span className="insightsp-dt-article-category">
+                      <span className="insightsp-dt-cat-icon">
                         {getCategoryIcon(insight.category?.name)}
                       </span>
                       {insight.category?.name || "General"}
                     </span>
                   </div>
-                  <div className="dt-article-content">
+                  <div className="insightsp-dt-article-content">
                     <h3>{insight.title}</h3>
                     <p
                       style={{
@@ -556,8 +556,8 @@ const Insightspage = () => {
                     >
                       {insight.excerpt}
                     </p>
-                    <div className="dt-article-footer">
-                      <div className="dt-article-meta">
+                    <div className="insightsp-dt-article-footer">
+                      <div className="insightsp-dt-article-meta">
                         <span>
                           <FaCalendarAlt />{" "}
                           {insight.date
@@ -595,9 +595,9 @@ const Insightspage = () => {
           </div>
 
           {/* Load More Button */}
-          <div className="dt-loadmore-wrapper">
+          <div className="insightsp-dt-loadmore-wrapper">
             <button
-              className="dt-loadmore-btn"
+              className="insightsp-dt-loadmore-btn"
               onClick={() => navigate("/events")}
             >
               Load More Articles <FaArrowRight />

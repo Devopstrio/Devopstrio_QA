@@ -41,6 +41,7 @@ import Team5 from "../assets/images/Sermaraj_dev.png";
 import Team6 from "../assets/images/thangalakshmi_dev.png";
 import Team7 from "../assets/images/punitha_dev.png";
 import Team8 from "../assets/images/oviya_dev.png";
+import coreValuesGraphic from "../assets/images/about_core_values_graphic.png";
 
 // Story Section Images
 const StoryImage1 = cloud1;
@@ -191,126 +192,49 @@ const Aboutpage = () => {
       {/* 1. HERO SECTION */}
       <AboutHero />
 
-      {/* 2. COMPANY INTRODUCTION (PREMIUM GRID LAYOUT) */}
-      <section className="about-intro-section reveal">
+      {/* 1.5 clutch */}
+
+      {/* 2. OUR CORE VALUES (PREMIUM TECHNICAL SPLIT LAYOUT) */}
+      <section className="about-values-section reveal">
         <div className="about-container">
-          
-          {/* Top Row: Title Split */}
-          <div className="intro-top-split-row">
-            <div className="intro-top-left">
-              <span className="about-pill"><FiInfo size={14} /> Company Introduction</span>
-              <h2 className="intro-title-text">Transforming Cloud Ideas into Reality</h2>
-            </div>
-            <div className="intro-top-right">
-              <a href="/contact" className="intro-top-quote-btn">Request a Quote</a>
-            </div>
-          </div>
-
-          {/* Main Bento Grid System */}
-          <div className="intro-main-bento-grid">
+          <div className="about-values-grid">
             
-            {/* Left Column: Visual Landscape + Bottom Two Info Cards */}
-            <div className="intro-bento-left-col">
+            {/* Left Column: Text Content and Stats */}
+            <div className="about-values-left-col">
+              <h2 className="about-values-title">Our core values</h2>
+              <p className="about-values-description">
+                As a leading strategic partner to companies around the world, we have leveraged technology to enable business transformation. We address the entire breadth of business needs, from strategy and design to managing operations. To do this, we draw on deep industry expertise and a command of the fast-evolving fields of cloud, data artificial intelligence, connectivity, software, digital engineering, and platforms.
+              </p>
               
-              {/* Landscape Media Card */}
-              <div className="intro-bento-media-card">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Devops Team Collaboration" />
-                
-                {/* Floating Glassmorphism Container Bar */}
-                <div className="intro-bento-glass-bar">
-                  <div className="glass-bar-left">
-                    <span>INTELLIGENCE ── ONE NODE AT A TIME</span>
-                  </div>
-                  <div className="glass-bar-right">
-                    <a href="/services" className="glass-bar-btn">GET STARTED <FiChevronRight /></a>
-                  </div>
+              {/* Stats Row */}
+              <div className="about-values-stats-row">
+                <div className="about-values-stat-item">
+                  <span className="about-values-stat-num">3,500+</span>
+                  <span className="about-values-stat-label">in-house experts</span>
+                </div>
+                <div className="about-values-stat-item">
+                  <span className="about-values-stat-num">20</span>
+                  <span className="about-values-stat-label">office locations</span>
+                </div>
+                <div className="about-values-stat-item">
+                  <span className="about-values-stat-num">2,000+</span>
+                  <span className="about-values-stat-label">global clients</span>
+                </div>
+                <div className="about-values-stat-item">
+                  <span className="about-values-stat-num">19</span>
+                  <span className="about-values-stat-label">years of experience</span>
                 </div>
               </div>
-
-              {/* Bottom Two Info Cards */}
-              <div className="intro-bento-bottom-row">
-                
-                {/* Small Card 1 */}
-                <div className="intro-small-info-card">
-                  <div className="info-card-icon-box">
-                    <FiTrendingUp />
-                  </div>
-                  <h3>High-Quality Standards</h3>
-                  <p>Our dedication to engineering excellence ensures every deployment meets strict zero-trust standards.</p>
-                </div>
-
-                {/* Small Card 2 */}
-                <div className="intro-small-info-card">
-                  <div className="info-card-icon-box">
-                    <FiZap />
-                  </div>
-                  <h3>Tailored Cloud Strategies</h3>
-                  <p>We architect custom-fit DevOps pipelines that align perfectly to your unique enterprise workloads.</p>
-                </div>
-
-              </div>
-
             </div>
 
-            {/* Right Column: Tall Capability Checklist Box */}
-            <div className="intro-bento-right-col">
-              <div className="intro-capabilities-tall-card">
-                <h3 className="capabilities-card-title">Cloud & Beyond</h3>
-                
-                <div className="capabilities-list">
-                  
-                  {/* Item 1 */}
-                  <div className="capability-item">
-                    <div className="capability-bullet">
-                      <FiCompass />
-                    </div>
-                    <div className="capability-content">
-                      <h4>Cloud-Native Architectures</h4>
-                      <p>Designing highly resilient, auto-scaling Kubernetes cluster fabrics.</p>
-                    </div>
-                  </div>
-
-                  {/* Item 2 */}
-                  <div className="capability-item">
-                    <div className="capability-bullet">
-                      <FiLock />
-                    </div>
-                    <div className="capability-content">
-                      <h4>End-to-End DevSecOps</h4>
-                      <p>Automated zero-trust CI/CD pipelines securing your cloud perimeter.</p>
-                    </div>
-                  </div>
-
-                  {/* Item 3 */}
-                  <div className="capability-item">
-                    <div className="capability-bullet">
-                      <FiCpu />
-                    </div>
-                    <div className="capability-content">
-                      <h4>AI-Powered Orchestration</h4>
-                      <p>Self-healing platform nodes powered by automated ML insights.</p>
-                    </div>
-                  </div>
-
-                  {/* Item 4 */}
-                  <div className="capability-item">
-                    <div className="capability-bullet">
-                      <FiActivity />
-                    </div>
-                    <div className="capability-content">
-                      <h4>Enterprise Cloud Migration</h4>
-                      <p>Seamless zero-downtime database and system migrations.</p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <a href="/services" className="capabilities-see-all-link">See All</a>
+            {/* Right Column: High-End Generative Code Graphic */}
+            <div className="about-values-right-col">
+              <div className="about-values-graphic-container">
+                <img src={coreValuesGraphic} alt="Devopstrio Tech Core Values Illustration" className="about-values-vector-art" />
               </div>
             </div>
 
           </div>
-
         </div>
       </section>
 

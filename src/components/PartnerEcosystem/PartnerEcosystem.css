@@ -1,36 +1,13 @@
-:root {
-  --primary-gradient: linear-gradient(
-    90deg,
-    #522c72 0%,
-    #962964 25%,
-    #ce2453 50%,
-    #dd5c54 75%,
-    #e79e57 100%
-  );
-  --primary-gradient-light: linear-gradient(
-    90deg,
-    rgba(82, 44, 114, 0.8) 0%,
-    rgba(150, 41, 100, 0.8) 25%,
-    rgba(206, 36, 83, 0.8) 50%,
-    rgba(221, 92, 84, 0.8) 75%,
-    rgba(231, 158, 87, 0.8) 100%
-  );
-  --primary-deep-purple: #522c72;
-  --primary-purple-pink: #962964;
-  --primary-rose-red: #ce2453;
-  --primary-warm-coral: #dd5c54;
-  --primary-soft-orange: #e79e57;
-}
-
 /* ===============================
    PARTNER ECOSYSTEM
    =============================== */
 
 .partnerecosys-partner-ecosystem {
-  background: #000;
-  color: #ffffff;
+  background: #000000; /* Pure black theme as requested */
+  padding: 60px 0;
   overflow: hidden;
   position: relative;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .partnerecosys-partner-container {
@@ -41,35 +18,31 @@
   z-index: 1;
 }
 
-
 /* ===============================
    HEADER
    =============================== */
 
 .partnerecosys-partner-title {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
+  color: #ffffff; /* White text for black theme */
+  text-align: center;
   margin-bottom: 12px;
-  line-height: 1.1;
-}
-
-.partnerecosys-partner-title span {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .partnerecosys-partner-subtitle {
-  max-width: 720px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: #94a3b8; /* Slate 400 for subtext */
+  text-align: center;
   margin-bottom: 56px;
+  font-weight: 400;
 }
 
 /* ===============================
-   SLIDER
+   SLIDER WITH PREMIUM GRADIENT FADE
    =============================== */
 
 .partnerecosys-partner-slider {
@@ -77,6 +50,11 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  padding: 10px 0;
+  
+  /* Gradient fade edges for premium look */
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
 
 .partnerecosys-partner-track {
@@ -90,72 +68,88 @@
 }
 
 /* ===============================
-   CARD
+   CARD (GLASSMORPHIC DARK MODE)
    =============================== */
 
 .partnerecosys-partner-card {
-  flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
-  min-width: calc((100cqw - (5 * 24px)) / 6);
+  flex: 0 0 200px;
+  width: 200px;
   height: 120px;
   margin-right: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 
-  /* background: rgba(255, 255, 255, 0.05); */
-  border-radius: 12px;
-  /* border: 1px solid rgba(82, 44, 114, 0.2); */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
 
+/* LOGO WRAPPER */
+.partnerecosys-partner-logo-wrapper {
+  height: 48px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 8px;
 }
 
-.partnerecosys-partner-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background: var(--primary-gradient); */
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 0;
+/* LOGO IMAGE */
+.partnerecosys-partner-logo {
+  height: 32px; /* Strict uniform height for identical size leveling */
+  width: 110px; /* Strict standard width boundary */
+  object-fit: contain; /* Guarantees fit without distortion */
+  transition: all 0.3s ease;
 }
 
-/* IMAGE */
-.partnerecosys-partner-card img {
-  max-width: 70%;
-  max-height: 60%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
+/* SPECIFICALLY FOR BT & BP TO SCALE DOWN TO SMALLER AS REQUESTED */
+.partnerecosys-partner-logo--small {
+  height:50px; /* Strict smaller height limit for BT & BP */
+  width: 100px;  /* Strict smaller width limit for BT & BP */
+}
 
-  /* filter: grayscale(100%) brightness(0.8); */
-  transform: scale(1);
+/* SPECIFICALLY FOR VIRGIN & GODADDY TO SCALE UP TO LARGER AS REQUESTED */
+.partnerecosys-partner-logo--large {
+  height: 80px; /* Strict larger height limit for Virgin & GoDaddy */
+  width: 140px; /* Strict larger width limit for Virgin & GoDaddy */
+}
 
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.partnerecosys-partner-logo--Medium{
+  height :40px;
+  width : 100px
+}
+
+
+
+/* NAME */
+.partnerecosys-partner-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8; /* Slate 400 */
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
 }
 
 /* HOVER EFFECTS */
 .partnerecosys-partner-card:hover {
-  /* /* background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(206, 36, 83, 0.4); 
-  box-shadow: 0 10px 30px rgba(82, 44, 114, 0.3),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1); */
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
-.partnerecosys-partner-card:hover::before {
-  opacity: 0.1;
+.partnerecosys-partner-card:hover .partnerecosys-partner-logo {
+  filter: grayscale(0%) brightness(1) opacity(1); /* Color wakes up beautifully on hover! */
+  transform: scale(1.05);
 }
 
-.partnerecosys-partner-card:hover img {
-  filter: grayscale(0%) brightness(1.1);
-  transform: scale(1.15); /* IMAGE ZOOM */
+.partnerecosys-partner-card:hover .partnerecosys-partner-name {
+  color: #ffffff; /* Slate white on hover */
 }
+
 
 /* ===============================
    ANIMATION
@@ -171,245 +165,75 @@
 }
 
 /* ===============================
-   LINK
+   RESPONSIVE DESIGN
    =============================== */
 
-.partnerecosys-partner-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 600;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  padding: 8px 0;
-}
-
-.partnerecosys-partner-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-gradient);
-  transition: width 0.3s ease;
-}
-
-.partnerecosys-partner-link:hover {
-  gap: 12px;
-}
-
-.partnerecosys-partner-link:hover::after {
-  width: 100%;
-}
-
-.partnerecosys-partner-link-arrow {
-  transition: transform 0.3s ease;
-}
-
-.partnerecosys-partner-link:hover .partnerecosys-partner-link-arrow {
-  transform: translateX(4px);
-}
-
-/* ===============================
-   RESPONSIVE DESIGN - PERFECTED BREAKPOINTS
-   =============================== */
-
-/* 4K Ultra Wide */
-@media (min-width: 2560px) {
+@media (max-width: 1024px) {
   .partnerecosys-partner-ecosystem {
-    padding: 90px 0;
-  }
-  .partnerecosys-partner-container {
-    max-width: 2100px;
-    padding: 0 40px;
+    padding: 60px 0;
   }
   .partnerecosys-partner-title {
-    font-size: 62px;
-    margin-bottom: 24px;
-  }
-  .partnerecosys-partner-subtitle {
-    font-size: 24px;
-    max-width: 1000px;
-    margin-bottom: 80px;
+    font-size: 32px;
   }
   .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (5 * 48px)) / 6);
-    min-width: calc((100cqw - (5 * 48px)) / 6);
-    height: 180px;
-    margin-right: 48px;
-    border-radius: 20px;
-  }
-  .partnerecosys-partner-card img {
-    max-width: 80%;
-    max-height: 70%;
-  }
-}
-
-/* Large Desktops */
-@media (min-width: 1440px) and (max-width: 2559px) {
-  .partnerecosys-partner-ecosystem {
-    padding: 40px 0;
-  }
-  .partnerecosys-partner-container {
-    max-width: 1260px;
-  }
-  .partnerecosys-partner-title {
-    font-size: 56px;
-  }
-  .partnerecosys-partner-subtitle {
-    font-size: 20px;
-  }
-  .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
-    min-width: calc((100cqw - (5 * 24px)) / 6);
-    height: 120px;
-  }
-}
-
-/* Laptops / Normal Desktops */
-@media (max-width: 1280px) {
-  .partnerecosys-partner-ecosystem {
-    padding: 40px 0;
-  }
-  .partnerecosys-partner-container {
-    padding: 0 32px;
-  }
-  .partnerecosys-partner-title {
-    font-size: 44px;
-  }
-  .partnerecosys-partner-subtitle {
-    font-size: 18px;
-    margin-bottom: 56px;
-  }
-  .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (5 * 24px)) / 6);
-    min-width: calc((100cqw - (5 * 24px)) / 6);
-    height: 120px;
-    margin-right: 24px;
-  }
-}
-
-/* Tablets */
-@media (max-width: 992px) {
-  .partnerecosys-partner-ecosystem {
-    padding: 40px 0;
-  }
-  .partnerecosys-partner-title {
-    font-size: 40px;
-  }
-  .partnerecosys-partner-subtitle {
-    font-size: 17px;
-    margin-bottom: 48px;
-  }
-  .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (3 * 20px)) / 4);
-    min-width: calc((100cqw - (3 * 20px)) / 4);
+    flex: 0 0 180px;
+    width: 180px;
     height: 110px;
     margin-right: 20px;
   }
 }
 
-/* Mobile Landscape & Standard Tabs */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .partnerecosys-partner-ecosystem {
-    padding: 40px 0;
-  }
-  .partnerecosys-partner-container {
-    padding: 0 24px;
-  }
-  .partnerecosys-partner-title {
-    font-size: 34px;
-    margin-bottom: 16px;
-  }
-  .partnerecosys-partner-subtitle {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-  .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (2 * 16px)) / 3);
-    min-width: calc((100cqw - (2 * 16px)) / 3);
-    height: 90px;
-    margin-right: 16px;
-    border-radius: 10px;
-  }
-  .partnerecosys-partner-card img {
-    max-width: 65%;
-    max-height: 55%;
-  }
-}
-
-/* Base Mobile */
-@media (max-width: 480px) {
-  .partnerecosys-partner-ecosystem {
-    padding: 40px 0;
-  }
-  .partnerecosys-partner-container {
-    padding: 0 16px;
+    padding: 50px 0;
   }
   .partnerecosys-partner-title {
     font-size: 28px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
   .partnerecosys-partner-subtitle {
     font-size: 15px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
   .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (1 * 12px)) / 2);
-    min-width: calc((100cqw - (1 * 12px)) / 2);
-    height: 80px;
-    margin-right: 12px;
-    border-radius: 8px;
+    flex: 0 0 160px;
+    width: 160px;
+    height: 100px;
+    margin-right: 16px;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .partnerecosys-partner-logo-wrapper {
+    height: 40px;
+  }
+  .partnerecosys-partner-name {
+    font-size: 12px;
   }
 }
 
-/* Small, Narrow Phones */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .partnerecosys-partner-ecosystem {
     padding: 40px 0;
-  }
-  .partnerecosys-partner-container {
-    padding: 0 12px;
   }
   .partnerecosys-partner-title {
     font-size: 24px;
   }
   .partnerecosys-partner-subtitle {
     font-size: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
+    padding: 0 16px;
   }
   .partnerecosys-partner-card {
-    flex: 0 0 calc((100cqw - (1 * 8px)) / 2);
-    min-width: calc((100cqw - (1 * 8px)) / 2);
-    height: 70px;
-    margin-right: 8px;
+    flex: 0 0 140px;
+    width: 140px;
+    height: 90px;
+    margin-right: 12px;
+    border-radius: 10px;
   }
-  .partnerecosys-partner-card img {
-    max-width: 60%;
-    max-height: 50%;
+  .partnerecosys-partner-logo-wrapper {
+    height: 36px;
   }
-}
-
-/* ===== INLINE SEO LINKS ===== */
-.partnerecosys-about-inline-link {
-  color: #ce2453;
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px dashed rgba(206, 36, 83, 0.4);
-  transition: all 0.3s ease;
-}
-
-.partnerecosys-about-inline-link:hover {
-  color: #e79e57;
-  border-bottom-style: solid;
-  border-bottom-color: #e79e57;
-  text-shadow: 0 0 10px rgba(231, 158, 87, 0.3);
+  .partnerecosys-partner-name {
+    font-size: 11px;
+  }
 }
