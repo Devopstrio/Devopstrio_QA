@@ -273,34 +273,52 @@ const Careerspage = () => {
 
   const teamTestimonials = [
     {
-      quote: "Amazing learning experience and supportive team.",
-      author: "- Intern",
+      quote: "Amazing learning experience and supportive team. The UI/UX internship provided me high technical leverage.",
+      author: "Ooviya",
+      role: "UI/UX Design Intern",
+      date: "1 week ago",
       avatar: Ooviya1,
+      stars: 5,
     },
     {
-      quote: "The culture here encourages rapid experimentation and learning.",
-      author: "- Backend Engineer",
+      quote: "The software engineering culture here encourages rapid experimentation, learning, and automated CI/CD releases.",
+      author: "Punitha",
+      role: "Backend Software Engineer",
+      date: "2 weeks ago",
       avatar: Punitha1,
+      stars: 5,
     },
     {
-      quote: "Every day we're pushing the boundaries of what's possible in cloud infra.",
-      author: "- DevOps Lead",
+      quote: "Every day we're pushing the boundaries of what's possible in secure multicloud architecture and serverless computing.",
+      author: "Sagar",
+      role: "DevOps Team Lead",
+      date: "3 weeks ago",
       avatar: Saga1,
+      stars: 5,
     },
     {
-      quote: "Technical excellence and peer support are at our core every single day.",
-      author: "- Fullstack Dev",
+      quote: "Technical excellence, test-driven infrastructure, and peer mentorship are baked into our DNA here.",
+      author: "Serma",
+      role: "Fullstack Architect",
+      date: "1 month ago",
       avatar: Serma1,
+      stars: 5,
     },
     {
-      quote: "A place where your vision translates into real-world execution rapidly.",
-      author: "- Cloud Architect",
+      quote: "A gorgeous sandbox where your system architecture design translates into high-traffic real-world deployments.",
+      author: "Subbiah",
+      role: "Principal Cloud Engineer",
+      date: "2 months ago",
       avatar: Subbiah1,
+      stars: 5,
     },
     {
-      quote: "Fast iteration and high impact—exactly where I want to be as an engineer.",
-      author: "- SRE Engineer",
+      quote: "Highly resilient pipelines, zero-downtime microservices, and absolute velocity—exactly where you want to grow.",
+      author: "Kishore",
+      role: "Site Reliability Engineer",
+      date: "2 months ago",
       avatar: Kishore1,
+      stars: 5,
     },
   ];
 
@@ -625,143 +643,117 @@ const Careerspage = () => {
       {/* 6. HIRING PROCESS */}
       <section className="careers-cp-section careers-cp-hiring-process reveal">
         <div className="careers-cp-wrap">
-          <div className="careers-cp-hiring-header">
-            <span className="careers-cp-section-label"><FiActivity size={12} /> Roadmap</span>
-            <h2 className="careers-cp-hiring-title">Hiring Process</h2>
-            <p className="careers-cp-hiring-description">
-              Follow our S-curve winding path from initial concept to successfully joining our elite team.
-            </p>
-          </div>
-
-          <div className="careers-cp-infographic-container">
+          <div className="careers-cp-hiring-layout">
             
-            {/* Start Node */}
-            <div className="careers-cp-info-start-node">
-              <span className="careers-cp-info-start-dot"></span>
-              <span className="careers-cp-info-start-text">START</span>
+            {/* Left Column: Sticky Title & Description */}
+            <div className="careers-cp-hiring-left">
+              <div className="careers-cp-hiring-sticky-content">
+                <span className="careers-cp-section-label">
+                  <FiActivity size={12} /> Roadmap
+                </span>
+                <h2 className="careers-cp-hiring-title">Hiring Process</h2>
+                <p className="careers-cp-hiring-description">
+                  Our structured and transparent path is designed to discover your true potential and welcome you into our elite team.
+                </p>
+                <div className="careers-cp-hiring-cta-wrapper">
+                  <button 
+                    onClick={() => navigate("/careers/jobs")} 
+                    className="careers-cp-btn careers-cp-btn-primary"
+                  >
+                    View Open Roles
+                  </button>
+                </div>
+              </div>
             </div>
 
-            {/* Winding SVG Track */}
-            <div className="careers-cp-winding-track-svg-wrapper">
-              <svg viewBox="0 0 1000 1000" fill="none" preserveAspectRatio="none" className="careers-cp-winding-svg">
-                {/* Black underlay for outline */}
-                <path
-                  d="M 50 30 L 600 30 A 90 90 0 0 1 600 210 L 400 210 A 90 90 0 0 0 400 390 L 600 390 A 90 90 0 0 1 600 570 L 400 570 A 90 90 0 0 0 400 750 L 600 750 A 90 90 0 0 1 600 910 L 780 910"
-                  stroke="#000000"
-                  strokeWidth="24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                {/* Glowing brand gradient track */}
-                <path
-                  d="M 50 30 L 600 30 A 90 90 0 0 1 600 210 L 400 210 A 90 90 0 0 0 400 390 L 600 390 A 90 90 0 0 1 600 570 L 400 570 A 90 90 0 0 0 400 750 L 600 750 A 90 90 0 0 1 600 910 L 780 910"
-                  stroke="url(#trackGradient)"
-                  strokeWidth="10"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <defs>
-                  <linearGradient id="trackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#522c72" />
-                    <stop offset="25%" stopColor="#962964" />
-                    <stop offset="50%" stopColor="#ce2453" />
-                    <stop offset="75%" stopColor="#dd5c54" />
-                    <stop offset="100%" stopColor="#e79e57" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-
-            <div className="careers-cp-winding-timeline">
+            {/* Right Column: Scrollable Steps list */}
+            <div className="careers-cp-hiring-right">
               
-              {/* Step 1: Apply Online */}
-              <div className="careers-cp-timeline-row careers-cp-row-right-pin">
-                <div className="careers-cp-timeline-content">
-                  <span className="careers-cp-step-label-tiny">Step 01</span>
-                  <h3>Apply Online</h3>
-                  <p>Submit your application with your portfolio or resume.</p>
+              {/* Step 1 */}
+              <div className="careers-cp-hiring-step-item">
+                <div className="careers-cp-hiring-step-num-col">
+                  <span className="careers-cp-hiring-step-number">01</span>
                 </div>
-                <div className="careers-cp-timeline-pin-box">
-                  <div className="careers-cp-map-pin-shape">
-                    <div className="careers-cp-map-pin-inner">
-                      <FiMail size={24} />
-                    </div>
+                <div className="careers-cp-hiring-step-content-col">
+                  <h3 className="careers-cp-hiring-step-title">Apply Online</h3>
+                  <p className="careers-cp-hiring-step-text">
+                    Submit your application along with your portfolio, GitHub, or resume. We look for passion, unique projects, and alignment with our tech stack.
+                  </p>
+                  <div className="careers-cp-hiring-substep-tags">
+                    <span className="careers-cp-hiring-tag-item">Resume Review</span>
+                    <span className="careers-cp-hiring-tag-item">Portfolio Check</span>
                   </div>
                 </div>
               </div>
 
-              {/* Step 2: Screening Call */}
-              <div className="careers-cp-timeline-row careers-cp-row-left-pin">
-                <div className="careers-cp-timeline-pin-box">
-                  <div className="careers-cp-map-pin-shape">
-                    <div className="careers-cp-map-pin-inner">
-                      <FiCpu size={24} />
-                    </div>
-                  </div>
+              {/* Step 2 */}
+              <div className="careers-cp-hiring-step-item">
+                <div className="careers-cp-hiring-step-num-col">
+                  <span className="careers-cp-hiring-step-number">02</span>
                 </div>
-                <div className="careers-cp-timeline-content">
-                  <span className="careers-cp-step-label-tiny">Step 02</span>
-                  <h3>Screening Call</h3>
-                  <p>Quick intro call to understand your skills & goals.</p>
-                </div>
-              </div>
-
-              {/* Step 3: Technical Round */}
-              <div className="careers-cp-timeline-row careers-cp-row-right-pin">
-                <div className="careers-cp-timeline-content">
-                  <span className="careers-cp-step-label-tiny">Step 03</span>
-                  <h3>Technical Round</h3>
-                  <p>Practical tasks or discussion based on your role.</p>
-                </div>
-                <div className="careers-cp-timeline-pin-box">
-                  <div className="careers-cp-map-pin-shape">
-                    <div className="careers-cp-map-pin-inner">
-                      <FiUsers size={24} />
-                    </div>
+                <div className="careers-cp-hiring-step-content-col">
+                  <h3 className="careers-cp-hiring-step-title">Screening Call</h3>
+                  <p className="careers-cp-hiring-step-text">
+                    A quick 15-20 minute conversational call to understand your professional goals, background, expectations, and cultural alignment.
+                  </p>
+                  <div className="careers-cp-hiring-substep-tags">
+                    <span className="careers-cp-hiring-tag-item">Culture Fit</span>
+                    <span className="careers-cp-hiring-tag-item">15 Mins Call</span>
                   </div>
                 </div>
               </div>
 
-              {/* Step 4: Final Interview */}
-              <div className="careers-cp-timeline-row careers-cp-row-left-pin">
-                <div className="careers-cp-timeline-pin-box">
-                  <div className="careers-cp-map-pin-shape">
-                    <div className="careers-cp-map-pin-inner">
-                      <FiAward size={24} />
-                    </div>
-                  </div>
+              {/* Step 3 */}
+              <div className="careers-cp-hiring-step-item">
+                <div className="careers-cp-hiring-step-num-col">
+                  <span className="careers-cp-hiring-step-number">03</span>
                 </div>
-                <div className="careers-cp-timeline-content">
-                  <span className="careers-cp-step-label-tiny">Step 04</span>
-                  <h3>Final Interview</h3>
-                  <p>Meet the team and discuss culture fit.</p>
-                </div>
-              </div>
-
-              {/* Step 5: Offer & Onboarding */}
-              <div className="careers-cp-timeline-row careers-cp-row-right-pin">
-                <div className="careers-cp-timeline-content">
-                  <span className="careers-cp-step-label-tiny">Step 05</span>
-                  <h3>Offer & Onboarding</h3>
-                  <p>Get your offer and start your journey with us.</p>
-                </div>
-                <div className="careers-cp-timeline-pin-box">
-                  <div className="careers-cp-map-pin-shape">
-                    <div className="careers-cp-map-pin-inner">
-                      <FiTarget size={24} />
-                    </div>
+                <div className="careers-cp-hiring-step-content-col">
+                  <h3 className="careers-cp-hiring-step-title">Technical Evaluation</h3>
+                  <p className="careers-cp-hiring-step-text">
+                    A deep dive into your technical skills with a practical assessment, followed by a live code review or system architecture discussion with our experts.
+                  </p>
+                  <div className="careers-cp-hiring-substep-tags">
+                    <span className="careers-cp-hiring-tag-item">Practical Assessment</span>
+                    <span className="careers-cp-hiring-tag-item">Architecture Talk</span>
                   </div>
                 </div>
               </div>
 
-            </div>
-
-            {/* Goal Node */}
-            <div className="careers-cp-info-goal-node">
-              <span className="careers-cp-info-goal-text">GOAL</span>
-              <div className="careers-cp-info-goal-flag">
-                <span className="careers-cp-flag-icon">🏁</span>
+              {/* Step 4 */}
+              <div className="careers-cp-hiring-step-item">
+                <div className="careers-cp-hiring-step-num-col">
+                  <span className="careers-cp-hiring-step-number">04</span>
+                </div>
+                <div className="careers-cp-hiring-step-content-col">
+                  <h3 className="careers-cp-hiring-step-title">Final Interview</h3>
+                  <p className="careers-cp-hiring-step-text">
+                    Meet key leadership team members to discuss high-level engineering challenges, team dynamics, vision, and how you can make a global impact.
+                  </p>
+                  <div className="careers-cp-hiring-substep-tags">
+                    <span className="careers-cp-hiring-tag-item">Meet Leadership</span>
+                    <span className="careers-cp-hiring-tag-item">Q&A Session</span>
+                  </div>
+                </div>
               </div>
+
+              {/* Step 5 */}
+              <div className="careers-cp-hiring-step-item">
+                <div className="careers-cp-hiring-step-num-col">
+                  <span className="careers-cp-hiring-step-number">05</span>
+                </div>
+                <div className="careers-cp-hiring-step-content-col">
+                  <h3 className="careers-cp-hiring-step-title">Offer & Onboarding</h3>
+                  <p className="careers-cp-hiring-step-text">
+                    We extend a formal offer letter with a competitive package. Upon acceptance, we kickstart a smooth integration process with equipment delivery and team introductions.
+                  </p>
+                  <div className="careers-cp-hiring-substep-tags">
+                    <span className="careers-cp-hiring-tag-item">Welcome Pack</span>
+                    <span className="careers-cp-hiring-tag-item">Mentorship Start</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -771,42 +763,63 @@ const Careerspage = () => {
       {/* 7. TESTIMONIALS */}
       <section className="careers-cp-section careers-cp-testimonials reveal">
         <div className="careers-cp-wrap">
-          <div className="careers-cp-section-header-centered" style={{ marginBottom: "60px" }}>
-            <span className="careers-cp-section-label"><FiAward size={12} /> Reviews</span>
-            <h2 className="careers-cp-section-title-large">What Our Team Says</h2>
-          </div>
-          
-          <div className="careers-cp-testimonials-grid">
-            {teamTestimonials.slice(testimonialIndex * 2, testimonialIndex * 2 + 2).map((item, idx) => (
-              <div className="careers-cp-testimonial-card shadow-lg" key={idx}>
-                {/* Large visual quote mark */}
-                <div className="careers-cp-test-quote-icon">“</div>
-                
-                <div className="careers-cp-test-body">
-                  <p className="careers-cp-test-quote">{item.quote}</p>
+          <div className="careers-cp-testimonials-layout">
+            {/* Left Column: Side title & Navigation indicator */}
+            <div className="careers-cp-testimonials-left">
+              <div className="careers-cp-testimonials-large-quote">“</div>
+              <h2 className="careers-cp-testimonials-side-title">What Our Team Is Saying</h2>
+              
+              <div className="careers-cp-testimonials-nav">
+                <button
+                  type="button"
+                  className="careers-cp-nav-btn prev"
+                  onClick={() => setTestimonialIndex((prev) => (prev === 0 ? 2 : prev - 1))}
+                  aria-label="Previous testimonials"
+                >
+                  ←
+                </button>
+                <div className="careers-cp-nav-progress-track">
+                  <div 
+                    className="careers-cp-nav-progress-fill" 
+                    style={{ transform: `translateX(${testimonialIndex * 200}%)` }} // 3 segments: 0%, 200% (middle), 400% (right)
+                  />
                 </div>
-                
-                {/* Seamless profile notch tab */}
-                <div className="careers-cp-test-author-tab">
-                  <img src={item.avatar} alt={item.author} className="careers-cp-test-avatar" />
-                  <div className="careers-cp-test-meta">
-                    <span className="careers-cp-test-author">{item.author}</span>
-                    <span className="careers-cp-test-handle">@{item.author.toLowerCase().replace(/[^a-z0-9]/g, '') || 'intern'}</span>
+                <button
+                  type="button"
+                  className="careers-cp-nav-btn next"
+                  onClick={() => setTestimonialIndex((prev) => (prev === 2 ? 0 : prev + 1))}
+                  aria-label="Next testimonials"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column: speech cards slider */}
+            <div className="careers-cp-testimonials-right">
+              {teamTestimonials.slice(testimonialIndex * 2, testimonialIndex * 2 + 2).map((item, idx) => (
+                <div className="careers-cp-testimonial-speech-wrapper" key={idx}>
+                  {/* Speech bubble card */}
+                  <div className="careers-cp-testimonial-speech-card">
+                    <p className="careers-cp-test-quote">{item.quote}</p>
+                    <div className="careers-cp-test-stars">
+                      {Array.from({ length: item.stars }).map((_, i) => (
+                        <span key={i}>★</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Profile connections notches */}
+                  <div className="careers-cp-testimonial-profile">
+                    <img src={item.avatar} alt={item.author} className="careers-cp-test-avatar" />
+                    <div className="careers-cp-test-meta">
+                      <span className="careers-cp-test-author">{item.author}</span>
+                      <span className="careers-cp-test-date">{item.role} • {item.date}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="careers-cp-carousel-dots">
-            {[0, 1, 2].map((i) => (
-              <span 
-                key={i}
-                className={`dot ${testimonialIndex === i ? "active" : ""}`}
-                onClick={() => setTestimonialIndex(i)}
-                style={{ cursor: "pointer" }}
-              ></span>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

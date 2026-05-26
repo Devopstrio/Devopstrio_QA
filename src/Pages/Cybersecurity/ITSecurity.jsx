@@ -42,8 +42,13 @@ import cyberEssentials from '../../assets/images/Cyber_essentials.png';
 import owasp from '../../assets/images/OWASP.png';
 import hipaa from '../../assets/images/HIPAA.png';
 import securityImg from '../../assets/images/datascience/Security_cuber_ddj.png';
-import cloudImg from '../../assets/images/cloud.png';
-import aiHeroImg from '../../assets/images/ai_hero_bg.png';
+
+import incident_security_solution from "../../assets/images/New/incident_security_solution.png";
+import Industrial_Cybersecurity from "../../assets/images/New/Industrial_Cybersecurity.png";
+import IT_Security_Audit_Services from "../../assets/images/New/IT_Security_Audit_Services.png";
+import Security_establishment from "../../assets/images/New/Security_establishment.png";
+import security_maintanence from "../../assets/images/New/security_maintanence.png";
+import Software_analytics from "../../assets/images/New/Software_analytics.png";
 
 const ITSecurity = () => {
     const navigate = useNavigate();
@@ -62,12 +67,12 @@ const ITSecurity = () => {
         { value: "24/7", label: "availability" }
     ];
 
-    const certificates = [
-        { name: "SSCP", bgColor: "#1a1a2e" },
-        { name: "GDPR\nDPR", bgColor: "#16213e" },
-        { name: "OSCP", bgColor: "#1a1a2e" },
-        { name: "OSWE", bgColor: "#16213e" }
-    ];
+    // const certificates = [
+    //     { name: "SSCP", bgColor: "#1a1a2e" },
+    //     { name: "GDPR\nDPR", bgColor: "#16213e" },
+    //     { name: "OSCP", bgColor: "#1a1a2e" },
+    //     { name: "OSWE", bgColor: "#16213e" }
+    // ];
 
     const services = [
         {
@@ -108,32 +113,32 @@ const ITSecurity = () => {
         {
             title: "Software Analysis with Automatic Means",
             desc: "Scanning your solution for vulnerabilities and providing you with a detailed report on any issues found and advice on how to address them.",
-            image: securityImg
+            image: Software_analytics
         },
         {
             title: "Security Culture Establishment",
             desc: "Checking your software project for compliance with governmental requirements, the violation of which may cause penalties or problems.",
-            image: cloudImg
+            image: Security_establishment
         },
         {
             title: "IT Security Audit Services for Your Projects",
             desc: "Rigorously assessing your project for vulnerabilities and potential problems, ranging from architecture to software and infrastructure.",
-            image: aiHeroImg
+            image: IT_Security_Audit_Services
         },
         {
             title: "Security Incident Solution",
             desc: "Assessing the situation and identifying what caused the hack, helping with the recovery, and protecting the software against such problems in the future.",
-            image: securityImg
+            image: incident_security_solution
         },
         {
             title: "Security Maintenance",
             desc: "Making security an integral part of development processes so that you feel confident about your product and know that all decisions made and code written are safe.",
-            image: cloudImg
+            image: security_maintanence
         },
         {
             title: "Industrial Cybersecurity",
             desc: "Drawing up the basic requirements for security, presenting them to your employees, and conducting their training on this matter.",
-            image: aiHeroImg
+            image: Industrial_Cybersecurity
         }
     ];
 

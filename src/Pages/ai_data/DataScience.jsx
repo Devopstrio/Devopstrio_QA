@@ -19,41 +19,14 @@ import CTA from '../../components/Cta/Cta';
 import Servicehero from '../../components/Hero/Serviceshero';
 
 // Assets
-import dsHeroImg from "../../assets/images/thangalakshmi_dev.png";
-import DAN_01 from "../../assets/images/DAN_01.png";
-
-import analyticsImg from "../../assets/images/datascience/analytics.png";
-import mlImg from "../../assets/images/datascience/ml.png";
-import bigDataImg from "../../assets/images/datascience/bigdata.png";
-import fintechImg from "../../assets/images/datascience/temp_1.png";
-import healthtechImg from "../../assets/images/datascience/healthtech.png";
-import ecommerceImg from "../../assets/images/datascience/ecommerce.png";
+import DAN_01 from "../../assets/images/New/Data_Science_1.png";
+import fintechImg from "../../assets/images/New/Data_Science.png";
 
 const DataScience = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const dsServices = [
-        {
-            title: "Predictive Analytics",
-            desc: "Anticipate market shifts and customer behavior with high-precision forecasting models.",
-            icon: <FiTrendingUp />,
-            image: analyticsImg
-        },
-        {
-            title: "Machine Learning",
-            desc: "Deploy custom ML algorithms that evolve with your data to automate complex decision-making.",
-            icon: <FiZap />,
-            image: mlImg
-        },
-        {
-            title: "Big Data Solutions",
-            desc: "Architect scalable data lakes and warehouses to process petabytes of information in real-time.",
-            icon: <FiLayers />,
-            image: bigDataImg
-        }
-    ];
 
     const techStack = [
         { name: "Python", icon: <SiPython />, cat: "Languages" },

@@ -31,9 +31,10 @@ import AuthorityInfoBar from "./AuthorityInfoBar";
 
 // MediaMenu API Data fetching
 import useCompanySections from "../../hooks/useCompanySections.jsx";
+import api from "../../Services/api";
 
 // Import images from assets
-import CloudPlatformsImage from "../../assets/images/Servicesnav.png";
+import CloudPlatformsImage from "../../assets/images/Services_2.png";
 import "./Navbar.css";
 
 const DEFAULT_DESCRIPTIONS = [
@@ -68,6 +69,11 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [panelScroll, setPanelScroll] = useState({ top: false, bottom: true });
+
+  // Dynamic Featured dropdown card states
+  const [dynamicServicesCard, setDynamicServicesCard] = useState(null);
+  const [dynamicIndustriesCard, setDynamicIndustriesCard] = useState(null);
+  const [dynamicEcosystemCard, setDynamicEcosystemCard] = useState(null);
 
   const { platformSections, aboutSections } = useCompanySections();
 
@@ -146,6 +152,75 @@ const Navbar = () => {
         clearTimeout(clickTimeoutRef.current);
       }
     };
+  }, []);
+
+  // Fetch dynamic featured blog/event updates on mount
+  useEffect(() => {
+    const fetchFeaturedCards = async () => {
+      try {
+        const posts = await api.getAllPosts(30); // Grab latest posts
+        if (posts && posts.length > 0) {
+          // 1. SERVICES CARD: Find latest post from blogs or Insights
+          const latestBlogPost = posts.find(
+            (post) =>
+              post.category?.slug?.toLowerCase() === "blogs" ||
+              post.section?.slug?.toLowerCase() === "insights-knowledge"
+          );
+
+          if (latestBlogPost) {
+            setDynamicServicesCard({
+              path: `/${latestBlogPost.section?.slug || "media"}/${latestBlogPost.category?.slug || "blogs"}/${latestBlogPost.id}`,
+              image: latestBlogPost.image || CloudPlatformsImage,
+              title: latestBlogPost.title,
+              description: latestBlogPost.excerpt || latestBlogPost.subtitle,
+              button: "READ ARTICLE",
+              badge: "LATEST BLOG",
+            });
+          }
+
+          // 2. INDUSTRIES CARD: Find latest post from industry events or News/Events
+          const latestEventPost = posts.find(
+            (post) =>
+              post.category?.slug?.toLowerCase() === "industry-events" ||
+              post.section?.slug?.toLowerCase() === "news-events"
+          );
+
+          if (latestEventPost) {
+            setDynamicIndustriesCard({
+              path: `/${latestEventPost.section?.slug || "media"}/${latestEventPost.category?.slug || "industry-events"}/${latestEventPost.id}`,
+              image: latestEventPost.image || CloudPlatformsImage,
+              title: latestEventPost.title,
+              description: latestEventPost.excerpt || latestEventPost.subtitle,
+              button: "VIEW EVENT",
+              badge: "UPCOMING EVENT",
+            });
+          }
+
+          // 3. ECOSYSTEM CARD: Find latest post from case studies or Success Stories
+          const latestCaseStudy = posts.find(
+            (post) =>
+              post.category?.slug?.toLowerCase() === "case-studies" ||
+              post.category?.slug?.toLowerCase() === "client-transformations" ||
+              post.section?.slug?.toLowerCase() === "success-stories"
+          );
+
+          if (latestCaseStudy) {
+            setDynamicEcosystemCard({
+              path: `/${latestCaseStudy.section?.slug || "media"}/${latestCaseStudy.category?.slug || "case-studies"}/${latestCaseStudy.id}`,
+              image: latestCaseStudy.image || CloudPlatformsImage,
+              title: latestCaseStudy.title,
+              description: latestCaseStudy.excerpt || latestCaseStudy.subtitle,
+              button: "READ CASE STUDY",
+              badge: "CASE STUDY",
+            });
+          }
+        }
+      } catch (err) {
+        console.error("Error loading dynamic featured megamenu cards:", err);
+      }
+    };
+
+    fetchFeaturedCards();
   }, []);
 
   // Real Enterprise Mega Menu Data
@@ -460,9 +535,13 @@ const Navbar = () => {
           //   ],
           // },
         ],
-        card: {
+        card: dynamicServicesCard || {
           path: "/services",
           image: CloudPlatformsImage,
+          title: "Work with us",
+          description: "Our experts deliver resilient architectures and top-tier digital transformation to scale your business.",
+          button: "LEARN MORE",
+          badge: "FEATURED",
         },
       },
 
@@ -526,10 +605,13 @@ const Navbar = () => {
           /* Success Stories menu moved to About */
         ],
 
-        card: {
+        card: dynamicIndustriesCard || {
           path: "/platform",
           image: CloudPlatformsImage,
-
+          title: "Industry Solutions",
+          description: "Explore how we solve complex technological challenges across banking, healthcare, telecom, and logistics.",
+          button: "EXPLORE",
+          badge: "SOLUTIONS",
         },
       },
 
@@ -595,10 +677,13 @@ const Navbar = () => {
             ],
           },
         ],
-        card: {
+        card: dynamicEcosystemCard || {
           path: "/ecosystem",
           image: CloudPlatformsImage,
-
+          title: "Partner Ecosystem",
+          description: "Collaborate and scale with our trusted global partners to engineer secure, high-capacity cloud solutions.",
+          button: "EXPLORE",
+          badge: "ECOSYSTEM",
         },
       },
 
@@ -803,7 +888,7 @@ const Navbar = () => {
         },
       },
     }),
-    [aboutSections, platformSections],
+    [aboutSections, platformSections, dynamicServicesCard, dynamicIndustriesCard, dynamicEcosystemCard],
   );
 
   // Main menu items
@@ -1026,7 +1111,9 @@ const Navbar = () => {
                       <h3>{megaMenus[item.label].title}</h3>
                     </div>
 
-                    <div className={`drio-mega-container ${(item.label !== "Services" && item.label !== "Industries") ? "drio-common-layout" : ""}`}>
+                    <div className={`drio-mega-container ${
+                      (item.label !== "Services" && item.label !== "Industries") ? "drio-common-layout" : ""
+                    } ${megaMenus[item.label].card && megaMenus[item.label].card.title ? "drio-has-card" : ""}`}>
                       {(item.label === "Services" || item.label === "Industries") ? (
                         <>
                           {/* 1. LEFT CATEGORY SIDEBAR */}
@@ -1194,6 +1281,43 @@ const Navbar = () => {
                               </div>
                             ))}
                           </div>
+
+                          {megaMenus[item.label].card && megaMenus[item.label].card.title && (
+                            <div className="drio-mega-card-panel">
+                              <div className="drio-nav-feature-card">
+                                <div className="drio-card-image-wrapper">
+                                  <img
+                                    src={megaMenus[item.label].card.image}
+                                    alt={megaMenus[item.label].card.title}
+                                    className="drio-card-image"
+                                  />
+                                </div>
+                                <div className="drio-card-content">
+                                  {megaMenus[item.label].card.badge && (
+                                    <span className="drio-card-badge">
+                                      {megaMenus[item.label].card.badge}
+                                    </span>
+                                  )}
+                                  <h4>{megaMenus[item.label].card.title}</h4>
+                                  <p>{megaMenus[item.label].card.description}</p>
+                                  {megaMenus[item.label].card.button && (
+                                    <Link
+                                      to={megaMenus[item.label].card.path}
+                                      className="drio-card-link"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setLockedMenu(null);
+                                        setActiveMenu("");
+                                        setActiveCategory(null);
+                                      }}
+                                    >
+                                      {megaMenus[item.label].card.button}
+                                    </Link>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          )}
                         </>
                       )}
                     </div>

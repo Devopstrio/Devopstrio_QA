@@ -17,11 +17,12 @@ import CTA from '../../components/Cta/Cta';
 import Hero from '../../components/Hero/Serviceshero';
 
 // Assets (Using existing high-quality assets where applicable)
-import fintechImg from "../../assets/images/datascience/fintech.jpg";
-import healthtechImg from "../../assets/images/datascience/healthtech.png";
-import ecommerceImg from "../../assets/images/datascience/ecommerce.png";
-import thagalakshmi from "../../assets/images/thangalakshmi_dev.png";
-import DAN_01 from "../../assets/images/DAN_01.png";
+import Finance_Software from "../../assets/images/New/Finance_Software.png";
+import Healthcare from "../../assets/images/New/Healthcare.png";
+import Retail_Ecommerce from "../../assets/images/New/Retail_E_commerce.png";
+import The_architecture_behind from "../../assets/images/New/The_architecture_behind.png";
+import Your_Trusted_Database from "../../assets/images/New/Your_Trusted_Database.png";
+
 
 const DBCreation = () => {
     useEffect(() => {
@@ -44,17 +45,17 @@ const DBCreation = () => {
         {
             title: "Finance Software",
             items: ["Banking Platforms", "Asset Management", "Payment Gateways"],
-            image: fintechImg
+            image: Finance_Software
         },
         {
             title: "Healthcare",
             items: ["Patient Records", "Clinical Data", "Health Analytics"],
-            image: healthtechImg
+            image: Healthcare
         },
         {
             title: "Retail & E-commerce",
             items: ["Inventory Systems", "Order Tracking", "Customer Profiling"],
-            image: ecommerceImg
+            image: Retail_Ecommerce
         }
     ];
 
@@ -168,7 +169,7 @@ const DBCreation = () => {
                             </div>
                             <div className="dt-db-bento-images">
                                 <div className="dt-db-bento-main">
-                                    <img src={fintechImg} alt="Database Infrastructure" />
+                                    <img src={Your_Trusted_Database} alt="Database Infrastructure" />
                                 </div>
                             </div>
                         </div>
@@ -214,7 +215,7 @@ const DBCreation = () => {
                     <div className="dt-db-case-split">
                         <div className="dt-db-case-visual">
                             <div className="dt-db-case-img-wrap">
-                                <img src={fintechImg} alt="Database Success" />
+                                <img src={The_architecture_behind} alt="Database Success" />
                                 <div className="dt-db-floating-badge">
                                     <div className="dt-db-badge-circle">
                                         <h4>15+</h4>

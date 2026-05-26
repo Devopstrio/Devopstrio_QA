@@ -336,7 +336,7 @@
 /* Feature Layout */
 .dt-ds-features-layout {
     display: grid;
-    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     gap: 40px;
     align-items: center;
 }
@@ -397,11 +397,11 @@
 }
 
 .dt-features-img-wrapper {
-    width: 100%;
+    max-width: 500px;
     height: 650px;
     border-radius: 40px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
     position: relative;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
 }
@@ -446,7 +446,7 @@
 .dt-ds-exp-main-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 

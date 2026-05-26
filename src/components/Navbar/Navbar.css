@@ -183,6 +183,11 @@
   gap: 50px;
 }
 
+.drio-mega-container.drio-common-layout.drio-has-card {
+  grid-template-columns: 280px 1fr 260px;
+  gap: 30px;
+}
+
 /* LEFT PROMO PANEL FOR COMMON MENU */
 .drio-mega-left-panel {
   display: flex;
@@ -366,7 +371,7 @@
   transform: translateX(0);
 }
 
-/* LEFT FEATURE CARD (More Compact) */
+/* LEFT FEATURE CARD (Sleek cinematic Split Card Layout) */
 .drio-mega-card-panel {
   display: flex;
   flex-direction: column;
@@ -375,117 +380,166 @@
 
 .drio-nav-feature-card {
   position: relative;
-  height: auto;
+  height: 310px;             /* Fixed height to allow perfect, stable split card transitions */
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 10px;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: rgba(255, 255, 255, 0.02); /* Glassmorphic deep translucent background */
+  border-radius: 20px;       /* Sleek premium rounded corners */
+  padding: 0;                /* NO padding on the card itself to let the image be flush with edges */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Premium inner border and deep shadows */
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle dark border for glass effect */
+  overflow: visible;         /* Ensures floating badge doesn't clip */
+  box-sizing: border-box;
+}
+
+.drio-nav-feature-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(255, 255, 255, 0.04); /* Muted brightness pop on hover */
+  border-color: rgba(206, 36, 83, 0.35); /* Smooth reactive brand border color */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(206, 36, 83, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08); /* Brand crimson glow */
 }
 
 .drio-card-image-wrapper {
   position: relative;
-  width: 220px;
-  height: 240px;
-  margin: 0 auto 20px;
-  /* Organic blob shape */
-  background: linear-gradient(135deg, #ce2453 30%, #dd5c54 75%, #e79e57 100%);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  width: 100%;
+  height: 155px;             /* Half of the card height */
+  border-radius: 20px 20px 0 0;
   overflow: hidden;
-  transition:
-    border-radius 0.6s ease,
-    box-shadow 0.4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 0;
+  background-color: #0c0c0e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 1;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Animate height & opacity transition */
 }
 
 .drio-nav-feature-card:hover .drio-card-image-wrapper {
-  /* Blob morphs on hover */
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  box-shadow: 0 15px 30px rgba(221, 92, 84, 0.3);
+  height: 0;                 /* Image completely collapses/shrinks to zero on hover! */
+  opacity: 0;                /* Smoothly fades out completely */
+  border-bottom-color: transparent;
 }
 
 .drio-card-image {
-  width: 81%;
+  width: 100%;
   height: 100%;
-  position: relative;
-  top: 10%;
   object-fit: cover;
-  z-index: 100;
-  /* Grayscale filter to match the reference style */
-  /* filter: grayscale(100%) contrast(1.1) brightness(0.9); */
-  transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .drio-nav-feature-card:hover .drio-card-image {
-  transform: scale(1);
-  filter: grayscale(0%) contrast(1) brightness(1);
-  /* Reveal full color on hover */
+  transform: scale(1.06);
 }
 
 .drio-card-badge {
   position: absolute;
-  width: fit-content;
-  top: -1%;
-  right: 3%;
-  padding: 4px 12px;
-  background: #ce2453;
-  backdrop-filter: blur(8px);
+  top: -10px;                /* Floats beautifully above the card boundary! */
+  right: 15px;               /* Positioned cleanly on the right edge */
+  padding: 5px 12px;
+  background: #ce2453;       /* Premium brand solid crimson badge */
   border-radius: 6px;
   color: #fff;
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
-  z-index: 2;
+  z-index: 20;               /* Sits above all other elements */
+  box-shadow: 0 4px 10px rgba(206, 36, 83, 0.45); /* Soft crimson shadow for elevated float effect */
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.drio-nav-feature-card:hover .drio-card-badge {
+  transform: translateY(-2px) scale(1.05); /* Soft spring pop on card hover */
+  box-shadow: 0 6px 15px rgba(206, 36, 83, 0.6);
+}
+
+.drio-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 155px;             /* Takes up the other half of the card initially */
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.drio-nav-feature-card:hover .drio-card-content {
+  height: 310px;             /* Automatically takes up 100% of card height when image collapses! */
+  padding: 24px;
 }
 
 .drio-card-content h4 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ce2453;
-  margin: 15px 0 10px;
-  line-height: 1.3;
-  letter-spacing: -0.5px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff; /* Crisp white headers for maximum legibility */
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
   transition: color 0.3s ease;
+}
+
+.drio-nav-feature-card:hover .drio-card-content h4 {
+  color: #ce2453; /* Header highlights in brand crimson on card hover */
 }
 
 .drio-card-content p {
   display: block;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
-  line-height: 1.6;
-  margin-top: 10px;
-  max-width: 280px;
+  color: rgba(255, 255, 255, 0.5); /* Muted off-white text for clean description hierarchy */
+  font-size: 12px;
+  line-height: 1.55;
+  max-width: 100%;
+  
+  /* Initial collapsed state */
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  overflow: hidden;
+  transform: translateY(15px); /* Positioned lower initially */
+  transition: max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+              opacity 0.4s ease,
+              margin 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+              transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.drio-nav-feature-card:hover .drio-card-content p {
+  max-height: 120px; /* Expands to show details fully */
+  opacity: 1;
+  margin: 12px 0 20px 0; /* Add clean spacing on hover */
+  transform: translateY(0); /* Slides smoothly up into view */
 }
 
 .drio-card-link {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
-  padding: 12px 36px;
-  /* Reduced padding */
-  background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  color: #ffffff;
+  color: #ce2453; /* Primary brand color matching the plume from Chalky image */
   text-decoration: none;
-  font-size: 14px;
-  /* Smaller font */
-  font-weight: 700;
-  transition: all 0.3s ease;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ce2453; /* Premium elegant underline */
+  padding-bottom: 2px;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: fit-content;
+  margin-top: auto;
+}
+
+.drio-card-link::after {
+  content: " \2192";        /* Right arrow symbol matching screenshot */
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .drio-card-link:hover {
-  background: #ffffff;
-  color: #000;
-  border-color: #ffffff;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+  color: #e79e57; /* Warm Secondary Accent Color */
+  border-bottom-color: #e79e57;
+  padding-bottom: 4px; /* Organic spring-underline feedback */
+}
+
+.drio-card-link:hover::after {
+  transform: translateX(4px); /* Arrow slides right on hover */
 }
 
 /* RIGHT LINKS GRID (8 Items Visible Only - 4 per column) */

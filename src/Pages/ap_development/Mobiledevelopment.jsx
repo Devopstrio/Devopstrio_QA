@@ -11,6 +11,8 @@ import {
     SiJavascript, SiFirebase, SiGradle, SiDart, SiIonic,
     SiApplepay, SiGooglepay, SiReactivex, SiOpenaccess, SiCplusplus
 } from 'react-icons/si';
+
+
 import '../../Style/ap_development/Mobiledevelopment.css';
 
 
@@ -19,10 +21,9 @@ import OleksandrK from '../../assets/images/mobile_senior.jpg';
 import AyanaT from '../../assets/images/seeedsxwoiw.jpg';
 import RichG from '../../assets/images/uieuue.jpg';
 import cross_paltform from '../../assets/images/datascience/eyuwtr.png'
-import Euopcarr from '../../assets/images/datascience/Europcar.png'
-import GlobeBank from '../../assets/images/datascience/GlobeBank.png'
-import Vivid from '../../assets/images/datascience/Vivid.png'
-
+import  Cross_Platform_car from "../../assets/images/New/Cross_Platform_car.png";
+import Fintech_Mobile_Banking from "../../assets/images/New/Fintech_Mobile_Banking.png";
+import Group_99 from "../../assets/images/New/Group_99.png";
 
 
 // Components
@@ -71,21 +72,21 @@ const Mobiledevelopment = () => {
             company: "Europcar",
             title: "Cross-Platform Car Rental",
             desc: "Devopstrio built a car rental ecosystem featuring keyless access and a management panel. Covering 190,000 vehicles and 13,000 stations, the platform holds a 4.9 rating. This high-quality product reduced operational errors and was acquired as a white-label tool.",
-            img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200&h=800",
+            img: Cross_Platform_car,
             location: "France"
         },
         {
             company: "GlobeBank",
             title: "Fintech Mobile Banking",
             desc: "A secure, scalable banking application with real-time transaction monitoring, AI-driven expense tracking, and seamless biometric authentication for millions of global users.",
-            img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200&h=800",
+            img: Fintech_Mobile_Banking,
             location: "United Kingdom"
         },
         {
             company: "Vivid Health",
             title: "Telehealth & Wellness",
             desc: "A comprehensive health platform connecting patients with doctors through high-definition video calls, integrated health records, and real-time wearable data synchronization.",
-            img:"https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200&h=800" ,
+            img:Group_99,
             location: "Germany"
         }
     ];

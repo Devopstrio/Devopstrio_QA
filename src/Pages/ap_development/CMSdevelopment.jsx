@@ -10,7 +10,9 @@ import '../../Style/ap_development/CMSdevelopment.css';
 
 
 // ==================== Images ====================
-import CMS_DEVELOPMENT from '../../assets/images/datascience/Cms.png';
+import Clients_Say_men from "../../assets/images/New/Clients_Say_men.png";
+import Clients_Say_men1 from "../../assets/images/New/Clients_Say_men1.png";
+import Enterprise_CMS from "../../assets/images/New/Enterprise_CMS.png";
 
 
 const CMSdevelopment = () => {
@@ -149,7 +151,7 @@ const CMSdevelopment = () => {
                     <div className="dt-cms-steps-layout">
                         <div className="dt-cms-steps-left">
                             <div className="dt-cms-visual">
-                                <img src={CMS_DEVELOPMENT} alt="CMS Architecture" />
+                                <img src={Enterprise_CMS} alt="CMS Architecture" />
                             </div>
                         </div>
                         <div className="dt-cms-steps-right">
@@ -229,7 +231,7 @@ const CMSdevelopment = () => {
                                 time: "3 months ago",
                                 quote: "Devopstrio transformed our content workflow. Their headless CMS implementation helped us build a clear strategy and today we finally feel in control of our global digital assets.",
                                 rating: 5,
-                                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                                image: Clients_Say_men
                             },
                             {
                                 name: "Michael Ross",
@@ -237,7 +239,7 @@ const CMSdevelopment = () => {
                                 time: "1 month ago",
                                 quote: "The scalability of the CMS platform provided by Devopstrio is unmatched. We migrated from legacy systems to a modern architecture without losing any data integrity.",
                                 rating: 5,
-                                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800"
+                                image: Clients_Say_men1
                             }
                         ].map((story, i) => (
                             <div key={i} className={`dt-testimonial-item ${activeStory === i ? 'active' : ''}`}>
