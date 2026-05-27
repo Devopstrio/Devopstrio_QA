@@ -69,17 +69,17 @@ jobs:
         run: npm run build
 
       # =====================================================
-      # VERIFY DIST
+      # VERIFY DIST EXISTS
       # =====================================================
 
       - name: Verify Dist Folder
         run: |
-          if [ ! -d "dist" ]; then
+          if [[ ! -d "dist" ]]; then
             echo "ERROR: dist folder not found"
             exit 1
           fi
 
-          echo "Dist folder found"
+          echo "Dist folder exists"
           ls -lah dist
 
       # =====================================================
@@ -94,8 +94,10 @@ jobs:
       # =====================================================
 
       - name: Verify QA Secret
+        env:
+          QA_SECRET: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
         run: |
-          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" ]; then
+          if [[ -z "$QA_SECRET" ]]; then
             echo "ERROR: QA Publish Profile Secret Missing"
             exit 1
           else
@@ -117,7 +119,20 @@ jobs:
         run: npm run compress
 
       # =====================================================
-      # CHECK ZIP SIZE
+      # VERIFY ZIP EXISTS
+      # =====================================================
+
+      - name: Verify ZIP File
+        run: |
+          if [[ ! -f "dist.zip" ]]; then
+            echo "ERROR: dist.zip not found"
+            exit 1
+          fi
+
+          echo "ZIP file created successfully"
+
+      # =====================================================
+      # SHOW ZIP SIZE
       # =====================================================
 
       - name: Check ZIP Size
@@ -183,17 +198,17 @@ jobs:
         run: npm run build
 
       # =====================================================
-      # VERIFY DIST
+      # VERIFY DIST EXISTS
       # =====================================================
 
       - name: Verify Dist Folder
         run: |
-          if [ ! -d "dist" ]; then
+          if [[ ! -d "dist" ]]; then
             echo "ERROR: dist folder not found"
             exit 1
           fi
 
-          echo "Dist folder found"
+          echo "Dist folder exists"
           ls -lah dist
 
       # =====================================================
@@ -204,12 +219,14 @@ jobs:
         run: du -sh dist
 
       # =====================================================
-      # VERIFY PRODUCTION SECRET
+      # VERIFY PROD SECRET
       # =====================================================
 
       - name: Verify Production Secret
+        env:
+          PROD_SECRET: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
         run: |
-          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}" ]; then
+          if [[ -z "$PROD_SECRET" ]]; then
             echo "ERROR: Production Publish Profile Secret Missing"
             exit 1
           else
@@ -231,7 +248,20 @@ jobs:
         run: npm run compress
 
       # =====================================================
-      # CHECK ZIP SIZE
+      # VERIFY ZIP EXISTS
+      # =====================================================
+
+      - name: Verify ZIP File
+        run: |
+          if [[ ! -f "dist.zip" ]]; then
+            echo "ERROR: dist.zip not found"
+            exit 1
+          fi
+
+          echo "ZIP file created successfully"
+
+      # =====================================================
+      # SHOW ZIP SIZE
       # =====================================================
 
       - name: Check ZIP Size
