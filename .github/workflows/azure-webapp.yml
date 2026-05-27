@@ -82,13 +82,12 @@ jobs:
       # ==========================================
       - name: Verify QA Secret
         run: |
-            SECRET="${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}"
-              if [ -z "$SECRET" ]; then
-                echo "ERROR: QA Publish Profile Secret Missing"
-                exit 1
-              fi
-              
-               echo "QA Publish Profile Secret Found"
+          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" ]; then
+            echo "ERROR: QA Publish Profile Secret Missing"
+            exit 1
+          else
+            echo "QA Publish Profile Secret Found"
+          fi
 
       # ==========================================
       # DEPLOY TO QA
