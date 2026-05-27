@@ -82,12 +82,17 @@ jobs:
       # ==========================================
       - name: Validate Publish Profile
         run: |
-          if [[ "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" == *"<?xml"* ]]; then
-            echo "✓ Publish profile appears valid (contains XML)"
-          else
-            echo "✗ ERROR: Publish profile format invalid"
-            exit 1
-          fi
+            PROFILE="${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}"
+            if [ -z "$PROFILE" ]; then
+              echo "✗ ERROR: AZURE_WEBAPP_PUBLISH_PROFILE_QA secret is not configured"
+              exit 1
+            fi
+            if [[ "$PROFILE" == *"<?xml"* ]]; then
+              echo "✓ Publish profile appears valid (contains XML)"
+            else
+              echo "✗ ERROR: Publish profile format invalid"
+              exit 1
+            fi
       
       # ==========================================
       # DEPLOY TO QA
