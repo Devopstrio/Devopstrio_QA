@@ -17,7 +17,7 @@ on:
           - 'true'
 
 env:
-  NODE_VERSION: '22'
+  NODE_VERSION: '20'
 
 jobs:
 
@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v4
 
       # =====================================================
-      # NODE SETUP
+      # SETUP NODE
       # =====================================================
 
       - name: Setup Node.js
@@ -83,13 +83,6 @@ jobs:
           ls -lah dist
 
       # =====================================================
-      # SHOW DIST SIZE
-      # =====================================================
-
-      - name: Check Dist Size
-        run: du -sh dist
-
-      # =====================================================
       # VERIFY QA SECRET
       # =====================================================
 
@@ -100,43 +93,9 @@ jobs:
           if [[ -z "$QA_SECRET" ]]; then
             echo "ERROR: QA Publish Profile Secret Missing"
             exit 1
-          else
-            echo "QA Publish Profile Secret Found"
           fi
 
-      # =====================================================
-      # INSTALL ARCHIVER
-      # =====================================================
-
-      - name: Install Archiver
-        run: npm install archiver --save-dev
-
-      # =====================================================
-      # COMPRESS DIST
-      # =====================================================
-
-      - name: Compress Dist Folder
-        run: npm run compress
-
-      # =====================================================
-      # VERIFY ZIP EXISTS
-      # =====================================================
-
-      - name: Verify ZIP File
-        run: |
-          if [[ ! -f "dist.zip" ]]; then
-            echo "ERROR: dist.zip not found"
-            exit 1
-          fi
-
-          echo "ZIP file created successfully"
-
-      # =====================================================
-      # SHOW ZIP SIZE
-      # =====================================================
-
-      - name: Check ZIP Size
-        run: ls -lh dist.zip
+          echo "QA Publish Profile Secret Found"
 
       # =====================================================
       # DEPLOY TO QA
@@ -147,8 +106,7 @@ jobs:
         with:
           app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
-          package: dist.zip
-          clean: true
+          package: ./dist
 
   # =====================================================
   # PRODUCTION DEPLOYMENT
@@ -170,7 +128,7 @@ jobs:
         uses: actions/checkout@v4
 
       # =====================================================
-      # NODE SETUP
+      # SETUP NODE
       # =====================================================
 
       - name: Setup Node.js
@@ -212,13 +170,6 @@ jobs:
           ls -lah dist
 
       # =====================================================
-      # SHOW DIST SIZE
-      # =====================================================
-
-      - name: Check Dist Size
-        run: du -sh dist
-
-      # =====================================================
       # VERIFY PROD SECRET
       # =====================================================
 
@@ -229,43 +180,9 @@ jobs:
           if [[ -z "$PROD_SECRET" ]]; then
             echo "ERROR: Production Publish Profile Secret Missing"
             exit 1
-          else
-            echo "Production Publish Profile Secret Found"
           fi
 
-      # =====================================================
-      # INSTALL ARCHIVER
-      # =====================================================
-
-      - name: Install Archiver
-        run: npm install archiver --save-dev
-
-      # =====================================================
-      # COMPRESS DIST
-      # =====================================================
-
-      - name: Compress Dist Folder
-        run: npm run compress
-
-      # =====================================================
-      # VERIFY ZIP EXISTS
-      # =====================================================
-
-      - name: Verify ZIP File
-        run: |
-          if [[ ! -f "dist.zip" ]]; then
-            echo "ERROR: dist.zip not found"
-            exit 1
-          fi
-
-          echo "ZIP file created successfully"
-
-      # =====================================================
-      # SHOW ZIP SIZE
-      # =====================================================
-
-      - name: Check ZIP Size
-        run: ls -lh dist.zip
+          echo "Production Publish Profile Secret Found"
 
       # =====================================================
       # DEPLOY TO PRODUCTION
@@ -276,5 +193,4 @@ jobs:
         with:
           app-name: 'devopstrio-prod'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
-          package: dist.zip
-          clean: true
+          package: ./dist
