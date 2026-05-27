@@ -101,7 +101,7 @@ const ITSecurity = () => {
 
     const scrollSlider = (direction) => {
         if (sliderRef.current) {
-            const scrollAmount = 430; // Card width + gap
+            const scrollAmount = 430; 
             sliderRef.current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
