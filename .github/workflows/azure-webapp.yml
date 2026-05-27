@@ -1,5 +1,3 @@
-# Improved Azure Multi Environment CI/CD Workflow
-
 name: Azure Multi Environment CI/CD
 
 on:
@@ -24,13 +22,13 @@ env:
 jobs:
 
   # =====================================================
-  # QA DEPLOYMENT (AUTO)
+  # QA DEPLOYMENT
   # =====================================================
+
   deploy-qa:
     name: Deploy QA Environment
     runs-on: ubuntu-latest
 
-    # Auto deploy only on push
     if: github.event_name == 'push'
 
     steps:
@@ -38,12 +36,14 @@ jobs:
       # =====================================================
       # CHECKOUT
       # =====================================================
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       # =====================================================
-      # SETUP NODE
+      # NODE SETUP
       # =====================================================
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -53,13 +53,15 @@ jobs:
       # =====================================================
       # INSTALL DEPENDENCIES
       # =====================================================
+
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
       # =====================================================
-      # BUILD APPLICATION
+      # BUILD PROJECT
       # =====================================================
-      - name: Build Application
+
+      - name: Build Project
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
           VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
@@ -67,30 +69,30 @@ jobs:
         run: npm run build
 
       # =====================================================
-      # VERIFY BUILD OUTPUT
+      # VERIFY DIST
       # =====================================================
-      - name: Verify Build Output
+
+      - name: Verify Dist Folder
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found"
             exit 1
           fi
 
-          echo "Build successful"
-          echo "Dist folder contents:"
+          echo "Dist folder found"
           ls -lah dist
 
       # =====================================================
-      # CHECK DIST SIZE
+      # SHOW DIST SIZE
       # =====================================================
-      - name: Check Dist Folder Size
-        run: |
-          echo "Checking dist folder size..."
-          du -sh dist
+
+      - name: Check Dist Size
+        run: du -sh dist
 
       # =====================================================
       # VERIFY QA SECRET
       # =====================================================
+
       - name: Verify QA Secret
         run: |
           if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" ]; then
@@ -101,24 +103,46 @@ jobs:
           fi
 
       # =====================================================
+      # INSTALL ARCHIVER
+      # =====================================================
+
+      - name: Install Archiver
+        run: npm install archiver --save-dev
+
+      # =====================================================
+      # COMPRESS DIST
+      # =====================================================
+
+      - name: Compress Dist Folder
+        run: npm run compress
+
+      # =====================================================
+      # CHECK ZIP SIZE
+      # =====================================================
+
+      - name: Check ZIP Size
+        run: ls -lh dist.zip
+
+      # =====================================================
       # DEPLOY TO QA
       # =====================================================
+
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-QA'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
-          package: ./dist
+          package: dist.zip
           clean: true
 
   # =====================================================
-  # PRODUCTION DEPLOYMENT (MANUAL)
+  # PRODUCTION DEPLOYMENT
   # =====================================================
+
   deploy-production:
     name: Deploy Production Environment
     runs-on: ubuntu-latest
 
-    # Manual deployment only
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
@@ -126,12 +150,14 @@ jobs:
       # =====================================================
       # CHECKOUT
       # =====================================================
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       # =====================================================
-      # SETUP NODE
+      # NODE SETUP
       # =====================================================
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -141,13 +167,15 @@ jobs:
       # =====================================================
       # INSTALL DEPENDENCIES
       # =====================================================
+
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
       # =====================================================
-      # BUILD APPLICATION
+      # BUILD PROJECT
       # =====================================================
-      - name: Build Application
+
+      - name: Build Project
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
           VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
@@ -155,30 +183,30 @@ jobs:
         run: npm run build
 
       # =====================================================
-      # VERIFY BUILD OUTPUT
+      # VERIFY DIST
       # =====================================================
-      - name: Verify Build Output
+
+      - name: Verify Dist Folder
         run: |
           if [ ! -d "dist" ]; then
             echo "ERROR: dist folder not found"
             exit 1
           fi
 
-          echo "Production build successful"
-          echo "Dist folder contents:"
+          echo "Dist folder found"
           ls -lah dist
 
       # =====================================================
-      # CHECK DIST SIZE
+      # SHOW DIST SIZE
       # =====================================================
-      - name: Check Dist Folder Size
-        run: |
-          echo "Checking dist folder size..."
-          du -sh dist
+
+      - name: Check Dist Size
+        run: du -sh dist
 
       # =====================================================
       # VERIFY PRODUCTION SECRET
       # =====================================================
+
       - name: Verify Production Secret
         run: |
           if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}" ]; then
@@ -189,12 +217,34 @@ jobs:
           fi
 
       # =====================================================
+      # INSTALL ARCHIVER
+      # =====================================================
+
+      - name: Install Archiver
+        run: npm install archiver --save-dev
+
+      # =====================================================
+      # COMPRESS DIST
+      # =====================================================
+
+      - name: Compress Dist Folder
+        run: npm run compress
+
+      # =====================================================
+      # CHECK ZIP SIZE
+      # =====================================================
+
+      - name: Check ZIP Size
+        run: ls -lh dist.zip
+
+      # =====================================================
       # DEPLOY TO PRODUCTION
       # =====================================================
+
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'devopstrio-prod'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
-          package: ./dist
+          package: dist.zip
           clean: true
