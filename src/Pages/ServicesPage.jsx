@@ -32,7 +32,7 @@ import { FaAws, FaMicrosoft, FaGoogle } from "react-icons/fa";
 
 
 //images
-import DevOps from "../assets/images/Site_img/Devops_2.png";
+import DevOps from "../assets/images/Site_img/Groups_74.png";
 import Cloud from "../assets/images/Site_img/Devops_1.png";
 import Security from "../assets/images/Site_img/Devops_3.png";
 
@@ -598,7 +598,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_70.png"
+                  src="/images/NewFolder/Groups_75.png"
                   alt="SaaS & Cloud Platforms"
                 />
               </div>
@@ -611,7 +611,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_71.png"
+                  src="/images/NewFolder/Groups_76.png"
                   alt="Infrastructure Migration"
                 />
               </div>
@@ -624,7 +624,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_72.png"
+                  src="/images/NewFolder/Groups_77.png"
                   alt="Enterprise DevOps"
                 />
               </div>
@@ -637,7 +637,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_73.png"
+                  src="/images/NewFolder/Groups_80.png"
                   alt="Data & AI Solutions"
                 />
               </div>

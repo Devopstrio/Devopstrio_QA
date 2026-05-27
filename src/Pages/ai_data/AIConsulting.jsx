@@ -7,21 +7,18 @@ import AIConsultationForm from "../../components/AIConsultationForm/AIConsultati
 import AITeam from "../../components/AITeam/AITeam";
 import { FiBarChart2, FiMap, FiTarget, FiLayers, FiCpu, FiDatabase, FiZap, FiMessageSquare, FiCheckCircle, FiChevronLeft, FiChevronRight, FiCheck, FiPlus, FiMinus, FiStar, FiArrowRight, FiUsers, FiTrendingUp, FiSearch, FiCloud, FiActivity, FiCalendar, FiGlobe, FiShield, FiAnchor, FiTrendingDown, FiMessageCircle } from "react-icons/fi";
 
-//IMAGES
-import thangalakshmi_dev from "../../assets/images/thangalakshmi_dev.png";
 
 import Servicehero from "../../components/Hero/Serviceshero";
 
-import AiConsulting_1 from "../../assets/images/Aiconsulting/AiConsulting_1.png"
-import AiConsulting_2 from "../../assets/images/Aiconsulting/AiConsulting_2.png"
-import AiConsulting_3 from "../../assets/images/Aiconsulting/AiConsulting_3.png"
-import AiConsulting_4 from "../../assets/images/Aiconsulting/AiConsulting_4.png"
-import AiConsulting_5 from "../../assets/images/Aiconsulting/AiConsulting_5.png"
-import AiConsulting_6 from "../../assets/images/Aiconsulting/AiConsulting_6.png"
-import AiConsulting_7 from "../../assets/images/Aiconsulting/AiConsulting_7.png"
-import AiConsulting_8 from "../../assets/images/Aiconsulting/AiConsulting_8.png"
-import AiConsulting_9 from "../../assets/images/Aiconsulting/AiConsulting_9.png"
-
+//IMAGES
+import AiConsulting_10 from '../../assets/images/Aiconsulting/AiConsulting_1.png';
+import AiConsulting_2 from "../../assets/images/Aiconsulting/AiConsulting_2.png";
+import AiConsulting_3 from "../../assets/images/Aiconsulting/AiConsulting_3.png";
+import AiConsulting_4 from "../../assets/images/Aiconsulting/AiConsulting_4.png";
+import AiConsulting_5 from "../../assets/images/Aiconsulting/AiConsulting_5.png";
+import AiConsulting_6 from "../../assets/images/Aiconsulting/AiConsulting_6.png";
+import AiConsulting_7 from "../../assets/images/Aiconsulting/AiConsulting_7.png";
+import AiConsulting_8 from "../../assets/images/Aiconsulting/AiConsulting_8.png";
 
 const AIConsulting = () => {
   const navigate = useNavigate();
@@ -191,7 +188,7 @@ const AIConsulting = () => {
   const expertiseData = [
     {
       category: "COMMON AI FEATURES",
-      image: AiConsulting_1,
+      image: AiConsulting_10,
       title: "Core AI capabilities to power growth:",
       points: [
         "Natural language processing and intelligent chatbots;",

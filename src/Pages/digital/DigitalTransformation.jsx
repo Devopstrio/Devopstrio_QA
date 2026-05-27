@@ -24,6 +24,7 @@ import Digital6 from '../../assets/images/Digital/Digital_6.jpg';
 import Digital7 from '../../assets/images/Digital/Digital_7.jpg';
 import Digital8 from '../../assets/images/Digital/Digital_8.png';
 import Digital9 from '../../assets/images/Digital/Digital_9.jpg';
+import healthcareImg from '../../assets/images/datascience/healthcareImg.jpg';
 
 
 const DigitalTransformation = () => {
@@ -444,7 +445,7 @@ const DigitalTransformation = () => {
                         {/* Main Featured Video Card */}
                         <div className="sev-dt-insights-featured-card">
                             <div className="sev-dt-featured-visual">
-                                <img src="https://images.unsplash.com/photo-150700531286a-575d93e0829a?auto=format&fit=crop&q=80&w=1200" alt="Healthcare Transformation" />
+                                <img src={healthcareImg} alt="Healthcare Transformation" />
                                 <span className="sev-dt-duration-badge">0:37:48</span>
                             </div>
                             <div className="sev-dt-featured-info">

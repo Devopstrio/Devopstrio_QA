@@ -20,10 +20,9 @@ import Cta from '../../components/Cta/Cta';
 import '../../Style/Cybersecurity/Penetrationtesting.css';
 
 // Assets (reusing available ones)
-import caseStudyImg from '../../assets/images/security.png';
+import blockchainImg  from '../../assets/images/datascience/blockchainImg.jpg'
 import devsecopsImg from '../../assets/images/datascience/devsecopsImg.jpg';
 import healthcareImg from '../../assets/images/datascience/healthcareImg.jpg';
-import blockchainImg from '../../assets/images/blockchain_banking_security_1778190085792.png';
 import iso27001 from '../../assets/images/ISO27001.png';
 import gdpr from '../../assets/images/GDPR_certification.png';
 import cyberEssentials from '../../assets/images/Cyber_essentials.png';
@@ -32,6 +31,7 @@ import hipaa from '../../assets/images/HIPAA.png';
 import iso42001 from '../../assets/images/ISO42001.png';
 import iso9001 from '../../assets/images/ISO9001.png';
 import microsoftSecurity from '../../assets/images/Microsoft-Solutions-Partner-Colour-Security.png';
+import { image } from 'd3';
 
 
 const PenetrationTesting = () => {
