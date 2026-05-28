@@ -21,86 +21,74 @@ env:
 
 jobs:
 
-  # =====================================================
-  # QA DEPLOYMENT
-  # =====================================================
-
+  # ==========================================
+  # QA DEPLOYMENT (AUTO)
+  # ==========================================
   deploy-qa:
     name: Deploy QA Environment
     runs-on: ubuntu-latest
 
+    # Auto deploy only on push
     if: github.event_name == 'push'
 
     steps:
 
-      # =====================================================
+      # ==========================================
       # CHECKOUT
-      # =====================================================
-
+      # ==========================================
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # =====================================================
+      # ==========================================
       # SETUP NODE
-      # =====================================================
-
+      # ==========================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # =====================================================
+      # ==========================================
       # INSTALL DEPENDENCIES
-      # =====================================================
-
+      # ==========================================
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # =====================================================
-      # BUILD PROJECT
-      # =====================================================
-
-      - name: Build Project
+      # ==========================================
+      # BUILD APPLICATION
+      # ==========================================
+      - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
           VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # =====================================================
-      # VERIFY DIST EXISTS
-      # =====================================================
-
-      - name: Verify Dist Folder
+      # ==========================================
+      # VERIFY BUILD OUTPUT
+      # ==========================================
+      - name: Verify Build Output
         run: |
-          if [[ ! -d "dist" ]]; then
-            echo "ERROR: dist folder not found"
+          if [ ! -d "dist" ]; then
+            echo "ERROR: dist folder not found."
             exit 1
           fi
-
-          echo "Dist folder exists"
-          ls -lah dist
-
-      # =====================================================
+          echo "QA Build Successful"
+          ls -la dist
+      # ==========================================
       # VERIFY QA SECRET
-      # =====================================================
-
+      # ==========================================
       - name: Verify QA Secret
-        env:
-          QA_SECRET: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
         run: |
-          if [[ -z "$QA_SECRET" ]]; then
+          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}" ]; then
             echo "ERROR: QA Publish Profile Secret Missing"
             exit 1
+          else
+            echo "QA Publish Profile Secret Found"
           fi
-
-          echo "QA Publish Profile Secret Found"
-
-      # =====================================================
+      # ==========================================
       # DEPLOY TO QA
-      # =====================================================
-
+      # ==========================================
       - name: Deploy to QA Azure Web App
         uses: azure/webapps-deploy@v3
         with:
@@ -108,89 +96,77 @@ jobs:
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_QA }}
           package: ./dist
 
-  # =====================================================
-  # PRODUCTION DEPLOYMENT
-  # =====================================================
-
+  # ==========================================
+  # PRODUCTION DEPLOYMENT (MANUAL)
+  # ==========================================
   deploy-production:
     name: Deploy Production Environment
     runs-on: ubuntu-latest
 
+    # Manual deploy only
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_production == 'true'
 
     steps:
 
-      # =====================================================
+      # ==========================================
       # CHECKOUT
-      # =====================================================
-
+      # ==========================================
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # =====================================================
+      # ==========================================
       # SETUP NODE
-      # =====================================================
-
+      # ==========================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      # =====================================================
+      # ==========================================
       # INSTALL DEPENDENCIES
-      # =====================================================
-
+      # ==========================================
       - name: Install Dependencies
         run: npm install --legacy-peer-deps
 
-      # =====================================================
-      # BUILD PROJECT
-      # =====================================================
-
-      - name: Build Project
+      # ==========================================
+      # BUILD APPLICATION
+      # ==========================================
+      - name: Build Application
         env:
           VITE_FORM_SUBMIT_EMAIL: ${{ secrets.VITE_FORM_SUBMIT_EMAIL }}
           VITE_COMPANY_ID: ${{ secrets.VITE_COMPANY_ID }}
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: npm run build
 
-      # =====================================================
-      # VERIFY DIST EXISTS
-      # =====================================================
-
-      - name: Verify Dist Folder
+      # ==========================================
+      # VERIFY BUILD OUTPUT
+      # ==========================================
+      - name: Verify Build Output
         run: |
-          if [[ ! -d "dist" ]]; then
-            echo "ERROR: dist folder not found"
+          if [ ! -d "dist" ]; then
+            echo "ERROR: dist folder not found."
             exit 1
           fi
-
-          echo "Dist folder exists"
-          ls -lah dist
-
-      # =====================================================
+          echo "Production Build Successful"
+          ls -la dist
+      # ==========================================
       # VERIFY PROD SECRET
-      # =====================================================
-
+      # ==========================================
       - name: Verify Production Secret
-        env:
-          PROD_SECRET: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
         run: |
-          if [[ -z "$PROD_SECRET" ]]; then
+          if [ -z "${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}" ]; then
             echo "ERROR: Production Publish Profile Secret Missing"
             exit 1
+          else
+            echo "Production Publish Profile Secret Found"
           fi
-
-          echo "Production Publish Profile Secret Found"
-
-      # =====================================================
+      # ==========================================
       # DEPLOY TO PRODUCTION
-      # =====================================================
-
+      # ==========================================
       - name: Deploy to Production Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'devopstrio-c7aqc5ccfudrh2ec'
+          app-name: 'devopstrio'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PROD }}
           package: ./dist
