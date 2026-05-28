@@ -11,7 +11,7 @@ import { FiBarChart2, FiMap, FiTarget, FiLayers, FiCpu, FiDatabase, FiZap, FiMes
 import Servicehero from "../../components/Hero/Serviceshero";
 
 //IMAGES
-import AiConsulting_10 from '../../assets/images/Aiconsulting/AiConsulting_1.png';
+import AiConsulting_1 from '../../assets/images/Aiconsulting/AiConsulting_1.png';
 import AiConsulting_2 from "../../assets/images/Aiconsulting/AiConsulting_2.png";
 import AiConsulting_3 from "../../assets/images/Aiconsulting/AiConsulting_3.png";
 import AiConsulting_4 from "../../assets/images/Aiconsulting/AiConsulting_4.png";
@@ -41,10 +41,10 @@ const AIConsulting = () => {
         if (!start) start = timestamp;
         const progress = timestamp - start;
         const percentage = Math.min(progress / duration, 1);
-        
+
         // EaseInOutCubic function for cinematic feel
-        const easing = percentage < 0.5 
-          ? 4 * percentage * percentage * percentage 
+        const easing = percentage < 0.5
+          ? 4 * percentage * percentage * percentage
           : 1 - Math.pow(-2 * percentage + 2, 3) / 2;
 
         window.scrollTo(0, startPosition + distance * easing);
@@ -188,7 +188,7 @@ const AIConsulting = () => {
   const expertiseData = [
     {
       category: "COMMON AI FEATURES",
-      image: AiConsulting_10,
+      image: AiConsulting_1,
       title: "Core AI capabilities to power growth:",
       points: [
         "Natural language processing and intelligent chatbots;",
@@ -506,7 +506,7 @@ const AIConsulting = () => {
         </section>
 
         {/* Free Consultation Form Component */}
-        <AIConsultationForm 
+        <AIConsultationForm
           id="Scroll"
           title="Let's build your <span class='dt-aic-gradient-text'>AI Strategy</span>"
           subjectPrefix="AI Strategy Consultation"

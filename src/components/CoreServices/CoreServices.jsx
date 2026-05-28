@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./CoreServices.css";
-import { Database, Code, Cloud, ChevronRight, ArrowRight, Cpu, Users } from "lucide-react";
+import { Database, Code, Cloud, ArrowRight, Cpu, Users } from "lucide-react";
+
+//IMAGES
 
 export default function CoreServices() {
   const [activeTab, setActiveTab] = useState("ai");
@@ -10,6 +12,7 @@ export default function CoreServices() {
       id: "ai",
       title: "AI & Data",
       icon: <Database size={20} />,
+      image: "/images/New/notewoman.png",
       capabilities: [
         { name: "AI Strategy & Consulting", link: "/services/ai-consulting-services" },
         { name: "Artificial Intelligence Solutions", link: "/services/artificial-intelligence" },
@@ -23,6 +26,7 @@ export default function CoreServices() {
       id: "cloud",
       title: "Cloud Development",
       icon: <Cloud size={20} />,
+      image: "/images/New/Support_intern_img1.png",
       capabilities: [
         { name: "Cloud Migration Solutions", link: "/services/cloud-migration" },
         { name: "Multi-Cloud Infrastructure", link: "/services/multi-cloud" },
@@ -36,6 +40,7 @@ export default function CoreServices() {
       id: "software",
       title: "Software Engineering",
       icon: <Code size={20} />,
+      image: "/images/New/internship_collaboration.png",
       capabilities: [
         { name: "Web Application Development", link: "/services/web-development" },
         { name: "Mobile App Development", link: "/services/mobile-development" },
@@ -49,6 +54,7 @@ export default function CoreServices() {
       id: "modernization",
       title: "Legacy Modernization",
       icon: <Cpu size={20} />,
+      image: "/images/New/Support_image.png",
       capabilities: [
         { name: "DevOps Infrastructure Enablement", link: "/services/devops-enablement" },
         { name: "Application Security & Compliance", link: "/services/compliance" },
@@ -62,6 +68,7 @@ export default function CoreServices() {
       id: "augmentation",
       title: "Staff Augmentation",
       icon: <Users size={20} />,
+      image: "/images/devopstrio_collaboration.png",
       capabilities: [
         { name: "IT Security & SOC Management", link: "/services/security-management" },
         { name: "Security Operations Center", link: "/services/security-operations-center" },
@@ -94,25 +101,24 @@ export default function CoreServices() {
         {/* INTERACTIVE WORKSPACE LAYOUT */}
         <div className="coreservs-workspace">
           
-          {/* LEFT SIDEBAR: MENU */}
-          <div className="coreservs-sidebar">
-            {services.map((item) => (
-              <button
-                key={item.id}
-                className={`coreservs-menu-btn ${activeTab === item.id ? "active" : ""}`}
-                onClick={() => setActiveTab(item.id)}
-                aria-label={`Select ${item.title}`}
-              >
-                <span className="coreservs-btn-icon">{item.icon}</span>
-                <span className="coreservs-btn-text">{item.title}</span>
-                {activeTab === item.id && (
-                  <ChevronRight size={18} className="coreservs-btn-arrow" />
-                )}
-              </button>
-            ))}
+          {/* TOP NAVBAR: MENU WRAPPER */}
+          <div className="coreservs-navbar-wrapper">
+            <div className="coreservs-navbar">
+              {services.map((item) => (
+                <button
+                  key={item.id}
+                  className={`coreservs-menu-btn ${activeTab === item.id ? "active" : ""}`}
+                  onClick={() => setActiveTab(item.id)}
+                  aria-label={`Select ${item.title}`}
+                >
+                  <span className="coreservs-btn-icon">{item.icon}</span>
+                  <span className="coreservs-btn-text">{item.title}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* RIGHT DETAILED PANEL */}
+          {/* DETAILED PANEL */}
           <div className="coreservs-panel">
             
             {/* PANEL LEFT: CAPABILITIES DETAILS */}
@@ -138,20 +144,15 @@ export default function CoreServices() {
               </a>
             </div>
 
-            {/* PANEL RIGHT: DYNAMIC GRAPHIC ILLUSTRATION */}
-            <div className="coreservs-panel-graphic">
-              <div className="coreservs-graphic-circle">
-                <div className="coreservs-graphic-inner"></div>
-                <div className="coreservs-graphic-core"></div>
-                
-                {/* Petals/Cards arrangement around the circle */}
-                <div className="coreservs-graphic-card c1"></div>
-                <div className="coreservs-graphic-card c2"></div>
-                <div className="coreservs-graphic-card c3"></div>
-                <div className="coreservs-graphic-card c4"></div>
-                <div className="coreservs-graphic-card c5"></div>
-                <div className="coreservs-graphic-card c6"></div>
-              </div>
+            {/* PANEL RIGHT: SERVICE IMAGE */}
+            <div className="coreservs-panel-image-container">
+              <img 
+                key={activeTab}
+                src={activeService.image} 
+                alt={activeService.title} 
+                className="coreservs-panel-image"
+              />
+              <div className="coreservs-image-overlay"></div>
             </div>
 
           </div>

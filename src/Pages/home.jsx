@@ -32,14 +32,14 @@ export default function Home() {
     <>
       {/* HERO */}
       <Hero />
+      {/* CORE SERVICES */}
+      <CoreServices />
+
       {/* PARTNER_ECOSYSTEM */}
       <PartnerEcosystem />
 
       {/* Business Overview */}
       <BusinessOverview />
-
-         {/* CORE SERVICES */}
-      <CoreServices />
 
       {/* INDUSTRY SPECIALIZATION */}
       <IndustrySpecialization />
@@ -50,10 +50,8 @@ export default function Home() {
       {/* CASE STUDIES */}
       <CaseStudies />
 
-
       {/* WHY Devopstrio  */}
       <WhyDevopstrio/>
-
 
       {/* OUR CLIENTS */}
       <OurClients />

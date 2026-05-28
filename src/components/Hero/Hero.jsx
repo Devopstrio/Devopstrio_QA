@@ -10,8 +10,8 @@ export default function Hero() {
 
   // Word scrolling state
   const wordPairs = [
-    { cloud: "Cloud", product: "Migration" },
     { cloud: "AI", product: "Platforms" },
+    { cloud: "Cloud", product: "Migration" },
     { cloud: "Data", product: "Engineering" },
     { cloud: "DevOps", product: "Product" },
   ];
@@ -24,7 +24,7 @@ export default function Hero() {
             {/* Main Heading with Staggered Animation */}
             <div className="heading-container">
               <h1>
-                <span className="line line-1">Building Scalable</span>
+                <span className="line line-1">Advancing Cloud</span>
                 <span className="line line-2">
                   <div className="word-scroll-container">
                     {/* Unified scroll container with both words */}

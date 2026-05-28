@@ -598,7 +598,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_75.png"
+                  src="/images/NewFolder/Groups_70.png"
                   alt="SaaS & Cloud Platforms"
                 />
               </div>
@@ -611,7 +611,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_76.png"
+                  src="/images/NewFolder/Groups_71.png"
                   alt="Infrastructure Migration"
                 />
               </div>
@@ -624,7 +624,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_77.png"
+                  src="/images/NewFolder/Groups_72.png"
                   alt="Enterprise DevOps"
                 />
               </div>
@@ -637,7 +637,7 @@ export default function ServicesPage() {
             <div className="spg-bd-card">
               <div className="spg-bd-card-img">
                 <img
-                  src="/images/NewFolder/Groups_80.png"
+                  src="/images/NewFolder/Groups_73.png"
                   alt="Data & AI Solutions"
                 />
               </div>

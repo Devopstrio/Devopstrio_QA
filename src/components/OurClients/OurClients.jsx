@@ -35,8 +35,8 @@ export default function OurClients() {
           </span>
 
           <h2>
-            One platform <br />
-            <span>Every system connected</span>
+            Working with <br />
+            <span>Leading Brands</span>
           </h2>
 
           <p dangerouslySetInnerHTML={{ __html: "We help organizations of all sizes, from start-ups to global enterprises, across <a href='/platform/financial-services' class='about-inline-link'>financial services</a>, media & comms, <a href='/platform/retail' class='about-inline-link'>retail & consumer goods</a>, and <a href='/services/explore' class='about-inline-link'>professional services</a>." }}></p>

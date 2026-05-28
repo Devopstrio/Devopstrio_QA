@@ -801,7 +801,6 @@
 
 .sa-panel-img:hover {
   transform: scale(1.02);
-  box-shadow: 0 45px 100px rgba(206, 36, 83, .15);
 }
 
 .sa-panel-img img {
